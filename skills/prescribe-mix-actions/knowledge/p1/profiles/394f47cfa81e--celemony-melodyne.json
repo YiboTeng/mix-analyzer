@@ -1,0 +1,203 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "394f47cfa81e--celemony-melodyne",
+  "family_id": "394f47cfa81e",
+  "identity": {
+    "vendor": "Celemony",
+    "product": "Melodyne",
+    "version_range": "5.4.1",
+    "formats": [
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "pitch-editor",
+    "secondary": [
+      "timing",
+      "note-level-editing"
+    ],
+    "diagnoses": [
+      "note_level_pitch_error",
+      "timing_or_pitch_drift_edit"
+    ],
+    "not_for": [
+      "low-latency tracking",
+      "automatic live correction"
+    ]
+  },
+  "routing": [
+    {
+      "position": "offline or transfer edit before insert dynamics",
+      "when": "note_level_pitch_error"
+    },
+    {
+      "position": "offline or transfer edit before insert dynamics",
+      "when": "timing_or_pitch_drift_edit"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "fix detection and note separation first",
+      "move note centre without erasing drift",
+      "edit only defective region"
+    ],
+    "controls": [
+      {
+        "name": "Pitch Center",
+        "action": "increase per note after detection review"
+      },
+      {
+        "name": "Drift/Modulation",
+        "action": "change separately from centre"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "over-quantized phrasing",
+    "blob boundary artifacts",
+    "transfer workflow mismatch"
+  ],
+  "stop_conditions": [
+    "external F0 gets worse while edit has no musical justification",
+    "consonant or transition smears"
+  ],
+  "alternatives": [
+    {
+      "condition": "realtime correction",
+      "fallback": "Auto-Tune Pro"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 5.4.1.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Celemony/Melodyne.md",
+    "source_note": "sources/音乐制作/插件资料/Celemony/Melodyne资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/394f47cfa81e--Celemony-Melodyne.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/394f47cfa81e--melodyne-transfer-pitch-center100.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Celemony/Melodyne.md",
+        "packaged_path": "evidence/cards/Melodyne.md",
+        "sha256": "a35b2d2dd67920657b6d72d86ee7a6cddf3c8c4960a4a4a37379a48b889f8b7b"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Celemony/Melodyne资料.md",
+        "packaged_path": "evidence/sources/Melodyne资料.md",
+        "sha256": "133ad3f8bf35d8b8c10611916427edce1c5e7aca5bc055ce0c7dfae7d27af2f3"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/394f47cfa81e--Celemony-Melodyne.md",
+        "packaged_path": "evidence/validation/394f47cfa81e--Celemony-Melodyne.md",
+        "sha256": "602c009722cb47478ce60e81cf2a275e23edbbf6e5c4eb89c29354efbdedac83"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/394f47cfa81e--melodyne-transfer-pitch-center100.json",
+          "packaged_path": "evidence/results/394f47cfa81e--melodyne-transfer-pitch-center100.json",
+          "sha256": "9b9f7dc6921b914b44b77da7faa5526bdfd4b2cadd452c6e4cd0d433cd831c61"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "note_level_pitch_error",
+      "timing_or_pitch_drift_edit"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Transfer and Pitch Center 100% boundary tested; ARA and labelled-note accuracy not tested."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "完成剪辑、Comping 与基本源修复后，通过 Studio One ARA 打开；先确认 Melodic 算法与音符分配，再编辑。",
+      "Pitch/Timing 精修通常先于压缩、饱和和空间效果；渲染或冻结后保留可回退版本。",
+      "对持续音尾或滑音仅分离问题区，保持相邻软分隔以维持自然过渡。"
+    ],
+    "routing": [
+      "Studio One ARA 事件级编辑；完成 Comping 后再进入。",
+      "保留原始事件副本，必要时 Bounce 到新轨后进行后续混音。"
+    ],
+    "controls": [
+      {
+        "name": "Algorithm / Detection",
+        "meaning": "决定音频如何被解析和可编辑。",
+        "action": "人声优先检查 Melodic；先修 Note Assignment，再做声音编辑。"
+      },
+      {
+        "name": "Pitch Center",
+        "meaning": "音符音高重心。",
+        "action": "只把真正偏离目标的音符拉回；保留风格性蓝调音、滑入和语气。"
+      },
+      {
+        "name": "Pitch Drift",
+        "meaning": "音符内慢速音高漂移。",
+        "action": "长音后半段下坠时小幅减少，不动正常颤音。"
+      },
+      {
+        "name": "Pitch Modulation",
+        "meaning": "快速变化，如颤音。",
+        "action": "颤音过宽时轻减；完全归零容易失去生命力。"
+      },
+      {
+        "name": "Note Separation",
+        "meaning": "把 Blob 切分或连接，影响音高中心和过渡。",
+        "action": "把错误音尾、滑入、辅音或误识别段单独分离，再局部编辑。"
+      },
+      {
+        "name": "Timing / Time Handles",
+        "meaning": "移动音符边界、整体位置或内部时间演化。",
+        "action": "先对齐节奏重音，避免把全部音节硬贴网格。"
+      }
+    ],
+    "parameter_start_points": [
+      "先检查 Melodic 算法与 Note Assignment；错误 Detection 先修正。",
+      "Correct Pitch Macro：Pitch Center 30–60%、Pitch Drift 10–40% 作为自然修音试点，再逐音符回退。",
+      "极端风格只对明确目标段提高至 80–100%，不要默认作用整轨。"
+    ],
+    "listen_for": [
+      "辅音和气息是否被时间/音高编辑拉长或切短。",
+      "Blob 分离后是否出现新的音高重心跳变。",
+      "过度量化导致的平直颤音、机械时值和音色相位感。"
+    ],
+    "stop": [
+      "关闭 Compare 时错误不再分散注意力，同时演唱个性仍在。",
+      "继续校正只让图形更整齐但听感更假时停止并回退。"
+    ],
+    "latency": [
+      "ARA 编辑通常不是常规实时 Insert 延迟问题，但检测、时间拉伸与导出算法可能改变相位/瞬态。本机 Melodyne Studio 5.4.1 VST3 在 Ableton Live 11.3.43 / 48 kHz 中报告 0 samples；这不代表 ARA、时间编辑或其它宿主没有渲染差异。"
+    ]
+  }
+}

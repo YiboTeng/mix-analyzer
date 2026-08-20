@@ -1,0 +1,205 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "a094b33b301c--waves-scheps-omni-channel",
+  "family_id": "a094b33b301c",
+  "identity": {
+    "vendor": "Waves",
+    "product": "Scheps Omni Channel",
+    "version_range": "12.7.0.209",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "channel-strip",
+    "secondary": [
+      "preamp",
+      "eq",
+      "dynamics",
+      "deessing"
+    ],
+    "diagnoses": [
+      "multi_stage_vocal_cleanup",
+      "fast_integrated_chain"
+    ],
+    "not_for": [
+      "single_precision_task",
+      "version_2_only_features"
+    ]
+  },
+  "routing": [
+    {
+      "position": "integrated insert after restoration",
+      "when": "multi_stage_vocal_cleanup"
+    },
+    {
+      "position": "integrated insert after restoration",
+      "when": "fast_integrated_chain"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "one module at a time",
+      "explicit module order",
+      "global level match"
+    ],
+    "controls": [
+      {
+        "name": "Pre/Drive",
+        "action": "separate colour from loudness"
+      },
+      {
+        "name": "EQ/Dynamics/DS",
+        "action": "activate only justified modules"
+      },
+      {
+        "name": "Routing",
+        "action": "compare compressor pre/post EQ and de-esser order"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "hidden cumulative gain",
+    "over-processing",
+    "version mismatch"
+  ],
+  "stop_conditions": [
+    "cannot attribute improvement to one module",
+    "gain staging clips internally"
+  ],
+  "alternatives": [
+    {
+      "condition": "individual precision tools",
+      "fallback": "Pro-Q 3 + Pro-C 2 + Pro-DS"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 12.7.0.209.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Waves/Scheps Omni Channel.md",
+    "source_note": "sources/音乐制作/插件资料/Waves/Scheps Omni Channel资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/a094b33b301c--Waves-Scheps-Omni-Channel.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/a094b33b301c--channel-strip-pre-saturation.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Waves/Scheps Omni Channel.md",
+        "packaged_path": "evidence/cards/Scheps Omni Channel.md",
+        "sha256": "3bd8a6ee1722e78192636774165829c918ff8d86c506d1db4be3fdac79977820"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Waves/Scheps Omni Channel资料.md",
+        "packaged_path": "evidence/sources/Scheps Omni Channel资料.md",
+        "sha256": "9c795c5d6cb7efdd9d44c9b306907b4966bd73cb661f969ce6b19f6eabd29548"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/a094b33b301c--Waves-Scheps-Omni-Channel.md",
+        "packaged_path": "evidence/validation/a094b33b301c--Waves-Scheps-Omni-Channel.md",
+        "sha256": "8f81da3c6df323f736da3b9c72b6f52e9afc78542e6c62a0e1b32c9038dcd60d"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/a094b33b301c--channel-strip-pre-saturation.json",
+          "packaged_path": "evidence/results/a094b33b301c--channel-strip-pre-saturation.json",
+          "sha256": "42792e2295559dd26740f7bbc4a19e0c9972b1ea4df1e1501374b566f85b038d"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "multi_stage_vocal_cleanup",
+      "fast_integrated_chain"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Original V12 Full Reset and HEAVY drive boundary tested; Omni Channel 2 features excluded."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "先按问题决定模块顺序；主唱可从 Compressor→Pre/EQ→DS²，Gate/Expander 置前。",
+      "官方 Andrew Scheps 教程建议比较 Compressor 前/后 EQ、DS² 前/后 Compressor，而不是固定教条。",
+      "Insert 插件能力按本机原版仅信任 Waves 内部兼容性，待 S4 回读。"
+    ],
+    "routing": [
+      "主唱 Insert 的一体化通道。",
+      "Backing Vocal Bus 统一处理；Gate/DS² 更保守。"
+    ],
+    "controls": [
+      {
+        "name": "Pre Saturation / Thump / Filters",
+        "meaning": "增加谐波、低频共振和边界滤波。",
+        "action": "先滤除无用频率，再选一个饱和模式小推；Thump 仅缺重量时。"
+      },
+      {
+        "name": "VCA / FET / OPT Compressor",
+        "meaning": "VCA 快且透明，FET 更有色/泵，OPT 最慢平滑。",
+        "action": "Vocal 从 VCA 4:1、慢 Attack/快 Release 起，再 A/B 类型。"
+      },
+      {
+        "name": "DS² 1/2",
+        "meaning": "两段频率选择性动态抑制。",
+        "action": "一段 6–10 kHz 齿音，一段 2.5–3.5 kHz 喊唱鼻刺，仅在对应事件动作。"
+      },
+      {
+        "name": "Gate / Expander",
+        "meaning": "降低阈值下泄漏。",
+        "action": "放链前，从温和扩展开始，保护尾音。"
+      },
+      {
+        "name": "Module Drag Order / Insert",
+        "meaning": "改变处理先后和可插入点。",
+        "action": "每次只移动一个模块，重新匹配响度和压缩阈值。"
+      }
+    ],
+    "parameter_start_points": [
+      "Compressor 4:1、相对慢 Attack/快 Release、3–5 dB GR。",
+      "DS² Band 1 先找齿音，Band 2 只在 2.5–3.5 kHz 喊唱问题存在时启用。",
+      "Pre 只选一种轻饱和；所有模块逐个开启。比较 ODD/EVEN/HEAVY 前先匹配 Output；HEAVY Drive 0 已比 Full Reset 约响 0.5 dB。"
+    ],
+    "listen_for": [
+      "多模块叠加过度饱和/去齿/压缩。",
+      "EQ 前后移动使 Compressor 触发变化。",
+      "Gate 吞尾、DS² 造成暗哑。"
+    ],
+    "stop": [
+      "每个启用模块都有独立可听目标和旁通收益。",
+      "关闭任何模块无差异时删除而不是保留。"
+    ],
+    "latency": [
+      "本机原版 v12 VST3 Stereo 在 Full Reset 与 HEAVY Drive 0/3.2 时，Ableton 均报告 0 samples；Full Reset 对旁路最佳偏移 0 samples、互差 RMS -141.483962 dBFS。该结果不能外推到 Omni Channel 2、Insert、其它模块/模式、VST2 或其它采样率。"
+    ]
+  }
+}

@@ -1,0 +1,508 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T09:07:14+08:00",
+  "family_id": "e98173f7f4df",
+  "test_id": "composite-fixed-air-band-20khz-gain-and-headroom",
+  "fixed_state": {
+    "host": "Ableton Live 11.3.43",
+    "format": "VST3",
+    "plugin_version_family_filesystem": "1.3.0.0 | 1.9.0.0",
+    "zero_gain_baseline": "fresh active instance; all six gain controls at 0; Air selector 20 kHz; Level Trim unchanged",
+    "air_safe_state": "Air Band 20 kHz; Air Gain +3 dB; all other gain controls 0; Level Trim unchanged",
+    "air_risk_state": "Air Band 20 kHz; Air Gain +5 dB; all other gain controls 0; Level Trim unchanged",
+    "host_reported_latency_samples": {
+      "zero_gain": 0,
+      "air_20khz_plus3db": 0,
+      "air_20khz_plus5db": 0
+    },
+    "render": "Master; 2.1.1 start; 48.0.0 length; 72 s output; 48 kHz; stereo 24-bit WAV; normalize off; triangular dither",
+    "fixture": "deterministic composite with ten-tone steady segment at 8-20 s and level-stepped dynamics at 66-72 s"
+  },
+  "files": {
+    "bypass": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\7a146380912e--composite--bypass.wav",
+      "sha256": "38a74287a951ad7a62a6abeb219aa91afdd0e4f2abde062b972361851e0de16f",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938332,
+      "rms_dbfs": -21.437912,
+      "left_right_correlation": 0.771435140941
+    },
+    "zero": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\e98173f7f4df--composite--all-gains-zero.wav",
+      "sha256": "da548ecc3eeac1893804d9d4f0a043d3f046fda31893b727356b3d32a344a668",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.677919,
+      "rms_dbfs": -21.379127,
+      "left_right_correlation": 0.773527498974
+    },
+    "air_safe": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\e98173f7f4df--composite--air20k-plus3.wav",
+      "sha256": "35e0afed1b48ee00f3a4a4ec9ea6e597249a815a707c9d9efc99e6b7581983ee",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -0.897973,
+      "rms_dbfs": -21.173733,
+      "left_right_correlation": 0.775732928129
+    },
+    "air_risk": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\e98173f7f4df--composite--air20k-plus5.wav",
+      "sha256": "b169e9a7cf37b693cf2e5225e6b22ec0646445c5992ef9e2e226b9c02e3be318",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1e-06,
+      "rms_dbfs": -20.682851,
+      "left_right_correlation": 0.781538619449
+    }
+  },
+  "snapshot": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\host\\snapshots\\0072a637f389--FabFilter-Saturn-2 Project\\e98173f7f4df--Plugin-Alliance-Maag-EQ4.als",
+    "sha256": "f34f0329fa12a7a435e184450e308f6e64ecc449314d6cdc2920b546f6dcbed5"
+  },
+  "comparisons": {
+    "all_gains_zero_vs_shared_bypass": {
+      "best_integer_lag_samples": 0,
+      "best_integer_lag_ms": 0.0,
+      "best_lag_correlation": 0.999662180025,
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "level_delta_db": 0.261688,
+          "peak_delta_db": 0.260412,
+          "correlation": 0.99985469291,
+          "residual_rms_dbfs": -83.877435,
+          "left_right_residual_rms_dbfs": -141.477799
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "level_delta_db": 0.0189,
+          "peak_delta_db": 0.470426,
+          "correlation": 0.99966223894,
+          "residual_rms_dbfs": -51.159028,
+          "left_right_residual_rms_dbfs": -17.034561
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "level_delta_db": 0.026002,
+          "peak_delta_db": 0.260412,
+          "correlation": 0.999310880823,
+          "residual_rms_dbfs": -42.802189,
+          "left_right_residual_rms_dbfs": -141.4879
+        }
+      },
+      "steady_multitone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": -0.169974,
+          "phase_degrees": 11.368419
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": 0.042653,
+          "phase_degrees": 8.473014
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": -0.233456,
+          "phase_degrees": 3.650103
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": 0.018011,
+          "phase_degrees": 1.488105
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": 0.252738,
+          "phase_degrees": 0.919042
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": 0.181263,
+          "phase_degrees": 0.350754
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": 0.198598,
+          "phase_degrees": 0.411626
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": 0.226567,
+          "phase_degrees": 0.25935
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": 0.240688,
+          "phase_degrees": 0.142791
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": 0.237716,
+          "phase_degrees": 0.063763
+        }
+      ]
+    },
+    "air_20khz_plus3db_vs_all_gains_zero": {
+      "best_integer_lag_samples": 0,
+      "best_integer_lag_ms": 0.0,
+      "best_lag_correlation": 0.999991463656,
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "level_delta_db": 0.804251,
+          "peak_delta_db": 0.779946,
+          "correlation": 0.997868870891,
+          "residual_rms_dbfs": -73.055283,
+          "left_right_residual_rms_dbfs": -141.452695
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "level_delta_db": 0.162855,
+          "peak_delta_db": 0.983728,
+          "correlation": 0.999991464312,
+          "residual_rms_dbfs": -53.729065,
+          "left_right_residual_rms_dbfs": -16.871704
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "level_delta_db": 0.160536,
+          "peak_delta_db": 0.779948,
+          "correlation": 0.999996080834,
+          "residual_rms_dbfs": -48.964025,
+          "left_right_residual_rms_dbfs": -141.492249
+        }
+      },
+      "steady_multitone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": 0.207877,
+          "phase_degrees": 0.832003
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": 0.231195,
+          "phase_degrees": 0.613649
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": 0.11902,
+          "phase_degrees": 0.317224
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": 0.162877,
+          "phase_degrees": 0.236097
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": 0.152655,
+          "phase_degrees": 0.196094
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": 0.159855,
+          "phase_degrees": 0.202156
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": 0.169887,
+          "phase_degrees": 0.364169
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": 0.206018,
+          "phase_degrees": 0.604025
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": 0.264731,
+          "phase_degrees": 0.725378
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": 0.325321,
+          "phase_degrees": 0.630879
+        }
+      ]
+    },
+    "air_20khz_plus5db_vs_all_gains_zero": {
+      "best_integer_lag_samples": 0,
+      "best_integer_lag_ms": 0.0,
+      "best_lag_correlation": 0.999910377231,
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "level_delta_db": 2.105484,
+          "peak_delta_db": 1.677918,
+          "correlation": 0.980899942017,
+          "residual_rms_dbfs": -63.612146,
+          "left_right_residual_rms_dbfs": -141.48455
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "level_delta_db": 0.539724,
+          "peak_delta_db": 2.95838,
+          "correlation": 0.999910384189,
+          "residual_rms_dbfs": -43.140912,
+          "left_right_residual_rms_dbfs": -16.494832
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "level_delta_db": 0.531915,
+          "peak_delta_db": 2.39771,
+          "correlation": 0.999958801499,
+          "residual_rms_dbfs": -38.375873,
+          "left_right_residual_rms_dbfs": -141.471901
+        }
+      },
+      "steady_multitone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": 0.691232,
+          "phase_degrees": 2.648506
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": 0.763238,
+          "phase_degrees": 1.954465
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": 0.396945,
+          "phase_degrees": 1.045156
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": 0.53979,
+          "phase_degrees": 0.765004
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": 0.506494,
+          "phase_degrees": 0.635639
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": 0.529564,
+          "phase_degrees": 0.661192
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": 0.563612,
+          "phase_degrees": 1.170285
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": 0.684304,
+          "phase_degrees": 1.913345
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": 0.878969,
+          "phase_degrees": 2.297749
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": 1.05515,
+          "phase_degrees": 1.929753
+        }
+      ]
+    },
+    "air_20khz_plus3db_vs_shared_bypass": {
+      "best_integer_lag_samples": -1,
+      "best_integer_lag_ms": -0.020833,
+      "best_lag_correlation": 0.999617528269,
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "level_delta_db": 1.065939,
+          "peak_delta_db": 1.040359,
+          "correlation": 0.997060909142,
+          "residual_rms_dbfs": -71.058326,
+          "left_right_residual_rms_dbfs": -141.452695
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "level_delta_db": 0.181756,
+          "peak_delta_db": 1.454154,
+          "correlation": 0.999546483043,
+          "residual_rms_dbfs": -48.11736,
+          "left_right_residual_rms_dbfs": -16.871704
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "level_delta_db": 0.186537,
+          "peak_delta_db": 1.04036,
+          "correlation": 0.999352659761,
+          "residual_rms_dbfs": -41.760713,
+          "left_right_residual_rms_dbfs": -141.492249
+        }
+      },
+      "steady_multitone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": 0.037903,
+          "phase_degrees": 12.200422
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": 0.273849,
+          "phase_degrees": 9.086663
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": -0.114435,
+          "phase_degrees": 3.967327
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": 0.180888,
+          "phase_degrees": 1.724202
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": 0.405393,
+          "phase_degrees": 1.115136
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": 0.341118,
+          "phase_degrees": 0.55291
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": 0.368485,
+          "phase_degrees": 0.775795
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": 0.432584,
+          "phase_degrees": 0.863375
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": 0.505419,
+          "phase_degrees": 0.868169
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": 0.563037,
+          "phase_degrees": 0.694643
+        }
+      ]
+    },
+    "air_20khz_plus5db_vs_shared_bypass": {
+      "best_integer_lag_samples": -1,
+      "best_integer_lag_ms": -0.020833,
+      "best_lag_correlation": 0.999829443269,
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "level_delta_db": 2.367172,
+          "peak_delta_db": 1.93833,
+          "correlation": 0.978810038629,
+          "residual_rms_dbfs": -62.935556,
+          "left_right_residual_rms_dbfs": -141.48455
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "level_delta_db": 0.558624,
+          "peak_delta_db": 3.428806,
+          "correlation": 0.999225235181,
+          "residual_rms_dbfs": -41.666882,
+          "left_right_residual_rms_dbfs": -16.494832
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "level_delta_db": 0.557916,
+          "peak_delta_db": 2.658123,
+          "correlation": 0.999417864304,
+          "residual_rms_dbfs": -36.926069,
+          "left_right_residual_rms_dbfs": -141.471901
+        }
+      },
+      "steady_multitone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": 0.521258,
+          "phase_degrees": 14.016926
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": 0.805891,
+          "phase_degrees": 10.427479
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": 0.163489,
+          "phase_degrees": 4.695258
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": 0.557801,
+          "phase_degrees": 2.253108
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": 0.759232,
+          "phase_degrees": 1.554681
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": 0.710828,
+          "phase_degrees": 1.011946
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": 0.76221,
+          "phase_degrees": 1.581911
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": 0.91087,
+          "phase_degrees": 2.172695
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": 1.119657,
+          "phase_degrees": 2.44054
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": 1.292866,
+          "phase_degrees": 1.993517
+        }
+      ]
+    }
+  },
+  "interpretation_boundary": "Measurements compare independent host-PDC-compensated Ableton exports of the installed legacy Maag EQ4 VST3 family over one deterministic 72-second fixture. They establish the active all-gains-zero boundary, the broad steady-state transfer of the 20 kHz Air Band at a non-clipping +3 dB state, the headroom failure observed at +5 dB on this fixture, stereo consistency, peak/level consequences, and the host-reported zero-latency state at 48 kHz. Triangular dither prevents a bit-perfect null. Simultaneous tones provide reliable comparative transfer at the listed bins for this linear fixed-EQ case but do not replace swept-sine distortion testing. The experiment does not establish every fixed band, Level Trim behavior, automation, noise or harmonic distortion below the fixture/dither floor, CPU cost, other sample rates/formats, newer Maag EQ4 builds, or musical preference."
+}

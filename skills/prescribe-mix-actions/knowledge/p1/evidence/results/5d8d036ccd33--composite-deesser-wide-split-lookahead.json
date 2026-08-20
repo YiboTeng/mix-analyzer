@@ -1,0 +1,851 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T07:51:05+08:00",
+  "family_id": "5d8d036ccd33",
+  "test_id": "composite-deesser-wide-split-lookahead",
+  "fixed_state": {
+    "host": "Ableton Live 11.3.43",
+    "format": "VST3",
+    "plugin_version_ui": "1.21 (64-bit), June 29, 2023",
+    "preset": "Default Setting",
+    "threshold_db": -36.0,
+    "range_db": 6.0,
+    "detection_mode": "Single Vocal",
+    "sidechain_range_visual": "approximately 7-14 kHz",
+    "stereo_link": "100%; Mid",
+    "render": "Master; 2.1.1 start; 48.0.0 length; 72 s output; 48 kHz; stereo 24-bit WAV; normalize off; triangular dither",
+    "host_reported_latency_samples": {
+      "wide_lookahead_12ms_oversampling_off": 720,
+      "split_lookahead_12ms_oversampling_off": 1232,
+      "wide_lookahead_module_off_oversampling_off": 0,
+      "wide_lookahead_module_off_oversampling_2x": 34,
+      "wide_lookahead_module_off_oversampling_4x": 40
+    },
+    "host_reported_latency_ms_at_48khz": {
+      "wide_lookahead_12ms_oversampling_off": 15.0,
+      "split_lookahead_12ms_oversampling_off": 25.7,
+      "wide_lookahead_module_off_oversampling_off": 0.0,
+      "wide_lookahead_module_off_oversampling_2x": 0.71,
+      "wide_lookahead_module_off_oversampling_4x": 0.83
+    },
+    "important_control_observation": "Turning the Lookahead knob to 0.000 ms while leaving its module enabled still reported 720 samples; true zero-latency required disabling the Lookahead module itself."
+  },
+  "regions": {
+    "early_source_events": {
+      "start_seconds": 0.0,
+      "end_seconds": 6.0
+    },
+    "steady_multitone": {
+      "start_seconds": 8.0,
+      "end_seconds": 20.0
+    },
+    "late_dynamics": {
+      "start_seconds": 66.0,
+      "end_seconds": 72.0
+    }
+  },
+  "files": {
+    "bypass": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\5d8d036ccd33--multitone--bypass.wav",
+      "sha256": "75d2b8e2b10b567ec407e3fd7da2ed53d4f58885df768c58ddd69c526ecec5ce",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938332,
+      "rms_dbfs": -21.437912,
+      "left_right_correlation": 0.771435140395
+    },
+    "wide": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\5d8d036ccd33--multitone--default-single-vocal-wide-lookahead12ms.wav",
+      "sha256": "0e664b38c41f885d8a4546d7f452b1b19508ff350e02c037ecf4f1dd78e2809c",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -2.862492,
+      "rms_dbfs": -21.438016,
+      "left_right_correlation": 0.771429632858
+    },
+    "split": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\5d8d036ccd33--multitone--single-vocal-split-lookahead12ms.wav",
+      "sha256": "a509ba26fee7a063306b6d3bc8939659038d8b2a22db65933afad7dd614cc198",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -2.8577,
+      "rms_dbfs": -21.437947,
+      "left_right_correlation": 0.771433300554
+    },
+    "no_lookahead": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\5d8d036ccd33--multitone--single-vocal-wide-lookahead-off.wav",
+      "sha256": "dc0e357a7bcd05503cb7957e8c05b1a7bd4eabbf9172f7a0c10d56888b16fecc",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938333,
+      "rms_dbfs": -21.437912,
+      "left_right_correlation": 0.771435140815
+    }
+  },
+  "snapshot": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\host\\snapshots\\0072a637f389--FabFilter-Saturn-2 Project\\5d8d036ccd33--FabFilter-Pro-DS.als",
+    "sha256": "24674094d6f8a0f741e6abdd46e2e9caef3328369a28c4364ddb69fae0212f3d"
+  },
+  "comparisons": {
+    "single_vocal_wide_lookahead12ms_vs_bypass": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -54.805364,
+          "candidate_rms_dbfs": -55.891623,
+          "level_delta_db": -1.08626,
+          "peak_delta_db": -1.158394,
+          "correlation": 0.999909533544,
+          "residual_rms_dbfs": -73.350559,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 39.951494,
+              "candidate_db": 38.97388,
+              "candidate_minus_reference_db": -0.977614
+            },
+            "deessing_7_14khz": {
+              "reference_db": 39.963924,
+              "candidate_db": 38.986306,
+              "candidate_minus_reference_db": -0.977618
+            },
+            "above_14khz": {
+              "reference_db": 41.51307,
+              "candidate_db": 40.535454,
+              "candidate_minus_reference_db": -0.977616
+            }
+          }
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.495209,
+          "candidate_rms_dbfs": -19.495209,
+          "level_delta_db": -0.0,
+          "peak_delta_db": 0.0,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.479072,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 85.350683,
+              "candidate_db": 85.350683,
+              "candidate_minus_reference_db": 0.0
+            },
+            "deessing_7_14khz": {
+              "reference_db": 29.306825,
+              "candidate_db": 29.306832,
+              "candidate_minus_reference_db": 7e-06
+            },
+            "above_14khz": {
+              "reference_db": 27.135612,
+              "candidate_db": 27.135624,
+              "candidate_minus_reference_db": 1.2e-05
+            }
+          }
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.504447,
+          "candidate_rms_dbfs": -14.504612,
+          "level_delta_db": -0.000165,
+          "peak_delta_db": -0.00879,
+          "correlation": 0.999999993258,
+          "residual_rms_dbfs": -93.077378,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 89.930048,
+              "candidate_db": 89.930011,
+              "candidate_minus_reference_db": -3.7e-05
+            },
+            "deessing_7_14khz": {
+              "reference_db": 41.849142,
+              "candidate_db": 41.84033,
+              "candidate_minus_reference_db": -0.008812
+            },
+            "above_14khz": {
+              "reference_db": 39.693038,
+              "candidate_db": 39.684228,
+              "candidate_minus_reference_db": -0.00881
+            }
+          }
+        }
+      },
+      "short_event_windows": {
+        "event_0_50s": {
+          "start_seconds": 0.5,
+          "end_seconds": 0.75,
+          "reference_rms_dbfs": -42.730145,
+          "candidate_rms_dbfs": -43.888538,
+          "level_delta_db": -1.158393,
+          "peak_delta_db": -1.158394,
+          "correlation": 0.999999999923,
+          "residual_rms_dbfs": -60.802072,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.481268,
+              "candidate_db": -78.703173,
+              "candidate_minus_reference_db": -0.221906
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.359525,
+              "candidate_db": -78.465806,
+              "candidate_minus_reference_db": -0.106281
+            },
+            "above_14khz": {
+              "reference_db": -76.948945,
+              "candidate_db": -77.005554,
+              "candidate_minus_reference_db": -0.05661
+            }
+          }
+        },
+        "event_2_50s": {
+          "start_seconds": 2.5,
+          "end_seconds": 2.75,
+          "reference_rms_dbfs": -46.812412,
+          "candidate_rms_dbfs": -47.804698,
+          "level_delta_db": -0.992285,
+          "peak_delta_db": -0.992285,
+          "correlation": 0.999999999806,
+          "residual_rms_dbfs": -66.147386,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.389768,
+              "candidate_db": -78.551436,
+              "candidate_minus_reference_db": -0.161668
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.386058,
+              "candidate_db": -78.438547,
+              "candidate_minus_reference_db": -0.052489
+            },
+            "above_14khz": {
+              "reference_db": -77.160607,
+              "candidate_db": -77.101683,
+              "candidate_minus_reference_db": 0.058925
+            }
+          }
+        },
+        "event_4_50s": {
+          "start_seconds": 4.5,
+          "end_seconds": 4.75,
+          "reference_rms_dbfs": -52.833014,
+          "candidate_rms_dbfs": -53.580322,
+          "level_delta_db": -0.747308,
+          "peak_delta_db": -0.74731,
+          "correlation": 0.999999999262,
+          "residual_rms_dbfs": -74.510287,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.852033,
+              "candidate_db": -78.706455,
+              "candidate_minus_reference_db": 0.145579
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.454664,
+              "candidate_db": -78.458316,
+              "candidate_minus_reference_db": -0.003652
+            },
+            "above_14khz": {
+              "reference_db": -76.809252,
+              "candidate_db": -77.063906,
+              "candidate_minus_reference_db": -0.254654
+            }
+          }
+        }
+      },
+      "active_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 1037,
+        "attenuated_at_least_0_05_db_count": 3,
+        "attenuated_fraction": 0.002893,
+        "strongest_attenuation_windows": [
+          {
+            "start_seconds": 0.5,
+            "reference_rms_dbfs": -35.740445,
+            "level_delta_db": -1.158393,
+            "residual_rms_dbfs": -53.812372
+          },
+          {
+            "start_seconds": 2.5,
+            "reference_rms_dbfs": -39.822712,
+            "level_delta_db": -0.992285,
+            "residual_rms_dbfs": -59.157686
+          },
+          {
+            "start_seconds": 4.5,
+            "reference_rms_dbfs": -45.843314,
+            "level_delta_db": -0.747308,
+            "residual_rms_dbfs": -67.520588
+          },
+          {
+            "start_seconds": 71.65,
+            "reference_rms_dbfs": -15.847305,
+            "level_delta_db": -0.005402,
+            "residual_rms_dbfs": -79.275451
+          },
+          {
+            "start_seconds": 69.95,
+            "reference_rms_dbfs": -15.845949,
+            "level_delta_db": -0.005401,
+            "residual_rms_dbfs": -79.275382
+          },
+          {
+            "start_seconds": 70.4,
+            "reference_rms_dbfs": -15.845852,
+            "level_delta_db": -0.005401,
+            "residual_rms_dbfs": -79.275189
+          },
+          {
+            "start_seconds": 70.8,
+            "reference_rms_dbfs": -15.846232,
+            "level_delta_db": -0.005401,
+            "residual_rms_dbfs": -79.275387
+          },
+          {
+            "start_seconds": 71.25,
+            "reference_rms_dbfs": -15.845852,
+            "level_delta_db": -0.005401,
+            "residual_rms_dbfs": -79.275219
+          },
+          {
+            "start_seconds": 71.7,
+            "reference_rms_dbfs": -50.600753,
+            "level_delta_db": -8e-05,
+            "residual_rms_dbfs": -141.164966
+          },
+          {
+            "start_seconds": 7.95,
+            "reference_rms_dbfs": -61.023052,
+            "level_delta_db": -3.2e-05,
+            "residual_rms_dbfs": -141.524092
+          },
+          {
+            "start_seconds": 70.85,
+            "reference_rms_dbfs": -56.421574,
+            "level_delta_db": -3.1e-05,
+            "residual_rms_dbfs": -141.437302
+          },
+          {
+            "start_seconds": 70.0,
+            "reference_rms_dbfs": -62.328158,
+            "level_delta_db": -1.3e-05,
+            "residual_rms_dbfs": -141.502231
+          }
+        ]
+      }
+    },
+    "single_vocal_split_lookahead12ms_vs_bypass": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -54.805364,
+          "candidate_rms_dbfs": -55.762798,
+          "level_delta_db": -0.957434,
+          "peak_delta_db": -1.02408,
+          "correlation": 0.999535570113,
+          "residual_rms_dbfs": -74.114141,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 39.951494,
+              "candidate_db": 39.313132,
+              "candidate_minus_reference_db": -0.638361
+            },
+            "deessing_7_14khz": {
+              "reference_db": 39.963924,
+              "candidate_db": 39.017458,
+              "candidate_minus_reference_db": -0.946466
+            },
+            "above_14khz": {
+              "reference_db": 41.51307,
+              "candidate_db": 40.544786,
+              "candidate_minus_reference_db": -0.968284
+            }
+          }
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.495209,
+          "candidate_rms_dbfs": -19.495209,
+          "level_delta_db": -0.0,
+          "peak_delta_db": -7e-06,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.486051,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 85.350683,
+              "candidate_db": 85.350683,
+              "candidate_minus_reference_db": -0.0
+            },
+            "deessing_7_14khz": {
+              "reference_db": 29.306825,
+              "candidate_db": 29.306827,
+              "candidate_minus_reference_db": 2e-06
+            },
+            "above_14khz": {
+              "reference_db": 27.135612,
+              "candidate_db": 27.13562,
+              "candidate_minus_reference_db": 7e-06
+            }
+          }
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.504447,
+          "candidate_rms_dbfs": -14.504452,
+          "level_delta_db": -5e-06,
+          "peak_delta_db": -0.003998,
+          "correlation": 0.999999999859,
+          "residual_rms_dbfs": -109.99204,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 89.930048,
+              "candidate_db": 89.930046,
+              "candidate_minus_reference_db": -1e-06
+            },
+            "deessing_7_14khz": {
+              "reference_db": 41.849142,
+              "candidate_db": 41.840632,
+              "candidate_minus_reference_db": -0.00851
+            },
+            "above_14khz": {
+              "reference_db": 39.693038,
+              "candidate_db": 39.684311,
+              "candidate_minus_reference_db": -0.008727
+            }
+          }
+        }
+      },
+      "short_event_windows": {
+        "event_0_50s": {
+          "start_seconds": 0.5,
+          "end_seconds": 0.75,
+          "reference_rms_dbfs": -42.730145,
+          "candidate_rms_dbfs": -43.75232,
+          "level_delta_db": -1.022176,
+          "peak_delta_db": -1.02408,
+          "correlation": 0.999780956248,
+          "residual_rms_dbfs": -61.686815,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.481268,
+              "candidate_db": -78.444427,
+              "candidate_minus_reference_db": 0.036841
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.359525,
+              "candidate_db": -78.463753,
+              "candidate_minus_reference_db": -0.104228
+            },
+            "above_14khz": {
+              "reference_db": -76.948945,
+              "candidate_db": -76.993663,
+              "candidate_minus_reference_db": -0.044718
+            }
+          }
+        },
+        "event_2_50s": {
+          "start_seconds": 2.5,
+          "end_seconds": 2.75,
+          "reference_rms_dbfs": -46.812412,
+          "candidate_rms_dbfs": -47.689254,
+          "level_delta_db": -0.876841,
+          "peak_delta_db": -0.878216,
+          "correlation": 0.999841656389,
+          "residual_rms_dbfs": -67.032138,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.389768,
+              "candidate_db": -78.831708,
+              "candidate_minus_reference_db": -0.441939
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.386058,
+              "candidate_db": -78.519767,
+              "candidate_minus_reference_db": -0.133709
+            },
+            "above_14khz": {
+              "reference_db": -77.160607,
+              "candidate_db": -76.848456,
+              "candidate_minus_reference_db": 0.312152
+            }
+          }
+        },
+        "event_4_50s": {
+          "start_seconds": 4.5,
+          "end_seconds": 4.75,
+          "reference_rms_dbfs": -52.833014,
+          "candidate_rms_dbfs": -53.494732,
+          "level_delta_db": -0.661717,
+          "peak_delta_db": -0.662481,
+          "correlation": 0.999912148824,
+          "residual_rms_dbfs": -75.395067,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.852033,
+              "candidate_db": -78.550075,
+              "candidate_minus_reference_db": 0.301958
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.454664,
+              "candidate_db": -78.660044,
+              "candidate_minus_reference_db": -0.20538
+            },
+            "above_14khz": {
+              "reference_db": -76.809252,
+              "candidate_db": -77.015914,
+              "candidate_minus_reference_db": -0.206662
+            }
+          }
+        }
+      },
+      "active_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 1037,
+        "attenuated_at_least_0_05_db_count": 3,
+        "attenuated_fraction": 0.002893,
+        "strongest_attenuation_windows": [
+          {
+            "start_seconds": 0.5,
+            "reference_rms_dbfs": -35.740445,
+            "level_delta_db": -1.022176,
+            "residual_rms_dbfs": -54.697115
+          },
+          {
+            "start_seconds": 2.5,
+            "reference_rms_dbfs": -39.822712,
+            "level_delta_db": -0.876841,
+            "residual_rms_dbfs": -60.042438
+          },
+          {
+            "start_seconds": 4.5,
+            "reference_rms_dbfs": -45.843314,
+            "level_delta_db": -0.661717,
+            "residual_rms_dbfs": -68.405368
+          },
+          {
+            "start_seconds": 69.95,
+            "reference_rms_dbfs": -15.845949,
+            "level_delta_db": -0.000161,
+            "residual_rms_dbfs": -96.193756
+          },
+          {
+            "start_seconds": 70.4,
+            "reference_rms_dbfs": -15.845852,
+            "level_delta_db": -0.000161,
+            "residual_rms_dbfs": -99.121659
+          },
+          {
+            "start_seconds": 70.8,
+            "reference_rms_dbfs": -15.846232,
+            "level_delta_db": -0.000161,
+            "residual_rms_dbfs": -96.192365
+          },
+          {
+            "start_seconds": 71.25,
+            "reference_rms_dbfs": -15.845852,
+            "level_delta_db": -0.000161,
+            "residual_rms_dbfs": -96.192415
+          },
+          {
+            "start_seconds": 71.65,
+            "reference_rms_dbfs": -15.847305,
+            "level_delta_db": -0.000161,
+            "residual_rms_dbfs": -96.192755
+          },
+          {
+            "start_seconds": 28.45,
+            "reference_rms_dbfs": -69.174219,
+            "level_delta_db": -1.2e-05,
+            "residual_rms_dbfs": -141.502231
+          },
+          {
+            "start_seconds": 7.95,
+            "reference_rms_dbfs": -61.023052,
+            "level_delta_db": -8e-06,
+            "residual_rms_dbfs": -141.406976
+          },
+          {
+            "start_seconds": 63.45,
+            "reference_rms_dbfs": -55.62754,
+            "level_delta_db": -7e-06,
+            "residual_rms_dbfs": -141.382159
+          },
+          {
+            "start_seconds": 56.95,
+            "reference_rms_dbfs": -45.368106,
+            "level_delta_db": -6e-06,
+            "residual_rms_dbfs": -141.509506
+          }
+        ]
+      }
+    },
+    "single_vocal_wide_lookahead_off_vs_bypass": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -54.805364,
+          "candidate_rms_dbfs": -54.805364,
+          "level_delta_db": -0.0,
+          "peak_delta_db": -1e-06,
+          "correlation": 0.999999998926,
+          "residual_rms_dbfs": -141.485501,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 39.951494,
+              "candidate_db": 39.951498,
+              "candidate_minus_reference_db": 4e-06
+            },
+            "deessing_7_14khz": {
+              "reference_db": 39.963924,
+              "candidate_db": 39.963925,
+              "candidate_minus_reference_db": 1e-06
+            },
+            "above_14khz": {
+              "reference_db": 41.51307,
+              "candidate_db": 41.513067,
+              "candidate_minus_reference_db": -3e-06
+            }
+          }
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.495209,
+          "candidate_rms_dbfs": -19.495209,
+          "level_delta_db": -0.0,
+          "peak_delta_db": -7e-06,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.486187,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 85.350683,
+              "candidate_db": 85.350683,
+              "candidate_minus_reference_db": 0.0
+            },
+            "deessing_7_14khz": {
+              "reference_db": 29.306825,
+              "candidate_db": 29.306835,
+              "candidate_minus_reference_db": 1e-05
+            },
+            "above_14khz": {
+              "reference_db": 27.135612,
+              "candidate_db": 27.135611,
+              "candidate_minus_reference_db": -2e-06
+            }
+          }
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.504447,
+          "candidate_rms_dbfs": -14.504447,
+          "level_delta_db": 0.0,
+          "peak_delta_db": 0.0,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.478974,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 89.930048,
+              "candidate_db": 89.930048,
+              "candidate_minus_reference_db": 0.0
+            },
+            "deessing_7_14khz": {
+              "reference_db": 41.849142,
+              "candidate_db": 41.849141,
+              "candidate_minus_reference_db": -0.0
+            },
+            "above_14khz": {
+              "reference_db": 39.693038,
+              "candidate_db": 39.693039,
+              "candidate_minus_reference_db": 1e-06
+            }
+          }
+        }
+      },
+      "short_event_windows": {
+        "event_0_50s": {
+          "start_seconds": 0.5,
+          "end_seconds": 0.75,
+          "reference_rms_dbfs": -42.730145,
+          "candidate_rms_dbfs": -42.730145,
+          "level_delta_db": -1e-06,
+          "peak_delta_db": -1e-06,
+          "correlation": 0.999999999935,
+          "residual_rms_dbfs": -141.570729,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.481268,
+              "candidate_db": -78.361847,
+              "candidate_minus_reference_db": 0.119421
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.359525,
+              "candidate_db": -78.78723,
+              "candidate_minus_reference_db": -0.427705
+            },
+            "above_14khz": {
+              "reference_db": -76.948945,
+              "candidate_db": -77.10292,
+              "candidate_minus_reference_db": -0.153975
+            }
+          }
+        },
+        "event_2_50s": {
+          "start_seconds": 2.5,
+          "end_seconds": 2.75,
+          "reference_rms_dbfs": -46.812412,
+          "candidate_rms_dbfs": -46.812412,
+          "level_delta_db": -0.0,
+          "peak_delta_db": 0.0,
+          "correlation": 0.999999999829,
+          "residual_rms_dbfs": -141.484098,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.389768,
+              "candidate_db": -78.592267,
+              "candidate_minus_reference_db": -0.202498
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.386058,
+              "candidate_db": -78.485068,
+              "candidate_minus_reference_db": -0.099011
+            },
+            "above_14khz": {
+              "reference_db": -77.160607,
+              "candidate_db": -76.890432,
+              "candidate_minus_reference_db": 0.270176
+            }
+          }
+        },
+        "event_4_50s": {
+          "start_seconds": 4.5,
+          "end_seconds": 4.75,
+          "reference_rms_dbfs": -52.833014,
+          "candidate_rms_dbfs": -52.833012,
+          "level_delta_db": 2e-06,
+          "peak_delta_db": 4e-06,
+          "correlation": 0.999999999319,
+          "residual_rms_dbfs": -141.488805,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.852033,
+              "candidate_db": -78.742931,
+              "candidate_minus_reference_db": 0.109103
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.454664,
+              "candidate_db": -78.468189,
+              "candidate_minus_reference_db": -0.013525
+            },
+            "above_14khz": {
+              "reference_db": -76.809252,
+              "candidate_db": -77.122184,
+              "candidate_minus_reference_db": -0.312932
+            }
+          }
+        }
+      },
+      "active_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 1037,
+        "attenuated_at_least_0_05_db_count": 0,
+        "attenuated_fraction": 0.0,
+        "strongest_attenuation_windows": [
+          {
+            "start_seconds": 28.45,
+            "reference_rms_dbfs": -69.174219,
+            "level_delta_db": -1.4e-05,
+            "residual_rms_dbfs": -141.595908
+          },
+          {
+            "start_seconds": 56.95,
+            "reference_rms_dbfs": -45.368106,
+            "level_delta_db": -4e-06,
+            "residual_rms_dbfs": -141.525919
+          },
+          {
+            "start_seconds": 45.0,
+            "reference_rms_dbfs": -45.363833,
+            "level_delta_db": -2e-06,
+            "residual_rms_dbfs": -141.529574
+          },
+          {
+            "start_seconds": 67.4,
+            "reference_rms_dbfs": -45.483502,
+            "level_delta_db": -2e-06,
+            "residual_rms_dbfs": -141.527746
+          },
+          {
+            "start_seconds": 71.7,
+            "reference_rms_dbfs": -50.600753,
+            "level_delta_db": -2e-06,
+            "residual_rms_dbfs": -141.6746
+          },
+          {
+            "start_seconds": 0.5,
+            "reference_rms_dbfs": -35.740445,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.612651
+          },
+          {
+            "start_seconds": 25.45,
+            "reference_rms_dbfs": -27.554564,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.579229
+          },
+          {
+            "start_seconds": 26.9,
+            "reference_rms_dbfs": -24.061784,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.371566
+          },
+          {
+            "start_seconds": 31.05,
+            "reference_rms_dbfs": -28.933494,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.504049
+          },
+          {
+            "start_seconds": 45.05,
+            "reference_rms_dbfs": -36.862949,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.599623
+          },
+          {
+            "start_seconds": 56.9,
+            "reference_rms_dbfs": -36.865201,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.392777
+          },
+          {
+            "start_seconds": 60.15,
+            "reference_rms_dbfs": -33.010869,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.423005
+          }
+        ]
+      }
+    }
+  },
+  "interpretation_boundary": "These are independent, host-PDC-compensated exports of one installed Pro-DS VST3 instance over a 72-second composite arrangement. The evidence isolates one installed version, one default threshold/range, Single Vocal detection, Wide versus Split processing, Lookahead enabled versus disabled, and host-reported latency. The steady multitone is deliberately non-speech and tests false or absent triggering rather than de-essing quality. The early and late source events are deterministic fixture excerpts, not an annotated phoneme corpus. Results therefore do not establish recall/precision across singers, languages or consonant classes; external sidechain, Allround mode, alternate thresholds/ranges, automation, CPU use, and listening preference remain outside this test."
+}

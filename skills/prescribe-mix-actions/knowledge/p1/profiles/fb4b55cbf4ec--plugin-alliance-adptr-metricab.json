@@ -1,0 +1,208 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "fb4b55cbf4ec--plugin-alliance-adptr-metricab",
+  "family_id": "fb4b55cbf4ec",
+  "identity": {
+    "vendor": "Plugin Alliance",
+    "product": "ADPTR MetricAB",
+    "version_range": "1.0.0 | 1.0.0.0",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "reference-ab",
+    "secondary": [
+      "loudness-match",
+      "spectrum"
+    ],
+    "diagnoses": [
+      "reference_mismatch",
+      "loudness_bias_check",
+      "mix_context_comparison"
+    ],
+    "not_for": [
+      "audio_processing",
+      "automatic_mastering_decision"
+    ]
+  },
+  "routing": [
+    {
+      "position": "monitoring-only final slot",
+      "when": "reference_mismatch"
+    },
+    {
+      "position": "monitoring-only final slot",
+      "when": "loudness_bias_check"
+    },
+    {
+      "position": "monitoring-only final slot",
+      "when": "mix_context_comparison"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "level-match references",
+      "compare short aligned sections",
+      "inspect spectrum/dynamics without chasing curves"
+    ],
+    "controls": [
+      {
+        "name": "Source/Sync",
+        "action": "choose aligned reference segment"
+      },
+      {
+        "name": "Level Match",
+        "action": "remove loudness advantage"
+      },
+      {
+        "name": "Meters",
+        "action": "support listening rather than dictate EQ"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "copying mastered loudness",
+    "curve chasing",
+    "monitor path contamination"
+  ],
+  "stop_conditions": [
+    "reference louder than target",
+    "changes are made without diagnosis"
+  ],
+  "alternatives": [
+    {
+      "condition": "meter-only",
+      "fallback": "Insight 2"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 1.0.0 | 1.0.0.0.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Plugin Alliance/ADPTR MetricAB.md",
+    "source_note": "sources/音乐制作/插件资料/Plugin Alliance/ADPTR MetricAB资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/fb4b55cbf4ec--ADPTR-MetricAB.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/fb4b55cbf4ec--neutral-metric-source.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Plugin Alliance/ADPTR MetricAB.md",
+        "packaged_path": "evidence/cards/ADPTR MetricAB.md",
+        "sha256": "ea05720efd13a5c4c26c8ffacea075cf5f2057886922dbbe359f83926f9e5485"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Plugin Alliance/ADPTR MetricAB资料.md",
+        "packaged_path": "evidence/sources/ADPTR MetricAB资料.md",
+        "sha256": "0e549639244ba13a123c2ba9bf854fcd86ae8dae51c10fee71ed5a037e819460"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/fb4b55cbf4ec--ADPTR-MetricAB.md",
+        "packaged_path": "evidence/validation/fb4b55cbf4ec--ADPTR-MetricAB.md",
+        "sha256": "efe0056e727f60fd00d8ac90726a523dce3ca6d899860e921d928c10bb929a42"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/fb4b55cbf4ec--neutral-metric-source.json",
+          "packaged_path": "evidence/results/fb4b55cbf4ec--neutral-metric-source.json",
+          "sha256": "d7202d1d027a6b85d2648bf26750d6f6df4ca4616fb6811dfd00a58ddf7c8312"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "reference_mismatch",
+      "loudness_bias_check",
+      "mix_context_comparison"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Default Metric source neutrality measured; reference ingest workflow not exhaustively tested."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "放在Monitor/最后总线末端，确保Reference绕过项目母带处理而A流路径清楚。",
+      "独唱插件知识库主要用它做参考人声/Stem的响度匹配和频段监听。"
+    ],
+    "routing": [
+      "Monitor/Main Out最后，避免写入导出。",
+      "Reference内部播放，不经过待测链。"
+    ],
+    "controls": [
+      {
+        "name": "A/B / Track Select",
+        "meaning": "切换当前工程输入与参考轨。",
+        "action": "映射快捷键，随机切换短段。"
+      },
+      {
+        "name": "Loudness Match / Track Gain",
+        "meaning": "估算并补偿参考响度。",
+        "action": "先Match，再用短期LUFS/ActiveRMS人工微调。"
+      },
+      {
+        "name": "Cue/Sync/Delay Comp",
+        "meaning": "对齐音乐位置与宿主延迟。",
+        "action": "同功能段落Cue；Sync异常时校PDC/手动延迟。"
+      },
+      {
+        "name": "Filter / Stereo Mode",
+        "meaning": "只听低/中/高频或Mono/Sides等。",
+        "action": "分频比较可懂度/齿音/低中频，检查Mono。"
+      },
+      {
+        "name": "Analysis Tabs",
+        "meaning": "频谱、动态、声像、响度可视化。",
+        "action": "只用作证据，不替代盲听。"
+      }
+    ],
+    "parameter_start_points": [
+      "先Load 3–5首参考、设Cue、Loudness Match All。",
+      "Filter分别低<200Hz、中200Hz–5kHz、高>5kHz粗检。",
+      "每次A/B 2–10秒随机切换。"
+    ],
+    "listen_for": [
+      "参考被二次处理。",
+      "Match在短段漂移。",
+      "不同编曲/人声类型造成伪目标。"
+    ],
+    "stop": [
+      "A/B路由可Null验证且响度误差在预设容差内。",
+      "再调只是追单一参考个性时停止。"
+    ],
+    "latency": [
+      "PDC开关/毫秒值用于同步参考播放。本机默认 Metric 源实测最佳整数延迟为 0 samples；这不等于内部参考、Cue/Sync 或 PDC 已被验证。"
+    ]
+  }
+}

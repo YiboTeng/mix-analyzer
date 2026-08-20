@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "ad123c8856d3--waves-debreath",
+  "family_id": "ad123c8856d3",
+  "identity": {
+    "vendor": "Waves",
+    "product": "DeBreath",
+    "version_range": "12.7.0.209",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "restoration-breath",
+    "secondary": [
+      "pre-mix-cleanup",
+      "breath-monitor"
+    ],
+    "diagnoses": [
+      "breath_too_loud",
+      "breath_level_inconsistent"
+    ],
+    "not_for": [
+      "continuous_noise",
+      "plosive_low_frequency_event"
+    ]
+  },
+  "routing": [
+    {
+      "position": "before compression and upward density",
+      "when": "breath_too_loud"
+    },
+    {
+      "position": "before compression and upward density",
+      "when": "breath_level_inconsistent"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "breaths remain natural but no longer dominate",
+      "Breath monitor contains only breaths",
+      "preserve stereo unless intentional mono"
+    ],
+    "controls": [
+      {
+        "name": "Reduction/Threshold",
+        "action": "use Breath monitor and increase only to target breaths"
+      },
+      {
+        "name": "Room Tone/Gate",
+        "action": "retain continuity without opening on speech"
+      },
+      {
+        "name": "Mono",
+        "action": "leave off for stereo material unless fold-down is intended"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "breaths vanish unnaturally",
+    "speech misclassified",
+    "734 ms latency",
+    "stereo fold"
+  ],
+  "stop_conditions": [
+    "monitor contains speech",
+    "phrases lose attacks",
+    "room tone pumps"
+  ],
+  "alternatives": [
+    {
+      "condition": "sparse breaths",
+      "fallback": "clip gain"
+    },
+    {
+      "condition": "live tracking",
+      "fallback": "manual performance or lower-latency workflow"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 12.7.0.209.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Waves/DeBreath.md",
+    "source_note": "sources/音乐制作/插件资料/Waves/DeBreath资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/ad123c8856d3--Waves-DeBreath.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/ad123c8856d3--composite-debreath.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Waves/DeBreath.md",
+        "packaged_path": "evidence/cards/DeBreath.md",
+        "sha256": "a1299050d10aae72bc637e31afb13ed3ff4495bec5877a630bb3d70b057e7a44"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Waves/DeBreath资料.md",
+        "packaged_path": "evidence/sources/DeBreath资料.md",
+        "sha256": "4bba339497811fdb626050c92554caffc1f978941e4776ed8bfda6867cfd21e6"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/ad123c8856d3--Waves-DeBreath.md",
+        "packaged_path": "evidence/validation/ad123c8856d3--Waves-DeBreath.md",
+        "sha256": "5e0f836c3604cc3e174137fa22570761e34e1f1bdd0294c62e00b1da02f86b5c"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/ad123c8856d3--composite-debreath.json",
+          "packaged_path": "evidence/results/ad123c8856d3--composite-debreath.json",
+          "sha256": "8f5f3a7852d7f520b5d9b60eb3e253f36d60da170ad486c7fb0a7fe821659177"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "breath_too_loud",
+      "breath_level_inconsistent"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "No labelled breaths; instance, monitors, 35248-sample latency and stereo-fold risk tested."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "单声道主唱编辑/修复前段，在 Vocal Rider、MV2、重压缩、激励和饱和之前。",
+      "先做明显剪辑与嘴音修复，再做呼吸控制；之后压缩器才不会把残余呼吸重新抬高。"
+    ],
+    "routing": [
+      "常规：单声道人声 Insert 前段，Monitor Voice 输出。",
+      "高级：若宿主允许独立获取 Voice/Breath 路径，可给 Breath 路径单独做暗化/轻压缩，再按自然度混回；必须保证相加关系和延迟对齐。"
+    ],
+    "controls": [
+      {
+        "name": "Breath Threshold",
+        "meaning": "incoming event 与呼吸模板的相似度门槛，0–100%，默认 50%。",
+        "action": "在 Breath Monitor 下，把线放在目标呼吸评分峰值下方；若听到有音高的字头/尾音，向更严格方向回退。"
+      },
+      {
+        "name": "Energy Threshold",
+        "meaning": "仅允许低于该平均能量的事件被判为呼吸，0 至 -64 dBFS，默认 -30 dBFS。",
+        "action": "先看呼吸与正文的能量分布；强呼吸可向 -25/-20 dBFS 调，正文误检时不要盲目放宽。"
+      },
+      {
+        "name": "Reduction",
+        "meaning": "对已检出呼吸的衰减，0 至 -Inf，默认 -Inf。",
+        "action": "实际混音通常先从温和衰减开始，保留节奏和自然吸气；只有确需删除的事件才走深。"
+      },
+      {
+        "name": "Fade Out / Fade In",
+        "meaning": "Voice 与 Breath 路径之间交叉转移的过渡，0.1–200 ms，默认 5 ms。",
+        "action": "吞字头/切尾时加长或回退阈值；呼吸边缘拖尾时缩短，但要避免点击与突变。"
+      },
+      {
+        "name": "Monitor Voice/Breath",
+        "meaning": "监听保留路径或被移除路径。",
+        "action": "调参必须来回切换；Breath 路径理想上只有呼吸，不应包含有音高元音或辅音主体。"
+      },
+      {
+        "name": "Room Tone",
+        "meaning": "在衰减区按衰减量加入最高约 -80 dB 的白噪。",
+        "action": "完全移除造成“真空洞”时尝试；已有连续真实底噪时谨慎，避免噪声纹理跳变。"
+      }
+    ],
+    "parameter_start_points": [
+      "从官方默认 Breath 50%、Energy -30 dBFS、Fade 5/5 ms 开始，先切 Breath Monitor，不先决定 Reduction。",
+      "先调 Breath 阈值剔除有音高内容，再用 Energy 阈值排除较响正文；最后把 Reduction 从温和衰减逐步加深。",
+      "强、响的吸气可能需要把 Energy 提到 -25 至 -20 dBFS；这是条件化范围，不是所有录音的固定值。"
+    ],
+    "listen_for": [
+      "Breath 路径里是否出现有明确音高的元音、清辅音或房间尾音。",
+      "Voice 路径是否出现硬切、真空洞、吞字头或节奏被抽走。"
+    ],
+    "stop": [
+      "在完整编曲中呼吸不再抢注意力、但演唱仍“会呼吸”时停止。",
+      "若为了去掉极少数重呼吸而开始误检正文，撤回自动深度，对个别事件用 Clip Gain/剪辑。"
+    ],
+    "latency": [
+      "- 本机 48 kHz 回读 35248 samples / 734.3 ms，与 Waves 当前延迟表一致；不适合实时跟唱或低延迟监听。\n- Ableton 离线导出会补偿延迟，但播放定位、自动化手感和实时录音仍受影响。\n- 官方旧 PDF 的 48 kHz 数字与当前表不一致；本卡以当前表和本机回读为准。"
+    ]
+  }
+}

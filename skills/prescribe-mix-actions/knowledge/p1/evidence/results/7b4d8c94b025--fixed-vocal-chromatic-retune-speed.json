@@ -1,0 +1,259 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T09:40:37+08:00",
+  "family_id": "7b4d8c94b025",
+  "test_id": "fixed-vocal-chromatic-retune-speed",
+  "fixed_state": {
+    "host": "Ableton Live 11.3.43",
+    "format": "VST3",
+    "plugin_version": "10.0.0",
+    "mode": "Auto; Modern",
+    "input_type": "Alto-Tenor",
+    "key": "C",
+    "scale": "Chromatic",
+    "tracking": 50,
+    "flex_tune": 0,
+    "humanize": 0,
+    "natural_vibrato": 0.0,
+    "formant": "enabled; 100",
+    "transpose": 0,
+    "detune_hz": 440.0,
+    "mix_percent": 100,
+    "isolated_variable": "Retune Speed 20 versus 0",
+    "host_reported_latency_samples": 2670,
+    "host_reported_latency_ms_at_48khz": 55.625,
+    "render": "Master; 2.1.1 start; 48.0.0 length; 72 s output; 48 kHz; stereo 24-bit WAV; normalize off; triangular dither"
+  },
+  "pitch_analysis": {
+    "region_seconds": [
+      21.0,
+      42.0
+    ],
+    "analysis_rate_hz": 12000,
+    "frame_ms": 120.0,
+    "hop_ms": 40.0,
+    "gate_dbfs": -50.0,
+    "common_voiced_frames": 491,
+    "files": {
+      "bypass": {
+        "common_voiced_frames": 491,
+        "f0_hz": {
+          "mean": 176.64785,
+          "median": 173.805643,
+          "p10": 146.610035,
+          "p90": 219.033611
+        },
+        "signed_deviation_from_nearest_semitone_cents": {
+          "mean": -0.136028,
+          "median": -0.100148,
+          "p10": -8.577687,
+          "p90": 8.892142
+        },
+        "absolute_deviation_from_nearest_semitone_cents": {
+          "mean": 6.929517,
+          "median": 6.115057,
+          "p10": 1.51838,
+          "p90": 9.435262
+        },
+        "within_cents_fraction": {
+          "5": 0.401222,
+          "10": 0.922607,
+          "25": 0.96945
+        },
+        "frame_to_frame_motion_cents": {
+          "mean": 44.114783,
+          "median": 8.253885,
+          "p10": 2.262934,
+          "p90": 192.71553
+        },
+        "mean_confidence": 0.932079
+      },
+      "retune20": {
+        "common_voiced_frames": 491,
+        "f0_hz": {
+          "mean": 176.747395,
+          "median": 173.943249,
+          "p10": 146.744311,
+          "p90": 219.3626
+        },
+        "signed_deviation_from_nearest_semitone_cents": {
+          "mean": -0.382677,
+          "median": -0.058561,
+          "p10": -6.117639,
+          "p90": 6.496845
+        },
+        "absolute_deviation_from_nearest_semitone_cents": {
+          "mean": 5.318039,
+          "median": 4.160221,
+          "p10": 1.030193,
+          "p90": 7.698483
+        },
+        "within_cents_fraction": {
+          "5": 0.637475,
+          "10": 0.93279,
+          "25": 0.971487
+        },
+        "frame_to_frame_motion_cents": {
+          "mean": 42.997179,
+          "median": 6.295045,
+          "p10": 1.553458,
+          "p90": 191.569265
+        },
+        "mean_confidence": 0.93196
+      },
+      "retune0": {
+        "common_voiced_frames": 491,
+        "f0_hz": {
+          "mean": 176.815025,
+          "median": 174.466638,
+          "p10": 146.820089,
+          "p90": 219.814145
+        },
+        "signed_deviation_from_nearest_semitone_cents": {
+          "mean": -0.583996,
+          "median": 0.059284,
+          "p10": -2.581451,
+          "p90": 1.982577
+        },
+        "absolute_deviation_from_nearest_semitone_cents": {
+          "mean": 2.725811,
+          "median": 0.844061,
+          "p10": 0.161991,
+          "p90": 5.950866
+        },
+        "within_cents_fraction": {
+          "5": 0.879837,
+          "10": 0.930754,
+          "25": 0.979633
+        },
+        "frame_to_frame_motion_cents": {
+          "mean": 40.266504,
+          "median": 1.336928,
+          "p10": 0.251341,
+          "p90": 194.279125
+        },
+        "mean_confidence": 0.932
+      }
+    },
+    "comparisons": {
+      "retune20_vs_bypass": {
+        "absolute_deviation_improvement_cents": {
+          "mean": 1.611478,
+          "median": 1.884297,
+          "p10": -3.524922,
+          "p90": 5.904291
+        },
+        "improved_frame_fraction": 0.686354,
+        "worsened_frame_fraction": 0.313646,
+        "candidate_minus_reference_pitch_cents": {
+          "mean": 0.975347,
+          "median": 0.194903,
+          "p10": -5.652754,
+          "p90": 6.121917
+        },
+        "absolute_pitch_change_cents": {
+          "mean": 4.723987,
+          "median": 4.165487,
+          "p10": 0.970701,
+          "p90": 6.592282
+        }
+      },
+      "retune0_vs_bypass": {
+        "absolute_deviation_improvement_cents": {
+          "mean": 4.203705,
+          "median": 4.861787,
+          "p10": -0.535283,
+          "p90": 8.412624
+        },
+        "improved_frame_fraction": 0.87169,
+        "worsened_frame_fraction": 0.12831,
+        "candidate_minus_reference_pitch_cents": {
+          "mean": 1.588691,
+          "median": 0.529711,
+          "p10": -8.48844,
+          "p90": 8.857813
+        },
+        "absolute_pitch_change_cents": {
+          "mean": 7.682246,
+          "median": 6.249281,
+          "p10": 1.712296,
+          "p90": 9.980501
+        }
+      },
+      "retune0_vs_retune20": {
+        "absolute_deviation_improvement_cents": {
+          "mean": 2.592228,
+          "median": 2.776101,
+          "p10": -1.114981,
+          "p90": 5.877398
+        },
+        "improved_frame_fraction": 0.820774,
+        "worsened_frame_fraction": 0.179226,
+        "candidate_minus_reference_pitch_cents": {
+          "mean": 0.613344,
+          "median": 0.328284,
+          "p10": -5.875907,
+          "p90": 5.834736
+        },
+        "absolute_pitch_change_cents": {
+          "mean": 4.982247,
+          "median": 3.972553,
+          "p10": 1.029152,
+          "p90": 6.688256
+        }
+      }
+    }
+  },
+  "files": {
+    "bypass": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\7a146380912e--composite--bypass.wav",
+      "sha256": "38a74287a951ad7a62a6abeb219aa91afdd0e4f2abde062b972361851e0de16f",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938332,
+      "rms_dbfs": -21.437912,
+      "fixed_vocal_region": {
+        "peak_dbfs": -16.673754,
+        "rms_dbfs": -25.938159
+      }
+    },
+    "retune20": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\7b4d8c94b025--composite--chromatic-retune20.wav",
+      "sha256": "656123f1d8260fd595869620eefd36b4e378030a9a868ec94735e6be1bb7c1b0",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938333,
+      "rms_dbfs": -21.458172,
+      "fixed_vocal_region": {
+        "peak_dbfs": -16.64475,
+        "rms_dbfs": -25.939564
+      }
+    },
+    "retune0": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\7b4d8c94b025--composite--chromatic-retune0.wav",
+      "sha256": "fa43512d70c3e64a75c8d2eb75e45b910406a2946fed054e2d560c24ef5c5955",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938333,
+      "rms_dbfs": -21.458046,
+      "fixed_vocal_region": {
+        "peak_dbfs": -16.498917,
+        "rms_dbfs": -25.938176
+      }
+    }
+  },
+  "snapshot": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\host\\snapshots\\0072a637f389--FabFilter-Saturn-2 Project\\7b4d8c94b025--Antares-Auto-Tune-Pro.als",
+    "sha256": "f6a7de8bd80d94e01b0e078021fcda4215844a6ef1bba55ca58bb037ddd0d914"
+  },
+  "interpretation_boundary": "The 21-42 second segment is a fixed local vocal fixture inside the deterministic composite arrangement. F0 uses 120 ms autocorrelation frames and evaluates distance to the nearest equal-tempered semitone under C Chromatic, not musical correctness against a song key. Only frames voiced in all three renders are compared. Octave errors, polyphonic leakage, clip warping, consonants and frame selection can bias statistics. The result validates one installed Auto Mode state and one Retune Speed contrast; it is not a Graph Mode, formant-quality, timing-naturalness or listening-preference score."
+}

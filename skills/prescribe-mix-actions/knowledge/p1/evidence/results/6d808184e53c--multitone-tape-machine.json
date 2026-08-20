@@ -1,0 +1,342 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T03:47:08+08:00",
+  "family_id": "6d808184e53c",
+  "test_id": "multitone-tape-machine-speed",
+  "fixed_state": {
+    "host": "Ableton Live 11.3.43",
+    "format": "VST3",
+    "machine": "2-inch 16-track",
+    "tape": "FG456",
+    "bias": "Normal",
+    "input_db": 0.0,
+    "output_db": 0.0,
+    "global_calibration_db": -15.0,
+    "noise_reduction_db": -24.0,
+    "wow_flutter_percent": 25.0,
+    "bass_alignment_db": 0.0,
+    "default_group": "Ungrouped",
+    "host_reported_latency_samples": 1882,
+    "host_reported_latency_ms": 39.2,
+    "render": "Master; 32.1.1-40.1.1; 12 s; 48 kHz; 24-bit WAV; normalize off; triangular dither",
+    "controlled_variable": "speed 30 ips -> 15 ips"
+  },
+  "files": {
+    "bypass": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\6d808184e53c--multitone--bypass.wav",
+      "sha256": "022b3014616a4f0c41c900922e68b2c6ed565a8885bc2cb45e661b1a75cb91f0",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -11.508632,
+      "rms_dbfs": -20.793808,
+      "left_right_correlation": 1.0
+    },
+    "default_30ips": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\6d808184e53c--multitone--default-2in-fg456-30ips-normal.wav",
+      "sha256": "109f153c2c704431b9f4b8156768ef75b88f6a34f3a3531776cf69de6ed510c1",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -8.489462,
+      "rms_dbfs": -19.240858,
+      "left_right_correlation": 1.0
+    },
+    "variant_15ips": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\6d808184e53c--multitone--15ips.wav",
+      "sha256": "8640a0f37c11c03fa8d1ed77a94304dad95202a5fe2c4baca92d44df5ec9cd8f",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -9.104181,
+      "rms_dbfs": -20.064948,
+      "left_right_correlation": 1.0
+    }
+  },
+  "snapshot": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\host\\snapshots\\0072a637f389--FabFilter-Saturn-2 Project\\6d808184e53c--Slate-Digital-Virtual-Tape-Machines.als",
+    "sha256": "56746eb05901ea41fe08daf205a898ac01827df32970675cf1ab122ef1677236"
+  },
+  "comparisons": {
+    "default_30ips_vs_bypass": {
+      "best_integer_lag_samples": 436,
+      "best_integer_lag_ms": 9.083333,
+      "direct_correlation": 0.666529948239,
+      "best_lag_correlation": 0.797338019958,
+      "level_delta_db": 1.55295,
+      "peak_delta_db": 3.01917,
+      "residual_rms_dbfs": -23.605505,
+      "residual_peak_dbfs": -10.003671,
+      "left_right_residual_rms_dbfs": -141.48831,
+      "tone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": 3.146337,
+          "phase_degrees": -78.918981,
+          "block_gain_std_db": 0.005314,
+          "block_phase_range_degrees": 0.193689
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": 1.811417,
+          "phase_degrees": 44.886421,
+          "block_gain_std_db": 0.00534,
+          "block_phase_range_degrees": 0.389572
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": 1.442933,
+          "phase_degrees": 22.807524,
+          "block_gain_std_db": 0.005475,
+          "block_phase_range_degrees": 0.775579
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": 1.414256,
+          "phase_degrees": 11.507523,
+          "block_gain_std_db": 0.005972,
+          "block_phase_range_degrees": 1.551861
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": 1.407137,
+          "phase_degrees": 5.818654,
+          "block_gain_std_db": 0.008568,
+          "block_phase_range_degrees": 3.103338
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": 1.349931,
+          "phase_degrees": 2.516203,
+          "block_gain_std_db": 0.020789,
+          "block_phase_range_degrees": 6.211391
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": 0.836553,
+          "phase_degrees": -0.361621,
+          "block_gain_std_db": 0.072492,
+          "block_phase_range_degrees": 12.454877
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": -0.325496,
+          "phase_degrees": -5.290852,
+          "block_gain_std_db": 0.285057,
+          "block_phase_range_degrees": 25.154828
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": -0.686914,
+          "phase_degrees": -14.739157,
+          "block_gain_std_db": 0.858114,
+          "block_phase_range_degrees": 45.129481
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": -0.683696,
+          "phase_degrees": 22.430478,
+          "block_gain_std_db": 1.576802,
+          "block_phase_range_degrees": 68.431065
+        }
+      ],
+      "reference_off_tone": {
+        "off_tone_energy_fraction_20hz_20khz": 8.834e-09,
+        "off_tone_to_total_db": -80.538251
+      },
+      "candidate_off_tone": {
+        "off_tone_energy_fraction_20hz_20khz": 0.033518992701,
+        "off_tone_to_total_db": -14.74709
+      }
+    },
+    "variant_15ips_vs_bypass": {
+      "best_integer_lag_samples": 1308,
+      "best_integer_lag_ms": 27.25,
+      "direct_correlation": 0.661080269017,
+      "best_lag_correlation": 0.743072791103,
+      "level_delta_db": 0.72886,
+      "peak_delta_db": 2.404451,
+      "residual_rms_dbfs": -23.251972,
+      "residual_peak_dbfs": -9.46751,
+      "left_right_residual_rms_dbfs": -141.487137,
+      "tone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": 1.387333,
+          "phase_degrees": -86.306664,
+          "block_gain_std_db": 0.004641,
+          "block_phase_range_degrees": 0.272643
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": 0.833917,
+          "phase_degrees": 47.693916,
+          "block_gain_std_db": 0.004637,
+          "block_phase_range_degrees": 0.545148
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": 0.823358,
+          "phase_degrees": 24.822467,
+          "block_gain_std_db": 0.004709,
+          "block_phase_range_degrees": 1.092563
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": 0.906507,
+          "phase_degrees": 13.493802,
+          "block_gain_std_db": 0.005019,
+          "block_phase_range_degrees": 2.18344
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": 0.960277,
+          "phase_degrees": 7.930314,
+          "block_gain_std_db": 0.007115,
+          "block_phase_range_degrees": 4.370804
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": 0.779363,
+          "phase_degrees": 6.417809,
+          "block_gain_std_db": 0.019234,
+          "block_phase_range_degrees": 8.74248
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": 0.755941,
+          "phase_degrees": 6.5689,
+          "block_gain_std_db": 0.072138,
+          "block_phase_range_degrees": 17.486894
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": -0.392434,
+          "phase_degrees": -2.808284,
+          "block_gain_std_db": 0.293183,
+          "block_phase_range_degrees": 34.962844
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": -2.215858,
+          "phase_degrees": 31.458388,
+          "block_gain_std_db": 0.918305,
+          "block_phase_range_degrees": 59.404609
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": -4.840902,
+          "phase_degrees": -59.433843,
+          "block_gain_std_db": 1.7992,
+          "block_phase_range_degrees": 78.78868
+        }
+      ],
+      "reference_off_tone": {
+        "off_tone_energy_fraction_20hz_20khz": 8.438e-09,
+        "off_tone_to_total_db": -80.737736
+      },
+      "candidate_off_tone": {
+        "off_tone_energy_fraction_20hz_20khz": 0.058216931382,
+        "off_tone_to_total_db": -12.349507
+      }
+    },
+    "variant_15ips_vs_default_30ips": {
+      "best_integer_lag_samples": -3492,
+      "best_integer_lag_ms": -72.75,
+      "direct_correlation": 0.83735422489,
+      "best_lag_correlation": 0.868916577084,
+      "level_delta_db": -0.824133,
+      "peak_delta_db": -0.614719,
+      "residual_rms_dbfs": -25.294177,
+      "residual_peak_dbfs": -10.920116,
+      "left_right_residual_rms_dbfs": -141.487543,
+      "tone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": -1.758761,
+          "phase_degrees": -7.523702,
+          "block_gain_std_db": 0.007058,
+          "block_phase_range_degrees": 0.343015
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": -0.978878,
+          "phase_degrees": 2.514744,
+          "block_gain_std_db": 0.007044,
+          "block_phase_range_degrees": 0.688028
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": -0.620335,
+          "phase_degrees": 1.432632,
+          "block_gain_std_db": 0.007301,
+          "block_phase_range_degrees": 1.379717
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": -0.508349,
+          "phase_degrees": 0.822479,
+          "block_gain_std_db": 0.008389,
+          "block_phase_range_degrees": 2.7543
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": -0.447583,
+          "phase_degrees": -0.215439,
+          "block_gain_std_db": 0.013438,
+          "block_phase_range_degrees": 5.512678
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": -0.572138,
+          "phase_degrees": -0.752479,
+          "block_gain_std_db": 0.035536,
+          "block_phase_range_degrees": 11.03935
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": -0.085723,
+          "phase_degrees": -2.378211,
+          "block_gain_std_db": 0.126791,
+          "block_phase_range_degrees": 22.198351
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": -0.085688,
+          "phase_degrees": -16.141703,
+          "block_gain_std_db": 0.503126,
+          "block_phase_range_degrees": 45.416784
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": -1.5782,
+          "phase_degrees": 47.157246,
+          "block_gain_std_db": 1.535055,
+          "block_phase_range_degrees": 82.505114
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": -4.233623,
+          "phase_degrees": 39.41212,
+          "block_gain_std_db": 2.881328,
+          "block_phase_range_degrees": 119.305781
+        }
+      ],
+      "reference_off_tone": {
+        "off_tone_energy_fraction_20hz_20khz": 0.034098700723,
+        "off_tone_to_total_db": -14.672622
+      },
+      "candidate_off_tone": {
+        "off_tone_energy_fraction_20hz_20khz": 0.058484629562,
+        "off_tone_to_total_db": -12.329583
+      }
+    }
+  },
+  "interpretation_boundary": "The deterministic fixture is a dual-mono ten-tone signal with 0.5 s fades. Measurements compare independent Ableton 48 kHz/24-bit triangular-dither exports. They establish this installed VST3 instance's default and 15 ips transfer, PDC-aligned timing, channel consistency, tone gains, and off-tone energy under one input level. They do not isolate harmonic order because many fixture tones are octave-related; off-tone energy also includes dither, modeled hiss, modulation skirts, and nonlinear products. No claim is made about other formats, installed file versions, sample rates, machine/tape/bias choices, automation, CPU, or musical preference."
+}

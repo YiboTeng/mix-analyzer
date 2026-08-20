@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "source_root": "C:\\Projects\\aizen-knowledge-base",
+  "referenced_count": 19,
+  "packaged_count": 19,
+  "missing": [],
+  "entries": [
+    {
+      "source_path": "notes/音乐制作/人声处理/人声EQ应区分基频泛音与固定共振而不是找固定频点.md",
+      "packaged_path": "p0/evidence/人声EQ应区分基频泛音与固定共振而不是找固定频点.md",
+      "sha256": "e8b6672767ed1849e72d57559750655368216ce592a029cab04b99f066213c13"
+    },
+    {
+      "source_path": "notes/音乐制作/人声处理/人声动态控制按峰值整句与频段三个层级升级.md",
+      "packaged_path": "p0/evidence/人声动态控制按峰值整句与频段三个层级升级.md",
+      "sha256": "1e4da47418dc5f022f245656847ffbfef56ba63c58ad7fb8ffd7bd0cba17c397"
+    },
+    {
+      "source_path": "notes/音乐制作/人声处理/把人声不干净拆成房间声高频毛边与动态刺耳.md",
+      "packaged_path": "p0/evidence/把人声不干净拆成房间声高频毛边与动态刺耳.md",
+      "sha256": "5a7eea789dbe05e8cfd4ace65bbe96b3cf604f57b4d64cec1c99e64a68d0c300"
+    },
+    {
+      "source_path": "notes/音乐制作/人声处理/把人声低频的量动态与质感分开处理.md",
+      "packaged_path": "p0/evidence/把人声低频的量动态与质感分开处理.md",
+      "sha256": "f8867321818ac7e2d7af70aec78f55c5947b68436e5b64698fcf72e35fc3a291"
+    },
+    {
+      "source_path": "notes/音乐制作/人声处理/把激进失真放到并行返回并用高切收住新生谐波.md",
+      "packaged_path": "p0/evidence/把激进失真放到并行返回并用高切收住新生谐波.md",
+      "sha256": "d13995adfe507e649b11f63400ac8cbd4062cb7c82079857091a1ec9acfb7fdf"
+    },
+    {
+      "source_path": "notes/音乐制作/人声处理/用七段职责链构建明亮柔顺的说唱人声.md",
+      "packaged_path": "p0/evidence/用七段职责链构建明亮柔顺的说唱人声.md",
+      "sha256": "068658752abfcb5853930a46ae33cb5d233d21091ad8a0821eda0b5f2da6d1e7"
+    },
+    {
+      "source_path": "notes/音乐制作/人声处理/用多段动态分开控制人声亮度与刺耳峰值.md",
+      "packaged_path": "p0/evidence/用多段动态分开控制人声亮度与刺耳峰值.md",
+      "sha256": "2458eeaeae894afab78049737be4dfeedb26c83b3f683ed30f7eb107fbfc8979"
+    },
+    {
+      "source_path": "notes/音乐制作/人声处理/用瞬态动态和混响尾巴把人声推到前景.md",
+      "packaged_path": "p0/evidence/用瞬态动态和混响尾巴把人声推到前景.md",
+      "sha256": "864909731a120193d6ed4d3e21a588559046d92323ada69be15b286d758052da"
+    },
+    {
+      "source_path": "notes/音乐制作/人声处理/用短长混响与双Delay分工构建氛围人声.md",
+      "packaged_path": "p0/evidence/用短长混响与双Delay分工构建氛围人声.md",
+      "sha256": "279ea8c6faf7020f6cd6ead4c4cca836d2707bec8603257cc334b19f1a76f65b"
+    },
+    {
+      "source_path": "notes/音乐制作/人声处理/让主唱保持中心并把宽度交给辅助层.md",
+      "packaged_path": "p0/evidence/让主唱保持中心并把宽度交给辅助层.md",
+      "sha256": "6c1db64b21753a2ef79ed18693d55a52f5676aac912c96b338b1832f1b83b39e"
+    },
+    {
+      "source_path": "notes/音乐制作/插件/Antares/Auto-Tune Pro.md",
+      "packaged_path": "p0/evidence/Auto-Tune Pro.md",
+      "sha256": "22d817ddbffff7774fb3dc5c408d3d755c6f9d035fbd55844906c42053bc2c4b"
+    },
+    {
+      "source_path": "notes/音乐制作/插件/Celemony/Melodyne.md",
+      "packaged_path": "p0/evidence/Melodyne.md",
+      "sha256": "a35b2d2dd67920657b6d72d86ee7a6cddf3c8c4960a4a4a37379a48b889f8b7b"
+    },
+    {
+      "source_path": "notes/音乐制作/母带/按清理冲击宽度染色响度与监测搭建母带链.md",
+      "packaged_path": "p0/evidence/按清理冲击宽度染色响度与监测搭建母带链.md",
+      "sha256": "81c9a61b7cfa631b75b35fa13b4865c50b04d4a81ff40097da3607384210bc73"
+    },
+    {
+      "source_path": "notes/音乐制作/混音/从分轨准备到削波限制完成母带闭环.md",
+      "packaged_path": "p0/evidence/从分轨准备到削波限制完成母带闭环.md",
+      "sha256": "da9416d773b8bcaab74f83c3da2be56b86d050010a8c93bd5b1763cc9e823307"
+    },
+    {
+      "source_path": "notes/音乐制作/混音/用Trackspacer侧链在中间声道为人声动态让位.md",
+      "packaged_path": "p0/evidence/用Trackspacer侧链在中间声道为人声动态让位.md",
+      "sha256": "af0d08e48423b81f4be4ecc825fbbfb25c46fe8c7c7d60d35bb0ae488ee22cc8"
+    },
+    {
+      "source_path": "notes/音乐制作/混音/用五维匹配解决贴唱人声与伴奏分离.md",
+      "packaged_path": "p0/evidence/用五维匹配解决贴唱人声与伴奏分离.md",
+      "sha256": "278d536781eaba8df9a77d6d5e1bc5f3174db1a57c5ccc360caf655f15895967"
+    },
+    {
+      "source_path": "notes/音乐制作/混音/用同风格参考曲做等响与频谱差值校准.md",
+      "packaged_path": "p0/evidence/用同风格参考曲做等响与频谱差值校准.md",
+      "sha256": "7b89212c2cf2d07d238852cfb5c1458589008b6e06a86241ae4bee9e33025090"
+    },
+    {
+      "source_path": "notes/音乐制作/混音/用声场相位扇形图检查单声道兼容性.md",
+      "packaged_path": "p0/evidence/用声场相位扇形图检查单声道兼容性.md",
+      "sha256": "1ffbda55c06fcb1c6098c00b203df6355d576851e15a3feb5b9e0aad7e35b1b5"
+    },
+    {
+      "source_path": "projects/p1-plugin-knowledge-base/TRACEABILITY_REPORT.md",
+      "packaged_path": "p0/evidence/TRACEABILITY_REPORT.md",
+      "sha256": "dbf9ef8396cebec2b83dde5046e62e6b766333b7c0ddf047ce286bd1b4a5b531"
+    }
+  ]
+}

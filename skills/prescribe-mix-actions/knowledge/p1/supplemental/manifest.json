@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "L2/deferred",
+  "count": 7,
+  "entries": [
+    {
+      "family_id": "e4502ba6e6cb",
+      "profile": "p1/supplemental/l2-e4502ba6e6cb--rx-10-breath-control.json",
+      "sha256": "8167bfaa62998995a60943b90aac3d29a35815d7ca8d8f241d57632093696139"
+    },
+    {
+      "family_id": "5a5ddef31a66",
+      "profile": "p1/supplemental/l2-5a5ddef31a66--rx-10-de-plosive.json",
+      "sha256": "ac2335b0f220e78ef27dee0a830304ae32fd19e3c720ecca9a0fd92d99e6babe"
+    },
+    {
+      "family_id": "8f1bf189fac1",
+      "profile": "p1/supplemental/l2-8f1bf189fac1--rx-10-mouth-de-click.json",
+      "sha256": "368de015ecd5367ee8e5c076eda509d82a1c86cb46f43fc1eccc54f1acc412ce"
+    },
+    {
+      "family_id": "e482c5d14f03",
+      "profile": "p1/supplemental/l2-e482c5d14f03--pro-eq.json",
+      "sha256": "09a1fce8882ec7163a0111be8c5bae6489431f6b2d837d9a027fd2b5e60da4b8"
+    },
+    {
+      "family_id": "bc411ff14519",
+      "profile": "p1/supplemental/l2-bc411ff14519--decapitator.json",
+      "sha256": "c588ff9c8b6938fae2dbe70f8ee90656c59a5cf54010a6e0b26e834a5d2e8a26"
+    },
+    {
+      "family_id": "3e3b26a92fe1",
+      "profile": "p1/supplemental/l2-3e3b26a92fe1--littlealterboy.json",
+      "sha256": "b2e8a50ff17343ae36185259fcf8ae2270b73fb91181e647e0b4837de3e9ed54"
+    },
+    {
+      "family_id": "f9e0e7aeb790",
+      "profile": "p1/supplemental/l2-f9e0e7aeb790--microshift.json",
+      "sha256": "e324d8897975af8bfd124cb4295649030c1fead0a710e19903e6e66135b69c59"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0",
+  "source": "C:\\Projects\\mix-reference-comparator",
+  "source_head": "0fcf1797925ec90b1d7bff4727f8f75dc72168c8",
+  "source_status_porcelain": "M .codex-plugin/plugin.json\n M README.md\n M skills/compare-vocal-references/SKILL.md\n?? skills/compare-mix-references/\n?? skills/select-reference-analysis-mode/",
+  "recorded_at_utc": "2026-08-20T11:49:15.178709+00:00",
+  "files": [
+    {
+      "path": ".codex-plugin/plugin.json",
+      "source_sha256": "0dc394ec35966b9eb5cc0c974e3f5a469cac91f26f4294e6049d62e0f49f17af",
+      "copied_sha256": "04ce034cb2702d2c21e0c557644f3579978174602432a2ca21e672d2a98200c8"
+    },
+    {
+      "path": ".gitignore",
+      "source_sha256": "915fa7438c504c0cacc3ac27073485066aae8298b1b81703bd52c06569ab55ba",
+      "copied_sha256": null
+    },
+    {
+      "path": "README.md",
+      "source_sha256": "bfed95785ebe9124e05fd75f97de104222d97233d18181c32406f5318a1ac90e",
+      "copied_sha256": "bfed95785ebe9124e05fd75f97de104222d97233d18181c32406f5318a1ac90e"
+    },
+    {
+      "path": "skills/compare-mix-references/agents/openai.yaml",
+      "source_sha256": "9f7fce930993efa81e778620b359e21fb0bea2d822654a294c1fb4be251d23a2",
+      "copied_sha256": "9f7fce930993efa81e778620b359e21fb0bea2d822654a294c1fb4be251d23a2"
+    },
+    {
+      "path": "skills/compare-mix-references/references/mix-input-schema.md",
+      "source_sha256": "671ee63f1066fc43d9b792c663e228d0c3d6d90615ebcfdb15be12e3d0886c14",
+      "copied_sha256": "671ee63f1066fc43d9b792c663e228d0c3d6d90615ebcfdb15be12e3d0886c14"
+    },
+    {
+      "path": "skills/compare-mix-references/references/mix-measurement-and-confidence.md",
+      "source_sha256": "03a7535ec77750427424fe031370f7c2c1c4513d682dd5060b24677160e5b9c5",
+      "copied_sha256": "03a7535ec77750427424fe031370f7c2c1c4513d682dd5060b24677160e5b9c5"
+    },
+    {
+      "path": "skills/compare-mix-references/scripts/bootstrap_deps.py",
+      "source_sha256": "f86f0007778e97aca6c7b932d22f14eec28be43f5f7be2694b6d0651bae17fbe",
+      "copied_sha256": "f86f0007778e97aca6c7b932d22f14eec28be43f5f7be2694b6d0651bae17fbe"
+    },
+    {
+      "path": "skills/compare-mix-references/scripts/compare_mix_references.py",
+      "source_sha256": "3d1ad18af33f7eba8deacdee6142f2664e253fc87ddbac25a2afe1c032b2bb7e",
+      "copied_sha256": "3d1ad18af33f7eba8deacdee6142f2664e253fc87ddbac25a2afe1c032b2bb7e"
+    },
+    {
+      "path": "skills/compare-mix-references/scripts/mix_common.py",
+      "source_sha256": "2678891a40389a3a035724e30ca58478ad6334234455323df8495168cb2d25c5",
+      "copied_sha256": "2678891a40389a3a035724e30ca58478ad6334234455323df8495168cb2d25c5"
+    },
+    {
+      "path": "skills/compare-mix-references/scripts/requirements.txt",
+      "source_sha256": "748f4b3a0594f5dc1c90c048aa59748a37e53828e5b78751aac365c8d9f6da66",
+      "copied_sha256": "748f4b3a0594f5dc1c90c048aa59748a37e53828e5b78751aac365c8d9f6da66"
+    },
+    {
+      "path": "skills/compare-mix-references/SKILL.md",
+      "source_sha256": "50f00741f77d7e6bda375608bb54b11638659ca02185c4d10ab3d7a51410658b",
+      "copied_sha256": "50f00741f77d7e6bda375608bb54b11638659ca02185c4d10ab3d7a51410658b"
+    },
+    {
+      "path": "skills/compare-vocal-references/agents/openai.yaml",
+      "source_sha256": "8d217a39181c8bb0a66863a885627e99d786dd0e7dc55261e1250b046fe3679a",
+      "copied_sha256": "8d217a39181c8bb0a66863a885627e99d786dd0e7dc55261e1250b046fe3679a"
+    },
+    {
+      "path": "skills/compare-vocal-references/references/detail-diagnostics.md",
+      "source_sha256": "93893811bbadb23d64fde9e43f8fac736e20b772925c7dd20d4c76d6894329f3",
+      "copied_sha256": "93893811bbadb23d64fde9e43f8fac736e20b772925c7dd20d4c76d6894329f3"
+    },
+    {
+      "path": "skills/compare-vocal-references/references/measurement-and-causality.md",
+      "source_sha256": "9f34afe52648bc268d9b998dbfef41a51a75ee237beeae337d49a326401843b5",
+      "copied_sha256": "9f34afe52648bc268d9b998dbfef41a51a75ee237beeae337d49a326401843b5"
+    },
+    {
+      "path": "skills/compare-vocal-references/references/plugin-actions.md",
+      "source_sha256": "8d70281c0b93a53e0ddea85055ab195905e6b16fe22e7d8f401c075c9930a1a7",
+      "copied_sha256": "8d70281c0b93a53e0ddea85055ab195905e6b16fe22e7d8f401c075c9930a1a7"
+    },
+    {
+      "path": "skills/compare-vocal-references/references/reference-set-comparison.md",
+      "source_sha256": "95249a1bc8c0c19890fdb235fc3523fd28523a39bbeea7a8f72c9effa494ff42",
+      "copied_sha256": "95249a1bc8c0c19890fdb235fc3523fd28523a39bbeea7a8f72c9effa494ff42"
+    },
+    {
+      "path": "skills/compare-vocal-references/references/report-and-visualization.md",
+      "source_sha256": "6954e90916c53554eb60b8861b8acaf39db504a4fbf3d022887a3b1d0425c3bb",
+      "copied_sha256": "6954e90916c53554eb60b8861b8acaf39db504a4fbf3d022887a3b1d0425c3bb"
+    },
+    {
+      "path": "skills/compare-vocal-references/references/spatial-field-diagnostics.md",
+      "source_sha256": "709f880d292b63afb7eda616c4c4e4a6d411264ecbfc1d597529b2c4a7b3c858",
+      "copied_sha256": "709f880d292b63afb7eda616c4c4e4a6d411264ecbfc1d597529b2c4a7b3c858"
+    },
+    {
+      "path": "skills/compare-vocal-references/scripts/analyze_vocals.py",
+      "source_sha256": "8063576b6ddf12f185bd72276e04c55584c766ac70295b996a62f26ccece9f89",
+      "copied_sha256": "8063576b6ddf12f185bd72276e04c55584c766ac70295b996a62f26ccece9f89"
+    },
+    {
+      "path": "skills/compare-vocal-references/scripts/bootstrap_deps.py",
+      "source_sha256": "4a427e3efd02bd0cbacdcc0ed6fd189d5830c748e899fb79bf39e6b001cfc78a",
+      "copied_sha256": "4a427e3efd02bd0cbacdcc0ed6fd189d5830c748e899fb79bf39e6b001cfc78a"
+    },
+    {
+      "path": "skills/compare-vocal-references/scripts/compare_reference_set.py",
+      "source_sha256": "5a480c071cfd026d4a6f8097776f49d128d7340770a0428178d88384bb4c4107",
+      "copied_sha256": "5a480c071cfd026d4a6f8097776f49d128d7340770a0428178d88384bb4c4107"
+    },
+    {
+      "path": "skills/compare-vocal-references/scripts/detail_diagnostics.py",
+      "source_sha256": "cb3c2a15ed45e202f40ebc7e1dae696b66dbfe98302c38cfb6479108738520ed",
+      "copied_sha256": "cb3c2a15ed45e202f40ebc7e1dae696b66dbfe98302c38cfb6479108738520ed"
+    },
+    {
+      "path": "skills/compare-vocal-references/scripts/requirements.txt",
+      "source_sha256": "81bcf5593076d19436d35579d3620f7dfeaee0407d7c70d08f86e7f88858adf6",
+      "copied_sha256": "81bcf5593076d19436d35579d3620f7dfeaee0407d7c70d08f86e7f88858adf6"
+    },
+    {
+      "path": "skills/compare-vocal-references/scripts/spatial_diagnostics.py",
+      "source_sha256": "ceff054a2c8afeefe57c7c28142b8c5a7cc6c3fbf2f3e88f0be545bc002c0b12",
+      "copied_sha256": "ceff054a2c8afeefe57c7c28142b8c5a7cc6c3fbf2f3e88f0be545bc002c0b12"
+    },
+    {
+      "path": "skills/compare-vocal-references/SKILL.md",
+      "source_sha256": "95ef733d935336fa7bf0d8704a0856c11b07d1419a396e60967b3c9cd1c04f5b",
+      "copied_sha256": "95ef733d935336fa7bf0d8704a0856c11b07d1419a396e60967b3c9cd1c04f5b"
+    },
+    {
+      "path": "skills/select-reference-analysis-mode/agents/openai.yaml",
+      "source_sha256": "2ce4582ff19c2f026fcbdb6c03d05414356ae6a908629a21dd09907079662f13",
+      "copied_sha256": "2ce4582ff19c2f026fcbdb6c03d05414356ae6a908629a21dd09907079662f13"
+    },
+    {
+      "path": "skills/select-reference-analysis-mode/SKILL.md",
+      "source_sha256": "4e27111099ec2c1ffec0a12e75288ae8be905c3bd83a6af3185037e55e6307dc",
+      "copied_sha256": "4e27111099ec2c1ffec0a12e75288ae8be905c3bd83a6af3185037e55e6307dc"
+    }
+  ]
+}

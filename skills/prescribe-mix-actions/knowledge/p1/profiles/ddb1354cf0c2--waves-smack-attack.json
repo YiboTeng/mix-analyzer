@@ -1,0 +1,197 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "ddb1354cf0c2--waves-smack-attack",
+  "family_id": "ddb1354cf0c2",
+  "identity": {
+    "vendor": "Waves",
+    "product": "Smack Attack",
+    "version_range": "12.7.0.209",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "transient-shaping",
+    "secondary": [
+      "articulation",
+      "envelope"
+    ],
+    "diagnoses": [
+      "articulation_too_soft",
+      "sustain_too_long"
+    ],
+    "not_for": [
+      "pitch_error",
+      "continuous_noise"
+    ]
+  },
+  "routing": [
+    {
+      "position": "after cleanup, before or after compression by intent",
+      "when": "articulation_too_soft"
+    },
+    {
+      "position": "after cleanup, before or after compression by intent",
+      "when": "sustain_too_long"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "change attack or sustain separately",
+      "maintain peak headroom",
+      "preserve syllable body"
+    ],
+    "controls": [
+      {
+        "name": "Attack",
+        "action": "increase only until articulation reads"
+      },
+      {
+        "name": "Sustain",
+        "action": "reduce only excessive tails"
+      },
+      {
+        "name": "Output",
+        "action": "match level and protect peaks"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "clipping",
+    "thin syllables",
+    "unnatural pumping"
+  ],
+  "stop_conditions": [
+    "attack hits ceiling",
+    "word body disappears"
+  ],
+  "alternatives": [
+    {
+      "condition": "compressor timing",
+      "fallback": "Pro-C 2 or CLA-76"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 12.7.0.209.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Waves/Smack Attack.md",
+    "source_note": "sources/音乐制作/插件资料/Waves/Smack Attack资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/ddb1354cf0c2--Waves-Smack-Attack.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/ddb1354cf0c2--dynamics-smack-attack.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Waves/Smack Attack.md",
+        "packaged_path": "evidence/cards/Smack Attack.md",
+        "sha256": "1fb04e977e8ce360c6a193ccce6ce47286ff177a27cbfea75f4afff58b09d74e"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Waves/Smack Attack资料.md",
+        "packaged_path": "evidence/sources/Smack Attack资料.md",
+        "sha256": "2d96bbebed59909f1c9fe52a009a971fb8d42f2d7e304b2dba15ce3f918d4889"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/ddb1354cf0c2--Waves-Smack-Attack.md",
+        "packaged_path": "evidence/validation/ddb1354cf0c2--Waves-Smack-Attack.md",
+        "sha256": "74bdc06452eb029c6022c7db4a9cc0fc7aaf14709a46e6a35fcf454cf08ecbf6"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/ddb1354cf0c2--dynamics-smack-attack.json",
+          "packaged_path": "evidence/results/ddb1354cf0c2--dynamics-smack-attack.json",
+          "sha256": "7794a58ba3fa533b26387804b7cc14fe56361e9d55ffea3f5029d2d5a1f72b7b"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "articulation_too_soft",
+      "sustain_too_long"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Attack +100 and Sustain -100 separated; attack stress clipped at 0 dBFS."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "基础修复和去齿后，小幅塑造主唱/Ad-lib 字头；常在压缩后使用。",
+      "若只需要个别词头，优先 Clip Gain/自动化而非整轨。"
+    ],
+    "routing": [
+      "主唱链后段轻用。",
+      "只对复制的效果轨或自动化区段启用。"
+    ],
+    "controls": [
+      {
+        "name": "Sensitivity",
+        "meaning": "决定哪些瞬态被检测。",
+        "action": "从低上推，只让目标词头触发，排除噪声与齿音。"
+      },
+      {
+        "name": "Attack Amount / Shape / Duration",
+        "meaning": "改变检测到的起始段电平、曲线和时长。",
+        "action": "从 ±5–15% 小步；咬字不足提升，爆破/硬辅音过强衰减。"
+      },
+      {
+        "name": "Sustain",
+        "meaning": "改变瞬态后的持续包络。",
+        "action": "需要更短更干时轻减；拉长会抬房间/呼吸。"
+      },
+      {
+        "name": "Mix / Output",
+        "meaning": "并行混合并补偿输出。",
+        "action": "先全湿诊断，再回 Mix；始终等响度。"
+      }
+    ],
+    "parameter_start_points": [
+      "Sensitivity 刚好抓目标；Attack 从 ±5–10 小步开始；Duration 中短。本机 +100 极值已把固定瞬态推到 0 dBFS，不可作为人声起点。",
+      "Sustain 0 起，仅在尾部包络确有目标时动。",
+      "Mix 50–100% 由等响度盲听决定。"
+    ],
+    "listen_for": [
+      "齿音、爆破、点击被提升。",
+      "检测漏抓弱字或误抓噪声。",
+      "Sustain 抬房间和尾噪。"
+    ],
+    "stop": [
+      "目标词头达到存在感且硬辅音未超标。",
+      "进一步 Attack 主要增加峰值/刺耳时停止。"
+    ],
+    "latency": [
+      "本机 VST3 Stereo、48 kHz、A: Default Preset 在 Ableton 设备栏报告 0 samples。默认态与旁路整段相关 1.0、互差约 -141.478 dBFS；这是当前导出与 PDC 下的近似中性证据，不代表所有 Mix、Guard、格式或采样率都零延迟/位透明。"
+    ]
+  }
+}

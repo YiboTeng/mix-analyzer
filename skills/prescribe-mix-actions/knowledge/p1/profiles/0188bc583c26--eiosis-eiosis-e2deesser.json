@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "0188bc583c26--eiosis-eiosis-e2deesser",
+  "family_id": "0188bc583c26",
+  "identity": {
+    "vendor": "Eiosis",
+    "product": "Eiosis E2Deesser",
+    "version_range": "1.0.9.3",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "deessing-spectral",
+    "secondary": [
+      "sibilance",
+      "voice-specific"
+    ],
+    "diagnoses": [
+      "sibilance",
+      "voice_specific_harshness"
+    ],
+    "not_for": [
+      "global_dullness",
+      "broadband_noise"
+    ]
+  },
+  "routing": [
+    {
+      "position": "after corrective EQ, before air/excitation",
+      "when": "sibilance"
+    },
+    {
+      "position": "after corrective EQ, before air/excitation",
+      "when": "voice_specific_harshness"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "voice mode matches source",
+      "minimum amount",
+      "preserve voiced/sibilant balance"
+    ],
+    "controls": [
+      {
+        "name": "Mode",
+        "action": "choose source class by audition"
+      },
+      {
+        "name": "Sensitivity/Amount",
+        "action": "trigger only problem events"
+      },
+      {
+        "name": "Auto/Smooth",
+        "action": "balance responsiveness and continuity"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "lisping",
+    "dullness",
+    "15 ms latency"
+  ],
+  "stop_conditions": [
+    "voiced consonants lose energy",
+    "smoothness becomes smeared"
+  ],
+  "alternatives": [
+    {
+      "condition": "wide/split control",
+      "fallback": "Pro-DS"
+    },
+    {
+      "condition": "broad harshness",
+      "fallback": "soothe2"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 1.0.9.3.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Eiosis/Eiosis E2Deesser.md",
+    "source_note": "sources/音乐制作/插件资料/Eiosis/Eiosis E2Deesser资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/0188bc583c26--Eiosis-E2Deesser.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/0188bc583c26--composite-e2deesser-mode-auto-smooth.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Eiosis/Eiosis E2Deesser.md",
+        "packaged_path": "evidence/cards/Eiosis E2Deesser.md",
+        "sha256": "ae12d295e299744d4cce700c3456178479ca087159815b466fab37ee5374e51a"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Eiosis/Eiosis E2Deesser资料.md",
+        "packaged_path": "evidence/sources/Eiosis E2Deesser资料.md",
+        "sha256": "fee6091fec4af375c09d4f72278031d01a1fb5b9c3f28b585370ed1f4e7d2da2"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/0188bc583c26--Eiosis-E2Deesser.md",
+        "packaged_path": "evidence/validation/0188bc583c26--Eiosis-E2Deesser.md",
+        "sha256": "0a23d48767da01e23b79813e2e7999cd9855b847aee29ef609491fbfd1bced99"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/0188bc583c26--composite-e2deesser-mode-auto-smooth.json",
+          "packaged_path": "evidence/results/0188bc583c26--composite-e2deesser-mode-auto-smooth.json",
+          "sha256": "0c1df6d7b3787f75024f2d9aeb17105ff513a4251f490d38e7fe64f12d4f228a"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "sibilance",
+      "voice_specific_harshness"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Solo/Voice Over and Auto/Smooth boundaries tested at default 50% wet."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "通常在主要高频激励前；若后级增加新谐波，可在链尾轻度补控。",
+      "先选与素材相符的检测 Mode，再用齿音独听/可视化校准，最后用 Auto/Smooth 塑形。"
+    ],
+    "routing": [
+      "主唱或叠唱 Insert。",
+      "Stereo/M-S 模式仅用于对应总线实验，不作为默认。"
+    ],
+    "controls": [
+      {
+        "name": "Mode",
+        "meaning": "切换按独唱、叠唱、旁白、乐器或母带优化的检测与通道行为。",
+        "action": "干单主唱先 Solo Vocal；硬分轨叠唱才 Background Vocals；其余按官方用途试。"
+      },
+      {
+        "name": "Sensitivity / Idle Threshold",
+        "meaning": "控制检测灵敏度与静默/噪声处误触发。",
+        "action": "提高至完整捕获齿音，再用 Manual Idle Threshold 排除呼吸与底噪。"
+      },
+      {
+        "name": "Auto",
+        "meaning": "动态平滑齿音内部的频率峰值。",
+        "action": "口哨/尖峰式齿音逐步增加；完整辅音被掏空时回退。"
+      },
+      {
+        "name": "Smooth",
+        "meaning": "以温和饱和降低齿音峰度和尖锐幅度。",
+        "action": "需要保留空气但减硬时小幅使用，并等响度比较。"
+      },
+      {
+        "name": "Dry/Wet / Gain",
+        "meaning": "混合原信号与处理结果并补偿 ±18 dB 输出。",
+        "action": "先 100% Wet 校准，再用 Dry/Wet 回添自然齿音；Gain 只做电平匹配。"
+      }
+    ],
+    "parameter_start_points": [
+      "Solo Vocal；Sensitivity 从低上推，先保证只抓目标；Auto 与 Smooth 从 0 小步增加。",
+      "Dry/Wet 100% 校准，再视自然度回到 70–100%；Gain 等响度。",
+      "Voice Over 模式若使用，必须同时设置 Manual Idle Threshold。"
+    ],
+    "listen_for": [
+      "Auto 过高造成齿音空洞或带滤波感。",
+      "Smooth 过高造成沙哑、饱和或更亮错觉。",
+      "左右独立检测造成声像跳动。"
+    ],
+    "stop": [
+      "最坏齿音被重新整形而不是消失。",
+      "开始出现咬舌、声像不稳或呼吸被持续处理时回退。"
+    ],
+    "latency": [
+      "本机 1.0.9.3 VST3 在 Ableton Live 11.3.43 / 48 kHz 报告固定 `720 samples / 15 ms`，Solo Vocal、Voice Over 与所测 Auto/Smooth 状态一致；导出由宿主 PDC 对齐。当前 UI 未见可关闭的 Lookahead 或过采样控件，不把它当零延迟处理器，也不把 VST3 结果外推到 VST2、其它采样率或其它 build。"
+    ]
+  }
+}

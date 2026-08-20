@@ -1,0 +1,1122 @@
+{
+  "schema_version": "1.0",
+  "test_id": "composite-debreath-default-voice-and-monitor-breath",
+  "family_id": "ad123c8856d3",
+  "plugin": "Waves DeBreath Mono 12.7.0.209 VST3",
+  "host": "Ableton Live 11.3.43",
+  "sample_rate_hz": 48000,
+  "host_reported_latency_samples": 35248,
+  "host_reported_latency_ms": 734.3,
+  "controls": {
+    "default": {
+      "preset": "A: Default Preset",
+      "breath": 50.0,
+      "energy_gate_db": -30.0
+    },
+    "stress": {
+      "breath": 89.5,
+      "energy_gate_db": -57.0
+    },
+    "reduction_db": "-Inf",
+    "fade_out_ms": 5.0,
+    "fade_in_ms": 5.0,
+    "room_tone": "Off",
+    "conditions": [
+      "Monitor Voice",
+      "Monitor Breath"
+    ]
+  },
+  "isolation": "DeBreath enabled for Voice/Breath renders; NS1, Pro-G, Melodyne, and all earlier chain devices disabled. Both DeBreath and earlier devices disabled for the fresh bypass.",
+  "files": {
+    "bypass": {
+      "path": "renders\\ad123c8856d3--composite--bypass.wav",
+      "sha256": "e2dfde5d5dc081d2df466c94f100a8fed79f864ed720eb9e398221f275aecdda"
+    },
+    "default_voice": {
+      "path": "renders\\ad123c8856d3--composite--default-voice.wav",
+      "sha256": "1674852720fae64acc2aa4cacb643390a7ba415006624e7c9b8cdae554fd4782"
+    },
+    "default_monitor_breath": {
+      "path": "renders\\ad123c8856d3--composite--default-monitor-breath.wav",
+      "sha256": "285da5e073487e960148b5e0a108fc9fbe89bde58a1d571a95e9c1da13931af2"
+    },
+    "stress_voice": {
+      "path": "renders\\ad123c8856d3--composite--stress89.5-gate-57-voice.wav",
+      "sha256": "81c09dc81a8e412a44a5c70b664e38a461cf6ed6f427d1078bedeb69b92d3048"
+    },
+    "stress_monitor_breath": {
+      "path": "renders\\ad123c8856d3--composite--stress89.5-gate-57-monitor-breath.wav",
+      "sha256": "4fba147bb4904e543259d0ca96ddc0533287b6c63746abaec483741ff6d08725"
+    }
+  },
+  "full_file": {
+    "stereo": {
+      "bypass": {
+        "channels": 2,
+        "left_rms_dbfs": -21.323612002181385,
+        "right_rms_dbfs": -21.555300751289423,
+        "lr_correlation": 0.7714351407567642,
+        "side_rms_dbfs": -30.852945040913706,
+        "mid_rms_dbfs": -21.9656266961257
+      },
+      "default_voice": {
+        "channels": 2,
+        "left_rms_dbfs": -21.965626700835816,
+        "right_rms_dbfs": -21.965626703032775,
+        "lr_correlation": 0.9999999999994442,
+        "side_rms_dbfs": -147.50623878825112,
+        "mid_rms_dbfs": -21.96562670193551
+      },
+      "default_monitor_breath": {
+        "channels": 2,
+        "left_rms_dbfs": -144.49446326443712,
+        "right_rms_dbfs": -144.49585586478912,
+        "lr_correlation": -8.564507522805508e-05,
+        "side_rms_dbfs": -147.50508745095235,
+        "mid_rms_dbfs": -147.5058315117857
+      },
+      "stress_voice": {
+        "channels": 2,
+        "left_rms_dbfs": -21.96562669715638,
+        "right_rms_dbfs": -21.96562669158247,
+        "lr_correlation": 0.9999999999994361,
+        "side_rms_dbfs": -147.502966571771,
+        "mid_rms_dbfs": -21.96562669437064
+      },
+      "stress_monitor_breath": {
+        "channels": 2,
+        "left_rms_dbfs": -144.49723382228711,
+        "right_rms_dbfs": -144.49235259191698,
+        "lr_correlation": 0.0001307952887001002,
+        "side_rms_dbfs": -147.5056605676124,
+        "mid_rms_dbfs": -147.50452446261363
+      }
+    },
+    "default": {
+      "voice_minus_bypass_db": -0.5277151673019732,
+      "voice_to_bypass_correlation": 0.9410528077526011,
+      "voice_residual_rms_dbfs": -30.852945050854267,
+      "monitor_breath_minus_bypass_db": -123.05724797416224,
+      "monitor_breath_to_bypass_correlation": -3.746656781070848e-05,
+      "voice_plus_breath_reconstruction_rms_dbfs": -30.852945048830843,
+      "voice_plus_breath_reconstruction_max_abs": 0.15847814083099365
+    },
+    "stress": {
+      "voice_minus_bypass_db": -0.5277151597371034,
+      "voice_to_bypass_correlation": 0.9410528077375141,
+      "voice_residual_rms_dbfs": -30.852945049776395,
+      "monitor_breath_minus_bypass_db": -123.05688098669054,
+      "monitor_breath_to_bypass_correlation": -0.0006815242747631523,
+      "voice_plus_breath_reconstruction_rms_dbfs": -30.852945041858458,
+      "voice_plus_breath_reconstruction_max_abs": 0.15847814083099365
+    }
+  },
+  "regions": {
+    "impulse_train": {
+      "bypass_stereo": {
+        "channels": 2,
+        "left_rms_dbfs": -54.80536381109224,
+        "right_rms_dbfs": -54.805365224292224,
+        "lr_correlation": 0.999999998925986,
+        "side_rms_dbfs": -147.50554241895446,
+        "mid_rms_dbfs": -54.80536452002438
+      },
+      "conditions": {
+        "default": {
+          "voice_minus_bypass_db": 8.424818730332003e-07,
+          "voice_to_bypass_correlation": 0.9999999989301037,
+          "voice_residual_rms_dbfs": -141.50168626439972,
+          "monitor_breath_minus_bypass_db": -89.69087351047202,
+          "monitor_breath_to_bypass_correlation": -0.002478347982167112,
+          "voice_plus_breath_reconstruction_rms_dbfs": -139.74173270109955,
+          "voice_active_50ms_windows": {
+            "count": 3,
+            "minimum_db": 6.471588889266057e-07,
+            "p10_db": 7.248158945600977e-07,
+            "median_db": 1.0354439170940652e-06,
+            "p90_db": 1.8637974708145723e-06,
+            "maximum_db": 2.070885859244699e-06,
+            "count_attenuated_ge_0_1_db": 0,
+            "count_attenuated_ge_1_db": 0,
+            "count_attenuated_ge_6_db": 0,
+            "residual_rms_dbfs_median": -141.55893097033126
+          },
+          "monitor_breath_active_50ms_windows": {
+            "count": 3,
+            "minimum_db": -108.81958975218923,
+            "p10_db": -107.97707683494477,
+            "median_db": -104.6070251659669,
+            "p90_db": -99.91542060920894,
+            "maximum_db": -98.74251947001945,
+            "count_attenuated_ge_0_1_db": 3,
+            "count_attenuated_ge_1_db": 3,
+            "count_attenuated_ge_6_db": 3,
+            "residual_rms_dbfs_median": -39.82271129465812
+          },
+          "voice_spectral_bands": [
+            {
+              "band_hz": [
+                20,
+                120
+              ],
+              "candidate_minus_reference_db": -1.349808177437049e-05
+            },
+            {
+              "band_hz": [
+                120,
+                500
+              ],
+              "candidate_minus_reference_db": 1.6197108313352742e-06
+            },
+            {
+              "band_hz": [
+                500,
+                2000
+              ],
+              "candidate_minus_reference_db": 4.137581967460442e-06
+            },
+            {
+              "band_hz": [
+                2000,
+                7000
+              ],
+              "candidate_minus_reference_db": -3.886809511659867e-07
+            },
+            {
+              "band_hz": [
+                7000,
+                14000
+              ],
+              "candidate_minus_reference_db": 4.4164014425848006e-06
+            },
+            {
+              "band_hz": [
+                14000,
+                24000
+              ],
+              "candidate_minus_reference_db": -8.339705851621152e-07
+            }
+          ],
+          "stereo": {
+            "voice": {
+              "channels": 2,
+              "left_rms_dbfs": -54.80536381109458,
+              "right_rms_dbfs": -54.80536353932603,
+              "lr_correlation": 0.9999999989301758,
+              "side_rms_dbfs": -147.52252843825755,
+              "mid_rms_dbfs": -54.80536367753339
+            },
+            "monitor_breath": {
+              "channels": 2,
+              "left_rms_dbfs": -144.49029818428522,
+              "right_rms_dbfs": -144.5021860070928,
+              "lr_correlation": -0.0014054293875907962,
+              "side_rms_dbfs": -147.50044748912762,
+              "mid_rms_dbfs": -147.51263703371754
+            }
+          }
+        },
+        "stress": {
+          "voice_minus_bypass_db": 8.425056514175642e-07,
+          "voice_to_bypass_correlation": 0.9999999989261685,
+          "voice_residual_rms_dbfs": -141.48575704257578,
+          "monitor_breath_minus_bypass_db": -89.68833979161226,
+          "monitor_breath_to_bypass_correlation": 2.443745684434281e-06,
+          "voice_plus_breath_reconstruction_rms_dbfs": -139.7196782515334,
+          "voice_active_50ms_windows": {
+            "count": 3,
+            "minimum_db": 6.471563836040343e-07,
+            "p10_db": 7.248137174945791e-07,
+            "median_db": 1.0354430530567583e-06,
+            "p90_db": 1.863793743111186e-06,
+            "maximum_db": 2.0708814156247926e-06,
+            "count_attenuated_ge_0_1_db": 0,
+            "count_attenuated_ge_1_db": 0,
+            "count_attenuated_ge_6_db": 0,
+            "residual_rms_dbfs_median": -141.48228877861695
+          },
+          "monitor_breath_active_50ms_windows": {
+            "count": 3,
+            "minimum_db": -108.8713360898778,
+            "p10_db": -108.01137174807903,
+            "median_db": -104.57151438088397,
+            "p90_db": -99.92313449108511,
+            "maximum_db": -98.76103951863539,
+            "count_attenuated_ge_0_1_db": 3,
+            "count_attenuated_ge_1_db": 3,
+            "count_attenuated_ge_6_db": 3,
+            "residual_rms_dbfs_median": -39.82271233009697
+          },
+          "voice_spectral_bands": [
+            {
+              "band_hz": [
+                20,
+                120
+              ],
+              "candidate_minus_reference_db": -1.7837729983798285e-05
+            },
+            {
+              "band_hz": [
+                120,
+                500
+              ],
+              "candidate_minus_reference_db": 1.2232968926553714e-05
+            },
+            {
+              "band_hz": [
+                500,
+                2000
+              ],
+              "candidate_minus_reference_db": -4.4445417354812416e-07
+            },
+            {
+              "band_hz": [
+                2000,
+                7000
+              ],
+              "candidate_minus_reference_db": -5.278568442361628e-07
+            },
+            {
+              "band_hz": [
+                7000,
+                14000
+              ],
+              "candidate_minus_reference_db": 2.8437110217505725e-06
+            },
+            {
+              "band_hz": [
+                14000,
+                24000
+              ],
+              "candidate_minus_reference_db": 6.580785255343638e-07
+            }
+          ],
+          "stereo": {
+            "voice": {
+              "channels": 2,
+              "left_rms_dbfs": -54.80536326752906,
+              "right_rms_dbfs": -54.805364082844015,
+              "lr_correlation": 0.9999999989252001,
+              "side_rms_dbfs": -147.50240637023475,
+              "mid_rms_dbfs": -54.80536367752041
+            },
+            "monitor_breath": {
+              "channels": 2,
+              "left_rms_dbfs": -144.49162414549318,
+              "right_rms_dbfs": -144.4957854699405,
+              "lr_correlation": 0.001197684800312707,
+              "side_rms_dbfs": -147.50919394335702,
+              "mid_rms_dbfs": -147.4988207826257
+            }
+          }
+        }
+      }
+    },
+    "steady_multitone": {
+      "bypass_stereo": {
+        "channels": 2,
+        "left_rms_dbfs": -19.084576925028195,
+        "right_rms_dbfs": -19.94876077902576,
+        "lr_correlation": 0.12329104229900228,
+        "side_rms_dbfs": -23.073945324335696,
+        "mid_rms_dbfs": -22.00293641825852
+      },
+      "conditions": {
+        "default": {
+          "voice_minus_bypass_db": -2.507727258966691,
+          "voice_to_bypass_correlation": 0.7492273784965999,
+          "voice_residual_rms_dbfs": -23.073945334117024,
+          "monitor_breath_minus_bypass_db": -125.00487748414132,
+          "monitor_breath_to_bypass_correlation": 0.00016432856500648915,
+          "voice_plus_breath_reconstruction_rms_dbfs": -23.073945331858713,
+          "voice_active_50ms_windows": {
+            "count": 240,
+            "minimum_db": -125.79892288975726,
+            "p10_db": -125.46245208526787,
+            "median_db": -2.2643977088990797,
+            "p90_db": 5.0593633382283175e-09,
+            "maximum_db": 1.883102821863746e-07,
+            "count_attenuated_ge_0_1_db": 193,
+            "count_attenuated_ge_1_db": 177,
+            "count_attenuated_ge_6_db": 58,
+            "residual_rms_dbfs_median": -23.242536623912244
+          },
+          "monitor_breath_active_50ms_windows": {
+            "count": 240,
+            "minimum_db": -125.79892304444161,
+            "p10_db": -125.60932494623661,
+            "median_db": -125.43260205173061,
+            "p90_db": -122.70070398647937,
+            "maximum_db": -121.96168590493568,
+            "count_attenuated_ge_0_1_db": 240,
+            "count_attenuated_ge_1_db": 240,
+            "count_attenuated_ge_6_db": 240,
+            "residual_rms_dbfs_median": -19.010645587399623
+          },
+          "voice_spectral_bands": [
+            {
+              "band_hz": [
+                20,
+                120
+              ],
+              "candidate_minus_reference_db": 1.644865492854163e-06
+            },
+            {
+              "band_hz": [
+                120,
+                500
+              ],
+              "candidate_minus_reference_db": -8.595782285055298e-08
+            },
+            {
+              "band_hz": [
+                500,
+                2000
+              ],
+              "candidate_minus_reference_db": 2.8001229070924083e-07
+            },
+            {
+              "band_hz": [
+                2000,
+                7000
+              ],
+              "candidate_minus_reference_db": -1.2864936863135568e-06
+            },
+            {
+              "band_hz": [
+                7000,
+                14000
+              ],
+              "candidate_minus_reference_db": -2.7179609726662587e-06
+            },
+            {
+              "band_hz": [
+                14000,
+                24000
+              ],
+              "candidate_minus_reference_db": -1.1845283376739731e-05
+            }
+          ],
+          "stereo": {
+            "voice": {
+              "channels": 2,
+              "left_rms_dbfs": -22.00293644522946,
+              "right_rms_dbfs": -22.002936461024234,
+              "lr_correlation": 0.9999999999994366,
+              "side_rms_dbfs": -147.50190903211768,
+              "mid_rms_dbfs": -22.002936453128076
+            },
+            "monitor_breath": {
+              "channels": 2,
+              "left_rms_dbfs": -144.49331231820062,
+              "right_rms_dbfs": -144.5068716219263,
+              "lr_correlation": -0.000326561209481302,
+              "side_rms_dbfs": -147.5089675199254,
+              "mid_rms_dbfs": -147.51180621382346
+            }
+          }
+        },
+        "stress": {
+          "voice_minus_bypass_db": -2.5077272519456266,
+          "voice_to_bypass_correlation": 0.7492273784203237,
+          "voice_residual_rms_dbfs": -23.073945332985456,
+          "monitor_breath_minus_bypass_db": -125.00558721558016,
+          "monitor_breath_to_bypass_correlation": -0.0015918998019497231,
+          "voice_plus_breath_reconstruction_rms_dbfs": -23.073945324966548,
+          "voice_active_50ms_windows": {
+            "count": 240,
+            "minimum_db": -125.76634996434694,
+            "p10_db": -125.51681219747998,
+            "median_db": -2.2643977809099,
+            "p90_db": 8.175793909932833e-09,
+            "maximum_db": 2.6847200075096975e-07,
+            "count_attenuated_ge_0_1_db": 193,
+            "count_attenuated_ge_1_db": 177,
+            "count_attenuated_ge_6_db": 58,
+            "residual_rms_dbfs_median": -23.242536593686225
+          },
+          "monitor_breath_active_50ms_windows": {
+            "count": 240,
+            "minimum_db": -125.80671292756719,
+            "p10_db": -125.60857930721546,
+            "median_db": -125.4083920467366,
+            "p90_db": -122.75311868480009,
+            "maximum_db": -121.86063911483238,
+            "count_attenuated_ge_0_1_db": 240,
+            "count_attenuated_ge_1_db": 240,
+            "count_attenuated_ge_6_db": 240,
+            "residual_rms_dbfs_median": -19.010645583776586
+          },
+          "voice_spectral_bands": [
+            {
+              "band_hz": [
+                20,
+                120
+              ],
+              "candidate_minus_reference_db": -4.016671327859078e-07
+            },
+            {
+              "band_hz": [
+                120,
+                500
+              ],
+              "candidate_minus_reference_db": -7.145109976122636e-08
+            },
+            {
+              "band_hz": [
+                500,
+                2000
+              ],
+              "candidate_minus_reference_db": -8.074106931142339e-07
+            },
+            {
+              "band_hz": [
+                2000,
+                7000
+              ],
+              "candidate_minus_reference_db": 3.0917095881494776e-06
+            },
+            {
+              "band_hz": [
+                7000,
+                14000
+              ],
+              "candidate_minus_reference_db": 4.292607773621975e-06
+            },
+            {
+              "band_hz": [
+                14000,
+                24000
+              ],
+              "candidate_minus_reference_db": -5.205748732271299e-06
+            }
+          ],
+          "stereo": {
+            "voice": {
+              "channels": 2,
+              "left_rms_dbfs": -22.002936457686303,
+              "right_rms_dbfs": -22.002936434525267,
+              "lr_correlation": 0.9999999999994376,
+              "side_rms_dbfs": -147.50337106713036,
+              "mid_rms_dbfs": -22.002936446107007
+            },
+            "monitor_breath": {
+              "channels": 2,
+              "left_rms_dbfs": -144.50699260795741,
+              "right_rms_dbfs": -144.49460903921556,
+              "lr_correlation": -6.131416232017327e-05,
+              "side_rms_dbfs": -147.51082454063553,
+              "mid_rms_dbfs": -147.51136820913945
+            }
+          }
+        }
+      }
+    },
+    "fixed_vocal": {
+      "bypass_stereo": {
+        "channels": 2,
+        "left_rms_dbfs": -25.904025237927183,
+        "right_rms_dbfs": -25.97256409038202,
+        "lr_correlation": 0.9987523653674387,
+        "side_rms_dbfs": -57.88067916311534,
+        "mid_rms_dbfs": -25.94093706816103
+      },
+      "conditions": {
+        "default": {
+          "voice_minus_bypass_db": -0.0027776079541475002,
+          "voice_to_bypass_correlation": 0.9996802670191031,
+          "voice_residual_rms_dbfs": -57.880679481757504,
+          "monitor_breath_minus_bypass_db": -118.55312885333986,
+          "monitor_breath_to_bypass_correlation": -0.000446662403682502,
+          "voice_plus_breath_reconstruction_rms_dbfs": -57.88067991307302,
+          "voice_active_50ms_windows": {
+            "count": 391,
+            "minimum_db": -0.006326867211562683,
+            "p10_db": -0.003333967789463317,
+            "median_db": -0.0027489181631455283,
+            "p90_db": -0.002242793798496912,
+            "maximum_db": 6.72597820133321e-05,
+            "count_attenuated_ge_0_1_db": 0,
+            "count_attenuated_ge_1_db": 0,
+            "count_attenuated_ge_6_db": 0,
+            "residual_rms_dbfs_median": -57.11420946284
+          },
+          "monitor_breath_active_50ms_windows": {
+            "count": 391,
+            "minimum_db": -120.57915214300513,
+            "p10_db": -120.30343529750873,
+            "median_db": -119.04268073988412,
+            "p90_db": -115.95822097641432,
+            "maximum_db": -75.45242203104718,
+            "count_attenuated_ge_0_1_db": 391,
+            "count_attenuated_ge_1_db": 391,
+            "count_attenuated_ge_6_db": 391,
+            "residual_rms_dbfs_median": -25.430744298949868
+          },
+          "voice_spectral_bands": [
+            {
+              "band_hz": [
+                20,
+                120
+              ],
+              "candidate_minus_reference_db": -4.1969306874056265e-08
+            },
+            {
+              "band_hz": [
+                120,
+                500
+              ],
+              "candidate_minus_reference_db": -1.4414433336656191e-08
+            },
+            {
+              "band_hz": [
+                500,
+                2000
+              ],
+              "candidate_minus_reference_db": 1.805161128900471e-08
+            },
+            {
+              "band_hz": [
+                2000,
+                7000
+              ],
+              "candidate_minus_reference_db": 5.40784613739458e-07
+            },
+            {
+              "band_hz": [
+                7000,
+                14000
+              ],
+              "candidate_minus_reference_db": 1.1127947883104026e-07
+            },
+            {
+              "band_hz": [
+                14000,
+                24000
+              ],
+              "candidate_minus_reference_db": -2.984949326279107e-06
+            }
+          ],
+          "stereo": {
+            "voice": {
+              "channels": 2,
+              "left_rms_dbfs": -25.940937065600778,
+              "right_rms_dbfs": -25.94093706730923,
+              "lr_correlation": 0.9999999999986126,
+              "side_rms_dbfs": -147.50629230448817,
+              "mid_rms_dbfs": -25.940937066458034
+            },
+            "monitor_breath": {
+              "channels": 2,
+              "left_rms_dbfs": -144.49826003085437,
+              "right_rms_dbfs": -144.48432776657626,
+              "lr_correlation": 0.0003050746222372686,
+              "side_rms_dbfs": -147.50291453206876,
+              "mid_rms_dbfs": -147.50026240978764
+            }
+          }
+        },
+        "stress": {
+          "voice_minus_bypass_db": -0.0027775999225881005,
+          "voice_to_bypass_correlation": 0.9996802670254213,
+          "voice_residual_rms_dbfs": -57.88067956758218,
+          "monitor_breath_minus_bypass_db": -118.55490303767637,
+          "monitor_breath_to_bypass_correlation": 0.0001246439911210994,
+          "voice_plus_breath_reconstruction_rms_dbfs": -57.88067974792288,
+          "voice_active_50ms_windows": {
+            "count": 391,
+            "minimum_db": -0.0063266841937750255,
+            "p10_db": -0.0033341972084977344,
+            "median_db": -0.0027491954156820065,
+            "p90_db": -0.0022429890139704332,
+            "maximum_db": 3.789761892736511e-06,
+            "count_attenuated_ge_0_1_db": 0,
+            "count_attenuated_ge_1_db": 0,
+            "count_attenuated_ge_6_db": 0,
+            "residual_rms_dbfs_median": -57.114201758185615
+          },
+          "monitor_breath_active_50ms_windows": {
+            "count": 391,
+            "minimum_db": -120.57332264263776,
+            "p10_db": -120.27720441761325,
+            "median_db": -119.0526493997745,
+            "p90_db": -115.99036908882553,
+            "maximum_db": -75.37476833072463,
+            "count_attenuated_ge_0_1_db": 391,
+            "count_attenuated_ge_1_db": 391,
+            "count_attenuated_ge_6_db": 391,
+            "residual_rms_dbfs_median": -25.430744245376353
+          },
+          "voice_spectral_bands": [
+            {
+              "band_hz": [
+                20,
+                120
+              ],
+              "candidate_minus_reference_db": 2.649294935833155e-07
+            },
+            {
+              "band_hz": [
+                120,
+                500
+              ],
+              "candidate_minus_reference_db": 1.574343564714207e-08
+            },
+            {
+              "band_hz": [
+                500,
+                2000
+              ],
+              "candidate_minus_reference_db": 3.3945842612787356e-08
+            },
+            {
+              "band_hz": [
+                2000,
+                7000
+              ],
+              "candidate_minus_reference_db": 2.622665159823169e-07
+            },
+            {
+              "band_hz": [
+                7000,
+                14000
+              ],
+              "candidate_minus_reference_db": 2.4323866113780253e-07
+            },
+            {
+              "band_hz": [
+                14000,
+                24000
+              ],
+              "candidate_minus_reference_db": -3.1077717564940944e-06
+            }
+          ],
+          "stereo": {
+            "voice": {
+              "channels": 2,
+              "left_rms_dbfs": -25.94093705776896,
+              "right_rms_dbfs": -25.940937059077925,
+              "lr_correlation": 0.9999999999986044,
+              "side_rms_dbfs": -147.4944643833506,
+              "mid_rms_dbfs": -25.940937058426485
+            },
+            "monitor_breath": {
+              "channels": 2,
+              "left_rms_dbfs": -144.49245092360167,
+              "right_rms_dbfs": -144.49367415488643,
+              "lr_correlation": -0.0003961573411523057,
+              "side_rms_dbfs": -147.501639933506,
+              "mid_rms_dbfs": -147.50508565559295
+            }
+          }
+        }
+      }
+    },
+    "spatial": {
+      "bypass_stereo": {
+        "channels": 2,
+        "left_rms_dbfs": -20.793807694855456,
+        "right_rms_dbfs": -20.793807701721153,
+        "lr_correlation": 0.9999999999995733,
+        "side_rms_dbfs": -147.504290743358,
+        "mid_rms_dbfs": -20.793807698289232
+      },
+      "conditions": {
+        "default": {
+          "voice_minus_bypass_db": 2.828071588770825e-09,
+          "voice_to_bypass_correlation": 0.9999999999995597,
+          "voice_residual_rms_dbfs": -141.42303437839854,
+          "monitor_breath_minus_bypass_db": -123.70556936454088,
+          "monitor_breath_to_bypass_correlation": -0.0002818037819778717,
+          "voice_plus_breath_reconstruction_rms_dbfs": -139.68233127240404,
+          "voice_active_50ms_windows": {
+            "count": 240,
+            "minimum_db": -1.9881961116576193e-06,
+            "p10_db": -1.6268536781837278e-07,
+            "median_db": -6.0692837289753815e-09,
+            "p90_db": 1.8634515025902215e-07,
+            "maximum_db": 2.3700300549675472e-06,
+            "count_attenuated_ge_0_1_db": 0,
+            "count_attenuated_ge_1_db": 0,
+            "count_attenuated_ge_6_db": 0,
+            "residual_rms_dbfs_median": -141.4904361404326
+          },
+          "monitor_breath_active_50ms_windows": {
+            "count": 240,
+            "minimum_db": -124.25604321125522,
+            "p10_db": -124.11452945174959,
+            "median_db": -123.93078034875569,
+            "p90_db": -123.72603891107373,
+            "maximum_db": -99.10890033219367,
+            "count_attenuated_ge_0_1_db": 240,
+            "count_attenuated_ge_1_db": 240,
+            "count_attenuated_ge_6_db": 240,
+            "residual_rms_dbfs_median": -20.5605919390089
+          },
+          "voice_spectral_bands": [
+            {
+              "band_hz": [
+                20,
+                120
+              ],
+              "candidate_minus_reference_db": 1.929745679616673e-08
+            },
+            {
+              "band_hz": [
+                120,
+                500
+              ],
+              "candidate_minus_reference_db": -1.4350784830670489e-08
+            },
+            {
+              "band_hz": [
+                500,
+                2000
+              ],
+              "candidate_minus_reference_db": 4.018770184759345e-08
+            },
+            {
+              "band_hz": [
+                2000,
+                7000
+              ],
+              "candidate_minus_reference_db": -5.6566464978059025e-08
+            },
+            {
+              "band_hz": [
+                7000,
+                14000
+              ],
+              "candidate_minus_reference_db": -1.519858104039474e-08
+            },
+            {
+              "band_hz": [
+                14000,
+                24000
+              ],
+              "candidate_minus_reference_db": -1.7293373210257663e-08
+            }
+          ],
+          "stereo": {
+            "voice": {
+              "channels": 2,
+              "left_rms_dbfs": -20.793807695555348,
+              "right_rms_dbfs": -20.793807695365118,
+              "lr_correlation": 0.9999999999995762,
+              "side_rms_dbfs": -147.50754886847275,
+              "mid_rms_dbfs": -20.793807695461158
+            },
+            "monitor_breath": {
+              "channels": 2,
+              "left_rms_dbfs": -144.49225713336017,
+              "right_rms_dbfs": -144.5065086840543,
+              "lr_correlation": 0.0005435172745446554,
+              "side_rms_dbfs": -147.51203278530525,
+              "mid_rms_dbfs": -147.50732253079013
+            }
+          }
+        },
+        "stress": {
+          "voice_minus_bypass_db": 4.4657619233615975e-09,
+          "voice_to_bypass_correlation": 0.9999999999995717,
+          "voice_residual_rms_dbfs": -141.41771449062983,
+          "monitor_breath_minus_bypass_db": -123.69698767400959,
+          "monitor_breath_to_bypass_correlation": -0.000848616426606639,
+          "voice_plus_breath_reconstruction_rms_dbfs": -139.67824503130143,
+          "voice_active_50ms_windows": {
+            "count": 240,
+            "minimum_db": -2.7172328835245344e-06,
+            "p10_db": -1.494237415624404e-07,
+            "median_db": -1.3758812143105166e-09,
+            "p90_db": 1.9529696027557327e-07,
+            "maximum_db": 2.7945401872579214e-06,
+            "count_attenuated_ge_0_1_db": 0,
+            "count_attenuated_ge_1_db": 0,
+            "count_attenuated_ge_6_db": 0,
+            "residual_rms_dbfs_median": -141.4768657458802
+          },
+          "monitor_breath_active_50ms_windows": {
+            "count": 240,
+            "minimum_db": -124.29847073091,
+            "p10_db": -124.07698636903262,
+            "median_db": -123.93617207050792,
+            "p90_db": -123.73847201915653,
+            "maximum_db": -98.98738876759458,
+            "count_attenuated_ge_0_1_db": 240,
+            "count_attenuated_ge_1_db": 240,
+            "count_attenuated_ge_6_db": 240,
+            "residual_rms_dbfs_median": -20.56059194354014
+          },
+          "voice_spectral_bands": [
+            {
+              "band_hz": [
+                20,
+                120
+              ],
+              "candidate_minus_reference_db": 1.900733212884136e-08
+            },
+            {
+              "band_hz": [
+                120,
+                500
+              ],
+              "candidate_minus_reference_db": -8.413994378384813e-09
+            },
+            {
+              "band_hz": [
+                500,
+                2000
+              ],
+              "candidate_minus_reference_db": 2.2088896464625405e-08
+            },
+            {
+              "band_hz": [
+                2000,
+                7000
+              ],
+              "candidate_minus_reference_db": -2.3071652828685484e-08
+            },
+            {
+              "band_hz": [
+                7000,
+                14000
+              ],
+              "candidate_minus_reference_db": -6.001109154236346e-09
+            },
+            {
+              "band_hz": [
+                14000,
+                24000
+              ],
+              "candidate_minus_reference_db": -1.61877524790432e-08
+            }
+          ],
+          "stereo": {
+            "voice": {
+              "channels": 2,
+              "left_rms_dbfs": -20.793807691997127,
+              "right_rms_dbfs": -20.79380769564796,
+              "lr_correlation": 0.9999999999995836,
+              "side_rms_dbfs": -147.50905808788147,
+              "mid_rms_dbfs": -20.793807693823467
+            },
+            "monitor_breath": {
+              "channels": 2,
+              "left_rms_dbfs": -144.49460903921556,
+              "right_rms_dbfs": -144.48698505133473,
+              "lr_correlation": 0.0005554326658793328,
+              "side_rms_dbfs": -147.50350674481885,
+              "mid_rms_dbfs": -147.49868525124987
+            }
+          }
+        }
+      }
+    },
+    "dynamics": {
+      "bypass_stereo": {
+        "channels": 2,
+        "left_rms_dbfs": -17.197449793686342,
+        "right_rms_dbfs": -17.197449791330005,
+        "lr_correlation": 0.999999999999813,
+        "side_rms_dbfs": -147.5055725842637,
+        "mid_rms_dbfs": -17.19744979250858
+      },
+      "conditions": {
+        "default": {
+          "voice_minus_bypass_db": -1.8033155065010413e-09,
+          "voice_to_bypass_correlation": 0.9999999999998364,
+          "voice_residual_rms_dbfs": -141.48751485101187,
+          "monitor_breath_minus_bypass_db": -127.29800383137125,
+          "monitor_breath_to_bypass_correlation": 0.00021853375599718215,
+          "voice_plus_breath_reconstruction_rms_dbfs": -139.7291660633282,
+          "voice_active_50ms_windows": {
+            "count": 162,
+            "minimum_db": -2.28545863520093e-05,
+            "p10_db": -1.991894522269254e-07,
+            "median_db": 9.591830682878292e-09,
+            "p90_db": 2.843161065005486e-07,
+            "maximum_db": 7.2444792775000865e-06,
+            "count_attenuated_ge_0_1_db": 0,
+            "count_attenuated_ge_1_db": 0,
+            "count_attenuated_ge_6_db": 0,
+            "residual_rms_dbfs_median": -141.49315520168142
+          },
+          "monitor_breath_active_50ms_windows": {
+            "count": 162,
+            "minimum_db": -135.6800008118374,
+            "p10_db": -135.43702702899458,
+            "median_db": -123.3907606381809,
+            "p90_db": -111.36008057607873,
+            "maximum_db": -82.16624926627945,
+            "count_attenuated_ge_0_1_db": 162,
+            "count_attenuated_ge_1_db": 162,
+            "count_attenuated_ge_6_db": 162,
+            "residual_rms_dbfs_median": -21.01054501971941
+          },
+          "voice_spectral_bands": [
+            {
+              "band_hz": [
+                20,
+                120
+              ],
+              "candidate_minus_reference_db": 4.012287300559889e-08
+            },
+            {
+              "band_hz": [
+                120,
+                500
+              ],
+              "candidate_minus_reference_db": 6.357049167821983e-10
+            },
+            {
+              "band_hz": [
+                500,
+                2000
+              ],
+              "candidate_minus_reference_db": 3.3714627533133283e-07
+            },
+            {
+              "band_hz": [
+                2000,
+                7000
+              ],
+              "candidate_minus_reference_db": 3.605836999635641e-07
+            },
+            {
+              "band_hz": [
+                7000,
+                14000
+              ],
+              "candidate_minus_reference_db": -7.121120415691676e-07
+            },
+            {
+              "band_hz": [
+                14000,
+                24000
+              ],
+              "candidate_minus_reference_db": 2.413530616026215e-07
+            }
+          ],
+          "stereo": {
+            "voice": {
+              "channels": 2,
+              "left_rms_dbfs": -17.197449794869847,
+              "right_rms_dbfs": -17.19744979375313,
+              "lr_correlation": 0.9999999999998175,
+              "side_rms_dbfs": -147.5031750957298,
+              "mid_rms_dbfs": -17.197449794311893
+            },
+            "monitor_breath": {
+              "channels": 2,
+              "left_rms_dbfs": -144.49747526131202,
+              "right_rms_dbfs": -144.49343292707962,
+              "lr_correlation": 1.6285259265716325e-05,
+              "side_rms_dbfs": -147.5058139142807,
+              "mid_rms_dbfs": -147.5056932475959
+            }
+          }
+        },
+        "stress": {
+          "voice_minus_bypass_db": 8.423971298118188e-09,
+          "voice_to_bypass_correlation": 0.9999999999998245,
+          "voice_residual_rms_dbfs": -141.48397732639057,
+          "monitor_breath_minus_bypass_db": -127.29930119199265,
+          "monitor_breath_to_bypass_correlation": -0.0008199427267560811,
+          "voice_plus_breath_reconstruction_rms_dbfs": -139.72443213646963,
+          "voice_active_50ms_windows": {
+            "count": 162,
+            "minimum_db": -1.4876304378688759e-05,
+            "p10_db": -2.3823068020477814e-07,
+            "median_db": 1.6519740485684855e-08,
+            "p90_db": 2.8489439322145523e-07,
+            "maximum_db": 4.302991502912983e-06,
+            "count_attenuated_ge_0_1_db": 0,
+            "count_attenuated_ge_1_db": 0,
+            "count_attenuated_ge_6_db": 0,
+            "residual_rms_dbfs_median": -141.46874396626657
+          },
+          "monitor_breath_active_50ms_windows": {
+            "count": 162,
+            "minimum_db": -135.64230139866663,
+            "p10_db": -135.42951492341533,
+            "median_db": -123.35021651346332,
+            "p90_db": -111.23121148806338,
+            "maximum_db": -82.19529917271353,
+            "count_attenuated_ge_0_1_db": 162,
+            "count_attenuated_ge_1_db": 162,
+            "count_attenuated_ge_6_db": 162,
+            "residual_rms_dbfs_median": -21.01054504325997
+          },
+          "voice_spectral_bands": [
+            {
+              "band_hz": [
+                20,
+                120
+              ],
+              "candidate_minus_reference_db": -8.898257935685084e-09
+            },
+            {
+              "band_hz": [
+                120,
+                500
+              ],
+              "candidate_minus_reference_db": 9.987365016337098e-09
+            },
+            {
+              "band_hz": [
+                500,
+                2000
+              ],
+              "candidate_minus_reference_db": -2.226629329429855e-08
+            },
+            {
+              "band_hz": [
+                2000,
+                7000
+              ],
+              "candidate_minus_reference_db": 1.2500107303464795e-08
+            },
+            {
+              "band_hz": [
+                7000,
+                14000
+              ],
+              "candidate_minus_reference_db": 2.741073282772577e-07
+            },
+            {
+              "band_hz": [
+                14000,
+                24000
+              ],
+              "candidate_minus_reference_db": 2.373264776567988e-06
+            }
+          ],
+          "stereo": {
+            "voice": {
+              "channels": 2,
+              "left_rms_dbfs": -17.197449786818343,
+              "right_rms_dbfs": -17.19744978135006,
+              "lr_correlation": 0.9999999999998183,
+              "side_rms_dbfs": -147.5149944061528,
+              "mid_rms_dbfs": -17.197449784084604
+            },
+            "monitor_breath": {
+              "channels": 2,
+              "left_rms_dbfs": -144.5057828992892,
+              "right_rms_dbfs": -144.4877378141863,
+              "lr_correlation": -0.0011810997301829212,
+              "side_rms_dbfs": -147.501924102133,
+              "mid_rms_dbfs": -147.51218383952684
+            }
+          }
+        }
+      }
+    }
+  },
+  "boundaries": [
+    "The shared composite contains no labeled breath events, so Monitor Breath energy is detector-selected material, not breath-classification accuracy ground truth.",
+    "Only the installed VST3 Mono component at 48 kHz was tested; no claims are made for stereo, VST2, other sample rates, or other versions.",
+    "Reduction -Inf is an endpoint/full-removal condition and is not a universal recommendation.",
+    "The host compensates the reported plug-in latency in offline export; reported latency still matters for live tracking and automation feel."
+  ]
+}

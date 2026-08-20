@@ -1,0 +1,569 @@
+{
+  "schema_version": "1.0",
+  "prescriptions": [
+    {
+      "fixture_id": "F01",
+      "diagnosis": "pitch_drift_realtime",
+      "status": "adapter-selected",
+      "plugin": {
+        "family_id": "7b4d8c94b025",
+        "vendor": "Antares",
+        "product": "Auto-Tune Pro",
+        "version_range": "10.0.0"
+      },
+      "route": {
+        "position": "first corrective insert before dynamics",
+        "when": "pitch_drift_realtime"
+      },
+      "parameter_targets": [
+        "correct target key/scale",
+        "minimum retune needed for intent",
+        "preserve intended slides or deliberately flatten"
+      ],
+      "stop_conditions": [
+        "correct notes move to wrong targets",
+        "vibrato or slides lose intent"
+      ],
+      "side_effects": [
+        "wrong-scale notes",
+        "robotic motion",
+        "monitoring latency"
+      ],
+      "retest_metrics": [
+        "target-note cents",
+        "pitch-motion",
+        "latency",
+        "artifacts"
+      ],
+      "evidence_pointers": {
+        "level": "L3",
+        "card": "notes/音乐制作/插件/Antares/Auto-Tune Pro.md",
+        "source_note": "sources/音乐制作/插件资料/Antares/Auto-Tune Pro资料.md",
+        "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/7b4d8c94b025--Antares-Auto-Tune-Pro.md",
+        "result_files": [
+          "projects/p1-plugin-knowledge-base/validation/results/7b4d8c94b025--fixed-vocal-chromatic-retune-speed.json"
+        ]
+      },
+      "alternatives": [
+        {
+          "condition": "note-level correction",
+          "fallback": "Melodyne"
+        },
+        {
+          "condition": "creative octave/formant",
+          "fallback": "Vocal Bender"
+        }
+      ],
+      "rejected": []
+    },
+    {
+      "fixture_id": "F02",
+      "diagnosis": "macro_level_inconsistency",
+      "status": "adapter-selected",
+      "plugin": {
+        "family_id": "b6c750f3ccec",
+        "vendor": "Waves",
+        "product": "Vocal Rider",
+        "version_range": "12.7.0.209"
+      },
+      "route": {
+        "position": "before or after compression according to goal",
+        "when": "macro_level_inconsistency"
+      },
+      "parameter_targets": [
+        "narrow gain range",
+        "smooth phrase movement",
+        "do not lift noise floors"
+      ],
+      "stop_conditions": [
+        "range limits are hit often",
+        "movement becomes audible"
+      ],
+      "side_effects": [
+        "pumping",
+        "noise and breaths lifted",
+        "automation conflicts"
+      ],
+      "retest_metrics": [
+        "short-term level spread",
+        "ride range",
+        "pumping"
+      ],
+      "evidence_pointers": {
+        "level": "L3",
+        "card": "notes/音乐制作/插件/Waves/Vocal Rider.md",
+        "source_note": "sources/音乐制作/插件资料/Waves/Vocal Rider资料.md",
+        "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/b6c750f3ccec--Waves-Vocal-Rider.md",
+        "result_files": [
+          "projects/p1-plugin-knowledge-base/validation/results/b6c750f3ccec--composite-vocal-rider-fast-slow.json"
+        ]
+      },
+      "alternatives": [
+        {
+          "condition": "manual automation",
+          "fallback": "clip gain or DAW automation"
+        },
+        {
+          "condition": "microdynamic control",
+          "fallback": "compressor"
+        }
+      ],
+      "rejected": []
+    },
+    {
+      "fixture_id": "F03",
+      "diagnosis": "mouth_click_or_short_impulse",
+      "status": "adapter-selected",
+      "plugin": {
+        "family_id": "75f2f9574990",
+        "vendor": "Waves",
+        "product": "X-Click",
+        "version_range": "12.7.0.209"
+      },
+      "route": {
+        "position": "pre-compression insert or offline event",
+        "when": "mouth_click_or_short_impulse"
+      },
+      "parameter_targets": [
+        "Difference contains only defect",
+        "lowest working threshold",
+        "preserve consonants and drums"
+      ],
+      "stop_conditions": [
+        "Difference contains speech or drums",
+        "Audio loses articulation"
+      ],
+      "side_effects": [
+        "transient removal",
+        "consonant smear",
+        "high fixed latency"
+      ],
+      "retest_metrics": [
+        "event peak",
+        "Difference audition",
+        "speech residual"
+      ],
+      "evidence_pointers": {
+        "level": "L3",
+        "card": "notes/音乐制作/插件/Waves/X-Click.md",
+        "source_note": "sources/音乐制作/插件资料/Waves/X-Click资料.md",
+        "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/75f2f9574990--Waves-X-Click.md",
+        "result_files": [
+          "projects/p1-plugin-knowledge-base/validation/results/75f2f9574990--composite-xclick.json"
+        ]
+      },
+      "alternatives": [
+        {
+          "condition": "sparse event",
+          "fallback": "clip edit or waveform repair"
+        },
+        {
+          "condition": "dedicated mouth algorithm available",
+          "fallback": "re-evaluate RX Mouth De-click"
+        }
+      ],
+      "rejected": []
+    },
+    {
+      "fixture_id": "F04",
+      "diagnosis": "broadband_dialogue_noise",
+      "status": "adapter-selected",
+      "plugin": {
+        "family_id": "6756edefac77",
+        "vendor": "Waves",
+        "product": "WNS",
+        "version_range": "12.7.0.209"
+      },
+      "route": {
+        "position": "early insert before compression",
+        "when": "broadband_dialogue_noise"
+      },
+      "parameter_targets": [
+        "noise below context",
+        "weak speech survives",
+        "reduce only noisy bands"
+      ],
+      "stop_conditions": [
+        "wanted phrases sustain deep attenuation",
+        "tails become discontinuous"
+      ],
+      "side_effects": [
+        "speech loss",
+        "spectral holes",
+        "watery consonants"
+      ],
+      "retest_metrics": [
+        "noise RMS",
+        "weak-tail retention",
+        "speech residual"
+      ],
+      "evidence_pointers": {
+        "level": "L3",
+        "card": "notes/音乐制作/插件/Waves/WNS.md",
+        "source_note": "sources/音乐制作/插件资料/Waves/WNS资料.md",
+        "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/6756edefac77--Waves-WNS.md",
+        "result_files": [
+          "projects/p1-plugin-knowledge-base/validation/results/6756edefac77--composite-wns.json"
+        ]
+      },
+      "alternatives": [
+        {
+          "condition": "simple fast cleanup",
+          "fallback": "NS1"
+        },
+        {
+          "condition": "plosive event",
+          "fallback": "clip gain plus Pro-Q 3 or F6 dynamic low band"
+        }
+      ],
+      "rejected": []
+    },
+    {
+      "fixture_id": "F05",
+      "diagnosis": "sibilance",
+      "status": "adapter-selected",
+      "plugin": {
+        "family_id": "5d8d036ccd33",
+        "vendor": "FabFilter",
+        "product": "Pro-DS",
+        "version_range": "1.2.1.0"
+      },
+      "route": {
+        "position": "after corrective EQ and before brightening",
+        "when": "sibilance"
+      },
+      "parameter_targets": [
+        "reduce only harsh consonants",
+        "choose Wide or Split by collateral tone change",
+        "minimum lookahead"
+      ],
+      "stop_conditions": [
+        "normal consonants darken",
+        "sibilants lose identity"
+      ],
+      "side_effects": [
+        "lisping",
+        "dull vowels",
+        "lookahead latency"
+      ],
+      "retest_metrics": [
+        "sibilant-band energy",
+        "voiced tone delta",
+        "lisping"
+      ],
+      "evidence_pointers": {
+        "level": "L3",
+        "card": "notes/音乐制作/插件/FabFilter/Pro-DS.md",
+        "source_note": "sources/音乐制作/插件资料/FabFilter/Pro-DS资料.md",
+        "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/5d8d036ccd33--FabFilter-Pro-DS.md",
+        "result_files": [
+          "projects/p1-plugin-knowledge-base/validation/results/5d8d036ccd33--composite-deesser-wide-split-lookahead.json"
+        ]
+      },
+      "alternatives": [
+        {
+          "condition": "spectral voice-specific",
+          "fallback": "Eiosis E2Deesser"
+        },
+        {
+          "condition": "broad resonance",
+          "fallback": "soothe2 or dynamic EQ"
+        }
+      ],
+      "rejected": []
+    },
+    {
+      "fixture_id": "F06",
+      "diagnosis": "fast_peak_control",
+      "status": "adapter-selected",
+      "plugin": {
+        "family_id": "47e12f69eb3c",
+        "vendor": "Waves",
+        "product": "CLA-76",
+        "version_range": "12.7.0.209"
+      },
+      "route": {
+        "position": "after corrective cleanup, often first of serial compressors",
+        "when": "fast_peak_control"
+      },
+      "parameter_targets": [
+        "catch peaks while preserving articulation",
+        "match output loudness",
+        "use parallel for aggression"
+      ],
+      "stop_conditions": [
+        "attack loses clarity",
+        "release audibly pumps"
+      ],
+      "side_effects": [
+        "flattened consonants",
+        "noise lift",
+        "loudness bias"
+      ],
+      "retest_metrics": [
+        "peak reduction",
+        "attack retention",
+        "matched loudness"
+      ],
+      "evidence_pointers": {
+        "level": "L3",
+        "card": "notes/音乐制作/插件/Waves/CLA-76.md",
+        "source_note": "sources/音乐制作/插件资料/Waves/CLA-76资料.md",
+        "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/47e12f69eb3c--Waves-CLA-76.md",
+        "result_files": [
+          "projects/p1-plugin-knowledge-base/validation/results/47e12f69eb3c--dynamics-compressor.json"
+        ]
+      },
+      "alternatives": [
+        {
+          "condition": "transparent flexible compression",
+          "fallback": "Pro-C 2"
+        },
+        {
+          "condition": "slow leveling",
+          "fallback": "CL 1B mk II"
+        }
+      ],
+      "rejected": []
+    },
+    {
+      "fixture_id": "F07",
+      "diagnosis": "creative_octave_layer",
+      "status": "adapter-selected",
+      "plugin": {
+        "family_id": "06fad1aad9d8",
+        "vendor": "Waves",
+        "product": "Vocal Bender",
+        "version_range": "12.7.0.209"
+      },
+      "route": {
+        "position": "100% effect duplicate or throw aux",
+        "when": "creative_octave_layer"
+      },
+      "parameter_targets": [
+        "clear role for Pitch versus Formant",
+        "keep dry centre",
+        "high-pass octave layers as needed"
+      ],
+      "stop_conditions": [
+        "effect obscures lyrics",
+        "layer masks bass or lead"
+      ],
+      "side_effects": [
+        "intelligibility loss",
+        "low-end masking",
+        "algorithm artifacts"
+      ],
+      "retest_metrics": [
+        "pitch cents",
+        "intelligibility",
+        "low-end mask",
+        "mono"
+      ],
+      "evidence_pointers": {
+        "level": "L3",
+        "card": "notes/音乐制作/插件/Waves/Vocal Bender.md",
+        "source_note": "sources/音乐制作/插件资料/Waves/Vocal Bender资料.md",
+        "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/06fad1aad9d8--Waves-Vocal-Bender.md",
+        "result_files": [
+          "projects/p1-plugin-knowledge-base/validation/results/06fad1aad9d8--fixed-vocal-pitch-minus12-formant0.json",
+          "projects/p1-plugin-knowledge-base/validation/results/06fad1aad9d8--impulse-neutral.json"
+        ]
+      },
+      "alternatives": [
+        {
+          "condition": "transparent realtime correction",
+          "fallback": "Auto-Tune Pro"
+        },
+        {
+          "condition": "note editing",
+          "fallback": "Melodyne"
+        }
+      ],
+      "rejected": []
+    },
+    {
+      "fixture_id": "F08",
+      "diagnosis": "adlib_width",
+      "status": "adapter-selected",
+      "plugin": {
+        "family_id": "4bceae9f0a6f",
+        "vendor": "Waves",
+        "product": "Doubler",
+        "version_range": "12.7.0.209"
+      },
+      "route": {
+        "position": "100% wet stereo aux or duplicate layer",
+        "when": "adlib_width"
+      },
+      "parameter_targets": [
+        "keep dry lead centred",
+        "limit voice delay/pitch",
+        "check mono fold"
+      ],
+      "stop_conditions": [
+        "mono loses lead energy",
+        "words lose centre focus"
+      ],
+      "side_effects": [
+        "comb filtering",
+        "mono loss",
+        "blurred diction"
+      ],
+      "retest_metrics": [
+        "Side/Mid",
+        "correlation",
+        "mono delta",
+        "diction"
+      ],
+      "evidence_pointers": {
+        "level": "L3",
+        "card": "notes/音乐制作/插件/Waves/Doubler.md",
+        "source_note": "sources/音乐制作/插件资料/Waves/Doubler资料.md",
+        "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/4bceae9f0a6f--Waves-Doubler.md",
+        "result_files": [
+          "projects/p1-plugin-knowledge-base/validation/results/4bceae9f0a6f--impulse-default-doubler4-stereo.json"
+        ]
+      },
+      "alternatives": [
+        {
+          "condition": "frequency psychoacoustic width",
+          "fallback": "PS22 Spread"
+        },
+        {
+          "condition": "utility width only",
+          "fallback": "bx_control V2"
+        }
+      ],
+      "rejected": []
+    },
+    {
+      "fixture_id": "F09",
+      "diagnosis": "vocal_depth",
+      "status": "adapter-selected",
+      "plugin": {
+        "family_id": "a0c159c0ffd1",
+        "vendor": "Valhalla DSP, LLC",
+        "product": "ValhallaVintageVerb",
+        "version_range": "2.2.0"
+      },
+      "route": {
+        "position": "100% wet aux with send automation",
+        "when": "vocal_depth"
+      },
+      "parameter_targets": [
+        "pre-delay preserves diction",
+        "filter return",
+        "duck or automate tail"
+      ],
+      "stop_conditions": [
+        "tail covers next line",
+        "centre consonants retreat"
+      ],
+      "side_effects": [
+        "masking",
+        "washed diction",
+        "low-frequency buildup"
+      ],
+      "retest_metrics": [
+        "onset",
+        "decay",
+        "phrase masking",
+        "return level"
+      ],
+      "evidence_pointers": {
+        "level": "L3",
+        "card": "notes/音乐制作/插件/Valhalla DSP, LLC/ValhallaVintageVerb.md",
+        "source_note": "sources/音乐制作/插件资料/Valhalla DSP, LLC/ValhallaVintageVerb资料.md",
+        "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/a0c159c0ffd1--ValhallaVintageVerb.md",
+        "result_files": [
+          "projects/p1-plugin-knowledge-base/validation/results/a0c159c0ffd1--impulse--bypass.json",
+          "projects/p1-plugin-knowledge-base/validation/results/a0c159c0ffd1--impulse--default-wet.json"
+        ]
+      },
+      "alternatives": [
+        {
+          "condition": "natural room",
+          "fallback": "Pro-R"
+        },
+        {
+          "condition": "plate focus",
+          "fallback": "ValhallaPlate"
+        }
+      ],
+      "rejected": []
+    },
+    {
+      "fixture_id": "F10",
+      "diagnosis": "reference_mismatch",
+      "status": "adapter-selected",
+      "plugin": {
+        "family_id": "fb4b55cbf4ec",
+        "vendor": "Plugin Alliance",
+        "product": "ADPTR MetricAB",
+        "version_range": "1.0.0 | 1.0.0.0"
+      },
+      "route": {
+        "position": "monitoring-only final slot",
+        "when": "reference_mismatch"
+      },
+      "parameter_targets": [
+        "level-match references",
+        "compare short aligned sections",
+        "inspect spectrum/dynamics without chasing curves"
+      ],
+      "stop_conditions": [
+        "reference louder than target",
+        "changes are made without diagnosis"
+      ],
+      "side_effects": [
+        "copying mastered loudness",
+        "curve chasing",
+        "monitor path contamination"
+      ],
+      "retest_metrics": [
+        "level match",
+        "spectrum",
+        "dynamics",
+        "mono"
+      ],
+      "evidence_pointers": {
+        "level": "L3",
+        "card": "notes/音乐制作/插件/Plugin Alliance/ADPTR MetricAB.md",
+        "source_note": "sources/音乐制作/插件资料/Plugin Alliance/ADPTR MetricAB资料.md",
+        "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/fb4b55cbf4ec--ADPTR-MetricAB.md",
+        "result_files": [
+          "projects/p1-plugin-knowledge-base/validation/results/fb4b55cbf4ec--neutral-metric-source.json"
+        ]
+      },
+      "alternatives": [
+        {
+          "condition": "meter-only",
+          "fallback": "Insight 2"
+        }
+      ],
+      "rejected": []
+    },
+    {
+      "fixture_id": "F11",
+      "diagnosis": "plosive_low_frequency_event",
+      "status": "fallback",
+      "fallback": "clip gain plus Pro-Q 3 or F6 dynamic low-frequency EQ",
+      "rejected": []
+    },
+    {
+      "fixture_id": "F12",
+      "diagnosis": "breath_too_loud",
+      "status": "fallback",
+      "fallback": "clip gain breath automation",
+      "rejected": [
+        {
+          "adapter_id": "ad123c8856d3--waves-debreath",
+          "reasons": [
+            "latency_conflict"
+          ]
+        }
+      ]
+    }
+  ]
+}

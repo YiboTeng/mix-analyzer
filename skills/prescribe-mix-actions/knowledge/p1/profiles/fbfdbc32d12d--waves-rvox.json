@@ -1,0 +1,201 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "fbfdbc32d12d--waves-rvox",
+  "family_id": "fbfdbc32d12d",
+  "identity": {
+    "vendor": "Waves",
+    "product": "RVox",
+    "version_range": "12.7.0.209",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "compression-vocal-fast",
+    "secondary": [
+      "gate",
+      "workflow-speed"
+    ],
+    "diagnoses": [
+      "quick_vocal_density",
+      "simple_peak_and_body_control"
+    ],
+    "not_for": [
+      "precision_timing_design",
+      "final_limiting"
+    ]
+  },
+  "routing": [
+    {
+      "position": "main vocal insert after cleanup",
+      "when": "quick_vocal_density"
+    },
+    {
+      "position": "main vocal insert after cleanup",
+      "when": "simple_peak_and_body_control"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "minimum compression for stable front position",
+      "headroom after gain recovery",
+      "gate separately"
+    ],
+    "controls": [
+      {
+        "name": "Compression",
+        "action": "increase while watching combined reduction and gain recovery"
+      },
+      {
+        "name": "Gain",
+        "action": "level-match processed and bypass"
+      },
+      {
+        "name": "Gate",
+        "action": "leave off unless inter-phrase diagnosis exists"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "headroom loss",
+    "loudness bias",
+    "gate tail chop"
+  ],
+  "stop_conditions": [
+    "peak approaches ceiling",
+    "tone sounds smaller at equal loudness"
+  ],
+  "alternatives": [
+    {
+      "condition": "detailed compressor",
+      "fallback": "Pro-C 2"
+    },
+    {
+      "condition": "character peak control",
+      "fallback": "CLA-76"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 12.7.0.209.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Waves/RVox.md",
+    "source_note": "sources/音乐制作/插件资料/Waves/RVox资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/fbfdbc32d12d--Waves-RVox.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/fbfdbc32d12d--dynamics-rvox-compression.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Waves/RVox.md",
+        "packaged_path": "evidence/cards/RVox.md",
+        "sha256": "121cc3d1055a82074471f68571e1a8ccf15368d7c450ac5489f98294d60eda97"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Waves/RVox资料.md",
+        "packaged_path": "evidence/sources/RVox资料.md",
+        "sha256": "5f28e82d6ca9116d31651d3702c0a0b8625314247559dd75bc0d0ddc0284dfb3"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/fbfdbc32d12d--Waves-RVox.md",
+        "packaged_path": "evidence/validation/fbfdbc32d12d--Waves-RVox.md",
+        "sha256": "db2770589419ec8bd0e795e99f4ef5a3ff75de0b944a9f03fa9eb3b2d6205787"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/fbfdbc32d12d--dynamics-rvox-compression.json",
+          "packaged_path": "evidence/results/fbfdbc32d12d--dynamics-rvox-compression.json",
+          "sha256": "d464934fb168c28ee89fa66da1e6086a22c38b1367a158730e99d44c7944db44"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "quick_vocal_density",
+      "simple_peak_and_body_control"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Compression 0/-20 transfer and 64-sample latency tested; Gate not tested."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "清理和基础去齿后快速增加密度；Gate 只做轻度句间下压。",
+      "可作为快速草混或与复杂压缩器对照，判断额外参数是否真有价值。"
+    ],
+    "routing": [
+      "主唱 Insert。",
+      "作为 Pro-C 2/CL 1B 的效率对照组。"
+    ],
+    "controls": [
+      {
+        "name": "Compression",
+        "meaning": "移动阈值并联动内部语音优化的比率/时间行为。",
+        "action": "下降到响句达到目标 GR，再听轻句是否被过度拉平。"
+      },
+      {
+        "name": "Gate",
+        "meaning": "按能量检测降低阈值下信号。",
+        "action": "从关闭开始，仅推到句间噪声退后且尾音完整。"
+      },
+      {
+        "name": "Output Gain / Ceiling",
+        "meaning": "补偿压缩并限定输出。",
+        "action": "只做旁通等响度，不用它制造更贴脸错觉。"
+      },
+      {
+        "name": "Energy / Compression Display",
+        "meaning": "显示输入能量和总压缩。",
+        "action": "用作动作线索，最终以音节与噪声听感确认。"
+      }
+    ],
+    "parameter_start_points": [
+      "Gate 关闭；Compression 下拉到峰值约 3–6 dB 总压缩。",
+      "Gate 只推到句间噪声轻退 3–6 dB，不追求静音。",
+      "Output 还原旁通响度。"
+    ],
+    "listen_for": [
+      "轻句被抬后噪声/房间感。",
+      "Gate 吞尾音和词头。",
+      "内部固定行为对某些节奏产生喘振。"
+    ],
+    "stop": [
+      "动态稳定且无明显门限动作。",
+      "继续下压只增加密度、噪声和含混时停止。"
+    ],
+    "latency": [
+      "Waves 当前技术表列 44.1/48 kHz 64 samples、88.2/96 kHz 128 samples；本机 VST3 Stereo 在 Ableton / 48 kHz 报告 64 samples（1.3 ms），与官方表一致。VST2 与其它采样率未测。官方未给出过采样开关。"
+    ]
+  }
+}

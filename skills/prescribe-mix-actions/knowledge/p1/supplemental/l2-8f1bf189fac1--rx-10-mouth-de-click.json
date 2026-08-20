@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "l2-8f1bf189fac1--rx-10-mouth-de-click",
+  "family_id": "8f1bf189fac1",
+  "identity": {
+    "vendor": "iZotope",
+    "product": "RX 10 Mouth De-click",
+    "version_range": "10.4.2",
+    "formats": [
+      "VST2"
+    ],
+    "availability": "unavailable",
+    "tested_host": "deferred / not L3"
+  },
+  "capabilities": {
+    "primary": "restoration-mouth-click",
+    "secondary": [],
+    "diagnoses": [
+      "mouth_click_or_short_impulse"
+    ],
+    "not_for": []
+  },
+  "routing": [
+    {
+      "position": "单轨 Insert 或 RX Connect 局部 Render；严重事件优先局部。",
+      "when": "mouth_click_or_short_impulse"
+    },
+    {
+      "position": "完成后再进入 De-esser、压缩和饱和。",
+      "when": "mouth_click_or_short_impulse"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "点击退出注意力，但硬辅音边缘与咬字未软化。",
+      "第二遍只处理首遍后显露的轻点击，不扩大到正常纹理。"
+    ],
+    "controls": [
+      {
+        "name": "Sensitivity",
+        "action": "从低向上，刚好抓到目标；出现 B/D/G/T 等词头时退回。"
+      },
+      {
+        "name": "Frequency Skew",
+        "action": "根据目标点击的频谱位置调整，不凭名称固定拉满。"
+      },
+      {
+        "name": "Click Widening",
+        "action": "Lip Smack 有尾巴时小幅增加；短点击不要过宽。"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "explicitly accept L2/deferred evidence",
+    "level-matched comparison"
+  ],
+  "risks": [
+    "Sensitivity 过高破坏爆破音与硬辅音。",
+    "Click Widening 过大涂抹正常音节。",
+    "把有损编码/分离水声当成嘴部点击反复处理。"
+  ],
+  "stop_conditions": [
+    "点击不再妨碍近距离聆听且差分主要是目标噪声时停止。",
+    "开始带走硬辅音或使人声失去颗粒细节时退回。"
+  ],
+  "alternatives": [],
+  "version_policy": {
+    "match": "L2 control knowledge only; no L3 host guarantee.",
+    "mismatch": "Suppress exact controls and require revalidation."
+  },
+  "evidence": {
+    "level": "L2",
+    "card": "C:\\Projects\\aizen-knowledge-base\\notes\\音乐制作\\插件\\iZotope\\RX 10 Mouth De-click.md",
+    "source_note": "C:\\Projects\\aizen-knowledge-base\\sources\\音乐制作\\插件资料\\iZotope\\RX 10 Mouth De-click资料.md",
+    "validation_report": "not-L3",
+    "result_files": [],
+    "packaged": {
+      "card": {
+        "packaged_path": "p1/evidence/supplemental/cards/RX 10 Mouth De-click.md",
+        "sha256": "c1541544e406cdc66af009f1159050facd5d6b0c76477aabc259fc1d97234b54"
+      },
+      "source_note": {
+        "packaged_path": "p1/evidence/supplemental/sources/RX 10 Mouth De-click资料.md",
+        "sha256": "86defb46d0dc348afa5749d71e9b20c1f72e006ae473d996989719a2e088f82c"
+      }
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "mouth_click_or_short_impulse"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "host_load_failure",
+      "action": "reject until revalidated"
+    }
+  ],
+  "validation": {
+    "status": "deferred-l2",
+    "matrix_status": "not-l3",
+    "boundary": "Official/control research only; no successful L3 host render."
+  },
+  "catalog_warnings": [
+    "evidence_level_l2_not_l3",
+    "host_load_failure_0x3"
+  ],
+  "local_guidance": {
+    "signal_position": [
+      "Comping 后、压缩/激励前；先处理最明显嘴部点击，再考虑轻量第二遍。",
+      "用独听移除内容或局部选择检查，避免修复范围覆盖正常辅音。"
+    ],
+    "routing": [
+      "单轨 Insert 或 RX Connect 局部 Render；严重事件优先局部。",
+      "完成后再进入 De-esser、压缩和饱和。"
+    ],
+    "controls": [
+      {
+        "name": "Sensitivity",
+        "meaning": "检测多少嘴部点击。",
+        "action": "从低向上，刚好抓到目标；出现 B/D/G/T 等词头时退回。"
+      },
+      {
+        "name": "Frequency Skew",
+        "meaning": "将检测偏向低或高频点击；0/正值更面向中频嘴部点击。",
+        "action": "根据目标点击的频谱位置调整，不凭名称固定拉满。"
+      },
+      {
+        "name": "Click Widening",
+        "meaning": "扩展点击周围的修复区。",
+        "action": "Lip Smack 有尾巴时小幅增加；短点击不要过宽。"
+      }
+    ],
+    "parameter_start_points": [
+      "Sensitivity 2–4 附近试点；Frequency Skew 从 0 向正值寻找嘴部点击中心；Click Widening 保持低到中。",
+      "若一遍遗漏被掩盖的轻点击，可两遍轻处理，不用一遍极重。"
+    ],
+    "listen_for": [
+      "Output Clicks Only/差分中是否包含 B/D/G/T、齿音或元音瞬态。",
+      "修复处是否出现孔洞、相位化或音节边缘变钝。"
+    ],
+    "stop": [
+      "点击不再妨碍近距离聆听且差分主要是目标噪声时停止。",
+      "开始带走硬辅音或使人声失去颗粒细节时退回。"
+    ],
+    "latency": [
+      "插值修复可能改变局部波形；官方未给 RX 10 VST3 延迟。S4 需检查局部瞬态、报告延迟和两遍处理的累积涂抹。"
+    ]
+  }
+}

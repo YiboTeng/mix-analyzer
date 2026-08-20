@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "47e12f69eb3c--waves-cla-76",
+  "family_id": "47e12f69eb3c",
+  "identity": {
+    "vendor": "Waves",
+    "product": "CLA-76",
+    "version_range": "12.7.0.209",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "compression-fet",
+    "secondary": [
+      "peak-control",
+      "parallel"
+    ],
+    "diagnoses": [
+      "fast_peak_control",
+      "aggressive_vocal_density"
+    ],
+    "not_for": [
+      "transparent_macro_riding",
+      "final_true_peak_limiting"
+    ]
+  },
+  "routing": [
+    {
+      "position": "after corrective cleanup, often first of serial compressors",
+      "when": "fast_peak_control"
+    },
+    {
+      "position": "after corrective cleanup, often first of serial compressors",
+      "when": "aggressive_vocal_density"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "catch peaks while preserving articulation",
+      "match output loudness",
+      "use parallel for aggression"
+    ],
+    "controls": [
+      {
+        "name": "Input/Output",
+        "action": "drive reduction then level-match"
+      },
+      {
+        "name": "Attack/Release",
+        "action": "higher Attack number is faster on this model"
+      },
+      {
+        "name": "Ratio",
+        "action": "select character and containment"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "flattened consonants",
+    "noise lift",
+    "loudness bias"
+  ],
+  "stop_conditions": [
+    "attack loses clarity",
+    "release audibly pumps"
+  ],
+  "alternatives": [
+    {
+      "condition": "transparent flexible compression",
+      "fallback": "Pro-C 2"
+    },
+    {
+      "condition": "slow leveling",
+      "fallback": "CL 1B mk II"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 12.7.0.209.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Waves/CLA-76.md",
+    "source_note": "sources/音乐制作/插件资料/Waves/CLA-76资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/47e12f69eb3c--Waves-CLA-76.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/47e12f69eb3c--dynamics-compressor.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Waves/CLA-76.md",
+        "packaged_path": "evidence/cards/CLA-76.md",
+        "sha256": "c0fb8222270fcd0f6dd11a785f5cfec7fd85f169a807c059cd0feb12f8e9abfd"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Waves/CLA-76资料.md",
+        "packaged_path": "evidence/sources/CLA-76资料.md",
+        "sha256": "f274eb2a692ef07e7b8b999fa909ca62cf7ea09403635839fe7ee576d7b16e23"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/47e12f69eb3c--Waves-CLA-76.md",
+        "packaged_path": "evidence/validation/47e12f69eb3c--Waves-CLA-76.md",
+        "sha256": "99300cca5b0e1bc128fde274297a874463c67ff4d186bc34944e52061590fed5"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/47e12f69eb3c--dynamics-compressor.json",
+          "packaged_path": "evidence/results/47e12f69eb3c--dynamics-compressor.json",
+          "sha256": "506bbb6dbc510efe1cc16e2fdba03d1ebc506fa5341762a600efb3e384d89e1b"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "fast_peak_control",
+      "aggressive_vocal_density"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Default and Attack 3/7 transient direction tested; full timing map not measured."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "常作为串联压缩的快速峰值控制，放在较慢电平压缩之前。",
+      "也可在 Aux 做重压并行；发送返回必须处理噪声、齿音和相位。",
+      "去齿可在前面降低检测干扰，饱和/激励后仍需复查。"
+    ],
+    "routing": [
+      "主唱 Insert 的第一或第二级压缩。",
+      "100% Wet Aux 重压，Send 控制回添。"
+    ],
+    "controls": [
+      {
+        "name": "Input / Output",
+        "meaning": "Input 同时提高进电路电平与压缩量，Output 回补。",
+        "action": "先用 Input 达到目标 GR，再用 Output 做等响度；本机 v12 无 Trim。"
+      },
+      {
+        "name": "Attack 1–7",
+        "meaning": "从慢到快；高数字更快。",
+        "action": "保留字头从 3–4 起；尖峰仍穿出向 6–7。"
+      },
+      {
+        "name": "Release 1–7",
+        "meaning": "从慢到快。",
+        "action": "从 5–7 的较快释放找贴脸感；出现喘振或失真则减慢。"
+      },
+      {
+        "name": "Ratio / All",
+        "meaning": "决定压缩强度与反馈网络音色；All 为夸张模式。",
+        "action": "主唱从 4:1 起；8:1 控峰；All 多用于并行。"
+      },
+      {
+        "name": "Revision / Analog",
+        "meaning": "硬件修订与 50/60 Hz 模拟底噪选项。",
+        "action": "先用 Analog Off 判断核心压缩，再等响度比较 Bluey/Blacky；并行需外部 Aux。"
+      }
+    ],
+    "parameter_start_points": [
+      "4:1；Attack 3–4；Release 5–7；Input 调到响句约 2–5 dB GR。",
+      "更硬控峰：8:1、Attack 5–7、Release 5–7。",
+      "并行：All、较快 Attack/Release，返回从干声下 -15 至 -25 dB 起。"
+    ],
+    "listen_for": [
+      "Attack 过快让字头发钝。",
+      "Release 过快在低音/元音处失真或噪声呼吸。",
+      "Input 过高造成持续夹紧和中高频粗糙。"
+    ],
+    "stop": [
+      "峰值不再驱动后级失控且主唱仍有微动态。",
+      "再加 GR 只增加侵略性和噪声而不提高可懂度时回退。"
+    ],
+    "latency": [
+      "本机 Ableton Live 11.3.43 在 48 kHz 下对 `CLA-76 Stereo` VST3 报告 `Latency: 0 samples`。这只证明当前组件与采样率的宿主 PDC；Analog 噪声、非线性相位、其它格式与采样率仍需另测。本机没有内部 Mix，因此不存在本版本内部并行补偿的验证对象。"
+    ]
+  }
+}

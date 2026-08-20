@@ -1,0 +1,181 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "l2-bc411ff14519--decapitator",
+  "family_id": "bc411ff14519",
+  "identity": {
+    "vendor": "SoundToys",
+    "product": "Decapitator",
+    "version_range": "5.0.1.0",
+    "formats": [
+      "VST2"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "deferred / not L3"
+  },
+  "capabilities": {
+    "primary": "saturation-character",
+    "secondary": [],
+    "diagnoses": [
+      "parallel_distortion",
+      "vocal_density",
+      "harmonic_density",
+      "midrange_character"
+    ],
+    "not_for": []
+  },
+  "routing": [
+    {
+      "position": "主唱 Insert 轻用。",
+      "when": "parallel_distortion"
+    },
+    {
+      "position": "100% Wet Aux 重度处理，返回高通/低通。",
+      "when": "parallel_distortion"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "谐波让弱播放更可懂，而非只更响更亮。",
+      "字头、齿音和低中频仍受控。"
+    ],
+    "controls": [
+      {
+        "name": "Style A/E/N/T/P",
+        "action": "固定 Drive 与等响度逐个 A/B，不凭字母预设结论。"
+      },
+      {
+        "name": "Drive / Punish",
+        "action": "Insert 从 1–3 小步；Punish 主要并行并严格限峰。"
+      },
+      {
+        "name": "Low Cut / Thump",
+        "action": "防低频松散用 Low Cut；主唱通常慎用 Thump。"
+      },
+      {
+        "name": "Tone / High Cut / Steep",
+        "action": "齿音硬则偏 Dark/降 High Cut，避免靠更亮制造存在感。"
+      },
+      {
+        "name": "Mix / Output / Auto",
+        "action": "先全湿设音色，再回 Mix；最终人工等响度。"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "explicitly accept L2/deferred evidence",
+    "level-matched comparison"
+  ],
+  "risks": [
+    "Punish 全湿。",
+    "Tone/Low Cut 位置误读。",
+    "Style 比较未匹配响度。",
+    "饱和后重度去齿互相抵消。"
+  ],
+  "stop_conditions": [
+    "等响度下质感增加但可懂度和动态未受损。",
+    "再加 Drive 主要增加粗糙与失真时回退。"
+  ],
+  "alternatives": [],
+  "version_policy": {
+    "match": "L2 control knowledge only; no L3 host guarantee.",
+    "mismatch": "Suppress exact controls and require revalidation."
+  },
+  "evidence": {
+    "level": "L2",
+    "card": "C:\\Projects\\aizen-knowledge-base\\notes\\音乐制作\\插件\\SoundToys\\Decapitator.md",
+    "source_note": "C:\\Projects\\aizen-knowledge-base\\sources\\音乐制作\\插件资料\\SoundToys\\Decapitator资料.md",
+    "validation_report": "not-L3",
+    "result_files": [],
+    "packaged": {
+      "card": {
+        "packaged_path": "p1/evidence/supplemental/cards/Decapitator.md",
+        "sha256": "073bf1c3eb68ddb7645306f672a6f96e4eccb5a902f73061e557cefc27e19274"
+      },
+      "source_note": {
+        "packaged_path": "p1/evidence/supplemental/sources/Decapitator资料.md",
+        "sha256": "eb965ed483d8c1d8b7b280b5cae94b4bc8add2257ce83b1be987862230953123"
+      }
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "parallel_distortion",
+      "vocal_density",
+      "harmonic_density",
+      "midrange_character"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics"
+    ]
+  },
+  "conflict_rules": [],
+  "validation": {
+    "status": "deferred-l2",
+    "matrix_status": "not-l3",
+    "boundary": "Official/control research only; no successful L3 host render."
+  },
+  "catalog_warnings": [
+    "evidence_level_l2_not_l3",
+    "vst2_host_validation_deferred"
+  ],
+  "local_guidance": {
+    "signal_position": [
+      "主唱后段轻饱和通常在基础压缩/去齿之后；若高频新谐波激发齿音，链尾复查。",
+      "重度角色常放 Aux，100% Wet 后以 Send 控量并滤波。"
+    ],
+    "routing": [
+      "主唱 Insert 轻用。",
+      "100% Wet Aux 重度处理，返回高通/低通。"
+    ],
+    "controls": [
+      {
+        "name": "Style A/E/N/T/P",
+        "meaning": "选择不同模拟电路与谐波/频响。",
+        "action": "固定 Drive 与等响度逐个 A/B，不凭字母预设结论。"
+      },
+      {
+        "name": "Drive / Punish",
+        "meaning": "推入非线性；Punish 进入极端驱动。",
+        "action": "Insert 从 1–3 小步；Punish 主要并行并严格限峰。"
+      },
+      {
+        "name": "Low Cut / Thump",
+        "meaning": "饱和前减少低频；Thump 在切点附近提升。",
+        "action": "防低频松散用 Low Cut；主唱通常慎用 Thump。"
+      },
+      {
+        "name": "Tone / High Cut / Steep",
+        "meaning": "倾斜进入饱和的频谱并限制高频输出。",
+        "action": "齿音硬则偏 Dark/降 High Cut，避免靠更亮制造存在感。"
+      },
+      {
+        "name": "Mix / Output / Auto",
+        "meaning": "干湿与输出补偿。",
+        "action": "先全湿设音色，再回 Mix；最终人工等响度。"
+      }
+    ],
+    "parameter_start_points": [
+      "Drive 1–3、Punish Off、Mix 100%，找 Style 后再回 5–30% Mix。",
+      "并行 Punish 可开，但 Send 从 -20 dB 以下起。",
+      "Low Cut 80–150 Hz 仅在低频失真松散时。"
+    ],
+    "listen_for": [
+      "齿音沙亮、爆破毛刺、低频松散。",
+      "Auto/Output 带来的响度偏差。",
+      "并行梳状或噪声。"
+    ],
+    "stop": [
+      "等响度下质感增加但可懂度和动态未受损。",
+      "再加 Drive 主要增加粗糙与失真时回退。"
+    ],
+    "latency": [
+      "v5 手册未给本机 5.0.1 的延迟/OS；内部 Mix 与 VST2 宿主补偿需 S4 以脉冲/Null 验证。"
+    ]
+  }
+}

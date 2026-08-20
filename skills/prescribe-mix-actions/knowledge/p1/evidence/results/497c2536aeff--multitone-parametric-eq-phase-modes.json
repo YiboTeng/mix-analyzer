@@ -1,0 +1,465 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T07:27:23+08:00",
+  "family_id": "497c2536aeff",
+  "test_id": "multitone-parametric-eq-phase-modes",
+  "fixed_state": {
+    "host": "Ableton Live 11.3.43",
+    "format": "VST3",
+    "plugin_version_ui": "3.23 (64-bit), June 29, 2023",
+    "band": "Bell; 1763 Hz; +6.00 dB; Q 1.000; Stereo",
+    "host_reported_latency_samples": {
+      "zero_latency": 0,
+      "natural_phase": 320,
+      "linear_phase_medium": 5120
+    },
+    "host_reported_latency_ms": {
+      "zero_latency": 0.0,
+      "natural_phase": 6.7,
+      "linear_phase_medium": 106.7
+    },
+    "render": "Master; 32.1.1-40.1.1; 12 s; 48 kHz; 24-bit WAV; normalize off; triangular dither",
+    "fixture": "dual-mono ten-tone: 55, 110, 220, 440, 880, 1760, 3520, 7040, 12000, 16000 Hz"
+  },
+  "files": {
+    "bypass": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\497c2536aeff--multitone--bypass.wav",
+      "sha256": "aaf2513cd42bfa3f79a3223ae0a627c0660b8dbab4d9c18cba365fb6ba9a65ed",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -11.508632,
+      "rms_dbfs": -20.793808,
+      "left_right_correlation": 1.0
+    },
+    "default": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\497c2536aeff--multitone--default-zero-latency.wav",
+      "sha256": "67e6a6718e2883521a6a4f2a3b093195411b91ea0624d5038b51475da3a975c0",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -11.508632,
+      "rms_dbfs": -20.793808,
+      "left_right_correlation": 1.0
+    },
+    "zero": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\497c2536aeff--multitone--bell-1763hz-plus6db-q1--zero-latency.wav",
+      "sha256": "bbe3fc1103d99233acfc5c65d680aab2e75826483de7e3c872e04948503ca0a4",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -9.643436,
+      "rms_dbfs": -18.929928,
+      "left_right_correlation": 1.0
+    },
+    "natural": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\497c2536aeff--multitone--bell-1763hz-plus6db-q1--natural-phase.wav",
+      "sha256": "f8ead09b53aa7d4e025f35e4c4a33cd77057fa56b2fba6c8235de30c109628a4",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -9.614036,
+      "rms_dbfs": -18.924305,
+      "left_right_correlation": 1.0
+    },
+    "linear": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\497c2536aeff--multitone--bell-1763hz-plus6db-q1--linear-phase-medium.wav",
+      "sha256": "feb2c94d78a8cdc4b5cd985cbcc63039b1daf78416eba24a60d17021e2b7e071",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -10.205848,
+      "rms_dbfs": -18.924307,
+      "left_right_correlation": 1.0
+    }
+  },
+  "snapshot": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\host\\snapshots\\0072a637f389--FabFilter-Saturn-2 Project\\497c2536aeff--FabFilter-Pro-Q-3.als",
+    "sha256": "438daae42ecbf5763cbbf1ae3bd5fd590f9e6bcbc29a2d375eaae49d9a12bc89"
+  },
+  "comparisons": {
+    "default_vs_bypass": {
+      "best_integer_lag_samples": 0,
+      "best_integer_lag_ms": 0.0,
+      "direct_correlation": 1.0,
+      "best_lag_correlation": 1.0,
+      "level_delta_db": -0.0,
+      "peak_delta_db": 0.0,
+      "residual_rms_dbfs": -141.481249,
+      "left_right_residual_rms_dbfs": -141.480767,
+      "tone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": 0.0,
+          "phase_degrees": -0.0
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": -0.0,
+          "phase_degrees": -0.0
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": -0.0,
+          "phase_degrees": 0.0
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": 0.0,
+          "phase_degrees": -0.0
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": -0.0,
+          "phase_degrees": -0.0
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": -0.0,
+          "phase_degrees": 0.0
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": -0.0,
+          "phase_degrees": 0.0
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": -0.0,
+          "phase_degrees": 0.0
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": 0.0,
+          "phase_degrees": -0.0
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": -0.0,
+          "phase_degrees": 0.0
+        }
+      ]
+    },
+    "bell_zero_latency_vs_bypass": {
+      "best_integer_lag_samples": 0,
+      "best_integer_lag_ms": 0.0,
+      "direct_correlation": 0.95221285166,
+      "best_lag_correlation": 0.95221285166,
+      "level_delta_db": 1.86388,
+      "peak_delta_db": 1.865195,
+      "residual_rms_dbfs": -28.34514,
+      "left_right_residual_rms_dbfs": -141.485757,
+      "tone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": 0.012625,
+          "phase_degrees": 1.78471
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": 0.050425,
+          "phase_degrees": 3.555575
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": 0.200524,
+          "phase_degrees": 7.000622
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": 0.783208,
+          "phase_degrees": 13.124319
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": 2.821388,
+          "phase_degrees": 19.466888
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": 5.999963,
+          "phase_degrees": 0.284403
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": 2.82573,
+          "phase_degrees": -18.993825
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": 0.766571,
+          "phase_degrees": -12.170844
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": 0.257398,
+          "phase_degrees": -6.397234
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": 0.143505,
+          "phase_degrees": -3.738521
+        }
+      ]
+    },
+    "bell_natural_phase_vs_bypass": {
+      "best_integer_lag_samples": 0,
+      "best_integer_lag_ms": 0.0,
+      "direct_correlation": 0.951180956622,
+      "best_lag_correlation": 0.951180956622,
+      "level_delta_db": 1.869503,
+      "peak_delta_db": 1.894595,
+      "residual_rms_dbfs": -28.271119,
+      "left_right_residual_rms_dbfs": -141.461822,
+      "tone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": 0.012623,
+          "phase_degrees": 1.778768
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": 0.050422,
+          "phase_degrees": 3.543701
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": 0.200517,
+          "phase_degrees": 6.976963
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": 0.783246,
+          "phase_degrees": 13.077489
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": 2.821981,
+          "phase_degrees": 19.372877
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": 6.000002,
+          "phase_degrees": 0.098083
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": 2.838435,
+          "phase_degrees": -19.379035
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": 0.788456,
+          "phase_degrees": -13.114413
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": 0.277113,
+          "phase_degrees": -8.147637
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": 0.156614,
+          "phase_degrees": -6.189428
+        }
+      ]
+    },
+    "bell_linear_phase_medium_vs_bypass": {
+      "best_integer_lag_samples": 0,
+      "best_integer_lag_ms": 0.0,
+      "direct_correlation": 0.97055070797,
+      "best_lag_correlation": 0.97055070797,
+      "level_delta_db": 1.8695,
+      "peak_delta_db": 1.302784,
+      "residual_rms_dbfs": -29.630509,
+      "left_right_residual_rms_dbfs": -141.481716,
+      "tone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": 0.012696,
+          "phase_degrees": 1e-06
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": 0.050492,
+          "phase_degrees": 0.0
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": 0.200586,
+          "phase_degrees": 2e-06
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": 0.783308,
+          "phase_degrees": 5e-06
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": 2.822026,
+          "phase_degrees": -2e-06
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": 5.999889,
+          "phase_degrees": -1e-06
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": 2.838451,
+          "phase_degrees": 0.0
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": 0.788459,
+          "phase_degrees": -1e-06
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": 0.277115,
+          "phase_degrees": -0.0
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": 0.156615,
+          "phase_degrees": -2e-06
+        }
+      ]
+    },
+    "bell_natural_phase_vs_zero_latency": {
+      "best_integer_lag_samples": 0,
+      "best_integer_lag_ms": 0.0,
+      "direct_correlation": 0.999890731255,
+      "best_lag_correlation": 0.999890731255,
+      "level_delta_db": 0.005623,
+      "peak_delta_db": 0.0294,
+      "residual_rms_dbfs": -55.523537,
+      "left_right_residual_rms_dbfs": -141.461822,
+      "tone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": -2e-06,
+          "phase_degrees": -0.005943
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": -3e-06,
+          "phase_degrees": -0.011874
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": -7e-06,
+          "phase_degrees": -0.023659
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": 3.8e-05,
+          "phase_degrees": -0.04683
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": 0.000593,
+          "phase_degrees": -0.094011
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": 3.9e-05,
+          "phase_degrees": -0.18632
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": 0.012705,
+          "phase_degrees": -0.385211
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": 0.021885,
+          "phase_degrees": -0.943569
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": 0.019715,
+          "phase_degrees": -1.750403
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": 0.01311,
+          "phase_degrees": -2.450908
+        }
+      ]
+    },
+    "bell_linear_phase_medium_vs_zero_latency": {
+      "best_integer_lag_samples": 0,
+      "best_integer_lag_ms": 0.0,
+      "direct_correlation": 0.981048831429,
+      "best_lag_correlation": 0.98104883143,
+      "level_delta_db": 0.005621,
+      "peak_delta_db": -0.562411,
+      "residual_rms_dbfs": -33.14041,
+      "left_right_residual_rms_dbfs": -141.481716,
+      "tone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": 7.1e-05,
+          "phase_degrees": -1.784709
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": 6.7e-05,
+          "phase_degrees": -3.555575
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": 6.3e-05,
+          "phase_degrees": -7.00062
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": 9.9e-05,
+          "phase_degrees": -13.124314
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": 0.000638,
+          "phase_degrees": -19.46689
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": -7.4e-05,
+          "phase_degrees": -0.284404
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": 0.012722,
+          "phase_degrees": 18.993825
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": 0.021888,
+          "phase_degrees": 12.170843
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": 0.019717,
+          "phase_degrees": 6.397234
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": 0.013111,
+          "phase_degrees": 3.738519
+        }
+      ]
+    }
+  },
+  "interpretation_boundary": "Measurements compare independent, PDC-compensated Ableton exports of one installed Pro-Q 3 VST3 instance. They establish flat-default transparency, steady-state gain/phase at ten deterministic tones, stereo consistency, and host-reported latency for one +6 dB/Q1 Bell near the 1760 Hz fixture tone. They do not characterize dynamic EQ, per-band phase modes, filter-shape extremes, automation, CPU cost, transient pre-ringing audibility, other sample rates/formats, or musical preference. The 3 Hz center offset is 0.17 percent and is disclosed rather than rounded away."
+}

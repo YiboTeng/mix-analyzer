@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "6756edefac77--waves-wns",
+  "family_id": "6756edefac77",
+  "identity": {
+    "vendor": "Waves",
+    "product": "WNS",
+    "version_range": "12.7.0.209",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "noise-reduction-multiband-dialogue",
+    "secondary": [
+      "six-band-suppression",
+      "zero-latency"
+    ],
+    "diagnoses": [
+      "broadband_dialogue_noise",
+      "frequency_skewed_room_noise"
+    ],
+    "not_for": [
+      "plosive_low_frequency_event",
+      "isolated_click"
+    ]
+  },
+  "routing": [
+    {
+      "position": "early insert before compression",
+      "when": "broadband_dialogue_noise"
+    },
+    {
+      "position": "early insert before compression",
+      "when": "frequency_skewed_room_noise"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "noise below context",
+      "weak speech survives",
+      "reduce only noisy bands"
+    ],
+    "controls": [
+      {
+        "name": "Threshold",
+        "action": "place below wanted dialogue"
+      },
+      {
+        "name": "Band Gains",
+        "action": "limit maximum suppression by band"
+      },
+      {
+        "name": "Smoothing",
+        "action": "trade separation for natural transitions"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "speech loss",
+    "spectral holes",
+    "watery consonants"
+  ],
+  "stop_conditions": [
+    "wanted phrases sustain deep attenuation",
+    "tails become discontinuous"
+  ],
+  "alternatives": [
+    {
+      "condition": "simple fast cleanup",
+      "fallback": "NS1"
+    },
+    {
+      "condition": "plosive event",
+      "fallback": "clip gain plus Pro-Q 3 or F6 dynamic low band"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 12.7.0.209.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Waves/WNS.md",
+    "source_note": "sources/音乐制作/插件资料/Waves/WNS资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/6756edefac77--Waves-WNS.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/6756edefac77--composite-wns.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Waves/WNS.md",
+        "packaged_path": "evidence/cards/WNS.md",
+        "sha256": "95f1b3a1e0b85ec7128ce0ba086e18d98cf15c02118752cc484a9cfe426bc1de"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Waves/WNS资料.md",
+        "packaged_path": "evidence/sources/WNS资料.md",
+        "sha256": "449a4489828b619c70204db926122ab54991b1c4052acf64a162c617abb6964e"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/6756edefac77--Waves-WNS.md",
+        "packaged_path": "evidence/validation/6756edefac77--Waves-WNS.md",
+        "sha256": "0125ac849abe4bacbb9dedde105f7f969f45824af5532b9310650ae8115bada2"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/6756edefac77--composite-wns.json",
+          "packaged_path": "evidence/results/6756edefac77--composite-wns.json",
+          "sha256": "d205ac3ee1b3af9b16568e1e6d2a8b6c8ca0bd8dc76627e8ea933eb816ac4ee7"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "broadband_dialogue_noise",
+      "frequency_skewed_room_noise"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    },
+    {
+      "if": "diagnosis=plosive_low_frequency_event",
+      "action": "reject WNS and use clip gain/dynamic low-frequency EQ"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Six-band stress and zero-latency instance tested; no calibrated noise bed and no de-plosive claim."
+  },
+  "local_guidance": {
+    "signal_position": [],
+    "routing": [],
+    "controls": [
+      {
+        "name": "Threshold",
+        "meaning": "-80–0 dB / -20 dB",
+        "action": "放在对白主体下方，区分噪声与有效语音。"
+      },
+      {
+        "name": "6 Band Gains",
+        "meaning": "-32–+6 dB / 0 dB",
+        "action": "限定各频带最大抑制；只降低含噪频段。"
+      },
+      {
+        "name": "Smoothing",
+        "meaning": "1–100 / 50",
+        "action": "平滑频带间/时间变化，防止孔洞与颗粒。"
+      },
+      {
+        "name": "Low/High boundary",
+        "meaning": "LF 20–4000；HF 400–20000",
+        "action": "把处理限制在问题频谱。"
+      },
+      {
+        "name": "Suggest",
+        "meaning": "自动起点",
+        "action": "只作起点，必须人工复核弱字尾和擦音。"
+      }
+    ],
+    "parameter_start_points": [],
+    "listen_for": [],
+    "stop": [],
+    "latency": []
+  }
+}

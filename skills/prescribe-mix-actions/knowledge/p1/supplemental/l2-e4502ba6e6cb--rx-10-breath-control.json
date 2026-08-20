@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "l2-e4502ba6e6cb--rx-10-breath-control",
+  "family_id": "e4502ba6e6cb",
+  "identity": {
+    "vendor": "iZotope",
+    "product": "RX 10 Breath Control",
+    "version_range": "10.4.2",
+    "formats": [
+      "VST2"
+    ],
+    "availability": "unavailable",
+    "tested_host": "deferred / not L3"
+  },
+  "capabilities": {
+    "primary": "restoration-breath",
+    "secondary": [],
+    "diagnoses": [
+      "breath_too_loud",
+      "breath_level_inconsistent"
+    ],
+    "not_for": []
+  },
+  "routing": [
+    {
+      "position": "单轨 Insert；批量前先在代表性强/弱呼吸段预听。",
+      "when": "breath_too_loud"
+    },
+    {
+      "position": "严重个别事件仍优先 Clip Gain 或手工编辑。",
+      "when": "breath_too_loud"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "大呼吸不再触发后级压缩/激励显著跳出。",
+      "弱呼吸、气声唱法和词头仍保留自然连续性。"
+    ],
+    "controls": [
+      {
+        "name": "Gain Mode / Gain",
+        "action": "呼吸整体都偏响时使用；从小幅衰减开始。"
+      },
+      {
+        "name": "Target Mode / Target Level",
+        "action": "需要保留自然弱呼吸时优先。"
+      },
+      {
+        "name": "Sensitivity",
+        "action": "独听 Breaths Only，刚好完整捕获呼吸但不带词头/气声元音。"
+      },
+      {
+        "name": "Output Breaths Only",
+        "action": "作为校准监听，完成后关闭。"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "explicitly accept L2/deferred evidence",
+    "level-matched comparison"
+  ],
+  "risks": [
+    "Sensitivity 过高误抓辅音和气声元音。",
+    "固定 Gain 过深让弱呼吸消失、重呼吸仍显突兀。",
+    "处理顺序太后，检测受饱和谐波与混响影响。"
+  ],
+  "stop_conditions": [
+    "呼吸退到节奏背景且后级不再过度触发时停止。",
+    "开始削弱气声质感、词头或造成句间真空时降低 Sensitivity/Reduction。"
+  ],
+  "alternatives": [],
+  "version_policy": {
+    "match": "L2 control knowledge only; no L3 host guarantee.",
+    "mismatch": "Suppress exact controls and require revalidation."
+  },
+  "evidence": {
+    "level": "L2",
+    "card": "C:\\Projects\\aizen-knowledge-base\\notes\\音乐制作\\插件\\iZotope\\RX 10 Breath Control.md",
+    "source_note": "C:\\Projects\\aizen-knowledge-base\\sources\\音乐制作\\插件资料\\iZotope\\RX 10 Breath Control资料.md",
+    "validation_report": "not-L3",
+    "result_files": [],
+    "packaged": {
+      "card": {
+        "packaged_path": "p1/evidence/supplemental/cards/RX 10 Breath Control.md",
+        "sha256": "adad97ce2c3a45ecceca1100b64d1bee792419ad696cbca08ba37097717bf11e"
+      },
+      "source_note": {
+        "packaged_path": "p1/evidence/supplemental/sources/RX 10 Breath Control资料.md",
+        "sha256": "2a69dd17760f7d3ed932967e5f26710cec34e7a3299ae0a37ffa869324f20045"
+      }
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "breath_too_loud",
+      "breath_level_inconsistent"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "host_load_failure",
+      "action": "reject until revalidated"
+    }
+  ],
+  "validation": {
+    "status": "deferred-l2",
+    "matrix_status": "not-l3",
+    "boundary": "Official/control research only; no successful L3 host render."
+  },
+  "catalog_warnings": [
+    "evidence_level_l2_not_l3",
+    "host_load_failure_0x3"
+  ],
+  "local_guidance": {
+    "signal_position": [
+      "Comping/剪辑后、主压缩和饱和前；必要时在 Mouth De-click 与 De-plosive 之后。",
+      "先用 Output Breaths Only 校准检测，再在全信号中决定保留多少呼吸。"
+    ],
+    "routing": [
+      "单轨 Insert；批量前先在代表性强/弱呼吸段预听。",
+      "严重个别事件仍优先 Clip Gain 或手工编辑。"
+    ],
+    "controls": [
+      {
+        "name": "Gain Mode / Gain",
+        "meaning": "每个检测到的呼吸衰减固定量。",
+        "action": "呼吸整体都偏响时使用；从小幅衰减开始。"
+      },
+      {
+        "name": "Target Mode / Target Level",
+        "meaning": "只把高于目标的呼吸拉向指定电平。",
+        "action": "需要保留自然弱呼吸时优先。"
+      },
+      {
+        "name": "Sensitivity",
+        "meaning": "呼吸检测灵敏度。",
+        "action": "独听 Breaths Only，刚好完整捕获呼吸但不带词头/气声元音。"
+      },
+      {
+        "name": "Output Breaths Only",
+        "meaning": "只输出被检测的呼吸。",
+        "action": "作为校准监听，完成后关闭。"
+      }
+    ],
+    "parameter_start_points": [
+      "自然起点：Target Mode，目标设在不抢词尾的位置；Sensitivity 从低向上，独听检测。",
+      "统一衰减起点：Gain Mode -4 至 -8 dB；重呼吸可试 -10 至 -12 dB，但保留可听空气。"
+    ],
+    "listen_for": [
+      "Breaths Only 中是否出现 F/H/S、气声元音或房间尾音。",
+      "呼吸被压后句间是否出现突然真空或噪声门感。"
+    ],
+    "stop": [
+      "呼吸退到节奏背景且后级不再过度触发时停止。",
+      "开始削弱气声质感、词头或造成句间真空时降低 Sensitivity/Reduction。"
+    ],
+    "latency": [
+      "官方旧版模块说明控制语义，但未提供本机 RX 10 VST3 延迟/相位数据。S4 需在实时插件实例中测量报告延迟和离线导出一致性。"
+    ]
+  }
+}

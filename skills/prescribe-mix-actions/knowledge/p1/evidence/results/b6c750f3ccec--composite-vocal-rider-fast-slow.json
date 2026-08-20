@@ -1,0 +1,412 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T09:49:34+08:00",
+  "family_id": "b6c750f3ccec",
+  "test_id": "composite-vocal-rider-fast-slow",
+  "fixed_state": {
+    "host": "Ableton Live 11.3.43",
+    "format": "VST3 Stereo",
+    "plugin": "Waves Vocal Rider 12.7.0.209",
+    "preset": "Default Preset",
+    "target": "centered",
+    "vocal_sensitivity": 0.0,
+    "music_sensitivity": 0.0,
+    "range": "-6 to +6 dB (12 dB total)",
+    "rider": 0.0,
+    "output": 0.0,
+    "automation": "Off",
+    "music_sidechain": "not connected",
+    "host_reported_latency_samples": 0,
+    "render": "Master; 2.1.1 start; 48.0.0 length; 72 s output; 48 kHz; stereo 24-bit WAV; normalize off; triangular dither",
+    "controlled_variable": "Fast versus Slow attack switch; all other visible controls held fixed"
+  },
+  "files": {
+    "bypass": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\7a146380912e--composite--bypass.wav",
+      "sha256": "38a74287a951ad7a62a6abeb219aa91afdd0e4f2abde062b972361851e0de16f",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938332,
+      "rms_dbfs": -21.437912,
+      "left_right_correlation": 0.771435140941
+    },
+    "default": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\b6c750f3ccec--composite--default.wav",
+      "sha256": "e5c58fe1d1d62c65520f9483f29a0109dda50bf31f813e37512575bc3f9149bd",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938197,
+      "rms_dbfs": -22.645038,
+      "left_right_correlation": 0.679265430574
+    },
+    "fast": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\b6c750f3ccec--composite--fast.wav",
+      "sha256": "c6fade63a3e2079330b46412d0499cdce4b7cdd228f84336ebf29059fc6e58d8",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938196,
+      "rms_dbfs": -23.172054,
+      "left_right_correlation": 0.64793526131
+    },
+    "slow": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\b6c750f3ccec--composite--slow.wav",
+      "sha256": "81abef80e87ad232b5d376aeeabd1e2edc42a8e2789b9d9e481b0e86a748759f",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938197,
+      "rms_dbfs": -22.645193,
+      "left_right_correlation": 0.679254693564
+    }
+  },
+  "snapshot": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\host\\snapshots\\0072a637f389--FabFilter-Saturn-2 Project\\b6c750f3ccec--Waves-Vocal-Rider.als",
+    "sha256": "780b3b2e44fc99fe9004dc7fba714665346fcb98220757eb730d73d57f2c6e4f"
+  },
+  "comparisons_vs_bypass": {
+    "default": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -54.805363,
+          "candidate_rms_dbfs": -54.805228,
+          "candidate_minus_reference_db": 0.000135
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.495209,
+          "candidate_rms_dbfs": -19.350297,
+          "candidate_minus_reference_db": 0.144913
+        },
+        "fixed_vocal": {
+          "start_seconds": 21.0,
+          "end_seconds": 42.0,
+          "reference_rms_dbfs": -25.938159,
+          "candidate_rms_dbfs": -25.615297,
+          "candidate_minus_reference_db": 0.322862
+        },
+        "spatial_fixture": {
+          "start_seconds": 45.0,
+          "end_seconds": 57.0,
+          "reference_rms_dbfs": -20.793808,
+          "candidate_rms_dbfs": -21.339116,
+          "candidate_minus_reference_db": -0.545308
+        },
+        "dynamics_fixture": {
+          "start_seconds": 60.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -17.19745,
+          "candidate_rms_dbfs": -20.522065,
+          "candidate_minus_reference_db": -3.324615
+        }
+      },
+      "active_windows_full_program": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 1037,
+        "delta_quantiles_db": {
+          "minimum": -5.781776,
+          "p10": -1.054311,
+          "median": 0.225583,
+          "p90": 2.03562,
+          "maximum": 6.000004
+        },
+        "nontrivial_delta_at_least_0_05_db_count": 993,
+        "near_positive_6_db_ceiling_count": 39,
+        "near_negative_6_db_floor_count": 0,
+        "adjacent_delta_change_db": {
+          "median": 0.016014,
+          "p90": 0.154544
+        },
+        "input_level_spread_p90_minus_p10_db": 9.16983,
+        "output_level_spread_p90_minus_p10_db": 9.044455,
+        "spread_change_db": -0.125375
+      },
+      "active_windows_fixed_vocal": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 391,
+        "delta_quantiles_db": {
+          "minimum": 0.035383,
+          "p10": 0.183874,
+          "median": 0.294117,
+          "p90": 0.441363,
+          "maximum": 1.059358
+        },
+        "nontrivial_delta_at_least_0_05_db_count": 390,
+        "near_positive_6_db_ceiling_count": 0,
+        "near_negative_6_db_floor_count": 0,
+        "adjacent_delta_change_db": {
+          "median": 0.077649,
+          "p90": 0.123268
+        },
+        "input_level_spread_p90_minus_p10_db": 4.296747,
+        "output_level_spread_p90_minus_p10_db": 4.272483,
+        "spread_change_db": -0.024265
+      },
+      "active_windows_dynamics_fixture": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 162,
+        "delta_quantiles_db": {
+          "minimum": -5.781776,
+          "p10": -5.781193,
+          "median": 2.243726,
+          "p90": 6.0,
+          "maximum": 6.000004
+        },
+        "nontrivial_delta_at_least_0_05_db_count": 162,
+        "near_positive_6_db_ceiling_count": 39,
+        "near_negative_6_db_floor_count": 0,
+        "adjacent_delta_change_db": {
+          "median": 0.000375,
+          "p90": 0.294233
+        },
+        "input_level_spread_p90_minus_p10_db": 24.000294,
+        "output_level_spread_p90_minus_p10_db": 17.220867,
+        "spread_change_db": -6.779427
+      }
+    },
+    "fast": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -54.805363,
+          "candidate_rms_dbfs": -54.805227,
+          "candidate_minus_reference_db": 0.000136
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.495209,
+          "candidate_rms_dbfs": -19.448899,
+          "candidate_minus_reference_db": 0.04631
+        },
+        "fixed_vocal": {
+          "start_seconds": 21.0,
+          "end_seconds": 42.0,
+          "reference_rms_dbfs": -25.938159,
+          "candidate_rms_dbfs": -26.792937,
+          "candidate_minus_reference_db": -0.854778
+        },
+        "spatial_fixture": {
+          "start_seconds": 45.0,
+          "end_seconds": 57.0,
+          "reference_rms_dbfs": -20.793808,
+          "candidate_rms_dbfs": -22.610109,
+          "candidate_minus_reference_db": -1.816302
+        },
+        "dynamics_fixture": {
+          "start_seconds": 60.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -17.19745,
+          "candidate_rms_dbfs": -20.755293,
+          "candidate_minus_reference_db": -3.557843
+        }
+      },
+      "active_windows_full_program": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 1037,
+        "delta_quantiles_db": {
+          "minimum": -5.79546,
+          "p10": -1.883497,
+          "median": -0.899663,
+          "p90": 2.012872,
+          "maximum": 6.000004
+        },
+        "nontrivial_delta_at_least_0_05_db_count": 984,
+        "near_positive_6_db_ceiling_count": 28,
+        "near_negative_6_db_floor_count": 0,
+        "adjacent_delta_change_db": {
+          "median": 0.019206,
+          "p90": 0.242461
+        },
+        "input_level_spread_p90_minus_p10_db": 9.16983,
+        "output_level_spread_p90_minus_p10_db": 9.842582,
+        "spread_change_db": 0.672752
+      },
+      "active_windows_fixed_vocal": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 391,
+        "delta_quantiles_db": {
+          "minimum": -1.322479,
+          "p10": -1.115305,
+          "median": -0.851683,
+          "p90": -0.608247,
+          "maximum": 0.099517
+        },
+        "nontrivial_delta_at_least_0_05_db_count": 389,
+        "near_positive_6_db_ceiling_count": 0,
+        "near_negative_6_db_floor_count": 0,
+        "adjacent_delta_change_db": {
+          "median": 0.071591,
+          "p90": 0.216225
+        },
+        "input_level_spread_p90_minus_p10_db": 4.296747,
+        "output_level_spread_p90_minus_p10_db": 4.247167,
+        "spread_change_db": -0.049581
+      },
+      "active_windows_dynamics_fixture": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 162,
+        "delta_quantiles_db": {
+          "minimum": -5.79546,
+          "p10": -5.794043,
+          "median": 2.20249,
+          "p90": 6.0,
+          "maximum": 6.000004
+        },
+        "nontrivial_delta_at_least_0_05_db_count": 162,
+        "near_positive_6_db_ceiling_count": 28,
+        "near_negative_6_db_floor_count": 0,
+        "adjacent_delta_change_db": {
+          "median": 0.001553,
+          "p90": 0.315092
+        },
+        "input_level_spread_p90_minus_p10_db": 24.000294,
+        "output_level_spread_p90_minus_p10_db": 17.351766,
+        "spread_change_db": -6.648529
+      }
+    },
+    "slow": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -54.805363,
+          "candidate_rms_dbfs": -54.805228,
+          "candidate_minus_reference_db": 0.000135
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.495209,
+          "candidate_rms_dbfs": -19.350294,
+          "candidate_minus_reference_db": 0.144916
+        },
+        "fixed_vocal": {
+          "start_seconds": 21.0,
+          "end_seconds": 42.0,
+          "reference_rms_dbfs": -25.938159,
+          "candidate_rms_dbfs": -25.615992,
+          "candidate_minus_reference_db": 0.322168
+        },
+        "spatial_fixture": {
+          "start_seconds": 45.0,
+          "end_seconds": 57.0,
+          "reference_rms_dbfs": -20.793808,
+          "candidate_rms_dbfs": -21.339125,
+          "candidate_minus_reference_db": -0.545317
+        },
+        "dynamics_fixture": {
+          "start_seconds": 60.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -17.19745,
+          "candidate_rms_dbfs": -20.522256,
+          "candidate_minus_reference_db": -3.324806
+        }
+      },
+      "active_windows_full_program": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 1037,
+        "delta_quantiles_db": {
+          "minimum": -5.781845,
+          "p10": -1.054355,
+          "median": 0.223208,
+          "p90": 2.035619,
+          "maximum": 6.000003
+        },
+        "nontrivial_delta_at_least_0_05_db_count": 993,
+        "near_positive_6_db_ceiling_count": 39,
+        "near_negative_6_db_floor_count": 0,
+        "adjacent_delta_change_db": {
+          "median": 0.016029,
+          "p90": 0.154554
+        },
+        "input_level_spread_p90_minus_p10_db": 9.16983,
+        "output_level_spread_p90_minus_p10_db": 9.045029,
+        "spread_change_db": -0.124801
+      },
+      "active_windows_fixed_vocal": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 391,
+        "delta_quantiles_db": {
+          "minimum": 0.035383,
+          "p10": 0.183082,
+          "median": 0.294453,
+          "p90": 0.440406,
+          "maximum": 1.059202
+        },
+        "nontrivial_delta_at_least_0_05_db_count": 390,
+        "near_positive_6_db_ceiling_count": 0,
+        "near_negative_6_db_floor_count": 0,
+        "adjacent_delta_change_db": {
+          "median": 0.077726,
+          "p90": 0.123236
+        },
+        "input_level_spread_p90_minus_p10_db": 4.296747,
+        "output_level_spread_p90_minus_p10_db": 4.272061,
+        "spread_change_db": -0.024686
+      },
+      "active_windows_dynamics_fixture": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 162,
+        "delta_quantiles_db": {
+          "minimum": -5.781845,
+          "p10": -5.781157,
+          "median": 2.243721,
+          "p90": 6.0,
+          "maximum": 6.000003
+        },
+        "nontrivial_delta_at_least_0_05_db_count": 162,
+        "near_positive_6_db_ceiling_count": 39,
+        "near_negative_6_db_floor_count": 0,
+        "adjacent_delta_change_db": {
+          "median": 0.000389,
+          "p90": 0.294234
+        },
+        "input_level_spread_p90_minus_p10_db": 24.000294,
+        "output_level_spread_p90_minus_p10_db": 17.220761,
+        "spread_change_db": -6.779533
+      }
+    }
+  },
+  "render_similarity": {
+    "default_vs_fast": {
+      "residual_rms_dbfs": -43.134967,
+      "correlation": 0.997095282947,
+      "maximum_absolute_sample_difference": 0.129580379
+    },
+    "default_vs_slow": {
+      "residual_rms_dbfs": -100.019439,
+      "correlation": 0.999999991007,
+      "maximum_absolute_sample_difference": 0.00013721
+    },
+    "fast_vs_slow": {
+      "residual_rms_dbfs": -43.13747,
+      "correlation": 0.997096848275,
+      "maximum_absolute_sample_difference": 0.129533291
+    }
+  },
+  "interpretation_boundary": "Independent host-PDC-compensated renders isolate the visible Fast/Slow switch on one installed Waves Vocal Rider 12.7.0.209 VST3 Stereo instance. No music sidechain was connected and automation remained Off, so Music Sensitivity and automation write/read are not validated. The 72-second arrangement combines synthetic events, steady multitone, one fixed vocal excerpt, a spatial fixture, and stepped dynamics; its window-level deltas describe this detector's behavior on these sources, not universal speech-detection accuracy or recommended settings. The default ±6 dB range is intentionally broad and is evidence of failure risk rather than a production preset. Mono, Live variants, VST2, other versions/sample rates, real accompaniment sidechain behavior, DAW automation recall, CPU use, and listening preference remain outside this test."
+}

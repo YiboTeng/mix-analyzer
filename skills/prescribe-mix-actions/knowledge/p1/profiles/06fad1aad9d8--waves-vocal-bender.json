@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "06fad1aad9d8--waves-vocal-bender",
+  "family_id": "06fad1aad9d8",
+  "identity": {
+    "vendor": "Waves",
+    "product": "Vocal Bender",
+    "version_range": "12.7.0.209",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "pitch-formant-creative",
+    "secondary": [
+      "octave",
+      "formant",
+      "modulation"
+    ],
+    "diagnoses": [
+      "creative_octave_layer",
+      "formant_character",
+      "robotic_voice"
+    ],
+    "not_for": [
+      "transparent_pitch_correction",
+      "core_lead_naturalness"
+    ]
+  },
+  "routing": [
+    {
+      "position": "100% effect duplicate or throw aux",
+      "when": "creative_octave_layer"
+    },
+    {
+      "position": "100% effect duplicate or throw aux",
+      "when": "formant_character"
+    },
+    {
+      "position": "100% effect duplicate or throw aux",
+      "when": "robotic_voice"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "clear role for Pitch versus Formant",
+      "keep dry centre",
+      "high-pass octave layers as needed"
+    ],
+    "controls": [
+      {
+        "name": "Pitch",
+        "action": "set interval such as -12 st"
+      },
+      {
+        "name": "Formant",
+        "action": "change character independently"
+      },
+      {
+        "name": "Modulators",
+        "action": "enable one source with bounded depth"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "intelligibility loss",
+    "low-end masking",
+    "algorithm artifacts"
+  ],
+  "stop_conditions": [
+    "effect obscures lyrics",
+    "layer masks bass or lead"
+  ],
+  "alternatives": [
+    {
+      "condition": "transparent realtime correction",
+      "fallback": "Auto-Tune Pro"
+    },
+    {
+      "condition": "note editing",
+      "fallback": "Melodyne"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 12.7.0.209.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Waves/Vocal Bender.md",
+    "source_note": "sources/音乐制作/插件资料/Waves/Vocal Bender资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/06fad1aad9d8--Waves-Vocal-Bender.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/06fad1aad9d8--fixed-vocal-pitch-minus12-formant0.json",
+      "projects/p1-plugin-knowledge-base/validation/results/06fad1aad9d8--impulse-neutral.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Waves/Vocal Bender.md",
+        "packaged_path": "evidence/cards/Vocal Bender.md",
+        "sha256": "15eec318d491c5504a7bb3e3871314ef972fb5557c0de29cf8d4c13f2bcb2147"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Waves/Vocal Bender资料.md",
+        "packaged_path": "evidence/sources/Vocal Bender资料.md",
+        "sha256": "566aa78f61e11af8faaf904123dd4bdc7554038e87ba475fa605eaa9174a8bd6"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/06fad1aad9d8--Waves-Vocal-Bender.md",
+        "packaged_path": "evidence/validation/06fad1aad9d8--Waves-Vocal-Bender.md",
+        "sha256": "7fb4207d7476dcfdb6c50816d77cdbac88826cd7c7bdb49dd2a94fc5f9b07ff4"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/06fad1aad9d8--fixed-vocal-pitch-minus12-formant0.json",
+          "packaged_path": "evidence/results/06fad1aad9d8--fixed-vocal-pitch-minus12-formant0.json",
+          "sha256": "af25d1256ed7645da934be746e347d28d793628f141ac71c716e35b9972ada10"
+        },
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/06fad1aad9d8--impulse-neutral.json",
+          "packaged_path": "evidence/results/06fad1aad9d8--impulse-neutral.json",
+          "sha256": "78e281f3a872c25c2e31ce7ec2871851ed26021079437ebfb39d60ca65e1f80d"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "creative_octave_layer",
+      "formant_character",
+      "robotic_voice"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "-12 st command accuracy and zero-PDC/time-texture boundary measured."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "复制轨或并行 Aux 做创意层，主唱干声保持中心。",
+      "自动化前先清理爆破与口水音，避免检测被噪声驱动。"
+    ],
+    "routing": [
+      "复制主唱轨做 100% 效果层。",
+      "短句 Throw Aux 配合自动化。"
+    ],
+    "controls": [
+      {
+        "name": "Pitch",
+        "meaning": "以半音改变音高。",
+        "action": "低八度从 -12 st 起，按调性与伪影调整。"
+      },
+      {
+        "name": "Formant",
+        "meaning": "改变声道共振而不等同音高。",
+        "action": "小步调整角色感，避免元音身份丢失。"
+      },
+      {
+        "name": "Flatten",
+        "meaning": "把输入音高收拢到固定中心。",
+        "action": "只用于机器人/硬效果，不用于透明人声。"
+      },
+      {
+        "name": "Modulators",
+        "meaning": "Pitch、Amplitude、LFO、Sequencer 驱动参数。",
+        "action": "一次只启用一个调制源并控制深度。"
+      }
+    ],
+    "parameter_start_points": [
+      "Pitch -12 st、Formant 0 作为低八度起点。",
+      "角色声线从 Formant ±1–3 小步试。"
+    ],
+    "listen_for": [
+      "辅音颤动、元音塑料感、低频颗粒。",
+      "调制过深造成节奏失焦。"
+    ],
+    "stop": [
+      "效果层在 Solo 明显、混音中只提供角色或重量。",
+      "再提高 Blend 开始覆盖原唱。"
+    ],
+    "latency": [
+      "官方产品页声明 zero latency；本机 Ableton 确认 0 samples PDC，但默认脉冲仍有明显时间扩散与电平变化。“零延迟”不等于时间域透明。"
+    ]
+  }
+}

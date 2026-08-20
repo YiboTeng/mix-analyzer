@@ -1,0 +1,181 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "29b6d9504a55--waves-ns1",
+  "family_id": "29b6d9504a55",
+  "identity": {
+    "vendor": "Waves",
+    "product": "NS1",
+    "version_range": "12.7.0.209",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "noise-reduction-simple",
+    "secondary": [
+      "room-noise",
+      "workflow-speed"
+    ],
+    "diagnoses": [
+      "broadband_stationary_noise",
+      "quick_noise_cleanup"
+    ],
+    "not_for": [
+      "isolated_click",
+      "plosive_low_frequency_event"
+    ]
+  },
+  "routing": [
+    {
+      "position": "first restoration insert before dynamics",
+      "when": "broadband_stationary_noise"
+    },
+    {
+      "position": "first restoration insert before dynamics",
+      "when": "quick_noise_cleanup"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "noise just below context",
+      "preserve weak endings",
+      "minimum suppression"
+    ],
+    "controls": [
+      {
+        "name": "Suppression",
+        "action": "raise from zero until noise retreats, then stop"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "speech loss",
+    "high-frequency holes",
+    "gating tails"
+  ],
+  "stop_conditions": [
+    "attenuation meter moves deeply on speech",
+    "tails become watery"
+  ],
+  "alternatives": [
+    {
+      "condition": "frequency-specific dialogue noise",
+      "fallback": "WNS"
+    },
+    {
+      "condition": "inter-phrase only",
+      "fallback": "Pro-G"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 12.7.0.209.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Waves/NS1.md",
+    "source_note": "sources/音乐制作/插件资料/Waves/NS1资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/29b6d9504a55--Waves-NS1.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/29b6d9504a55--composite-ns1-suppression.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Waves/NS1.md",
+        "packaged_path": "evidence/cards/NS1.md",
+        "sha256": "35a934515a263c8850f402dbbe4081d0cf1cf63d200ba39f4ffd1236d5195753"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Waves/NS1资料.md",
+        "packaged_path": "evidence/sources/NS1资料.md",
+        "sha256": "067a8df396ebec1c89ac70dc3617111b4d488881c4a0d59eadf7960ba9fcee9d"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/29b6d9504a55--Waves-NS1.md",
+        "packaged_path": "evidence/validation/29b6d9504a55--Waves-NS1.md",
+        "sha256": "eb4e5309512c6dea7acdd51ad348c83e0b901c02a45b30fd7ebe00fa490625a7"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/29b6d9504a55--composite-ns1-suppression.json",
+          "packaged_path": "evidence/results/29b6d9504a55--composite-ns1-suppression.json",
+          "sha256": "a541982b2b681d830969108f6a8a25855c232f015376cc1e66ec253d951c7025"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "broadband_stationary_noise",
+      "quick_noise_cleanup"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "0/50/100 programme-dependent attenuation tested; no calibrated noise bed."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "主唱链前段，在重压缩、上行压缩、激励与饱和之前。",
+      "先处理稳定底噪，再用 Gate/Expander 控制句间；两者职责不要重叠到过度。"
+    ],
+    "routing": [
+      "单轨 Insert 前段；在 Vocal Rider/MV2 等会抬高低电平的工具之前。",
+      "严重、变化快或音乐性噪声改用 RX/Spectral 工具。"
+    ],
+    "controls": [
+      {
+        "name": "Suppression Fader",
+        "meaning": "决定自动噪声抑制量。",
+        "action": "从 0 慢慢上推，刚好让噪声退到编曲下方，不追求独听绝对静音。"
+      },
+      {
+        "name": "Attenuation Meter",
+        "meaning": "显示被移除的总体能量。",
+        "action": "观察强弱音节是否持续触发过深衰减，并结合听感回退。"
+      }
+    ],
+    "parameter_start_points": [
+      "Fader 从 0 上推，不给固定万能数值；以噪声刚退到伴奏下、语尾仍自然为起点。",
+      "若独唱检查出现水声/门控，退回一档并让编曲遮蔽剩余噪声。"
+    ],
+    "listen_for": [
+      "词尾、气息和低电平辅音是否出现水声或开合。",
+      "高频是否变空、立体声噪声是否造成声像漂移。"
+    ],
+    "stop": [
+      "在完整编曲中噪声不再分散注意力时停止。",
+      "继续上推只改善独唱静音、却伤害语尾和气息时回退。"
+    ],
+    "latency": [
+      "本机 NS1 Stereo 12.7.0.209 VST3 在 Ableton / 48 kHz 回读 0 samples。当前只验证该格式和采样率；不外推 Mono、VST2 或其它采样率。"
+    ]
+  }
+}

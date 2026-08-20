@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "l2-5a5ddef31a66--rx-10-de-plosive",
+  "family_id": "5a5ddef31a66",
+  "identity": {
+    "vendor": "iZotope",
+    "product": "RX 10 De-plosive",
+    "version_range": "10.4.2",
+    "formats": [
+      "VST2"
+    ],
+    "availability": "unavailable",
+    "tested_host": "deferred / not L3"
+  },
+  "capabilities": {
+    "primary": "restoration-plosive",
+    "secondary": [],
+    "diagnoses": [
+      "plosive_low_frequency_event"
+    ],
+    "not_for": []
+  },
+  "routing": [
+    {
+      "position": "主唱 Insert 链前端；高通和动态处理之前。",
+      "when": "plosive_low_frequency_event"
+    },
+    {
+      "position": "少量严重事件可只对事件区域 Render，避免整轨不必要处理。",
+      "when": "plosive_low_frequency_event"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "爆破低频峰下降但元音胸声与基频仍连续。",
+      "后级压缩器不再因爆破瞬间产生额外泵动。"
+    ],
+    "controls": [
+      {
+        "name": "Sensitivity",
+        "action": "漏检时先提高；正常低音也被抓时降低。"
+      },
+      {
+        "name": "Strength",
+        "action": "检测正确后再加深，避免伤害正常语音。"
+      },
+      {
+        "name": "Frequency Limit",
+        "action": "从只覆盖爆破的低频上限开始，必要时再向 300–400 Hz 扩展。"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "explicitly accept L2/deferred evidence",
+    "level-matched comparison"
+  ],
+  "risks": [
+    "前置高通导致检测失效。",
+    "Sensitivity 过高把正常低频元音当爆破。",
+    "Frequency Limit 过高削弱可懂度与声体，过低则留下爆破上缘。"
+  ],
+  "stop_conditions": [
+    "砰声不再抢注意力且胸声未改变时停止。",
+    "继续提高 Strength 只让音节变薄时退回，改用局部 Clip Gain/动态 EQ。"
+  ],
+  "alternatives": [],
+  "version_policy": {
+    "match": "L2 control knowledge only; no L3 host guarantee.",
+    "mismatch": "Suppress exact controls and require revalidation."
+  },
+  "evidence": {
+    "level": "L2",
+    "card": "C:\\Projects\\aizen-knowledge-base\\notes\\音乐制作\\插件\\iZotope\\RX 10 De-plosive.md",
+    "source_note": "C:\\Projects\\aizen-knowledge-base\\sources\\音乐制作\\插件资料\\iZotope\\RX 10 De-plosive资料.md",
+    "validation_report": "not-L3",
+    "result_files": [],
+    "packaged": {
+      "card": {
+        "packaged_path": "p1/evidence/supplemental/cards/RX 10 De-plosive.md",
+        "sha256": "32ef1c9409260e7746678489aae68e518eb2eab78985d7b7e643036f9c63785d"
+      },
+      "source_note": {
+        "packaged_path": "p1/evidence/supplemental/sources/RX 10 De-plosive资料.md",
+        "sha256": "3a9253ab6438bd0fed98106751ee82193f5a5a8f526d481dcc25cfc0d7a0cae0"
+      }
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "plosive_low_frequency_event"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "host_load_failure",
+      "action": "reject until revalidated"
+    }
+  ],
+  "validation": {
+    "status": "deferred-l2",
+    "matrix_status": "not-l3",
+    "boundary": "Official/control research only; no successful L3 host render."
+  },
+  "catalog_warnings": [
+    "evidence_level_l2_not_l3",
+    "host_load_failure_0x3"
+  ],
+  "local_guidance": {
+    "signal_position": [
+      "尽量放在高通、低频动态 EQ、重压缩和饱和之前；官方说明检测依赖 20–80 Hz。",
+      "先在爆破事件上定位 Frequency Limit，再扩展到整轨并复核正常低音音节。"
+    ],
+    "routing": [
+      "主唱 Insert 链前端；高通和动态处理之前。",
+      "少量严重事件可只对事件区域 Render，避免整轨不必要处理。"
+    ],
+    "controls": [
+      {
+        "name": "Sensitivity",
+        "meaning": "爆破检测灵敏度，官方指出对总体效果影响大于 Strength。",
+        "action": "漏检时先提高；正常低音也被抓时降低。"
+      },
+      {
+        "name": "Strength",
+        "meaning": "对已检测爆破的衰减深度。",
+        "action": "检测正确后再加深，避免伤害正常语音。"
+      },
+      {
+        "name": "Frequency Limit",
+        "meaning": "被衰减的最高频率。",
+        "action": "从只覆盖爆破的低频上限开始，必要时再向 300–400 Hz 扩展。"
+      }
+    ],
+    "parameter_start_points": [
+      "Sensitivity 中低起步，先捕获最明显事件；Strength 2–5/10 级别试点。",
+      "Frequency Limit 先约 120–200 Hz；仍有上部砰声再推至 250–350 Hz。"
+    ],
+    "listen_for": [
+      "P/B 后主体是否变薄或出现孔洞。",
+      "正常低音音节、近讲厚度是否被误削。",
+      "爆破上部 200–400 Hz 是否仍残留。"
+    ],
+    "stop": [
+      "砰声不再抢注意力且胸声未改变时停止。",
+      "继续提高 Strength 只让音节变薄时退回，改用局部 Clip Gain/动态 EQ。"
+    ],
+    "latency": [
+      "专用修复可能包含分析/插值，官方旧版页未给本机实时延迟。S4 需测瞬态对齐、报告延迟与离线/实时一致性。"
+    ]
+  }
+}

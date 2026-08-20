@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "0072a637f389--fabfilter-saturn-2",
+  "family_id": "0072a637f389",
+  "identity": {
+    "vendor": "FabFilter",
+    "product": "Saturn 2",
+    "version_range": "2.0.8.0",
+    "formats": [
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "saturation-multiband",
+    "secondary": [
+      "modulation",
+      "parallel"
+    ],
+    "diagnoses": [
+      "harmonic_density",
+      "frequency_selective_saturation",
+      "creative_modulation"
+    ],
+    "not_for": [
+      "transparent_level_control",
+      "uncorrected_sibilance"
+    ]
+  },
+  "routing": [
+    {
+      "position": "after cleanup, insert or parallel bus",
+      "when": "harmonic_density"
+    },
+    {
+      "position": "after cleanup, insert or parallel bus",
+      "when": "frequency_selective_saturation"
+    },
+    {
+      "position": "after cleanup, insert or parallel bus",
+      "when": "creative_modulation"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "one band/style change at a time",
+      "match loudness",
+      "protect aliases and latency budget"
+    ],
+    "controls": [
+      {
+        "name": "Drive/Style",
+        "action": "choose colour at equal output"
+      },
+      {
+        "name": "Mix",
+        "action": "blend after wet tone is set"
+      },
+      {
+        "name": "Quality/Phase",
+        "action": "select only as needed"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "aliasing",
+    "loudness bias",
+    "harshness",
+    "latency"
+  ],
+  "stop_conditions": [
+    "matched bypass is clearer",
+    "sibilance or low mids grow"
+  ],
+  "alternatives": [
+    {
+      "condition": "simple character",
+      "fallback": "Abbey Road Saturator"
+    },
+    {
+      "condition": "tube parallel",
+      "fallback": "HG-2"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 2.0.8.0.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/FabFilter/Saturn 2.md",
+    "source_note": "sources/音乐制作/插件资料/FabFilter/Saturn 2资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/0072a637f389--FabFilter-Saturn-2.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/0072a637f389--impulse-default-warm-tape.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/FabFilter/Saturn 2.md",
+        "packaged_path": "evidence/cards/Saturn 2.md",
+        "sha256": "74364236e4dbac0347da54727fdbd72098aff068716ee0382c6bf9f04378e7d7"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/FabFilter/Saturn 2资料.md",
+        "packaged_path": "evidence/sources/Saturn 2资料.md",
+        "sha256": "18aa2926c17485eea4cbc8d27eb1fbb0f2fddac5754dbb293da9e6bdf9a9882d"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/0072a637f389--FabFilter-Saturn-2.md",
+        "packaged_path": "evidence/validation/0072a637f389--FabFilter-Saturn-2.md",
+        "sha256": "691c3e2529080442b51090c2743f4aaaf022d7de86ce5aeb5dcd21b7ddcc998f"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/0072a637f389--impulse-default-warm-tape.json",
+          "packaged_path": "evidence/results/0072a637f389--impulse-default-warm-tape.json",
+          "sha256": "94be49d30a818332d729ded91ca91d679d11a4ed821ae6d78815768369330d3f"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "harmonic_density",
+      "frequency_selective_saturation",
+      "creative_modulation"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Default Warm Tape impulse nonlinearity and zero reported latency measured."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "单段轻饱和先作为基准；只在需要分频定向失真时加 Band。",
+      "高频激励/饱和后复查去齿；低频段 Drive 需防胸腔和爆破失真。"
+    ],
+    "routing": [
+      "主唱 Insert 轻饱和。",
+      "效果 Aux 或复制轨做多段/调制。"
+    ],
+    "controls": [
+      {
+        "name": "Style / Drive",
+        "meaning": "选择非线性算法并推驱；Drive 自动一定程度回调输出。",
+        "action": "先单段 Subtle Tube/Tape 低 Drive，固定响度再换 Style。"
+      },
+      {
+        "name": "Band Mix / Tone / Level",
+        "meaning": "每段并行、谐波频谱与输出。",
+        "action": "先 Mix 100%识别，再回比例；Level 只校准。"
+      },
+      {
+        "name": "Feedback / Dynamics",
+        "meaning": "反馈产生共振；Dynamics 向右压缩、向左扩展。",
+        "action": "混音轻用或关闭，创意效果另建轨。"
+      },
+      {
+        "name": "HQ / Linear Phase",
+        "meaning": "8x/32x OS 与线性相位分频。",
+        "action": "实时先 Off/Good，导出比较；Linear 只在相位叠加有证据时。"
+      },
+      {
+        "name": "M/S / Modulation",
+        "meaning": "以中侧通道和调制改变参数。",
+        "action": "主唱默认 L/R 无调制；效果返回才逐项引入并测 Mono。"
+      }
+    ],
+    "parameter_start_points": [
+      "单段 Subtle Tube/Tape，Drive 1–3 dB，Mix 10–40%。",
+      "多段仅两段：低频近干，高中频轻 Drive。",
+      "HQ Good 作为导出候选，先与 Off 盲听。"
+    ],
+    "listen_for": [
+      "分频相位、前振铃、别名。",
+      "Dynamics/Feedback 意外泵动或自激。",
+      "M/S 声像漂移。"
+    ],
+    "stop": [
+      "单段已达目标就不加频段。",
+      "继续复杂化只增加参数而无盲听收益时停止。"
+    ],
+    "latency": [
+      "Good=8x、Superb=32x，增加 CPU/延迟；Linear Phase 处理分频和 HQ OS，但其他 Tone/模型仍保留角色相位。本机 VST3 默认 Warm Tape、HQ/Linear 关闭时，Ableton 设备栏实测 `Latency: 0 samples`；Good/Superb/Linear 仍待单独量化。"
+    ]
+  }
+}

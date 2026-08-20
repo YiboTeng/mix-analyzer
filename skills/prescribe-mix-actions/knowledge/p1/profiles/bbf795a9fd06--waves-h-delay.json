@@ -1,0 +1,210 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "bbf795a9fd06--waves-h-delay",
+  "family_id": "bbf795a9fd06",
+  "identity": {
+    "vendor": "Waves",
+    "product": "H-Delay",
+    "version_range": "12.7.0.209",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "delay-vocal",
+    "secondary": [
+      "tempo-sync",
+      "filter",
+      "analog"
+    ],
+    "diagnoses": [
+      "slap_delay",
+      "tempo_echo",
+      "throw_delay"
+    ],
+    "not_for": [
+      "continuous_reverb",
+      "dry_lead_timing_fix"
+    ]
+  },
+  "routing": [
+    {
+      "position": "100% wet aux with send feedback automation",
+      "when": "slap_delay"
+    },
+    {
+      "position": "100% wet aux with send feedback automation",
+      "when": "tempo_echo"
+    },
+    {
+      "position": "100% wet aux with send feedback automation",
+      "when": "throw_delay"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "tempo subdivision matches pocket",
+      "filter repeats",
+      "feedback ends before next lyric"
+    ],
+    "controls": [
+      {
+        "name": "Delay/Sync",
+        "action": "choose time from tempo and groove"
+      },
+      {
+        "name": "Feedback",
+        "action": "set number of repeats"
+      },
+      {
+        "name": "Filters/Analog",
+        "action": "keep repeats behind lead"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "rhythmic clutter",
+    "feedback runaway",
+    "sibilant repeats"
+  ],
+  "stop_conditions": [
+    "repeat masks next word",
+    "feedback grows unexpectedly"
+  ],
+  "alternatives": [
+    {
+      "condition": "creative multitap",
+      "fallback": "Timeless 3"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 12.7.0.209.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Waves/H-Delay.md",
+    "source_note": "sources/音乐制作/插件资料/Waves/H-Delay资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/bbf795a9fd06--H-Delay.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/bbf795a9fd06--impulse--host-eighth-wet.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Waves/H-Delay.md",
+        "packaged_path": "evidence/cards/H-Delay.md",
+        "sha256": "36558c9f5072b3cafb9ed1cd00bd1dca9b11ed3c538f93d51164b1cc278a240f"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Waves/H-Delay资料.md",
+        "packaged_path": "evidence/sources/H-Delay资料.md",
+        "sha256": "753935d6587d8db74121312f974212776f3ea427b07d2371f6ad71313fe5a460"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/bbf795a9fd06--H-Delay.md",
+        "packaged_path": "evidence/validation/bbf795a9fd06--H-Delay.md",
+        "sha256": "b1e2890e89b902a27428ff7ceaebf282170c078d3ffc22c06c0807432b9b15c7"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/bbf795a9fd06--impulse--host-eighth-wet.json",
+          "packaged_path": "evidence/results/bbf795a9fd06--impulse--host-eighth-wet.json",
+          "sha256": "2d176c0b4b039fac39be9e441dce3bba4c0555eca451dcc2c467a0d4446b21f0"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "slap_delay",
+      "tempo_echo",
+      "throw_delay"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "1/8D at 160 BPM timing tested; broader analogue modes untested."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "100% Wet Aux；HP/LP 让重复避开主唱主体，Send 自动化做 Throw。",
+      "需要 Duck 时后接侧链压缩或自动化返回。"
+    ],
+    "routing": [
+      "Stereo Aux 100% Wet。",
+      "Send/Feedback 自动化，返回后级 Duck。"
+    ],
+    "controls": [
+      {
+        "name": "Delay / Sync / Tap",
+        "meaning": "毫秒或节拍定义重复。",
+        "action": "Slap 70–140 ms；节奏从 1/8、1/4、Dotted/Triplet试。"
+      },
+      {
+        "name": "Feedback",
+        "meaning": "0–100衰减，100–200累积。",
+        "action": "常规 10–40%；Throw 更高但自动化回落。"
+      },
+      {
+        "name": "HP/LP / Link",
+        "meaning": "滤除重复频段并可联动成 Bandpass。",
+        "action": "HP 150–300 Hz、LP 4–10 kHz起。"
+      },
+      {
+        "name": "Analog 1–4 / LoFi",
+        "meaning": "模拟色彩和低采样质感。",
+        "action": "先 Off 基线，逐模式等响度；LoFi只作角色。"
+      },
+      {
+        "name": "Mod / Ping Pong / Phase",
+        "meaning": "时变音高与立体声反弹/极性。",
+        "action": "低调制；Ping Pong 后做 Mono，避免单边反相。"
+      }
+    ],
+    "parameter_start_points": [
+      "Slap 90–120 ms、Feedback 0–15%、HP 180 Hz、LP 6–9 kHz。",
+      "节奏 1/8D或1/4、Feedback 20–35%。",
+      "Throw 自动化 Send/Feedback，段尾归零。"
+    ],
+    "listen_for": [
+      "齿音/爆破复制。",
+      "反馈失控。",
+      "相位反转 Mono 相消。",
+      "Delay与节奏打架。"
+    ],
+    "stop": [
+      "重复服务节奏且干声仍中心。",
+      "下一句可懂度下降时减 Feedback/频段/Send。"
+    ],
+    "latency": [
+      "官方 Native PDC 0；效果 Delay 独立。S4 验证 v12/格式和自动化。"
+    ]
+  }
+}

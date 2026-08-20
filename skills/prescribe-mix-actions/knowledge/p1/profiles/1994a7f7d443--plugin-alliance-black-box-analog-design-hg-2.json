@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "1994a7f7d443--plugin-alliance-black-box-analog-design-hg-2",
+  "family_id": "1994a7f7d443",
+  "identity": {
+    "vendor": "Plugin Alliance",
+    "product": "Black Box Analog Design HG-2",
+    "version_range": "1.3.0.0",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "saturation-tube-parallel",
+    "secondary": [
+      "harmonics",
+      "air"
+    ],
+    "diagnoses": [
+      "tube_harmonic_density",
+      "parallel_air",
+      "vocal_weight"
+    ],
+    "not_for": [
+      "transparent_correction",
+      "uncorrected_sibilance"
+    ]
+  },
+  "routing": [
+    {
+      "position": "after cleanup, insert or parallel bus",
+      "when": "tube_harmonic_density"
+    },
+    {
+      "position": "after cleanup, insert or parallel bus",
+      "when": "parallel_air"
+    },
+    {
+      "position": "after cleanup, insert or parallel bus",
+      "when": "vocal_weight"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "separate Pentode/Triode/Density decisions",
+      "level-match",
+      "retain headroom"
+    ],
+    "controls": [
+      {
+        "name": "Pentode/Triode",
+        "action": "introduce one harmonic path at a time"
+      },
+      {
+        "name": "Density/Air",
+        "action": "add only after core tone"
+      },
+      {
+        "name": "Parallel/Output",
+        "action": "blend and match"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "loudness bias",
+    "high-frequency grit",
+    "low-mid buildup"
+  ],
+  "stop_conditions": [
+    "matched bypass has better articulation",
+    "air becomes abrasive"
+  ],
+  "alternatives": [
+    {
+      "condition": "multiband control",
+      "fallback": "Saturn 2"
+    },
+    {
+      "condition": "REDD/TG colour",
+      "fallback": "Abbey Road Saturator"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 1.3.0.0.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Plugin Alliance/Black Box Analog Design HG-2.md",
+    "source_note": "sources/音乐制作/插件资料/Plugin Alliance/Black Box Analog Design HG-2资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/1994a7f7d443--Plugin-Alliance-Black-Box-HG-2.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/1994a7f7d443--impulse-default.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Plugin Alliance/Black Box Analog Design HG-2.md",
+        "packaged_path": "evidence/cards/Black Box Analog Design HG-2.md",
+        "sha256": "6710786e53e46b94b1b1f590fe781822ce2afda1bf50799ce1c6ed9d0371e8e5"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Plugin Alliance/Black Box Analog Design HG-2资料.md",
+        "packaged_path": "evidence/sources/Black Box Analog Design HG-2资料.md",
+        "sha256": "774762a8d0e71a02b8c3fb55b04e1caaa9d8e09846eec7ef81b457c5956cf5ba"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/1994a7f7d443--Plugin-Alliance-Black-Box-HG-2.md",
+        "packaged_path": "evidence/validation/1994a7f7d443--Plugin-Alliance-Black-Box-HG-2.md",
+        "sha256": "c95ea9db36229b0620203a2c8373edd10105d996294423dff8242b543c371fe1"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/1994a7f7d443--impulse-default.json",
+          "packaged_path": "evidence/results/1994a7f7d443--impulse-default.json",
+          "sha256": "f7ff967b8ccb995119cce42f7aafd8ccaba2032d98bd56f62799e53191866a2c"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "tube_harmonic_density",
+      "parallel_air",
+      "vocal_weight"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Legacy v1.3 default impulse level dependence and 32-sample latency measured."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "压缩后轻度管色；Air 后复查齿音。",
+      "Vocal Bus 小幅统一密度；极端 Parallel 用 Aux。"
+    ],
+    "routing": [
+      "主唱/人声总线后段。",
+      "Aux 进行更重 Parallel。"
+    ],
+    "controls": [
+      {
+        "name": "Pentode / Triode",
+        "meaning": "串联两级不同管饱和量。",
+        "action": "逐级单独推，先找到哪一级改善主体。"
+      },
+      {
+        "name": "Density",
+        "meaning": "一起加推两级而尽量保持平衡/输出。",
+        "action": "基础比例确定后小幅增加整体密度。"
+      },
+      {
+        "name": "Parallel Saturation",
+        "meaning": "选择较柔/较激进 12AX7 并行谐波。",
+        "action": "从关闭或低量起，注意中高频毛刺。"
+      },
+      {
+        "name": "Calibration / Air",
+        "meaning": "整体高频校准与 10 kHz 以上光泽。",
+        "action": "先 Normal/Air 0；主链平衡后再加 Air。"
+      },
+      {
+        "name": "Mix / Input / Output",
+        "meaning": "并行和增益结构。",
+        "action": "先全湿调色，再回 Mix；输出严格匹配。"
+      }
+    ],
+    "parameter_start_points": [
+      "Pentode/Triode 低量、Density 0、Parallel Off、Air 0。",
+      "先选一个管级推到可感，再用 Density 小加。",
+      "Mix 10–40% 或全湿轻驱；Output 等响度。"
+    ],
+    "listen_for": [
+      "相同峰值但 RMS 上升的偏差。",
+      "管级叠加导致低中频拥挤。",
+      "Air/Parallel 增加沙亮。"
+    ],
+    "stop": [
+      "等响度下主体更稳定且细节保留。",
+      "再推 Density 只让声音变扁/糊时回退。"
+    ],
+    "latency": [
+      "本机 1.3.0.0 VST3 在 Ableton Live 11.3.43 中报告 32 samples / 0.67 ms；离线 PDC 后三次脉冲峰值均为 0-sample 对齐。本轮旧版界面未发现可归因的 OS 或 TMT 数字控制，不把新版能力倒灌。"
+    ]
+  }
+}

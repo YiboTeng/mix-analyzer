@@ -1,0 +1,216 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "a8c2063eb007--fabfilter-pro-mb",
+  "family_id": "a8c2063eb007",
+  "identity": {
+    "vendor": "FabFilter",
+    "product": "Pro-MB",
+    "version_range": "1.2.8.0",
+    "formats": [
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "multiband-dynamics",
+    "secondary": [
+      "dynamic-tone",
+      "deessing"
+    ],
+    "diagnoses": [
+      "band_limited_dynamic_imbalance",
+      "low_mid_bloom",
+      "presence_instability"
+    ],
+    "not_for": [
+      "single_static_resonance",
+      "broadband_noise"
+    ]
+  },
+  "routing": [
+    {
+      "position": "after broad EQ, before final density",
+      "when": "band_limited_dynamic_imbalance"
+    },
+    {
+      "position": "after broad EQ, before final density",
+      "when": "low_mid_bloom"
+    },
+    {
+      "position": "after broad EQ, before final density",
+      "when": "presence_instability"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "one justified band",
+      "bounded range",
+      "preserve crossover transparency"
+    ],
+    "controls": [
+      {
+        "name": "Band/Range/Threshold",
+        "action": "create one band and cap action"
+      },
+      {
+        "name": "Attack/Release",
+        "action": "fit event duration"
+      },
+      {
+        "name": "Phase/Lookahead",
+        "action": "use minimum required latency"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "crossover coloration",
+    "phase shift",
+    "over-controlled tone",
+    "latency"
+  ],
+  "stop_conditions": [
+    "tone changes when band is idle",
+    "multiple bands move continuously"
+  ],
+  "alternatives": [
+    {
+      "condition": "single dynamic nodes",
+      "fallback": "Pro-Q 3 or F6"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 1.2.8.0.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/FabFilter/Pro-MB.md",
+    "source_note": "sources/音乐制作/插件资料/FabFilter/Pro-MB资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/a8c2063eb007--FabFilter-Pro-MB.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/a8c2063eb007--composite-multiband-lookahead.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/FabFilter/Pro-MB.md",
+        "packaged_path": "evidence/cards/Pro-MB.md",
+        "sha256": "7c44699b6fe7939a2b68f071599a9249ed5860c2c996a46cad694b182d2efe6e"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/FabFilter/Pro-MB资料.md",
+        "packaged_path": "evidence/sources/Pro-MB资料.md",
+        "sha256": "a1187676626baba533fc89e9669d2d959e83214585fbb9c6ee9b255f85ae13fe"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/a8c2063eb007--FabFilter-Pro-MB.md",
+        "packaged_path": "evidence/validation/a8c2063eb007--FabFilter-Pro-MB.md",
+        "sha256": "36b5d92d7cb76c0193c4cfe478eda807d79ca7dc361bc08ad73659009129a6ce"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/a8c2063eb007--composite-multiband-lookahead.json",
+          "packaged_path": "evidence/results/a8c2063eb007--composite-multiband-lookahead.json",
+          "sha256": "34ce9372a2b2464a5b14922e856f6a4605e98720651985273875af1d7ae0a2d0"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "band_limited_dynamic_imbalance",
+      "low_mid_bloom",
+      "presence_instability"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Empty-state neutrality and one-band Lookahead on/off behaviour tested."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "在主压缩前控制 150–500 Hz 偶发堆积，可让全带压缩更稳定。",
+      "在主压缩后控制 Presence/齿音或提升低电平细节，避免前级触发关系被改写。",
+      "由主唱侧链在伴奏总线建立频率选择性让位。"
+    ],
+    "routing": [
+      "主唱 Insert 前/后动态按诊断选择。",
+      "伴奏总线外部侧链让位。",
+      "Backing Vocal 总线宽频动态统一。"
+    ],
+    "controls": [
+      {
+        "name": "Band Range",
+        "meaning": "限制最大增益变化并以正负决定上下方向。",
+        "action": "向下压缩先 -1 至 -3 dB，明确确认箭头与 GR 方向。"
+      },
+      {
+        "name": "Threshold / Ratio / Knee",
+        "meaning": "定义触发点、压缩比例与过渡。",
+        "action": "先 Range 限深，再让最坏音素触发；用软 Knee 避免边界明显。"
+      },
+      {
+        "name": "Attack / Release",
+        "meaning": "节目与频率相关的 0–100% 速度。",
+        "action": "吞字头则放慢 Attack；音色抽动则放慢 Release。"
+      },
+      {
+        "name": "Lookahead",
+        "meaning": "每段预读值与顶部全局启用开关共同决定反应；本机全局 On 预留完整 20 ms 宿主延迟。",
+        "action": "捕捉快速齿音/爆发时 A/B On/Off；低延迟监听先检查全局开关与宿主 PDC。"
+      },
+      {
+        "name": "Processing Mode",
+        "meaning": "Dynamic、Linear 或 Minimum Phase。",
+        "action": "混音默认 Dynamic Phase；只有相位叠加证据才比较其他模式。"
+      },
+      {
+        "name": "Stereo Link / Mid-Side",
+        "meaning": "决定双声道检测联动和处理中/侧比重。",
+        "action": "主唱/总线先高 Link；降低前后检查声像。"
+      }
+    ],
+    "parameter_start_points": [
+      "单段 Dynamic Phase；Range -1 至 -3 dB、Ratio 1.5:1–3:1、Soft Knee。",
+      "Attack/Release 从中值起；字头过软提高 Attack 百分比，泵动则提高 Release。",
+      "每段 Lookahead 从低值起，但同时核对顶部全局开关；本机全局 On 固定预留 20 ms，录音监听不要只看每段的 1 ms 数字。"
+    ],
+    "listen_for": [
+      "分频边界相位和音色变化。",
+      "Attack 太快吞掉辅音或气势。",
+      "向上压缩抬噪声、呼吸和混响。",
+      "Stereo Link 太低造成声像游移。"
+    ],
+    "stop": [
+      "最坏音素被限制到邻近音素范围。",
+      "再加 Range 只让动态趋近平坦或出现泵动时停止。"
+    ],
+    "latency": [
+      "关闭全局 Lookahead、关闭 Oversampling 且使用 Dynamic 或 Minimum Phase 时官方称零延迟。本机实测：Default Setting 即使无频段也因全局 Lookahead On 报告 960 samples / 20 ms；单频段的 band Lookahead 显示 1.000 ms 时仍是 960 samples，关闭全局开关后才为 0 samples，且 band Lookahead 控件灰显。Linear Phase 与 Oversampling 另加延迟。Dynamic Phase 静止时近线性/平坦相位、动作时才引入小相位变化；Linear 有前振铃风险。"
+    ]
+  }
+}

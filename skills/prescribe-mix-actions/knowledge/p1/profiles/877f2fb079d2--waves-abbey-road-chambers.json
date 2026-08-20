@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "877f2fb079d2--waves-abbey-road-chambers",
+  "family_id": "877f2fb079d2",
+  "identity": {
+    "vendor": "Waves",
+    "product": "Abbey Road Chambers",
+    "version_range": "12.7.0.209",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "reverb-chamber",
+    "secondary": [
+      "vintage-room",
+      "speaker-mic"
+    ],
+    "diagnoses": [
+      "vintage_chamber_depth",
+      "speaker_mic_room_colour"
+    ],
+    "not_for": [
+      "transparent_natural_room",
+      "dry_intimate_only"
+    ]
+  },
+  "routing": [
+    {
+      "position": "100% wet aux",
+      "when": "vintage_chamber_depth"
+    },
+    {
+      "position": "100% wet aux",
+      "when": "speaker_mic_room_colour"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "choose speaker/mic/chamber deliberately",
+      "pre-delay protects diction",
+      "filter return"
+    ],
+    "controls": [
+      {
+        "name": "Chamber/Speaker/Mic",
+        "action": "select one topology at a time"
+      },
+      {
+        "name": "Time/PreDelay",
+        "action": "fit groove and phrases"
+      },
+      {
+        "name": "EQ/Mix",
+        "action": "100% wet aux and filter"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "vocal colour masking",
+    "low-mid buildup",
+    "long fixed onset"
+  ],
+  "stop_conditions": [
+    "room colour overwhelms words",
+    "tail masks next line"
+  ],
+  "alternatives": [
+    {
+      "condition": "clean natural room",
+      "fallback": "Pro-R"
+    },
+    {
+      "condition": "plate",
+      "fallback": "ValhallaPlate"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 12.7.0.209.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Waves/Abbey Road Chambers.md",
+    "source_note": "sources/音乐制作/插件资料/Waves/Abbey Road Chambers资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/877f2fb079d2--Abbey-Road-Chambers.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/877f2fb079d2--impulse--default.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Waves/Abbey Road Chambers.md",
+        "packaged_path": "evidence/cards/Abbey Road Chambers.md",
+        "sha256": "23dea6f8740ac804e1de17ac5be285f97b96a03167926ed153a3d0636d250a10"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Waves/Abbey Road Chambers资料.md",
+        "packaged_path": "evidence/sources/Abbey Road Chambers资料.md",
+        "sha256": "65bb966053ce72394c260c00a778cc8f7a73fec6c2ebccc74ea8c18ff4df89d1"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/877f2fb079d2--Abbey-Road-Chambers.md",
+        "packaged_path": "evidence/validation/877f2fb079d2--Abbey-Road-Chambers.md",
+        "sha256": "13e3e83d5c38ab729a725a006cfd71c31709365451b4a9c5d710452e75f8766d"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/877f2fb079d2--impulse--default.json",
+          "packaged_path": "evidence/results/877f2fb079d2--impulse--default.json",
+          "sha256": "2ae01697c8b2a66d349a7660aeff85ead130c4aa7fa27df0c574756b70cb0a27"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "vintage_chamber_depth",
+      "speaker_mic_room_colour"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Default KM53s/Classic/Chamber 2 onset and decay measured."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "100% Wet Aux；先 Room/Speaker/Mic 建基础 Chamber，再加入 STEED。",
+      "Mic Close Wall 更亮/瞬态多，Facing Room 更直接房间声；按咬字选择。"
+    ],
+    "routing": [
+      "Stereo Aux 100% Wet。",
+      "Send 自动化句尾效果。"
+    ],
+    "controls": [
+      {
+        "name": "Chamber Type",
+        "meaning": "半瓷砖 Chamber 2、亮 Mirrored、暗小 Stone。",
+        "action": "主唱从 Chamber 2 起，按亮暗比较。"
+      },
+      {
+        "name": "Speaker B&W/Altec",
+        "meaning": "B&W宽带现代；Altec 中高强调/低频减少。",
+        "action": "厚声试 Altec腾低频，薄声慎用。"
+      },
+      {
+        "name": "Mic Type/Position",
+        "meaning": "改变拾音色与早反射。",
+        "action": "Close Wall更亮，Facing Room更直接房间；逐项比较。"
+      },
+      {
+        "name": "STEED Delay/Feedback",
+        "meaning": "前房间磁带延迟与反馈延长/涌动尾。",
+        "action": "先短低反馈到不听见离散 Tap，再按效果增加。"
+      },
+      {
+        "name": "RS106/RS127 / Mix",
+        "meaning": "滤波/EQ 与干湿。",
+        "action": "Aux 100% Wet，低切低通腾空间。"
+      }
+    ],
+    "parameter_start_points": [
+      "Chamber 2+B&W+Facing Room，短 STEED/低 Feedback。",
+      "返回高通 150–250 Hz、低通 6–10 kHz。",
+      "Altec/Close Wall 作为更中高/更亮对照。"
+    ],
+    "listen_for": [
+      "中高拥挤、早反射盖辅音。",
+      "反馈累积、自激。",
+      "组合电平偏差。"
+    ],
+    "stop": [
+      "物理链选择解决明确空间目标。",
+      "再加 STEED 只增加糊和节奏冲突时回退。"
+    ],
+    "latency": [
+      "Waves v12 PDC 需 S4 实测；Tape Delay 是创作延迟，不等同算法 PDC。"
+    ]
+  }
+}

@@ -1,0 +1,486 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T05:48:33+08:00",
+  "family_id": "fbfdbc32d12d",
+  "test_id": "dynamics-steps-rvox-compression",
+  "fixed_state": {
+    "host": "Ableton Live 11.3.43",
+    "format": "VST3 Stereo",
+    "plugin": "Waves RVox 12.7.0.209",
+    "neutral": "Gate -Inf; Compression 0.0; Gain 0.0",
+    "compressed": "Gate -Inf; Compression -20.0; Gain 0.0",
+    "host_reported_latency_samples": 64,
+    "host_reported_latency_ms": 1.3,
+    "render": "Master; 42.1.1-50.1.1; 12 s; 48 kHz; 24-bit WAV; normalize off; triangular dither",
+    "fixture": "dynamics_steps_48k.wav warped by Ableton to 8 bars at 160 BPM",
+    "controlled_variable": "Compression 0.0 -> -20.0; Gate held at -Inf and Gain at 0.0"
+  },
+  "files": {
+    "bypass": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\fbfdbc32d12d--dynamics--bypass.wav",
+      "sha256": "dc8379ba04fe00155a24266321d6c08c11bd3877c383f39c23b360d446708132",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -2.853702,
+      "rms_dbfs": -17.19745,
+      "left_right_correlation": 1.0,
+      "left_right_residual_rms_dbfs": -141.481279
+    },
+    "neutral_gate_minus_inf_compression_0_gain_0": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\fbfdbc32d12d--dynamics--neutral.wav",
+      "sha256": "19d91a4d4a687912cdde55a0c1362b8962717438b1ec1df8cffb70fc19c40e09",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -2.940999,
+      "rms_dbfs": -17.284746,
+      "left_right_correlation": 1.0,
+      "left_right_residual_rms_dbfs": -141.471239
+    },
+    "compression_minus_20_gate_minus_inf_gain_0": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\fbfdbc32d12d--dynamics--comp-minus20.wav",
+      "sha256": "88208944a008cadac2b2bd6ca38208af609118ee78b7c916a2504161517fc5d0",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -0.911451,
+      "rms_dbfs": -9.54995,
+      "left_right_correlation": 1.0,
+      "left_right_residual_rms_dbfs": -141.472878
+    }
+  },
+  "snapshot": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\host\\snapshots\\0072a637f389--FabFilter-Saturn-2 Project\\fbfdbc32d12d--Waves-RVox.als",
+    "sha256": "e58373ab2711552e4e61dfdd5d36ef768a8249bff3d4d1015070bee0fc55cb9a"
+  },
+  "comparisons": {
+    "neutral_vs_bypass": {
+      "level_segments": [
+        {
+          "source_peak_dbfs": -30.0,
+          "start_s": 0.0,
+          "steady_start_s": 0.15,
+          "steady_end_s": 1.2,
+          "reference_rms_dbfs": -33.010869,
+          "candidate_rms_dbfs": -33.098165,
+          "steady_gain_db": -0.087296,
+          "reference_peak_dbfs": -30.001771,
+          "candidate_peak_dbfs": -30.089061,
+          "steady_peak_gain_db": -0.08729
+        },
+        {
+          "source_peak_dbfs": -24.0,
+          "start_s": 1.9,
+          "steady_start_s": 2.05,
+          "steady_end_s": 3.2,
+          "reference_rms_dbfs": -27.010592,
+          "candidate_rms_dbfs": -27.097888,
+          "steady_gain_db": -0.087296,
+          "reference_peak_dbfs": -24.002173,
+          "candidate_peak_dbfs": -24.08946,
+          "steady_peak_gain_db": -0.087287
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "start_s": 3.9,
+          "steady_start_s": 4.05,
+          "steady_end_s": 5.2,
+          "reference_rms_dbfs": -21.01068,
+          "candidate_rms_dbfs": -21.097976,
+          "steady_gain_db": -0.087296,
+          "reference_peak_dbfs": -18.000511,
+          "candidate_peak_dbfs": -18.087807,
+          "steady_peak_gain_db": -0.087296
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "start_s": 5.9,
+          "steady_start_s": 6.05,
+          "steady_end_s": 7.2,
+          "reference_rms_dbfs": -15.023319,
+          "candidate_rms_dbfs": -15.110616,
+          "steady_gain_db": -0.087296,
+          "reference_peak_dbfs": -11.999943,
+          "candidate_peak_dbfs": -12.087237,
+          "steady_peak_gain_db": -0.087295
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "start_s": 7.85,
+          "steady_start_s": 8.05,
+          "steady_end_s": 9.1,
+          "reference_rms_dbfs": -9.010575,
+          "candidate_rms_dbfs": -9.097871,
+          "steady_gain_db": -0.087296,
+          "reference_peak_dbfs": -6.000476,
+          "candidate_peak_dbfs": -6.087771,
+          "steady_peak_gain_db": -0.087295
+        }
+      ],
+      "static_curve": {
+        "output_vs_input_slope": 1.0,
+        "output_vs_input_intercept_db": -0.087297,
+        "gain_change_low_to_high_db": 0.0,
+        "effective_ratio_from_slope": 1.0
+      },
+      "tone_onsets": [
+        {
+          "source_peak_dbfs": -24.0,
+          "onset_s": 1.9,
+          "initial_gain_db_first_10ms": -0.343049,
+          "steady_gain_db": -0.087296,
+          "gain_reduction_development_db": 0.255753,
+          "time_to_within_1db_of_steady_for_20ms_ms": 59.916667
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "onset_s": 3.9,
+          "initial_gain_db_first_10ms": -0.815434,
+          "steady_gain_db": -0.087296,
+          "gain_reduction_development_db": 0.728138,
+          "time_to_within_1db_of_steady_for_20ms_ms": 38.791667
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "onset_s": 5.9,
+          "initial_gain_db_first_10ms": -0.108129,
+          "steady_gain_db": -0.087296,
+          "gain_reduction_development_db": 0.020833,
+          "time_to_within_1db_of_steady_for_20ms_ms": 15.083333
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "onset_s": 7.85,
+          "initial_gain_db_first_10ms": 0.099083,
+          "steady_gain_db": -0.087296,
+          "gain_reduction_development_db": -0.186379,
+          "time_to_within_1db_of_steady_for_20ms_ms": 36.625
+        }
+      ],
+      "isolated_transients": [
+        {
+          "onset_s": 9.973333,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -2.941,
+          "peak_gain_db": -0.087298
+        },
+        {
+          "onset_s": 10.4,
+          "reference_peak_dbfs": -2.853704,
+          "candidate_peak_dbfs": -2.940999,
+          "peak_gain_db": -0.087295
+        },
+        {
+          "onset_s": 10.826667,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -2.940999,
+          "peak_gain_db": -0.087297
+        },
+        {
+          "onset_s": 11.253333,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -2.940999,
+          "peak_gain_db": -0.087297
+        },
+        {
+          "onset_s": 11.68,
+          "reference_peak_dbfs": -2.853704,
+          "candidate_peak_dbfs": -2.940999,
+          "peak_gain_db": -0.087295
+        }
+      ],
+      "whole_file_level_delta_db": -0.087296,
+      "whole_file_peak_delta_db": -0.087297,
+      "direct_correlation": 1.0,
+      "left_right_residual_rms_dbfs": -141.471239
+    },
+    "compression_minus_20_vs_bypass": {
+      "level_segments": [
+        {
+          "source_peak_dbfs": -30.0,
+          "start_s": 0.0,
+          "steady_start_s": 0.15,
+          "steady_end_s": 1.2,
+          "reference_rms_dbfs": -33.010869,
+          "candidate_rms_dbfs": -15.26375,
+          "steady_gain_db": 17.747119,
+          "reference_peak_dbfs": -30.001771,
+          "candidate_peak_dbfs": -12.264257,
+          "steady_peak_gain_db": 17.737514
+        },
+        {
+          "source_peak_dbfs": -24.0,
+          "start_s": 1.9,
+          "steady_start_s": 2.05,
+          "steady_end_s": 3.2,
+          "reference_rms_dbfs": -27.010592,
+          "candidate_rms_dbfs": -10.995745,
+          "steady_gain_db": 16.014846,
+          "reference_peak_dbfs": -24.002173,
+          "candidate_peak_dbfs": -7.994971,
+          "steady_peak_gain_db": 16.007201
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "start_s": 3.9,
+          "steady_start_s": 4.05,
+          "steady_end_s": 5.2,
+          "reference_rms_dbfs": -21.01068,
+          "candidate_rms_dbfs": -7.671746,
+          "steady_gain_db": 13.338934,
+          "reference_peak_dbfs": -18.000511,
+          "candidate_peak_dbfs": -4.667485,
+          "steady_peak_gain_db": 13.333026
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "start_s": 5.9,
+          "steady_start_s": 6.05,
+          "steady_end_s": 7.2,
+          "reference_rms_dbfs": -15.023319,
+          "candidate_rms_dbfs": -5.372117,
+          "steady_gain_db": 9.651203,
+          "reference_peak_dbfs": -11.999943,
+          "candidate_peak_dbfs": -2.353485,
+          "steady_peak_gain_db": 9.646458
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "start_s": 7.85,
+          "steady_start_s": 8.05,
+          "steady_end_s": 9.1,
+          "reference_rms_dbfs": -9.010575,
+          "candidate_rms_dbfs": -3.920032,
+          "steady_gain_db": 5.090543,
+          "reference_peak_dbfs": -6.000476,
+          "candidate_peak_dbfs": -0.911451,
+          "steady_peak_gain_db": 5.089025
+        }
+      ],
+      "static_curve": {
+        "output_vs_input_slope": 0.471931,
+        "output_vs_input_intercept_db": 1.272111,
+        "gain_change_low_to_high_db": -12.656576,
+        "effective_ratio_from_slope": 2.118953
+      },
+      "tone_onsets": [
+        {
+          "source_peak_dbfs": -24.0,
+          "onset_s": 1.9,
+          "initial_gain_db_first_10ms": 0.215397,
+          "steady_gain_db": 16.009589,
+          "gain_reduction_development_db": 15.794192,
+          "time_to_within_1db_of_steady_for_20ms_ms": 80.020833
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "onset_s": 3.9,
+          "initial_gain_db_first_10ms": -0.344859,
+          "steady_gain_db": 13.333934,
+          "gain_reduction_development_db": 13.678793,
+          "time_to_within_1db_of_steady_for_20ms_ms": 54.583333
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "onset_s": 5.9,
+          "initial_gain_db_first_10ms": 0.906611,
+          "steady_gain_db": 9.647235,
+          "gain_reduction_development_db": 8.740624,
+          "time_to_within_1db_of_steady_for_20ms_ms": 28.208333
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "onset_s": 7.85,
+          "initial_gain_db_first_10ms": 0.032174,
+          "steady_gain_db": 5.089193,
+          "gain_reduction_development_db": 5.057018,
+          "time_to_within_1db_of_steady_for_20ms_ms": 51.854167
+        }
+      ],
+      "isolated_transients": [
+        {
+          "onset_s": 9.973333,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -1.730232,
+          "peak_gain_db": 1.12347
+        },
+        {
+          "onset_s": 10.4,
+          "reference_peak_dbfs": -2.853704,
+          "candidate_peak_dbfs": -1.72915,
+          "peak_gain_db": 1.124553
+        },
+        {
+          "onset_s": 10.826667,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -1.728719,
+          "peak_gain_db": 1.124983
+        },
+        {
+          "onset_s": 11.253333,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -1.728547,
+          "peak_gain_db": 1.125155
+        },
+        {
+          "onset_s": 11.68,
+          "reference_peak_dbfs": -2.853704,
+          "candidate_peak_dbfs": -1.72848,
+          "peak_gain_db": 1.125223
+        }
+      ],
+      "whole_file_level_delta_db": 7.6475,
+      "whole_file_peak_delta_db": 1.942251,
+      "direct_correlation": 0.925210363024,
+      "left_right_residual_rms_dbfs": -141.472878
+    },
+    "compression_minus_20_vs_neutral": {
+      "level_segments": [
+        {
+          "source_peak_dbfs": -30.0,
+          "start_s": 0.0,
+          "steady_start_s": 0.15,
+          "steady_end_s": 1.2,
+          "reference_rms_dbfs": -33.098165,
+          "candidate_rms_dbfs": -15.26375,
+          "steady_gain_db": 17.834416,
+          "reference_peak_dbfs": -30.089061,
+          "candidate_peak_dbfs": -12.264257,
+          "steady_peak_gain_db": 17.824805
+        },
+        {
+          "source_peak_dbfs": -24.0,
+          "start_s": 1.9,
+          "steady_start_s": 2.05,
+          "steady_end_s": 3.2,
+          "reference_rms_dbfs": -27.097888,
+          "candidate_rms_dbfs": -10.995745,
+          "steady_gain_db": 16.102143,
+          "reference_peak_dbfs": -24.08946,
+          "candidate_peak_dbfs": -7.994971,
+          "steady_peak_gain_db": 16.094489
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "start_s": 3.9,
+          "steady_start_s": 4.05,
+          "steady_end_s": 5.2,
+          "reference_rms_dbfs": -21.097976,
+          "candidate_rms_dbfs": -7.671746,
+          "steady_gain_db": 13.42623,
+          "reference_peak_dbfs": -18.087807,
+          "candidate_peak_dbfs": -4.667485,
+          "steady_peak_gain_db": 13.420322
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "start_s": 5.9,
+          "steady_start_s": 6.05,
+          "steady_end_s": 7.2,
+          "reference_rms_dbfs": -15.110616,
+          "candidate_rms_dbfs": -5.372117,
+          "steady_gain_db": 9.738499,
+          "reference_peak_dbfs": -12.087237,
+          "candidate_peak_dbfs": -2.353485,
+          "steady_peak_gain_db": 9.733752
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "start_s": 7.85,
+          "steady_start_s": 8.05,
+          "steady_end_s": 9.1,
+          "reference_rms_dbfs": -9.097871,
+          "candidate_rms_dbfs": -3.920032,
+          "steady_gain_db": 5.177839,
+          "reference_peak_dbfs": -6.087771,
+          "candidate_peak_dbfs": -0.911451,
+          "steady_peak_gain_db": 5.17632
+        }
+      ],
+      "static_curve": {
+        "output_vs_input_slope": 0.471931,
+        "output_vs_input_intercept_db": 1.313309,
+        "gain_change_low_to_high_db": -12.656577,
+        "effective_ratio_from_slope": 2.118953
+      },
+      "tone_onsets": [
+        {
+          "source_peak_dbfs": -24.0,
+          "onset_s": 1.9,
+          "initial_gain_db_first_10ms": 0.341543,
+          "steady_gain_db": 16.096884,
+          "gain_reduction_development_db": 15.755342,
+          "time_to_within_1db_of_steady_for_20ms_ms": 80.020833
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "onset_s": 3.9,
+          "initial_gain_db_first_10ms": 0.479236,
+          "steady_gain_db": 13.42123,
+          "gain_reduction_development_db": 12.941995,
+          "time_to_within_1db_of_steady_for_20ms_ms": 54.583333
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "onset_s": 5.9,
+          "initial_gain_db_first_10ms": 0.922437,
+          "steady_gain_db": 9.734531,
+          "gain_reduction_development_db": 8.812094,
+          "time_to_within_1db_of_steady_for_20ms_ms": 28.208333
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "onset_s": 7.85,
+          "initial_gain_db_first_10ms": -0.016266,
+          "steady_gain_db": 5.176489,
+          "gain_reduction_development_db": 5.192754,
+          "time_to_within_1db_of_steady_for_20ms_ms": 51.854167
+        }
+      ],
+      "isolated_transients": [
+        {
+          "onset_s": 9.973333,
+          "reference_peak_dbfs": -2.941,
+          "candidate_peak_dbfs": -1.730232,
+          "peak_gain_db": 1.210769
+        },
+        {
+          "onset_s": 10.4,
+          "reference_peak_dbfs": -2.940999,
+          "candidate_peak_dbfs": -1.72915,
+          "peak_gain_db": 1.211849
+        },
+        {
+          "onset_s": 10.826667,
+          "reference_peak_dbfs": -2.940999,
+          "candidate_peak_dbfs": -1.728719,
+          "peak_gain_db": 1.21228
+        },
+        {
+          "onset_s": 11.253333,
+          "reference_peak_dbfs": -2.940999,
+          "candidate_peak_dbfs": -1.728547,
+          "peak_gain_db": 1.212451
+        },
+        {
+          "onset_s": 11.68,
+          "reference_peak_dbfs": -2.940999,
+          "candidate_peak_dbfs": -1.72848,
+          "peak_gain_db": 1.212518
+        }
+      ],
+      "whole_file_level_delta_db": 7.734796,
+      "whole_file_peak_delta_db": 2.029548,
+      "direct_correlation": 0.925210362802,
+      "left_right_residual_rms_dbfs": -141.472878
+    }
+  },
+  "interpretation_boundary": "Measurements apply only to this installed Waves RVox 12.7.0.209 VST3 Stereo instance, the visible Gate -Inf / Gain 0.0 states, and the Compression 0.0 versus -20.0 comparison on the rendered 48 kHz dynamics fixture. Ableton reported 64 samples (1.3 ms) latency and rendered all files with delay compensation, so the comparison is level/shape evidence rather than a raw impulse-delay measurement. The fixture was auto-warped from 11.25 s to 12 s. This test does not validate Gate behavior, hidden detector constants, output-ceiling edge cases, mono behavior, stereo linking, VST2, other versions/sample rates/input programs, or musical preference."
+}

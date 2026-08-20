@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T02:43:08+08:00",
+  "family_id": "06fad1aad9d8",
+  "test_id": "impulse-neutral",
+  "reference": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\fixtures\\impulse_train_48k.wav",
+    "sha256": "aafbd0a42ee57fde77b79aae591d54f87383b391e76803af9405757f92e3cf2e",
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "sample_width_bytes": 2,
+    "frames": 384000,
+    "duration_seconds": 8.0,
+    "peak_dbfs": -1.938333,
+    "rms_dbfs": -56.054751
+  },
+  "candidate": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\06fad1aad9d8--impulse--neutral.wav",
+    "sha256": "e2bd187f094ed69a10db30406580ec4ea786033a97e161dab580c5bc7025d56d",
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "sample_width_bytes": 3,
+    "frames": 288000,
+    "duration_seconds": 6.0,
+    "peak_dbfs": -7.194262,
+    "rms_dbfs": -56.811564
+  },
+  "comparison_window": {
+    "frames": 288000,
+    "duration_seconds": 6.0,
+    "reference_was_cropped": true,
+    "candidate_was_cropped": false
+  },
+  "transfer": {
+    "direct_correlation": -9.577085e-06,
+    "best_integer_lag_samples": 105,
+    "best_integer_lag_ms": 2.1875,
+    "best_lag_correlation": 0.693372790701,
+    "level_delta_db": -2.0062,
+    "residual_rms_dbfs": -57.566701,
+    "residual_peak_dbfs": -8.194222,
+    "left_right_output_correlation": 0.999999998303,
+    "impulse_peak_gain_range_db": 0.45063
+  },
+  "impulses": [
+    {
+      "impulse": 1,
+      "time_seconds": 0.5,
+      "input_peak": 0.799987793,
+      "input_peak_dbfs": -1.938333,
+      "output_peak": 0.436804295,
+      "output_peak_dbfs": -7.194262,
+      "peak_gain_db": -5.255929,
+      "peak_offset_samples": 0,
+      "peak_offset_ms": 0.0,
+      "window_energy_gain_db": -2.194707,
+      "tail_energy_fraction": 0.010721585253,
+      "tail_rms_dbfs": -60.087689
+    },
+    {
+      "impulse": 2,
+      "time_seconds": 2.5,
+      "input_peak": 0.5,
+      "input_peak_dbfs": -6.0206,
+      "output_peak": 0.278311014,
+      "output_peak_dbfs": -11.109392,
+      "peak_gain_db": -5.088792,
+      "peak_offset_samples": 0,
+      "peak_offset_ms": 0.0,
+      "window_energy_gain_db": -1.762963,
+      "tail_energy_fraction": 0.011117609278,
+      "tail_rms_dbfs": -63.580688
+    },
+    {
+      "impulse": 3,
+      "time_seconds": 4.5,
+      "input_peak": 0.25,
+      "input_peak_dbfs": -12.0412,
+      "output_peak": 0.143772244,
+      "output_peak_dbfs": -16.846499,
+      "peak_gain_db": -4.805299,
+      "peak_offset_samples": 1,
+      "peak_offset_ms": 0.020833,
+      "window_energy_gain_db": -1.198029,
+      "tail_energy_fraction": 0.01236847067,
+      "tail_rms_dbfs": -68.573308
+    }
+  ],
+  "interpretation_boundary": "The source is an 8 s deterministic PCM16 impulse train; the candidate is a 6 s Ableton 48 kHz/24-bit export, so analysis uses their common first 6 s. The three impulse amplitudes test level-dependent peak transfer and short post-impulse energy, not steady-state THD, aliasing, crossover behavior, oversampling, CPU cost, or musical preference. Independent render dither contributes a very low noise floor but cannot explain material peak-gain differences or impulse-response tails."
+}

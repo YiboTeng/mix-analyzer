@@ -1,0 +1,211 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "290814706035--fabfilter-pro-g",
+  "family_id": "290814706035",
+  "identity": {
+    "vendor": "FabFilter",
+    "product": "Pro-G",
+    "version_range": "1.3.1.0",
+    "formats": [
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "gate-expander",
+    "secondary": [
+      "noise-control",
+      "sidechain"
+    ],
+    "diagnoses": [
+      "inter_phrase_noise",
+      "room_tone_between_lines"
+    ],
+    "not_for": [
+      "continuous_noise",
+      "mouth_clicks"
+    ]
+  },
+  "routing": [
+    {
+      "position": "early insert before heavy compression",
+      "when": "inter_phrase_noise"
+    },
+    {
+      "position": "early insert before heavy compression",
+      "when": "room_tone_between_lines"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "limit maximum attenuation",
+      "preserve weak consonants and tails",
+      "avoid chatter"
+    ],
+    "controls": [
+      {
+        "name": "Threshold/Range",
+        "action": "set Range first, then find threshold"
+      },
+      {
+        "name": "Attack/Hold/Release",
+        "action": "preserve onset and natural room continuity"
+      },
+      {
+        "name": "Lookahead",
+        "action": "enable only when onset loss justifies latency"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "tail chop",
+    "chatter",
+    "onset loss",
+    "lookahead latency"
+  ],
+  "stop_conditions": [
+    "weak endings disappear",
+    "gate movement becomes audible"
+  ],
+  "alternatives": [
+    {
+      "condition": "continuous noise",
+      "fallback": "NS1 or WNS"
+    },
+    {
+      "condition": "sparse defects",
+      "fallback": "event edit"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 1.3.1.0.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/FabFilter/Pro-G.md",
+    "source_note": "sources/音乐制作/插件资料/FabFilter/Pro-G资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/290814706035--FabFilter-Pro-G.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/290814706035--composite-pro-g-vocal-expander-lookahead.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/FabFilter/Pro-G.md",
+        "packaged_path": "evidence/cards/Pro-G.md",
+        "sha256": "720ad02f732ec584957d4b394ffe9c54ca40a2468962e43b6292118636829e3b"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/FabFilter/Pro-G资料.md",
+        "packaged_path": "evidence/sources/Pro-G资料.md",
+        "sha256": "dfdd245b4a0ecff113ce60f2b98f5d6e7775d8ddea1a5e40a2dde8670c985964"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/290814706035--FabFilter-Pro-G.md",
+        "packaged_path": "evidence/validation/290814706035--FabFilter-Pro-G.md",
+        "sha256": "5f96d758f4dbf609e7ef11fdd49c0ff2640e93b9d929bd811be2c18dbc773e24"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/290814706035--composite-pro-g-vocal-expander-lookahead.json",
+          "packaged_path": "evidence/results/290814706035--composite-pro-g-vocal-expander-lookahead.json",
+          "sha256": "ed8f2635b7ce42ee1ea67d1ef2f4ac109c29920e676648fded01cd23789caeb5"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "inter_phrase_noise",
+      "room_tone_between_lines"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Classic/Range/Lookahead tested on shared composite; labelled weak speech not tested."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "连续噪声先由 NS1/RX 处理，Pro-G 再控制句间与低电平泄漏。",
+      "通常放在主压缩前；若后级压缩抬起噪声，可在压缩后增加更轻的第二级扩展，但需避免双重门控。"
+    ],
+    "routing": [
+      "主唱 Insert 前段，通常在压缩前。",
+      "混响/延迟 Return 上可用外部侧链做 Ducking，干声触发。"
+    ],
+    "controls": [
+      {
+        "name": "Threshold",
+        "meaning": "超过阈值时打开/恢复。",
+        "action": "观察最弱有效字尾，设在噪声与有效语音之间。"
+      },
+      {
+        "name": "Ratio",
+        "meaning": "低于阈值后的扩展斜率；高于约 5:1 更像 Gate。",
+        "action": "人声优先 2:1–4:1 温和扩展，再考虑更高。"
+      },
+      {
+        "name": "Range",
+        "meaning": "最大衰减地板。",
+        "action": "只压低噪声 6–15 dB，保留房间连续性。"
+      },
+      {
+        "name": "Attack / Lookahead",
+        "meaning": "打开速度与预开时间。",
+        "action": "词头被切时开启/增加 Lookahead，比一味极速 Attack 更稳。"
+      },
+      {
+        "name": "Hold / Release",
+        "meaning": "保持打开与关闭时间。",
+        "action": "Hold 跨过音节间隙，Release 跟随自然词尾和呼吸。"
+      },
+      {
+        "name": "Side-chain Filter / Audition",
+        "meaning": "限制检测频段并独听触发信号。",
+        "action": "滤掉低频震动和极高噪声，让中频语音驱动开门。"
+      }
+    ],
+    "parameter_start_points": [
+      "人声自然扩展：Ratio 2:1–3:1，Range 6–12 dB，Attack 0–5 ms，Hold 40–100 ms，Release 100–250 ms。",
+      "词头被切：Lookahead 开；低频误触发：侧链高通约 80–150 Hz；齿音误触发可低通检测。",
+      "设置 Threshold 时循环最弱有效词尾和最响噪声，而不是只看强句。"
+    ],
+    "listen_for": [
+      "F/H/S、字尾和呼吸是否被截断。",
+      "Release 是否造成噪声床上下抽吸。",
+      "立体声返回是否因未链接检测而左右漂移。"
+    ],
+    "stop": [
+      "完整编曲中噪声不再妨碍、单独听仍自然连续时停止。",
+      "继续加 Range/Ratio 只让空隙更假或吞掉词尾时退回。"
+    ],
+    "latency": [
+      "本机 1.3.1.0 在 Lookahead 模块关闭且 Oversampling Off 时由 Ableton 回读 0 samples；开启后界面为 9.951 ms、宿主为 480 samples / 10.0 ms。离线导出由 PDC 对齐，但录音监听仍承担这段实时延迟。Oversampling 延迟尚未实测，不能从新版资料外推。"
+    ]
+  }
+}

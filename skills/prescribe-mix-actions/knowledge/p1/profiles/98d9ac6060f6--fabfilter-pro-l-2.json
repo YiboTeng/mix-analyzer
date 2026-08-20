@@ -1,0 +1,202 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "98d9ac6060f6--fabfilter-pro-l-2",
+  "family_id": "98d9ac6060f6",
+  "identity": {
+    "vendor": "FabFilter",
+    "product": "Pro-L 2",
+    "version_range": "2.2.1.0",
+    "formats": [
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "limiting",
+    "secondary": [
+      "true-peak",
+      "vocal-bus"
+    ],
+    "diagnoses": [
+      "vocal_bus_peak_protection",
+      "true_peak_ceiling"
+    ],
+    "not_for": [
+      "primary_dynamic_shaping",
+      "phrase_leveling"
+    ]
+  },
+  "routing": [
+    {
+      "position": "last on vocal bus or print safety",
+      "when": "vocal_bus_peak_protection"
+    },
+    {
+      "position": "last on vocal bus or print safety",
+      "when": "true_peak_ceiling"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "small occasional gain reduction",
+      "explicit ceiling",
+      "preserve articulation"
+    ],
+    "controls": [
+      {
+        "name": "Gain/Ceiling",
+        "action": "drive only to protection target"
+      },
+      {
+        "name": "Style/Lookahead",
+        "action": "choose by transient quality and latency"
+      },
+      {
+        "name": "True Peak/OS",
+        "action": "enable when delivery target requires"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "flattened consonants",
+    "loudness bias",
+    "high latency"
+  ],
+  "stop_conditions": [
+    "limiter works continuously",
+    "matched bypass has clearer attacks"
+  ],
+  "alternatives": [
+    {
+      "condition": "clip peak events earlier",
+      "fallback": "clip gain or compressor"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 2.2.1.0.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/FabFilter/Pro-L 2.md",
+    "source_note": "sources/音乐制作/插件资料/FabFilter/Pro-L 2资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/98d9ac6060f6--FabFilter-Pro-L-2.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/98d9ac6060f6--dynamics-pro-l-2.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/FabFilter/Pro-L 2.md",
+        "packaged_path": "evidence/cards/Pro-L 2.md",
+        "sha256": "f2e0661c2a47536b2b4bf455203214b8130e6e445d6f5f495040cba857e53f82"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/FabFilter/Pro-L 2资料.md",
+        "packaged_path": "evidence/sources/Pro-L 2资料.md",
+        "sha256": "22220154f0b3b1048f979ae1ed7ebb9d0b8a54bd3b25d75c570b1eaf6f63ca2f"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/98d9ac6060f6--FabFilter-Pro-L-2.md",
+        "packaged_path": "evidence/validation/98d9ac6060f6--FabFilter-Pro-L-2.md",
+        "sha256": "e9049fad6b5bb5a21b58bd1f1eb255e9dfd320709b3dd63b77fe04221417ad0c"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/98d9ac6060f6--dynamics-pro-l-2.json",
+          "packaged_path": "evidence/results/98d9ac6060f6--dynamics-pro-l-2.json",
+          "sha256": "74bd8faa039b313ce3515b0039f34f0c374db0b794bdd10f47d28d0c804286c8"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "vocal_bus_peak_protection",
+      "true_peak_ceiling"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Default neutrality, +5.96 dB drive and 3115-sample latency measured."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "人声总线或并行返回末端做 1–3 dB 峰值保护。",
+      "最终母带限制不是本卡的人声主用途；Dither 只在最终位深转换一次。"
+    ],
+    "routing": [
+      "Vocal Bus 最后一个动态处理，Meter 可后置。",
+      "不在每条人声都默认插入。"
+    ],
+    "controls": [
+      {
+        "name": "Gain / Output Level",
+        "meaning": "Gain 驱入限制，Output 设置最大样本或真峰值。",
+        "action": "先设 Ceiling/TP，再推 Gain 到目标 GR；用 Unity Gain 判断。"
+      },
+      {
+        "name": "Style",
+        "meaning": "八种算法从透明到 Aggressive/Bus。",
+        "action": "人声总线先 Transparent/Modern/Safe 比较；Bus 只作风格。"
+      },
+      {
+        "name": "Lookahead",
+        "meaning": "短值保瞬态/更响但失真风险高，长值更安全但可能变软。",
+        "action": "从默认或 0.1–1 ms 起，极短时开 OS/TP 监测。"
+      },
+      {
+        "name": "Attack / Release",
+        "meaning": "控制较慢释放包络介入和恢复。",
+        "action": "默认起；泵动加快 Release或减 GR，失真则更安全时间。"
+      },
+      {
+        "name": "Transient / Release Link",
+        "meaning": "分别链接短峰和慢包络左右声道。",
+        "action": "Release 从 100% Link；Transient 可稍低但要检查声像。"
+      }
+    ],
+    "parameter_start_points": [
+      "Transparent/Modern；TP Meter 开；Output -1 dBTP 仅作通用安全实验，不代表发布标准。",
+      "Gain 到最大 GR 1–3 dB。",
+      "4x OS、Lookahead 0.1–1 ms 作为高质量试点，并与零/低延迟比较。"
+    ],
+    "listen_for": [
+      "齿音失真、爆破挤压。",
+      "短 Lookahead 的毛刺/混叠。",
+      "Release 过慢的整体下沉。",
+      "低 Link 的声像摆动。"
+    ],
+    "stop": [
+      "最坏峰值满足目标且通常 GR 接近 0。",
+      "限制持续动作或可听失真时回到前级解决。"
+    ],
+    "latency": [
+      "Style、True Peak、Lookahead 与 2–32x OS 都影响延迟/CPU；极短 Lookahead 接近硬削并增加混叠/ISP。本机 Default Setting、TP On、OS Off 在 Ableton/48 kHz 报告 3115 samples / 64.9 ms；渲染由 PDC 对齐。该数字只对应当前组合，不默认最高 OS。"
+    ]
+  }
+}

@@ -1,0 +1,715 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T08:28:14+08:00",
+  "family_id": "5cc7ad8baf95",
+  "test_id": "composite-dynamic-eq-static-and-range",
+  "fixed_state": {
+    "host": "Ableton Live 11.3.43",
+    "format": "VST3 Stereo",
+    "plugin_version_filesystem": "12.7.0.209 (Waves V12)",
+    "default": "A: Full Reset; all six bands flat; Mix 100%; Output 0 dB; Stereo; Internal sidechain; Split",
+    "static_band": "Band 1 Bell; 1736 Hz; Q 1.0; Gain +3.7 dB; Range 0 dB",
+    "dynamic_band": "Band 1 Bell; 1736 Hz; Q 1.0; Gain 0 dB; Range -4.3 dB; Threshold -53.6 dB; Attack 16 ms; Release 160 ms; Internal sidechain; Split",
+    "host_reported_latency_samples": 0,
+    "render": "Master; 2.1.1 start; 48.0.0 length; 72 s output; 48 kHz; stereo 24-bit WAV; normalize off; triangular dither",
+    "fixture": "deterministic composite with ten-tone steady segment at 8-20 s and level-stepped dynamics at 66-72 s"
+  },
+  "regions": {
+    "early_source_events": {
+      "start_seconds": 0.0,
+      "end_seconds": 6.0
+    },
+    "steady_multitone": {
+      "start_seconds": 8.0,
+      "end_seconds": 20.0
+    },
+    "late_dynamics": {
+      "start_seconds": 66.0,
+      "end_seconds": 72.0
+    }
+  },
+  "files": {
+    "bypass": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\7a146380912e--composite--bypass.wav",
+      "sha256": "38a74287a951ad7a62a6abeb219aa91afdd0e4f2abde062b972361851e0de16f",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938332,
+      "rms_dbfs": -21.437912,
+      "left_right_correlation": 0.771435140941
+    },
+    "default": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\5cc7ad8baf95--composite--full-reset.wav",
+      "sha256": "36d50c8e3e5b96ca40dccf884228332e58d8ed3869e23bde466c2d471c2161ce",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938332,
+      "rms_dbfs": -21.437912,
+      "left_right_correlation": 0.771435140651
+    },
+    "static": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\5cc7ad8baf95--composite--static-bell.wav",
+      "sha256": "67f718a8fa689b43ddc1cd94a5659114087d089b146fcf193fbbcbc2ba408bbd",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.027279,
+      "rms_dbfs": -21.143102,
+      "left_right_correlation": 0.773245668982
+    },
+    "dynamic": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\5cc7ad8baf95--composite--dynamic-down.wav",
+      "sha256": "3b3515c2d07efc5b54f875e1116fb6f69d72cfab41117789bdc308bd1293046a",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938598,
+      "rms_dbfs": -21.604588,
+      "left_right_correlation": 0.765807170496
+    }
+  },
+  "snapshot": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\host\\snapshots\\0072a637f389--FabFilter-Saturn-2 Project\\5cc7ad8baf95--Waves-F6.als",
+    "sha256": "ec92b1689464ebd4517907083b10eb7ffca505687b016728f56084aef080f619"
+  },
+  "comparisons": {
+    "full_reset_vs_shared_bypass": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -54.805363,
+          "candidate_rms_dbfs": -54.805364,
+          "level_delta_db": -0.0,
+          "peak_delta_db": 0.0,
+          "correlation": 0.999999998926,
+          "residual_rms_dbfs": -141.48351
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.495209,
+          "candidate_rms_dbfs": -19.495209,
+          "level_delta_db": -0.0,
+          "peak_delta_db": 0.0,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.472359
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.504447,
+          "candidate_rms_dbfs": -14.504447,
+          "level_delta_db": -0.0,
+          "peak_delta_db": -1e-06,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.442915
+        }
+      },
+      "steady_multitone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": 0.000145,
+          "phase_degrees": 0.00117
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": -0.000523,
+          "phase_degrees": 0.000268
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": 0.000129,
+          "phase_degrees": 0.000205
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": -0.0,
+          "phase_degrees": -0.0
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": -6.7e-05,
+          "phase_degrees": 0.000844
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": 0.000447,
+          "phase_degrees": -0.000968
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": 0.000415,
+          "phase_degrees": 0.001895
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": 0.000208,
+          "phase_degrees": -0.002355
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": 0.00074,
+          "phase_degrees": 0.004863
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": 0.00282,
+          "phase_degrees": -0.00623
+        }
+      ],
+      "early_source_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 3,
+        "changed_at_least_0_05_db_count": 0,
+        "changed_fraction": 0.0,
+        "median_level_delta_db": 0.0,
+        "p10_level_delta_db": -1e-06,
+        "p90_level_delta_db": 2e-06,
+        "minimum_level_delta_db": -1e-06,
+        "maximum_level_delta_db": 2e-06,
+        "strongest_absolute_windows": [
+          {
+            "start_seconds": 4.5,
+            "reference_rms_dbfs": -45.843312,
+            "level_delta_db": 2e-06
+          },
+          {
+            "start_seconds": 0.5,
+            "reference_rms_dbfs": -35.740444,
+            "level_delta_db": -1e-06
+          },
+          {
+            "start_seconds": 2.5,
+            "reference_rms_dbfs": -39.822712,
+            "level_delta_db": -0.0
+          }
+        ]
+      },
+      "late_dynamics_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 68,
+        "changed_at_least_0_05_db_count": 0,
+        "changed_fraction": 0.0,
+        "median_level_delta_db": 0.0,
+        "p10_level_delta_db": -0.0,
+        "p90_level_delta_db": 0.0,
+        "minimum_level_delta_db": -0.0,
+        "maximum_level_delta_db": 7e-06,
+        "strongest_absolute_windows": [
+          {
+            "start_seconds": 70.0,
+            "reference_rms_dbfs": -62.328172,
+            "level_delta_db": 7e-06
+          },
+          {
+            "start_seconds": 70.85,
+            "reference_rms_dbfs": -56.421562,
+            "level_delta_db": 2e-06
+          },
+          {
+            "start_seconds": 71.7,
+            "reference_rms_dbfs": -50.600758,
+            "level_delta_db": 1e-06
+          },
+          {
+            "start_seconds": 66.0,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.05,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.1,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.15,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.2,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.25,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.3,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.35,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.4,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.45,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.5,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.55,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.6,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          }
+        ]
+      }
+    },
+    "static_bell_vs_full_reset": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -54.805364,
+          "candidate_rms_dbfs": -54.341175,
+          "level_delta_db": 0.464189,
+          "peak_delta_db": 0.37873,
+          "correlation": 0.990209466718,
+          "residual_rms_dbfs": -71.063501
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.495209,
+          "candidate_rms_dbfs": -19.234939,
+          "level_delta_db": 0.260271,
+          "peak_delta_db": 2.950533,
+          "correlation": 0.994160899972,
+          "residual_rms_dbfs": -38.369595
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.504447,
+          "candidate_rms_dbfs": -14.441465,
+          "level_delta_db": 0.062982,
+          "peak_delta_db": 1.826424,
+          "correlation": 0.998504425348,
+          "residual_rms_dbfs": -39.639945
+        }
+      },
+      "steady_multitone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": 0.878959,
+          "phase_degrees": 19.310441
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": 1.430107,
+          "phase_degrees": 13.993909
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": -0.748902,
+          "phase_degrees": 9.220917
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": 0.259673,
+          "phase_degrees": 6.184118
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": 0.318973,
+          "phase_degrees": 7.522697
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": 1.528927,
+          "phase_degrees": 6.325203
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": 1.21054,
+          "phase_degrees": -0.601365
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": 0.964949,
+          "phase_degrees": -0.488666
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": 0.927412,
+          "phase_degrees": -0.308229
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": 0.903858,
+          "phase_degrees": -0.226282
+        }
+      ],
+      "early_source_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 3,
+        "changed_at_least_0_05_db_count": 3,
+        "changed_fraction": 1.0,
+        "median_level_delta_db": 0.464189,
+        "p10_level_delta_db": 0.464187,
+        "p90_level_delta_db": 0.464189,
+        "minimum_level_delta_db": 0.464187,
+        "maximum_level_delta_db": 0.464189,
+        "strongest_absolute_windows": [
+          {
+            "start_seconds": 0.5,
+            "reference_rms_dbfs": -35.740445,
+            "level_delta_db": 0.464189
+          },
+          {
+            "start_seconds": 2.5,
+            "reference_rms_dbfs": -39.822712,
+            "level_delta_db": 0.464189
+          },
+          {
+            "start_seconds": 4.5,
+            "reference_rms_dbfs": -45.84331,
+            "level_delta_db": 0.464187
+          }
+        ]
+      },
+      "late_dynamics_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 68,
+        "changed_at_least_0_05_db_count": 67,
+        "changed_fraction": 0.985294,
+        "median_level_delta_db": 0.062315,
+        "p10_level_delta_db": 0.061058,
+        "p90_level_delta_db": 0.06238,
+        "minimum_level_delta_db": -0.069646,
+        "maximum_level_delta_db": 0.084579,
+        "strongest_absolute_windows": [
+          {
+            "start_seconds": 71.65,
+            "reference_rms_dbfs": -15.847306,
+            "level_delta_db": 0.084579
+          },
+          {
+            "start_seconds": 70.8,
+            "reference_rms_dbfs": -15.846233,
+            "level_delta_db": 0.084542
+          },
+          {
+            "start_seconds": 69.95,
+            "reference_rms_dbfs": -15.84595,
+            "level_delta_db": 0.084532
+          },
+          {
+            "start_seconds": 70.4,
+            "reference_rms_dbfs": -15.845852,
+            "level_delta_db": 0.084528
+          },
+          {
+            "start_seconds": 71.25,
+            "reference_rms_dbfs": -15.845852,
+            "level_delta_db": 0.084528
+          },
+          {
+            "start_seconds": 67.85,
+            "reference_rms_dbfs": -25.831623,
+            "level_delta_db": 0.071421
+          },
+          {
+            "start_seconds": 71.7,
+            "reference_rms_dbfs": -50.600757,
+            "level_delta_db": -0.069646
+          },
+          {
+            "start_seconds": 70.85,
+            "reference_rms_dbfs": -56.42156,
+            "level_delta_db": -0.069536
+          },
+          {
+            "start_seconds": 70.0,
+            "reference_rms_dbfs": -62.328165,
+            "level_delta_db": -0.06898
+          },
+          {
+            "start_seconds": 67.9,
+            "reference_rms_dbfs": -9.086008,
+            "level_delta_db": 0.062531
+          },
+          {
+            "start_seconds": 66.0,
+            "reference_rms_dbfs": -15.010556,
+            "level_delta_db": 0.062315
+          },
+          {
+            "start_seconds": 66.05,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": 0.062315
+          },
+          {
+            "start_seconds": 66.1,
+            "reference_rms_dbfs": -15.010556,
+            "level_delta_db": 0.062315
+          },
+          {
+            "start_seconds": 66.15,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": 0.062315
+          },
+          {
+            "start_seconds": 66.2,
+            "reference_rms_dbfs": -15.010556,
+            "level_delta_db": 0.062315
+          },
+          {
+            "start_seconds": 66.25,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": 0.062315
+          }
+        ]
+      }
+    },
+    "dynamic_down_vs_full_reset": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -54.805364,
+          "candidate_rms_dbfs": -54.805604,
+          "level_delta_db": -0.00024,
+          "peak_delta_db": -0.000267,
+          "correlation": 0.999999831168,
+          "residual_rms_dbfs": -119.51056
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.495209,
+          "candidate_rms_dbfs": -19.601637,
+          "level_delta_db": -0.106428,
+          "peak_delta_db": -1.3e-05,
+          "correlation": 0.998659231723,
+          "residual_rms_dbfs": -45.027992
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.504447,
+          "candidate_rms_dbfs": -14.516608,
+          "level_delta_db": -0.012161,
+          "peak_delta_db": -0.00026,
+          "correlation": 0.999930766665,
+          "residual_rms_dbfs": -53.037024
+        }
+      },
+      "steady_multitone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": -0.076523,
+          "phase_degrees": -11.831318
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": -0.726309,
+          "phase_degrees": -9.563292
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": 0.486181,
+          "phase_degrees": -4.246331
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": -0.254207,
+          "phase_degrees": -3.094111
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": -0.16676,
+          "phase_degrees": -3.666092
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": -0.671908,
+          "phase_degrees": -3.064105
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": -0.672974,
+          "phase_degrees": -0.247327
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": -0.568971,
+          "phase_degrees": 0.04823
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": -0.547072,
+          "phase_degrees": 0.050291
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": -0.5437,
+          "phase_degrees": 0.034377
+        }
+      ],
+      "early_source_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 3,
+        "changed_at_least_0_05_db_count": 0,
+        "changed_fraction": 0.0,
+        "median_level_delta_db": -0.000208,
+        "p10_level_delta_db": -0.000254,
+        "p90_level_delta_db": -0.000137,
+        "minimum_level_delta_db": -0.000265,
+        "maximum_level_delta_db": -0.000119,
+        "strongest_absolute_windows": [
+          {
+            "start_seconds": 0.5,
+            "reference_rms_dbfs": -35.740445,
+            "level_delta_db": -0.000265
+          },
+          {
+            "start_seconds": 2.5,
+            "reference_rms_dbfs": -39.822712,
+            "level_delta_db": -0.000208
+          },
+          {
+            "start_seconds": 4.5,
+            "reference_rms_dbfs": -45.84331,
+            "level_delta_db": -0.000119
+          }
+        ]
+      },
+      "late_dynamics_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 68,
+        "changed_at_least_0_05_db_count": 3,
+        "changed_fraction": 0.044118,
+        "median_level_delta_db": -0.006155,
+        "p10_level_delta_db": -0.014809,
+        "p90_level_delta_db": 0.008494,
+        "minimum_level_delta_db": -0.01481,
+        "maximum_level_delta_db": 0.060894,
+        "strongest_absolute_windows": [
+          {
+            "start_seconds": 70.0,
+            "reference_rms_dbfs": -62.328165,
+            "level_delta_db": 0.060894
+          },
+          {
+            "start_seconds": 70.85,
+            "reference_rms_dbfs": -56.42156,
+            "level_delta_db": 0.058205
+          },
+          {
+            "start_seconds": 71.7,
+            "reference_rms_dbfs": -50.600757,
+            "level_delta_db": 0.054725
+          },
+          {
+            "start_seconds": 68.5,
+            "reference_rms_dbfs": -9.010576,
+            "level_delta_db": -0.01481
+          },
+          {
+            "start_seconds": 68.55,
+            "reference_rms_dbfs": -9.010576,
+            "level_delta_db": -0.014809
+          },
+          {
+            "start_seconds": 68.6,
+            "reference_rms_dbfs": -9.010576,
+            "level_delta_db": -0.014809
+          },
+          {
+            "start_seconds": 68.65,
+            "reference_rms_dbfs": -9.010576,
+            "level_delta_db": -0.014809
+          },
+          {
+            "start_seconds": 68.7,
+            "reference_rms_dbfs": -9.010576,
+            "level_delta_db": -0.014809
+          },
+          {
+            "start_seconds": 68.75,
+            "reference_rms_dbfs": -9.010576,
+            "level_delta_db": -0.014809
+          },
+          {
+            "start_seconds": 68.8,
+            "reference_rms_dbfs": -9.010576,
+            "level_delta_db": -0.014809
+          },
+          {
+            "start_seconds": 68.85,
+            "reference_rms_dbfs": -9.010576,
+            "level_delta_db": -0.014809
+          },
+          {
+            "start_seconds": 68.9,
+            "reference_rms_dbfs": -9.010576,
+            "level_delta_db": -0.014809
+          },
+          {
+            "start_seconds": 68.95,
+            "reference_rms_dbfs": -9.010576,
+            "level_delta_db": -0.014809
+          },
+          {
+            "start_seconds": 69.0,
+            "reference_rms_dbfs": -9.010576,
+            "level_delta_db": -0.014809
+          },
+          {
+            "start_seconds": 69.05,
+            "reference_rms_dbfs": -9.010576,
+            "level_delta_db": -0.014809
+          },
+          {
+            "start_seconds": 69.1,
+            "reference_rms_dbfs": -9.026575,
+            "level_delta_db": -0.014809
+          }
+        ]
+      }
+    }
+  },
+  "interpretation_boundary": "Measurements compare independent, host-PDC-compensated Ableton exports of one installed Waves F6 Stereo VST3 instance over a deterministic 72-second composite arrangement. They establish one flat-default null boundary, one static Bell transfer, one internal-sidechain downward dynamic setting, time-local level changes, and host-reported latency at 48 kHz. The shared bypass was rendered from the same arrangement and chain before F6 loading; triangular dither prevents a bit-perfect null and therefore small residual noise is expected. The experiment does not establish external-sidechain routing, M/S or channel-link behavior, alternate band shapes, upward expansion, RTA behavior, automation, CPU cost, other formats/sample rates, or musical preference on real vocals."
+}

@@ -1,0 +1,231 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "6d808184e53c--slate-digital-virtual-tape-machines",
+  "family_id": "6d808184e53c",
+  "identity": {
+    "vendor": "Slate Digital",
+    "product": "Virtual Tape Machines",
+    "version_range": "1.1.11.1 | 1.2.1.1",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "saturation-tape",
+    "secondary": [
+      "head-bump",
+      "compression"
+    ],
+    "diagnoses": [
+      "tape_density",
+      "head_bump",
+      "high_frequency_softening"
+    ],
+    "not_for": [
+      "transparent_mastering",
+      "uncorrected_low_mid_buildup"
+    ]
+  },
+  "routing": [
+    {
+      "position": "late vocal insert or bus after cleanup",
+      "when": "tape_density"
+    },
+    {
+      "position": "late vocal insert or bus after cleanup",
+      "when": "head_bump"
+    },
+    {
+      "position": "late vocal insert or bus after cleanup",
+      "when": "high_frequency_softening"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "choose 15/30 ips by tonal goal",
+      "match output",
+      "monitor latency"
+    ],
+    "controls": [
+      {
+        "name": "Speed",
+        "action": "compare 15 and 30 ips at equal loudness"
+      },
+      {
+        "name": "Machine/Tape",
+        "action": "change one model at a time"
+      },
+      {
+        "name": "Input/Output",
+        "action": "drive and compensate"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "low-frequency bloom",
+    "high-frequency loss",
+    "39 ms latency",
+    "loudness bias"
+  ],
+  "stop_conditions": [
+    "words lose clarity",
+    "low mids obscure beat"
+  ],
+  "alternatives": [
+    {
+      "condition": "multiband saturation",
+      "fallback": "Saturn 2"
+    },
+    {
+      "condition": "tube colour",
+      "fallback": "HG-2"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 1.1.11.1 | 1.2.1.1.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Slate Digital/Virtual Tape Machines.md",
+    "source_note": "sources/音乐制作/插件资料/Slate Digital/Virtual Tape Machines资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/6d808184e53c--Slate-Digital-Virtual-Tape-Machines.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/6d808184e53c--multitone-tape-machine.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Slate Digital/Virtual Tape Machines.md",
+        "packaged_path": "evidence/cards/Virtual Tape Machines.md",
+        "sha256": "d5b1b3b6ef7eec77493317955b504c34054db126664d6ec5888b9dfa0f086a61"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Slate Digital/Virtual Tape Machines资料.md",
+        "packaged_path": "evidence/sources/Virtual Tape Machines资料.md",
+        "sha256": "472cfed5091b6a0a3006d9ef41f24c71e41c6c0d65d73eb3db03e416ef024973"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/6d808184e53c--Slate-Digital-Virtual-Tape-Machines.md",
+        "packaged_path": "evidence/validation/6d808184e53c--Slate-Digital-Virtual-Tape-Machines.md",
+        "sha256": "a2f7336364f115ff2fa683fa0eb8dc3c0abdddac7e04be749da5b6d66db2a43f"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/6d808184e53c--multitone-tape-machine.json",
+          "packaged_path": "evidence/results/6d808184e53c--multitone-tape-machine.json",
+          "sha256": "69ada6129e5494ced59035ae028411d4a398b734cec6bfb1f4632f7a7554521c"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "tape_density",
+      "head_bump",
+      "high_frequency_softening"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "15/30 ips spectral boundary and 1882-sample latency measured."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "主唱可放在去齿之后、EQ/压缩之前塑造录带角色；Vocal Bus 可放在后段胶合。机器/速度会改变后级触发，链序固定后再比较。"
+    ],
+    "routing": [
+      "主唱 Insert 轻用；总线与单轨不要同时无差别叠加。Group 只分配给确需联动的同用途实例。"
+    ],
+    "controls": [
+      {
+        "name": "Machine 2-inch / 1/2-inch",
+        "meaning": "A827 多轨机与 A80 RC 双轨机模型。",
+        "action": "单轨先试 2-inch；总线试 1/2-inch，但必须等响。"
+      },
+      {
+        "name": "Tape FG456 / FG9",
+        "meaning": "+6 与 +9 参考磁带，headroom 相差约 3 dB。",
+        "action": "更早色彩试 FG456；更紧/更高 headroom 试 FG9。"
+      },
+      {
+        "name": "15 / 30 ips",
+        "meaning": "改变噪声、频响、相位和非线性。",
+        "action": "一次只切速度；回配 Output 后比较 55–300 Hz 与 8–16 kHz。"
+      },
+      {
+        "name": "Bias High/Normal/Low",
+        "meaning": "改变高频饱和与动态。",
+        "action": "Normal 基线；High 更早柔化高频，Low 更开放动态。"
+      },
+      {
+        "name": "Input / Output",
+        "meaning": "Input 推磁带，Output 做电平回配。",
+        "action": "推到失真刚明显再回约 0.5 dB；按 Active RMS 等响。"
+      },
+      {
+        "name": "Calibration",
+        "meaning": "定义 VU 参考与工作电平；全局共享。",
+        "action": "会话开始记录；不要在 A/B 中途无记录地改。"
+      },
+      {
+        "name": "Noise Reduction / Hiss Automute",
+        "meaning": "降低建模 hiss；无输入时自动静音 hiss。",
+        "action": "现代主唱保持默认或更安静；复古目标才主动加噪。"
+      },
+      {
+        "name": "Wow & Flutter",
+        "meaning": "时基不稳程度；0 关、25 调校、50 常规、100 较差机器。",
+        "action": "默认 25% 已非零；清晰主唱先与 0% 对照。"
+      },
+      {
+        "name": "Bass Alignment",
+        "meaning": "按机器/磁带/速度调整低频对齐。",
+        "action": "0 dB 基线；不要把它当普通低架 EQ。"
+      },
+      {
+        "name": "Group 1–8 / Ungrouped",
+        "meaning": "同组实例共享主参数；全局设置另行共享。",
+        "action": "只给同用途实例分组，避免误改全工程。"
+      }
+    ],
+    "parameter_start_points": [
+      "本机默认 2-inch/FG456/30 ips/Normal 可作观察起点；较干净试 FG9 或降低 Input，复古暗化才单独试 15 ips/High Bias。"
+    ],
+    "listen_for": [
+      "低频隆起或箱体感、最高频滚降、齿音谐波、爆破失真、建模 hiss、Wow/Flutter 和后级压缩触发变化。"
+    ],
+    "stop": [
+      "达到目标且等响后仍优于旁路即停；继续推只增加糊、暗、噪声或延迟负担时回退。"
+    ],
+    "latency": [
+      "- 本机 VST3 在 Ableton 报告 1882 samples / 39.2 ms；周期多音的相关偏移不等于 PDC。官方资料未给当前旧版本的过采样规格。"
+    ]
+  }
+}

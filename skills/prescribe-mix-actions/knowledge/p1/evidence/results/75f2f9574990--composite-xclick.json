@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0",
+  "test_id": "composite-xclick-audio-difference-stress",
+  "family_id": "75f2f9574990",
+  "plugin": "Waves X-Click Stereo 12.7.0.209 VST3",
+  "host": "Ableton Live 11.3.43",
+  "sample_rate_hz": 48000,
+  "host_reported_latency_samples": 2624,
+  "controls": {
+    "default": {
+      "threshold": 0.0,
+      "shape": 50.0
+    },
+    "stress": {
+      "threshold": 50.0,
+      "shape": 70.0
+    },
+    "monitor_modes": [
+      "Audio",
+      "Difference"
+    ]
+  },
+  "files": {
+    "bypass": {
+      "path": "renders\\75f2f9574990--composite--bypass.wav",
+      "sha256": "c9802fbfa40487d6d60676d831f1ecb3a35d18ffca5ecb2d26361af56e429f04"
+    },
+    "default_audio": {
+      "path": "renders\\75f2f9574990--composite--default-audio.wav",
+      "sha256": "e606d7fdd9edd0fde618b2364bdcf27e0fe126fb817705f3b76cee6d04af99a7"
+    },
+    "default_difference": {
+      "path": "renders\\75f2f9574990--composite--default-difference-verified.wav",
+      "sha256": "9e5f3627c0377a28c3e2223b1009ebc1c1fc0aee670e643ad60e21fa753721bd"
+    },
+    "stress_audio": {
+      "path": "renders\\75f2f9574990--composite--threshold50-shape70-audio.wav",
+      "sha256": "e3c474c215502fdd0855801284d7b0ff45bc8cdbb37375dd40584011eae78f9f"
+    }
+  },
+  "full_file": {
+    "default_audio_vs_bypass": {
+      "candidate_minus_reference_db": 3.1431482309762445e-10,
+      "correlation": 0.9999999999994973,
+      "residual_rms_dbfs": -141.48362046545412,
+      "candidate_peak_dbfs": -1.9383327973301165
+    },
+    "difference_level_dbfs": -144.49346810530028,
+    "audio_plus_difference_vs_bypass": {
+      "candidate_minus_reference_db": -1.6757947709534287e-09,
+      "correlation": 0.9999999999992315,
+      "residual_rms_dbfs": -139.72231753947145,
+      "candidate_peak_dbfs": -1.9383327973301165
+    },
+    "stress_audio_vs_bypass": {
+      "candidate_minus_reference_db": -0.0002915557853697719,
+      "correlation": 0.9999468186260757,
+      "residual_rms_dbfs": -61.17006187141017,
+      "candidate_peak_dbfs": -2.8537020701517744
+    }
+  },
+  "regions": {
+    "impulse_train": {
+      "default_audio_vs_bypass": {
+        "candidate_minus_reference_db": 6.794392469541007e-07,
+        "correlation": 0.9999999989256608,
+        "residual_rms_dbfs": -141.48367575184864,
+        "candidate_peak_dbfs": -1.9383327973301165
+      },
+      "difference_level_dbfs": -144.49611734136002,
+      "audio_plus_difference_vs_bypass": {
+        "candidate_minus_reference_db": 6.841147670934869e-07,
+        "correlation": 0.9999999983866202,
+        "residual_rms_dbfs": -139.71770987807005,
+        "candidate_peak_dbfs": -1.9383327973301165
+      },
+      "stress_audio_vs_bypass": {
+        "candidate_minus_reference_db": -89.69247336217418,
+        "correlation": 0.001910246026840018,
+        "residual_rms_dbfs": -54.805364621739784,
+        "candidate_peak_dbfs": -138.47379800543135
+      }
+    },
+    "steady_multitone": {
+      "default_audio_vs_bypass": {
+        "candidate_minus_reference_db": 1.6471021711957745e-09,
+        "correlation": 0.9999999999996833,
+        "residual_rms_dbfs": -141.47511976578124,
+        "candidate_peak_dbfs": -16.000625713643387
+      },
+      "difference_level_dbfs": -144.49328216650423,
+      "audio_plus_difference_vs_bypass": {
+        "candidate_minus_reference_db": 4.903393015242419e-10,
+        "correlation": 0.9999999999995272,
+        "residual_rms_dbfs": -139.7175090737876,
+        "candidate_peak_dbfs": -16.00061917999846
+      },
+      "stress_audio_vs_bypass": {
+        "candidate_minus_reference_db": -0.000406776599755617,
+        "correlation": 0.9999614199604626,
+        "residual_rms_dbfs": -60.62124082028631,
+        "candidate_peak_dbfs": -16.000625713643387
+      }
+    },
+    "fixed_vocal": {
+      "default_audio_vs_bypass": {
+        "candidate_minus_reference_db": -1.2779581966919582e-08,
+        "correlation": 0.9999999999986379,
+        "residual_rms_dbfs": -141.48801182224486,
+        "candidate_peak_dbfs": -16.673754026505364
+      },
+      "difference_level_dbfs": -144.4957596108949,
+      "audio_plus_difference_vs_bypass": {
+        "candidate_minus_reference_db": -2.16428709862957e-08,
+        "correlation": 0.9999999999979253,
+        "residual_rms_dbfs": -139.72671976045046,
+        "candidate_peak_dbfs": -16.673761086628645
+      },
+      "stress_audio_vs_bypass": {
+        "candidate_minus_reference_db": -0.00018206554421653696,
+        "correlation": 0.9997687172431052,
+        "residual_rms_dbfs": -59.28618553967448,
+        "candidate_peak_dbfs": -16.673754026505364
+      }
+    },
+    "spatial": {
+      "default_audio_vs_bypass": {
+        "candidate_minus_reference_db": -3.341920230719318e-09,
+        "correlation": 0.9999999999995768,
+        "residual_rms_dbfs": -141.48204761109028,
+        "candidate_peak_dbfs": -11.508631703604951
+      },
+      "difference_level_dbfs": -144.4943677594767,
+      "audio_plus_difference_vs_bypass": {
+        "candidate_minus_reference_db": -6.908547084829049e-09,
+        "correlation": 0.9999999999993585,
+        "residual_rms_dbfs": -139.72538756150405,
+        "candidate_peak_dbfs": -11.508627808170559
+      },
+      "stress_audio_vs_bypass": {
+        "candidate_minus_reference_db": -1.7356255043000103e-09,
+        "correlation": 0.9999999999995697,
+        "residual_rms_dbfs": -141.49158392624722,
+        "candidate_peak_dbfs": -11.508631703604951
+      }
+    },
+    "dynamics": {
+      "default_audio_vs_bypass": {
+        "candidate_minus_reference_db": 4.133952271524335e-09,
+        "correlation": 0.999999999999839,
+        "residual_rms_dbfs": -141.4860587616824,
+        "candidate_peak_dbfs": -2.8537020701517744
+      },
+      "difference_level_dbfs": -144.49111179430764,
+      "audio_plus_difference_vs_bypass": {
+        "candidate_minus_reference_db": 3.9474918413332666e-09,
+        "correlation": 0.9999999999997491,
+        "residual_rms_dbfs": -139.72359756870821,
+        "candidate_peak_dbfs": -2.8537020701517744
+      },
+      "stress_audio_vs_bypass": {
+        "candidate_minus_reference_db": 1.7660789653408096e-09,
+        "correlation": 0.9999999999428215,
+        "residual_rms_dbfs": -116.61342752933302,
+        "candidate_peak_dbfs": -2.8537020701517744
+      }
+    }
+  },
+  "boundaries": [
+    "The shared composite has no hand-labelled mouth-click ground truth; this validates loading, control semantics, Difference isolation, reconstruction, latency, and collateral-change risk, not click-removal accuracy.",
+    "The 50/70 condition is the manual's MCR starting point used here as a stress profile, not a universal setting.",
+    "Only Stereo VST3 at 48 kHz was tested; no claims are made for Mono, VST2, other sample rates, or live tracking suitability."
+  ]
+}

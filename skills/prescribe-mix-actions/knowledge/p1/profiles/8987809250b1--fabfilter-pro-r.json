@@ -1,0 +1,211 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "8987809250b1--fabfilter-pro-r",
+  "family_id": "8987809250b1",
+  "identity": {
+    "vendor": "FabFilter",
+    "product": "Pro-R",
+    "version_range": "1.1.5.0",
+    "formats": [
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "reverb-natural",
+    "secondary": [
+      "decay-rate-eq",
+      "distance"
+    ],
+    "diagnoses": [
+      "natural_vocal_depth",
+      "room_distance",
+      "frequency_dependent_decay"
+    ],
+    "not_for": [
+      "obvious_vintage_effect",
+      "dry_intimate_only"
+    ]
+  },
+  "routing": [
+    {
+      "position": "100% wet aux",
+      "when": "natural_vocal_depth"
+    },
+    {
+      "position": "100% wet aux",
+      "when": "room_distance"
+    },
+    {
+      "position": "100% wet aux",
+      "when": "frequency_dependent_decay"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "set perceived distance",
+      "decay-rate EQ by band",
+      "protect diction with pre-delay"
+    ],
+    "controls": [
+      {
+        "name": "Space/Decay",
+        "action": "fit room size and gap"
+      },
+      {
+        "name": "Brightness/Decay Rate EQ",
+        "action": "shape tail by frequency"
+      },
+      {
+        "name": "Distance/PreDelay",
+        "action": "separate dry lead from room"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "masking",
+    "tail buildup",
+    "centre recession"
+  ],
+  "stop_conditions": [
+    "lyrics lose foreground",
+    "tail crosses phrase boundary"
+  ],
+  "alternatives": [
+    {
+      "condition": "plate",
+      "fallback": "ValhallaPlate"
+    },
+    {
+      "condition": "chamber colour",
+      "fallback": "Abbey Road Chambers"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 1.1.5.0.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/FabFilter/Pro-R.md",
+    "source_note": "sources/音乐制作/插件资料/FabFilter/Pro-R资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/8987809250b1--Pro-R.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/8987809250b1--impulse--default-wet.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/FabFilter/Pro-R.md",
+        "packaged_path": "evidence/cards/Pro-R.md",
+        "sha256": "93e5bb7f1d98c30589d49a9dc8fe612cec012be3ff3192b3dadf669b4001d03d"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/FabFilter/Pro-R资料.md",
+        "packaged_path": "evidence/sources/Pro-R资料.md",
+        "sha256": "55c4efb909c05372659c0e1b496e55ddcbd7b553d5cf8370a03ecf8c1af4c25f"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/8987809250b1--Pro-R.md",
+        "packaged_path": "evidence/validation/8987809250b1--Pro-R.md",
+        "sha256": "937c4944c70977b9e41db17d476fad7e91e8f1895fe65c36bd30fd4a124eae16"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/8987809250b1--impulse--default-wet.json",
+          "packaged_path": "evidence/results/8987809250b1--impulse--default-wet.json",
+          "sha256": "318af76fc58c6584f1c43142aab481f95854e7d2be3e5f551cdb2e9f37ed0910"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "natural_vocal_depth",
+      "room_distance",
+      "frequency_dependent_decay"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Default wet impulse onset/T60 measured on v1.1.5."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "100% Wet Aux，锁 Mix；先 Space/Decay/Distance，再 Decay Rate EQ，最后 Post EQ。",
+      "外部 Duck 用后级压缩/自动化，因为 v1 无内置 Duck。"
+    ],
+    "routing": [
+      "Stereo Aux 100% Wet。",
+      "后级外部 Duck/自动化。"
+    ],
+    "controls": [
+      {
+        "name": "Space / Decay Rate",
+        "meaning": "连续房间模型/基准尾长与整体倍率。",
+        "action": "先选空间形态，再把尾长贴合节奏。"
+      },
+      {
+        "name": "Distance",
+        "meaning": "改变靠近/远离声源的早反射与建立。",
+        "action": "主唱保持较近，背景层再拉远。"
+      },
+      {
+        "name": "Brightness / Character",
+        "meaning": "高低频/高频衰减与从透明到调制/反射性格。",
+        "action": "从中性开始，小步加入角色。"
+      },
+      {
+        "name": "Decay Rate EQ",
+        "meaning": "按频率缩短/延长尾长。",
+        "action": "缩短低中频和齿音尾，而非只用 Post EQ。"
+      },
+      {
+        "name": "Post EQ / Width / Predelay",
+        "meaning": "最终湿声频响、宽度和起始间隔。",
+        "action": "Aux 低切/低通，Width/Predelay 用 Mono/咬字检查。"
+      }
+    ],
+    "parameter_start_points": [
+      "Space 对应 0.6–1.5 s、Predelay 20–60 ms、Distance 近中。",
+      "Decay Rate EQ：低频 50–80%、高频 50–80% 起。",
+      "Post EQ 高通 120–250 Hz、低通 6–12 kHz。"
+    ],
+    "listen_for": [
+      "Decay Rate 与 Post EQ误用。",
+      "Character 过高造成 Echo/Chorus。",
+      "低中频尾堆积。"
+    ],
+    "stop": [
+      "空间在上下文成立且每个频段尾长有理由。",
+      "继续增加 Character/Width 只显效果时停止。"
+    ],
+    "latency": [
+      "v1 手册未给具体延迟/OS；S4 测 PDC、脉冲、频段 RT60。"
+    ]
+  }
+}

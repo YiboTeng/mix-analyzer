@@ -1,0 +1,243 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "2035ec8dd8df--waves-ps22-spread",
+  "family_id": "2035ec8dd8df",
+  "identity": {
+    "vendor": "Waves",
+    "product": "PS22 Spread",
+    "version_range": "12.7.0.209",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "width-psychoacoustic",
+    "secondary": [
+      "mono-to-stereo",
+      "send-effect"
+    ],
+    "diagnoses": [
+      "mono_to_stereo_effect",
+      "adlib_width",
+      "subtle_parallel_space"
+    ],
+    "not_for": [
+      "core_lead_mono_integrity",
+      "low_frequency_stereo"
+    ]
+  },
+  "routing": [
+    {
+      "position": "stereo aux or duplicate with dry mid retained",
+      "when": "mono_to_stereo_effect"
+    },
+    {
+      "position": "stereo aux or duplicate with dry mid retained",
+      "when": "adlib_width"
+    },
+    {
+      "position": "stereo aux or duplicate with dry mid retained",
+      "when": "subtle_parallel_space"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "small spread",
+      "keep low frequencies centred",
+      "mono fold remains acceptable"
+    ],
+    "controls": [
+      {
+        "name": "Spread/Sweeps",
+        "action": "choose density then increase width slowly"
+      },
+      {
+        "name": "LFSpread",
+        "action": "limit low-frequency side energy"
+      },
+      {
+        "name": "Rotation",
+        "action": "re-centre effect"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "mono ripple",
+    "centre thinning",
+    "comb colour"
+  ],
+  "stop_conditions": [
+    "mono sounds hollow",
+    "lead centre moves"
+  ],
+  "alternatives": [
+    {
+      "condition": "multivoice width",
+      "fallback": "Doubler"
+    },
+    {
+      "condition": "utility correction",
+      "fallback": "bx_control V2"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 12.7.0.209.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Waves/PS22 Spread.md",
+    "source_note": "sources/音乐制作/插件资料/Waves/PS22 Spread资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/2035ec8dd8df--Waves-PS22-Spread.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/2035ec8dd8df--impulse-default-spread.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Waves/PS22 Spread.md",
+        "packaged_path": "evidence/cards/PS22 Spread.md",
+        "sha256": "a09a8251e69954f5aa51e58f6175491a7337ad9a77d2a83740d652eb6fc8cf10"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Waves/PS22 Spread资料.md",
+        "packaged_path": "evidence/sources/PS22 Spread资料.md",
+        "sha256": "cc7e915eb521f279554daebf9496b5328a6e329bc510b147fcc5b547219e1aee"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/2035ec8dd8df--Waves-PS22-Spread.md",
+        "packaged_path": "evidence/validation/2035ec8dd8df--Waves-PS22-Spread.md",
+        "sha256": "99d9244ce52e3b1d22f1fa5fc0effcf05941618f21a325d8734e1776c8a2b215"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/2035ec8dd8df--impulse-default-spread.json",
+          "packaged_path": "evidence/results/2035ec8dd8df--impulse-default-spread.json",
+          "sha256": "b787db5e17ce603698a69892fae066585eb91df5e4d78f3aa90884cabeddeb75"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "mono_to_stereo_effect",
+      "adlib_width",
+      "subtle_parallel_space"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Default frequency-dependent spread, correlation and mono delta measured."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "Mono 人声、乐器或档案音源可直接 Insert；关键主唱更稳妥的路径是复制轨/并行返回，保留干燥中心。",
+      "已经很宽的 Stereo 源先用 Width 收窄，再加适量 Spread；需要偏左/偏右时用 Rotation。",
+      "下游可再做高通、去齿或 Duck，但必须重新检查 Stereo 与 Mono。"
+    ],
+    "routing": [
+      "Insert：对 Mono/窄 Stereo 音源直接构造空间。",
+      "Parallel：复制轨/Aux 100% 处理，干声保留中心；返回可高通、去齿与 Duck。"
+    ],
+    "controls": [
+      {
+        "name": "Input",
+        "meaning": "0 到 -24 dB 输入衰减。",
+        "action": "处理可能抬高峰值；出现 Clip 时先降 Input。"
+      },
+      {
+        "name": "Width",
+        "meaning": "0=输入折成 Mono，1=保留原 Stereo 宽度。",
+        "action": "宽 Stereo 输入先试 0.6–0.7，给 Spread 留空间。"
+      },
+      {
+        "name": "Rotation",
+        "meaning": "-45° 到 +45°，移动输入重心但不靠左右电平差。",
+        "action": "给非中央 Mono/窄 Stereo 定位，再加中等 Spread。"
+      },
+      {
+        "name": "Spread",
+        "meaning": "0=不展开，1=填满扬声器间，1.2=超宽。",
+        "action": "从 0.25–0.6 起；切 Mono，并观察图形是否越过 L/R。"
+      },
+      {
+        "name": "Freq",
+        "meaning": "低频 Spread 开始作用的过渡频率，32 Hz–16 kHz。",
+        "action": "想让低频更稳时提高过渡频率并降低 LFSpread。"
+      },
+      {
+        "name": "LFSpread",
+        "meaning": "1=低频与高频同宽，>1=低频更宽，趋近 0=低频居中。",
+        "action": "主唱/总线通常先收窄低频。"
+      },
+      {
+        "name": "Sweeps",
+        "meaning": "全频左右往返次数；标准版 2–22，(10) 版 2–10。",
+        "action": "2–4 做定位，约 8 折中，12–22 做扩散；先定它。"
+      },
+      {
+        "name": "FCenter",
+        "meaning": "FDensity 集中/疏散 Sweeps 的中心频率。",
+        "action": "把密度放到需要扩散的频段。"
+      },
+      {
+        "name": "FDensity",
+        "meaning": "0=大致均匀；正值集中到 FCenter，负值让中心附近更疏。",
+        "action": "通常保持中等（手册建议约 0.6 以下）。"
+      },
+      {
+        "name": "Tweak",
+        "meaning": "移动各频率的左右位置。",
+        "action": "最后在 -0.5 到 +0.5 一带细调平衡。"
+      },
+      {
+        "name": "L/R · M/S",
+        "meaning": "只改变表头显示，不改声音。",
+        "action": "S 长期高于 M 常意味着过宽或输入相位问题。"
+      }
+    ],
+    "parameter_start_points": [
+      "官方 Mono 教程起点：Sweeps=8、Spread=1.0、LFSpread=0、Freq≈200 Hz、FCenter≈2600 Hz、FDensity/Tweak=0；再把 FDensity 推到约 0.4，并用 FCenter/Tweak 找平衡。它不是通用最终值。",
+      "已有 Stereo：Width 0.6–0.7、Spread 0.25–0.5 起步。",
+      "主唱并行层：Spread 0.25–0.6、LFSpread 0–1；Sweeps 8 左右起步。"
+    ],
+    "listen_for": [
+      "Mono 频响起伏、中心变薄、某些音符或齿音突然偏向一侧。",
+      "高 Sweeps + 高 FDensity + 大 Spread 带来的梳状/机器人色彩。",
+      "超出扬声器的反相宽度在耳机上的疲劳感。"
+    ],
+    "stop": [
+      "目标宽度已可感，继续加 Spread 只增加 Mono 变化、疲劳或染色。",
+      "Tweak 已使关键频段平衡；继续移动只是在音符间交换偏左/偏右问题。"
+    ],
+    "latency": [
+      "- 官方把 PS-Spread/PS-Split 描述为线性、非时变的高阶低 Q IIR 交叉馈送系统；目标是低染色、低 phasey 感并避免基于时间延迟的伪立体声。\n- 本机 Ableton 在 48 kHz 报告 2 samples / 0.042 ms PDC。默认脉冲双通道峰值均在事件阈值后 5 samples / 0.104167 ms 到达；波形峰值与宿主 PDC 不是同一指标。\n- 没有 Oversampling 控制；本轮未测不同采样率或 VST2。"
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T00:56:26+08:00",
+  "family_id": "bbf795a9fd06",
+  "test_id": "impulse-host-dotted-eighth-wet",
+  "host_bpm": 160.0,
+  "sync_division": "dotted-eighth",
+  "expected_repeat_ms": 281.25,
+  "render": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\bbf795a9fd06--impulse--host-eighth-wet.wav",
+    "sha256": "b36a029d57b3519bddda2f8130961ef8aa1e904bc223122858c64c2c41f78ee4",
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "sample_width_bytes": 3,
+    "frames": 288000,
+    "duration_seconds": 6.0
+  },
+  "levels": {
+    "peak_dbfs": -7.5445,
+    "rms_dbfs": -58.4475
+  },
+  "stereo": {
+    "correlation": 0.996975,
+    "side_to_mid_db": -28.1963
+  },
+  "impulses": [
+    {
+      "expected_impulse_seconds": 0.5,
+      "repeat_hits": [
+        {
+          "offset_ms": 280.938,
+          "peak_dbfs": -7.5445
+        }
+      ],
+      "inter_repeat_intervals_ms": [],
+      "detection_boundary": "2 ms smoothed peak envelope; -45 dB relative threshold; 30 ms grouping; first 8 hits"
+    },
+    {
+      "expected_impulse_seconds": 2.5,
+      "repeat_hits": [
+        {
+          "offset_ms": 280.854,
+          "peak_dbfs": -10.2413
+        }
+      ],
+      "inter_repeat_intervals_ms": [],
+      "detection_boundary": "2 ms smoothed peak envelope; -45 dB relative threshold; 30 ms grouping; first 8 hits"
+    },
+    {
+      "expected_impulse_seconds": 4.5,
+      "repeat_hits": [
+        {
+          "offset_ms": 281.438,
+          "peak_dbfs": -14.9875
+        }
+      ],
+      "inter_repeat_intervals_ms": [],
+      "detection_boundary": "2 ms smoothed peak envelope; -45 dB relative threshold; 30 ms grouping; first 8 hits"
+    }
+  ],
+  "interpretation_boundary": "This measures the observed default host-sync render only. Ableton exported a 6 s, 48 kHz/24-bit WAV with Triangular dither; effect delay is not plugin PDC."
+}

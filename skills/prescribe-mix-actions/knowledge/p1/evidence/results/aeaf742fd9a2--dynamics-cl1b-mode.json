@@ -1,0 +1,487 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T05:21:48+08:00",
+  "family_id": "aeaf742fd9a2",
+  "test_id": "dynamics-steps-cl1b-mode",
+  "fixed_state": {
+    "host": "Ableton Live 11.3.43",
+    "format": "VST3 Stereo",
+    "plugin": "Softube Tube-Tech CL 1B mk II 2.5.x",
+    "threshold_db": -20,
+    "gain_db": 0,
+    "parallel_percent": 100,
+    "sidechain_low_cut": "Off",
+    "host_reported_latency_samples": 4,
+    "render": "Master; 42.1.1-50.1.1; 12 s; 48 kHz; 24-bit WAV; normalize off; triangular dither",
+    "fixture": "dynamics_steps_48k.wav warped by Ableton to 8 bars at 160 BPM",
+    "controlled_variable": "Time-control mode: Fix/Man versus Fixed; all other visible controls held constant"
+  },
+  "files": {
+    "bypass": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\aeaf742fd9a2--dynamics--bypass.wav",
+      "sha256": "3ca5a7a96c90f301020bbf1c4d9f895086e6767b6b8cd150caa75e4c6959856c",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -2.853702,
+      "rms_dbfs": -17.19745,
+      "left_right_correlation": 1.0,
+      "left_right_residual_rms_dbfs": -141.483691
+    },
+    "fixman_threshold_minus_20": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\aeaf742fd9a2--dynamics--fixman-thr-20.wav",
+      "sha256": "6f516cb79f638db1fb84bd543fa94b8e78104593c283a102add0eb344ba5d68f",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -0.990346,
+      "rms_dbfs": -28.435404,
+      "left_right_correlation": 0.999999999998,
+      "left_right_residual_rms_dbfs": -141.476941
+    },
+    "fixed_threshold_minus_20": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\aeaf742fd9a2--dynamics--fixed-thr-20.wav",
+      "sha256": "65c02689cef7894714af07a8879e544bbb5093d94a6956b327b7c6dd25850c45",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -5.494434,
+      "rms_dbfs": -30.352298,
+      "left_right_correlation": 0.999999999996,
+      "left_right_residual_rms_dbfs": -141.480631
+    }
+  },
+  "snapshot": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\host\\snapshots\\0072a637f389--FabFilter-Saturn-2 Project\\aeaf742fd9a2--Softube-Tube-Tech-CL-1B-mk-II.als",
+    "sha256": "a5636c0cefa2d058ad099166d19faf2673d04185f13ea3b96347afa72ac9ec37"
+  },
+  "comparisons": {
+    "fixman_vs_bypass": {
+      "level_segments": [
+        {
+          "source_peak_dbfs": -30.0,
+          "start_s": 0.0,
+          "steady_start_s": 0.15,
+          "steady_end_s": 1.2,
+          "reference_rms_dbfs": -33.010869,
+          "candidate_rms_dbfs": -33.337127,
+          "steady_gain_db": -0.326257,
+          "reference_peak_dbfs": -30.001771,
+          "candidate_peak_dbfs": -30.30008,
+          "steady_peak_gain_db": -0.298309
+        },
+        {
+          "source_peak_dbfs": -24.0,
+          "start_s": 1.9,
+          "steady_start_s": 2.05,
+          "steady_end_s": 3.2,
+          "reference_rms_dbfs": -27.010592,
+          "candidate_rms_dbfs": -31.756734,
+          "steady_gain_db": -4.746142,
+          "reference_peak_dbfs": -24.002173,
+          "candidate_peak_dbfs": -28.583109,
+          "steady_peak_gain_db": -4.580937
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "start_s": 3.9,
+          "steady_start_s": 4.05,
+          "steady_end_s": 5.2,
+          "reference_rms_dbfs": -21.01068,
+          "candidate_rms_dbfs": -30.41955,
+          "steady_gain_db": -9.40887,
+          "reference_peak_dbfs": -18.000511,
+          "candidate_peak_dbfs": -27.232154,
+          "steady_peak_gain_db": -9.231642
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "start_s": 5.9,
+          "steady_start_s": 6.05,
+          "steady_end_s": 7.2,
+          "reference_rms_dbfs": -15.023319,
+          "candidate_rms_dbfs": -29.101205,
+          "steady_gain_db": -14.077885,
+          "reference_peak_dbfs": -11.999943,
+          "candidate_peak_dbfs": -25.899155,
+          "steady_peak_gain_db": -13.899213
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "start_s": 7.85,
+          "steady_start_s": 8.05,
+          "steady_end_s": 9.1,
+          "reference_rms_dbfs": -9.010575,
+          "candidate_rms_dbfs": -27.72072,
+          "steady_gain_db": -18.710145,
+          "reference_peak_dbfs": -6.000476,
+          "candidate_peak_dbfs": -24.377991,
+          "steady_peak_gain_db": -18.377516
+        }
+      ],
+      "static_curve": {
+        "output_vs_input_slope": 0.23152,
+        "output_vs_input_intercept_db": -25.602089,
+        "gain_change_low_to_high_db": -18.383888,
+        "effective_ratio_from_slope": 4.319281
+      },
+      "tone_onsets": [
+        {
+          "source_peak_dbfs": -24.0,
+          "onset_s": 1.9,
+          "initial_gain_db_first_10ms": 0.289637,
+          "steady_gain_db": -4.752988,
+          "gain_reduction_development_db": -5.042625,
+          "time_to_within_1db_of_steady_for_20ms_ms": 122.916667
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "onset_s": 3.9,
+          "initial_gain_db_first_10ms": 0.052373,
+          "steady_gain_db": -9.416398,
+          "gain_reduction_development_db": -9.468771,
+          "time_to_within_1db_of_steady_for_20ms_ms": 111.041667
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "onset_s": 5.9,
+          "initial_gain_db_first_10ms": 0.347643,
+          "steady_gain_db": -14.089115,
+          "gain_reduction_development_db": -14.436758,
+          "time_to_within_1db_of_steady_for_20ms_ms": 109.708333
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "onset_s": 7.85,
+          "initial_gain_db_first_10ms": 0.0,
+          "steady_gain_db": -18.721959,
+          "gain_reduction_development_db": -18.721959,
+          "time_to_within_1db_of_steady_for_20ms_ms": 171.875
+        }
+      ],
+      "isolated_transients": [
+        {
+          "onset_s": 9.973333,
+          "reference_peak_dbfs": -2.853704,
+          "candidate_peak_dbfs": -2.264343,
+          "peak_gain_db": 0.58936
+        },
+        {
+          "onset_s": 10.4,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -0.990347,
+          "peak_gain_db": 1.863355
+        },
+        {
+          "onset_s": 10.826667,
+          "reference_peak_dbfs": -2.853704,
+          "candidate_peak_dbfs": -0.990347,
+          "peak_gain_db": 1.863356
+        },
+        {
+          "onset_s": 11.253333,
+          "reference_peak_dbfs": -2.853704,
+          "candidate_peak_dbfs": -0.990346,
+          "peak_gain_db": 1.863357
+        },
+        {
+          "onset_s": 11.68,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -0.990347,
+          "peak_gain_db": 1.863355
+        }
+      ],
+      "whole_file_level_delta_db": -11.237954,
+      "whole_file_peak_delta_db": 1.863356,
+      "direct_correlation": 0.714557586672,
+      "left_right_residual_rms_dbfs": -141.476941
+    },
+    "fixed_vs_bypass": {
+      "level_segments": [
+        {
+          "source_peak_dbfs": -30.0,
+          "start_s": 0.0,
+          "steady_start_s": 0.15,
+          "steady_end_s": 1.2,
+          "reference_rms_dbfs": -33.010869,
+          "candidate_rms_dbfs": -33.025761,
+          "steady_gain_db": -0.014892,
+          "reference_peak_dbfs": -30.001771,
+          "candidate_peak_dbfs": -30.011175,
+          "steady_peak_gain_db": -0.009404
+        },
+        {
+          "source_peak_dbfs": -24.0,
+          "start_s": 1.9,
+          "steady_start_s": 2.05,
+          "steady_end_s": 3.2,
+          "reference_rms_dbfs": -27.010592,
+          "candidate_rms_dbfs": -30.29817,
+          "steady_gain_db": -3.287578,
+          "reference_peak_dbfs": -24.002173,
+          "candidate_peak_dbfs": -27.344564,
+          "steady_peak_gain_db": -3.342391
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "start_s": 3.9,
+          "steady_start_s": 4.05,
+          "steady_end_s": 5.2,
+          "reference_rms_dbfs": -21.01068,
+          "candidate_rms_dbfs": -28.538391,
+          "steady_gain_db": -7.527711,
+          "reference_peak_dbfs": -18.000511,
+          "candidate_peak_dbfs": -25.613573,
+          "steady_peak_gain_db": -7.613062
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "start_s": 5.9,
+          "steady_start_s": 6.05,
+          "steady_end_s": 7.2,
+          "reference_rms_dbfs": -15.023319,
+          "candidate_rms_dbfs": -26.954877,
+          "steady_gain_db": -11.931558,
+          "reference_peak_dbfs": -11.999943,
+          "candidate_peak_dbfs": -24.021004,
+          "steady_peak_gain_db": -12.021062
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "start_s": 7.85,
+          "steady_start_s": 8.05,
+          "steady_end_s": 9.1,
+          "reference_rms_dbfs": -9.010575,
+          "candidate_rms_dbfs": -25.441711,
+          "steady_gain_db": -16.431136,
+          "reference_peak_dbfs": -6.000476,
+          "candidate_peak_dbfs": -22.500095,
+          "steady_peak_gain_db": -16.499619
+        }
+      ],
+      "static_curve": {
+        "output_vs_input_slope": 0.308584,
+        "output_vs_input_intercept_db": -22.367438,
+        "gain_change_low_to_high_db": -16.416244,
+        "effective_ratio_from_slope": 3.240607
+      },
+      "tone_onsets": [
+        {
+          "source_peak_dbfs": -24.0,
+          "onset_s": 1.9,
+          "initial_gain_db_first_10ms": -0.235879,
+          "steady_gain_db": -3.290872,
+          "gain_reduction_development_db": -3.054993,
+          "time_to_within_1db_of_steady_for_20ms_ms": 83.6875
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "onset_s": 3.9,
+          "initial_gain_db_first_10ms": -0.396727,
+          "steady_gain_db": -7.53221,
+          "gain_reduction_development_db": -7.135483,
+          "time_to_within_1db_of_steady_for_20ms_ms": 57.0
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "onset_s": 5.9,
+          "initial_gain_db_first_10ms": 0.889411,
+          "steady_gain_db": -11.944339,
+          "gain_reduction_development_db": -12.83375,
+          "time_to_within_1db_of_steady_for_20ms_ms": 30.395833
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "onset_s": 7.85,
+          "initial_gain_db_first_10ms": -0.142404,
+          "steady_gain_db": -16.435394,
+          "gain_reduction_development_db": -16.29299,
+          "time_to_within_1db_of_steady_for_20ms_ms": 55.270833
+        }
+      ],
+      "isolated_transients": [
+        {
+          "onset_s": 9.973333,
+          "reference_peak_dbfs": -2.853704,
+          "candidate_peak_dbfs": -5.496466,
+          "peak_gain_db": -2.642762
+        },
+        {
+          "onset_s": 10.4,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -5.494436,
+          "peak_gain_db": -2.640734
+        },
+        {
+          "onset_s": 10.826667,
+          "reference_peak_dbfs": -2.853704,
+          "candidate_peak_dbfs": -5.494436,
+          "peak_gain_db": -2.640733
+        },
+        {
+          "onset_s": 11.253333,
+          "reference_peak_dbfs": -2.853704,
+          "candidate_peak_dbfs": -5.494434,
+          "peak_gain_db": -2.640731
+        },
+        {
+          "onset_s": 11.68,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -5.494434,
+          "peak_gain_db": -2.640732
+        }
+      ],
+      "whole_file_level_delta_db": -13.154848,
+      "whole_file_peak_delta_db": -2.640732,
+      "direct_correlation": 0.88574575867,
+      "left_right_residual_rms_dbfs": -141.480631
+    },
+    "fixed_vs_fixman": {
+      "level_segments": [
+        {
+          "source_peak_dbfs": -30.0,
+          "start_s": 0.0,
+          "steady_start_s": 0.15,
+          "steady_end_s": 1.2,
+          "reference_rms_dbfs": -33.337127,
+          "candidate_rms_dbfs": -33.025761,
+          "steady_gain_db": 0.311365,
+          "reference_peak_dbfs": -30.30008,
+          "candidate_peak_dbfs": -30.011175,
+          "steady_peak_gain_db": 0.288905
+        },
+        {
+          "source_peak_dbfs": -24.0,
+          "start_s": 1.9,
+          "steady_start_s": 2.05,
+          "steady_end_s": 3.2,
+          "reference_rms_dbfs": -31.756734,
+          "candidate_rms_dbfs": -30.29817,
+          "steady_gain_db": 1.458564,
+          "reference_peak_dbfs": -28.583109,
+          "candidate_peak_dbfs": -27.344564,
+          "steady_peak_gain_db": 1.238546
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "start_s": 3.9,
+          "steady_start_s": 4.05,
+          "steady_end_s": 5.2,
+          "reference_rms_dbfs": -30.41955,
+          "candidate_rms_dbfs": -28.538391,
+          "steady_gain_db": 1.881159,
+          "reference_peak_dbfs": -27.232154,
+          "candidate_peak_dbfs": -25.613573,
+          "steady_peak_gain_db": 1.618581
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "start_s": 5.9,
+          "steady_start_s": 6.05,
+          "steady_end_s": 7.2,
+          "reference_rms_dbfs": -29.101205,
+          "candidate_rms_dbfs": -26.954877,
+          "steady_gain_db": 2.146328,
+          "reference_peak_dbfs": -25.899155,
+          "candidate_peak_dbfs": -24.021004,
+          "steady_peak_gain_db": 1.878151
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "start_s": 7.85,
+          "steady_start_s": 8.05,
+          "steady_end_s": 9.1,
+          "reference_rms_dbfs": -27.72072,
+          "candidate_rms_dbfs": -25.441711,
+          "steady_gain_db": 2.279009,
+          "reference_peak_dbfs": -24.377991,
+          "candidate_peak_dbfs": -22.500095,
+          "steady_peak_gain_db": 1.877897
+        }
+      ],
+      "static_curve": {
+        "output_vs_input_slope": 1.336871,
+        "output_vs_input_intercept_db": 11.878749,
+        "gain_change_low_to_high_db": 1.967644,
+        "effective_ratio_from_slope": 0.748015
+      },
+      "tone_onsets": [
+        {
+          "source_peak_dbfs": -24.0,
+          "onset_s": 1.9,
+          "initial_gain_db_first_10ms": -0.564814,
+          "steady_gain_db": 1.464672,
+          "gain_reduction_development_db": 2.029485,
+          "time_to_within_1db_of_steady_for_20ms_ms": 122.958333
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "onset_s": 3.9,
+          "initial_gain_db_first_10ms": -0.502411,
+          "steady_gain_db": 1.887031,
+          "gain_reduction_development_db": 2.389442,
+          "time_to_within_1db_of_steady_for_20ms_ms": 110.020833
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "onset_s": 5.9,
+          "initial_gain_db_first_10ms": 0.732961,
+          "steady_gain_db": 2.147318,
+          "gain_reduction_development_db": 1.414357,
+          "time_to_within_1db_of_steady_for_20ms_ms": 110.125
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "onset_s": 7.85,
+          "initial_gain_db_first_10ms": -0.362122,
+          "steady_gain_db": 2.288712,
+          "gain_reduction_development_db": 2.650833,
+          "time_to_within_1db_of_steady_for_20ms_ms": 172.395833
+        }
+      ],
+      "isolated_transients": [
+        {
+          "onset_s": 9.973313,
+          "reference_peak_dbfs": -2.264343,
+          "candidate_peak_dbfs": -5.496466,
+          "peak_gain_db": -3.232122
+        },
+        {
+          "onset_s": 10.399979,
+          "reference_peak_dbfs": -0.990347,
+          "candidate_peak_dbfs": -5.494436,
+          "peak_gain_db": -4.504089
+        },
+        {
+          "onset_s": 10.826646,
+          "reference_peak_dbfs": -0.990347,
+          "candidate_peak_dbfs": -5.494436,
+          "peak_gain_db": -4.504089
+        },
+        {
+          "onset_s": 11.253312,
+          "reference_peak_dbfs": -0.990346,
+          "candidate_peak_dbfs": -5.494434,
+          "peak_gain_db": -4.504088
+        },
+        {
+          "onset_s": 11.679979,
+          "reference_peak_dbfs": -0.990347,
+          "candidate_peak_dbfs": -5.494434,
+          "peak_gain_db": -4.504087
+        }
+      ],
+      "whole_file_level_delta_db": -1.916894,
+      "whole_file_peak_delta_db": -4.504088,
+      "direct_correlation": 0.767268012446,
+      "left_right_residual_rms_dbfs": -141.480631
+    }
+  },
+  "interpretation_boundary": "Measurements apply only to this installed Tube-Tech CL 1B mk II VST3 Stereo instance, the visible -20 dB Threshold and default remaining controls, and the rendered 48 kHz dynamics fixture. The fixture was auto-warped by Ableton from 11.25 s to 12 s. The test establishes the measured mode-dependent static and transient behavior under these levels; it does not calibrate the hardware, Manual mode endpoints, Sidechain Low Cut, Parallel phase behavior, mono/stereo link, other formats, sample rates, input levels, or musical preference."
+}

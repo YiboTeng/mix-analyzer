@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "fixtures": [
+    {"id": "F01", "diagnosis": "pitch_drift_realtime", "preferred_primary": "pitch-realtime", "retest_metrics": ["target-note cents", "pitch-motion", "latency", "artifacts"], "fallback": "manual note edit"},
+    {"id": "F02", "diagnosis": "macro_level_inconsistency", "preferred_primary": "level-riding", "retest_metrics": ["short-term level spread", "ride range", "pumping"], "fallback": "clip gain automation"},
+    {"id": "F03", "diagnosis": "mouth_click_or_short_impulse", "preferred_primary": "restoration-click-mouth-adjacent", "retest_metrics": ["event peak", "Difference audition", "speech residual"], "fallback": "event waveform edit"},
+    {"id": "F04", "diagnosis": "broadband_dialogue_noise", "preferred_primary": "noise-reduction-multiband-dialogue", "retest_metrics": ["noise RMS", "weak-tail retention", "speech residual"], "fallback": "manual spectral repair"},
+    {"id": "F05", "diagnosis": "sibilance", "preferred_primary": "deessing-wide-split", "retest_metrics": ["sibilant-band energy", "voiced tone delta", "lisping"], "fallback": "dynamic high-band automation"},
+    {"id": "F06", "diagnosis": "fast_peak_control", "preferred_primary": "compression-fet", "retest_metrics": ["peak reduction", "attack retention", "matched loudness"], "fallback": "clip gain then clean compression"},
+    {"id": "F07", "diagnosis": "creative_octave_layer", "preferred_primary": "pitch-formant-creative", "retest_metrics": ["pitch cents", "intelligibility", "low-end mask", "mono"], "fallback": "offline pitch render"},
+    {"id": "F08", "diagnosis": "adlib_width", "preferred_primary": "width-multivoice", "retest_metrics": ["Side/Mid", "correlation", "mono delta", "diction"], "fallback": "manual double tracking"},
+    {"id": "F09", "diagnosis": "vocal_depth", "preferred_primary": "reverb-vintage-algorithmic", "retest_metrics": ["onset", "decay", "phrase masking", "return level"], "fallback": "short room send"},
+    {"id": "F10", "diagnosis": "reference_mismatch", "preferred_primary": "reference-ab", "retest_metrics": ["level match", "spectrum", "dynamics", "mono"], "fallback": "manual matched reference export"},
+    {"id": "F11", "diagnosis": "plosive_low_frequency_event", "preferred_primary": "noise-reduction-multiband-dialogue", "retest_metrics": ["event low-band energy", "vowel body", "waveform discontinuity"], "fallback": "clip gain plus Pro-Q 3 or F6 dynamic low-frequency EQ"},
+    {"id": "F12", "diagnosis": "breath_too_loud", "preferred_primary": "restoration-breath", "realtime_tracking": true, "retest_metrics": ["breath-to-phrase ratio", "speech residual", "latency"], "fallback": "clip gain breath automation"}
+  ]
+}

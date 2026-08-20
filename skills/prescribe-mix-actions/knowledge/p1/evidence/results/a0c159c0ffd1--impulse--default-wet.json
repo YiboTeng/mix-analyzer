@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T00:46:26+08:00",
+  "family_id": "a0c159c0ffd1",
+  "test_id": "impulse-default-wet",
+  "render": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\a0c159c0ffd1--impulse--default-wet.wav",
+    "sha256": "a578acc91ef1b72ffad2e608c4e19b8b9b2c7d9b52ee1e64c3c14e7fb4095121",
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "sample_width_bytes": 3,
+    "frames": 288000,
+    "duration_seconds": 6.0
+  },
+  "levels": {
+    "peak_dbfs": -23.4295,
+    "rms_dbfs": -60.304,
+    "left_rms_dbfs": -60.3495,
+    "right_rms_dbfs": -60.259
+  },
+  "stereo": {
+    "correlation": 0.010724,
+    "side_to_mid_db": -0.0931
+  },
+  "impulses": [
+    {
+      "expected_impulse_seconds": 0.5,
+      "detected_onset_ms_after_impulse": 25.562,
+      "segment_peak_dbfs": -29.4501,
+      "decay_slope_db_per_second": -13.0647,
+      "t60_estimate_seconds": 4.5925,
+      "fit_boundary": "50 ms windows; fit only -5 to -35 dB region before next impulse"
+    },
+    {
+      "expected_impulse_seconds": 2.5,
+      "detected_onset_ms_after_impulse": 0.0,
+      "segment_peak_dbfs": -33.431,
+      "decay_slope_db_per_second": -12.9227,
+      "t60_estimate_seconds": 4.643,
+      "fit_boundary": "50 ms windows; fit only -5 to -35 dB region before next impulse"
+    },
+    {
+      "expected_impulse_seconds": 4.5,
+      "detected_onset_ms_after_impulse": 0.0,
+      "segment_peak_dbfs": -39.5496,
+      "decay_slope_db_per_second": -13.5087,
+      "t60_estimate_seconds": 4.4416,
+      "fit_boundary": "50 ms windows; fit only -5 to -35 dB region before next impulse"
+    }
+  ],
+  "interpretation_boundary": "These are render measurements, not universal plugin claims. The 6 s probe can truncate the final long tail and used Ableton export Triangular dither."
+}

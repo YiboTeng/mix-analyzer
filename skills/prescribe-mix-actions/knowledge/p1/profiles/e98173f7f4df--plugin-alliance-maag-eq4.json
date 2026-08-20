@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "e98173f7f4df--plugin-alliance-maag-eq4",
+  "family_id": "e98173f7f4df",
+  "identity": {
+    "vendor": "Plugin Alliance",
+    "product": "Maag EQ4",
+    "version_range": "1.3.0.0 | 1.9.0.0",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "eq-air-color",
+    "secondary": [
+      "broad-tone",
+      "air-band"
+    ],
+    "diagnoses": [
+      "lack_of_air",
+      "broad_high_frequency_dullness"
+    ],
+    "not_for": [
+      "active_sibilance",
+      "headroom_shortage"
+    ]
+  },
+  "routing": [
+    {
+      "position": "after de-essing, before or after compression by tone goal",
+      "when": "lack_of_air"
+    },
+    {
+      "position": "after de-essing, before or after compression by tone goal",
+      "when": "broad_high_frequency_dullness"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "broad air lift at equal loudness",
+      "preserve headroom",
+      "do not exaggerate noise"
+    ],
+    "controls": [
+      {
+        "name": "Air Band/Gain",
+        "action": "raise in small steps after de-essing"
+      },
+      {
+        "name": "Output",
+        "action": "recover headroom and match level"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "sibilance",
+    "noise lift",
+    "clipping"
+  ],
+  "stop_conditions": [
+    "peak approaches 0 dBFS",
+    "air becomes hiss"
+  ],
+  "alternatives": [
+    {
+      "condition": "parallel exciters",
+      "fallback": "Fresh Air"
+    },
+    {
+      "condition": "dynamic high control",
+      "fallback": "Pro-Q 3 or F6"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 1.3.0.0 | 1.9.0.0.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Plugin Alliance/Maag EQ4.md",
+    "source_note": "sources/音乐制作/插件资料/Plugin Alliance/Maag EQ4资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/e98173f7f4df--Plugin-Alliance-Maag-EQ4.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/e98173f7f4df--composite-air20k-gain-headroom.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Plugin Alliance/Maag EQ4.md",
+        "packaged_path": "evidence/cards/Maag EQ4.md",
+        "sha256": "ff309b81745d664383033b36e8e8555720625b97e12e1bfd1bd019dbe82cf1fa"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Plugin Alliance/Maag EQ4资料.md",
+        "packaged_path": "evidence/sources/Maag EQ4资料.md",
+        "sha256": "f90d0709a5e71389854fe9b3b3b0e25e71a5fd942992a7ef4d6ea83c7fdca164"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/e98173f7f4df--Plugin-Alliance-Maag-EQ4.md",
+        "packaged_path": "evidence/validation/e98173f7f4df--Plugin-Alliance-Maag-EQ4.md",
+        "sha256": "32ff50c4ac292405e676ecf5ec6c19e1f6d35e4de0e048a9665fb27b06117186"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/e98173f7f4df--composite-air20k-gain-headroom.json",
+          "packaged_path": "evidence/results/e98173f7f4df--composite-air20k-gain-headroom.json",
+          "sha256": "0816e9c7cdc995f102275f65c9b9d758b143628e074a16c1c7ad822447264b12"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "lack_of_air",
+      "broad_high_frequency_dullness"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "20 kHz +3/+5 dB headroom boundary measured on local legacy version."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "可放在修正型 EQ 与去齿之后做宽幅色彩；若 Air 明显激发齿音，则在其后再轻度 De-ess。",
+      "在压缩前提升 Presence 会改变压缩器触发；在压缩后更像最终色彩，二者需按目标选择。"
+    ],
+    "routing": [
+      "主唱后段色彩 EQ。",
+      "Backing Vocal Bus 或 Vocal Bus 上的轻量宽幅塑形。"
+    ],
+    "controls": [
+      {
+        "name": "SUB / 40 / 160 / 650 / 2.5K",
+        "meaning": "固定中心/转折的宽幅增益频段。",
+        "action": "按整体重量、浑浊、鼻音和咬字小步调整；不能当作窄 Q 工具。"
+      },
+      {
+        "name": "Air Band Frequency",
+        "meaning": "选择宽缓高频 Shelf 的转折/音色。",
+        "action": "从 20 或 40 kHz 起求空气；需要更多 Presence 再试 10/5 kHz。"
+      },
+      {
+        "name": "Air Gain",
+        "meaning": "提升宽范围高频并增加总体电平。",
+        "action": "从 0.5–1 dB 起，逐步到满足目标；每步用 Trim 对齐。"
+      },
+      {
+        "name": "Level Trim",
+        "meaning": "全局输出补偿。",
+        "action": "按旁通 Active RMS/感知响度回调，不用它继续推色彩。"
+      }
+    ],
+    "parameter_start_points": [
+      "Air 20 或 40 kHz、+0.5 至 +2 dB；Level Trim 等响度。",
+      "160/650/2.5K 每次先试 ±0.5 至 1 dB，不同时大幅推动多个相邻宽频段。"
+    ],
+    "listen_for": [
+      "齿音、嘴部点击和底噪是否被同步抬高。",
+      "多个宽频段相加后是否造成整体电平偏差。"
+    ],
+    "stop": [
+      "Air 在混音中可感但 Solo 不显沙亮。",
+      "再加 0.5 dB 使齿音先于元音出现时回退或移动到去齿前。"
+    ],
+    "latency": [
+      "本机旧版 VST3 在当前状态下由 Ableton 报告 `0 samples` 延迟。界面未见过采样控制；不把当前在线新版的附加功能写回旧版本，也不把 0 samples 外推到 VST2、其它 build 或采样率。"
+    ]
+  }
+}

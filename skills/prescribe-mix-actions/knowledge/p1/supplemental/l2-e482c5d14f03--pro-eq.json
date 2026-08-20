@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "l2-e482c5d14f03--pro-eq",
+  "family_id": "e482c5d14f03",
+  "identity": {
+    "vendor": "PreSonus",
+    "product": "Pro EQ",
+    "version_range": "4.0.0",
+    "formats": [
+      "VST2"
+    ],
+    "availability": "host-native-cache",
+    "tested_host": "deferred / not L3"
+  },
+  "capabilities": {
+    "primary": "eq-native-baseline",
+    "secondary": [],
+    "diagnoses": [
+      "mud",
+      "tonal_imbalance",
+      "resonance"
+    ],
+    "not_for": []
+  },
+  "routing": [
+    {
+      "position": "主唱或叠唱总线 Insert。",
+      "when": "mud"
+    },
+    {
+      "position": "实验工程中的原生 EQ 对照组。",
+      "when": "mud"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "用最少频段解决可听问题。",
+      "与第三方匹配曲线时保持相同增益与相位条件。"
+    ],
+    "controls": [
+      {
+        "name": "Frequency",
+        "action": "结合音素和混音上下文定位，不凭固定表格。"
+      },
+      {
+        "name": "Gain",
+        "action": "宽幅从 ±0.5–2 dB 起，窄问题带先做最小必要减法。"
+      },
+      {
+        "name": "Q / Bandwidth",
+        "action": "窄 Q 用于固定共振，宽 Q 用于整体音色；扫到问题后降低试听增益再确认。"
+      },
+      {
+        "name": "Cut / Shelf / Bell",
+        "action": "高通只清除无用低频；Shelf 做整体倾斜；Bell 做局部塑形。"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "explicitly accept L2/deferred evidence",
+    "level-matched comparison"
+  ],
+  "risks": [
+    "把旧/新文档功能混写。",
+    "未匹配曲线、相位与增益就比较品牌音质。",
+    "原生便利性掩盖了过度处理。"
+  ],
+  "stop_conditions": [
+    "原生 EQ 已达到目标且高级功能没有明确新增价值。",
+    "增加频段只让曲线更复杂而不改善上下文。"
+  ],
+  "alternatives": [],
+  "version_policy": {
+    "match": "L2 control knowledge only; no L3 host guarantee.",
+    "mismatch": "Suppress exact controls and require revalidation."
+  },
+  "evidence": {
+    "level": "L2",
+    "card": "C:\\Projects\\aizen-knowledge-base\\notes\\音乐制作\\插件\\PreSonus\\Pro EQ.md",
+    "source_note": "C:\\Projects\\aizen-knowledge-base\\sources\\音乐制作\\插件资料\\PreSonus\\Pro EQ资料.md",
+    "validation_report": "not-L3",
+    "result_files": [],
+    "packaged": {
+      "card": {
+        "packaged_path": "p1/evidence/supplemental/cards/Pro EQ.md",
+        "sha256": "13f741fec8536801d5a18d14969fc0c363b71e2dc26f23979c4c6921340d9436"
+      },
+      "source_note": {
+        "packaged_path": "p1/evidence/supplemental/sources/Pro EQ资料.md",
+        "sha256": "7eb9474e529e3e2af5e26ae6600d8adab3886b6999f3cd3e5bb1f76f3fb6ce7d"
+      }
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "mud",
+      "tonal_imbalance",
+      "resonance"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics"
+    ]
+  },
+  "conflict_rules": [],
+  "validation": {
+    "status": "deferred-l2",
+    "matrix_status": "not-l3",
+    "boundary": "Official/control research only; no successful L3 host render."
+  },
+  "catalog_warnings": [
+    "evidence_level_l2_not_l3",
+    "studio_one_runtime_unavailable"
+  ],
+  "local_guidance": {
+    "signal_position": [
+      "主唱链前段做高通、宽幅修正和必要窄削。",
+      "作为与 Pro-Q 3 对照的同曲线基线，隔离第三方工作流与算法的真实增益。"
+    ],
+    "routing": [
+      "主唱或叠唱总线 Insert。",
+      "实验工程中的原生 EQ 对照组。"
+    ],
+    "controls": [
+      {
+        "name": "Frequency",
+        "meaning": "选择每个滤波段中心或转折频率。",
+        "action": "结合音素和混音上下文定位，不凭固定表格。"
+      },
+      {
+        "name": "Gain",
+        "meaning": "提升或衰减目标频段。",
+        "action": "宽幅从 ±0.5–2 dB 起，窄问题带先做最小必要减法。"
+      },
+      {
+        "name": "Q / Bandwidth",
+        "meaning": "控制受影响频率范围。",
+        "action": "窄 Q 用于固定共振，宽 Q 用于整体音色；扫到问题后降低试听增益再确认。"
+      },
+      {
+        "name": "Cut / Shelf / Bell",
+        "meaning": "选择滤波拓扑。",
+        "action": "高通只清除无用低频；Shelf 做整体倾斜；Bell 做局部塑形。"
+      }
+    ],
+    "parameter_start_points": [
+      "高通 60–90 Hz、温和斜率，仅在确有无用能量时。",
+      "宽幅音色 ±0.5–2 dB；窄共振 -1 至 -3 dB。",
+      "动态段、Band Solo、Auto Gain 等功能只有本机 UI 确认存在后才设起点。"
+    ],
+    "listen_for": [
+      "高通造成的重量损失。",
+      "窄带扫频导致的确认偏差。",
+      "不同 EQ 曲线匹配不精确造成的伪差异。"
+    ],
+    "stop": [
+      "原生 EQ 已达到目标且高级功能没有明确新增价值。",
+      "增加频段只让曲线更复杂而不改善上下文。"
+    ],
+    "latency": [
+      "官方 5.5 文档不足以证明 Studio One 6 缓存 v4.0.0 的延迟、相位模式或动态段行为。S4 使用宿主报告、脉冲与扫频建立基线；未验证前只按普通参数 EQ 使用。"
+    ]
+  }
+}

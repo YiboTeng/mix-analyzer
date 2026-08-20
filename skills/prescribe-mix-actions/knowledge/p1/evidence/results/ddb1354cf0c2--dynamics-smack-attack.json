@@ -1,0 +1,1405 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T07:04:11+08:00",
+  "family_id": "ddb1354cf0c2",
+  "test_id": "dynamics-steps-smack-attack-envelope",
+  "fixed_state": {
+    "host": "Ableton Live 11.3.43",
+    "format": "VST3 Stereo",
+    "preset": "A: Default Preset",
+    "output_db": 0.0,
+    "guard": "Off",
+    "host_reported_latency_samples": 0,
+    "render": "Master; 42.1.1-50.1.1; 12 s; 48 kHz; 24-bit WAV; normalize off; triangular host dither",
+    "fixture": "dynamics_steps_48k.wav warped by Ableton to 8 bars at 160 BPM",
+    "states": {
+      "default": "Attack 0; Sustain 0; all other visible controls at A: Default Preset",
+      "attack_variant": "Attack +100; Sustain 0; all other visible controls fixed",
+      "sustain_variant": "Attack 0; Sustain -100; all other visible controls fixed"
+    }
+  },
+  "files": {
+    "bypass": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\ddb1354cf0c2--dynamics--bypass.wav",
+      "sha256": "842e7218300943a883da6cfb223e99c32384de0fe0e68a2244e88fc59909a0d0",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -2.853702,
+      "rms_dbfs": -17.19745,
+      "left_right_correlation": 1.0,
+      "left_right_residual_rms_dbfs": -141.486557
+    },
+    "default_attack_0_sustain_0": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\ddb1354cf0c2--dynamics--default.wav",
+      "sha256": "30eeae3e3c26898e96932de31c1165f30460074e14bb7944b0ecb7d6e85a59c1",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -2.853702,
+      "rms_dbfs": -17.19745,
+      "left_right_correlation": 1.0,
+      "left_right_residual_rms_dbfs": -141.469781
+    },
+    "attack_plus100_sustain_0": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\ddb1354cf0c2--dynamics--attack100.wav",
+      "sha256": "ea9dec803aa4804af6b14468b8d7f0f2add33268a1ac7d0f54a0fa5c470321e8",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": 0.0,
+      "rms_dbfs": -15.23657,
+      "left_right_correlation": 1.0,
+      "left_right_residual_rms_dbfs": -141.484701
+    },
+    "attack_0_sustain_minus100": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\ddb1354cf0c2--dynamics--sustain-minus100.wav",
+      "sha256": "9ea15b039dd93795504a52d0f72ba51bd8e3c1a375bbe49c08e860bdccdba477",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -2.853702,
+      "rms_dbfs": -17.436356,
+      "left_right_correlation": 1.0,
+      "left_right_residual_rms_dbfs": -141.489394
+    }
+  },
+  "snapshot": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\host\\snapshots\\0072a637f389--FabFilter-Saturn-2 Project\\ddb1354cf0c2--Waves-Smack-Attack.als",
+    "sha256": "4bf0c02a03cd6e342a8f9e4db5af9bfbe845b438a1a3f27b0063e04743d5f167"
+  },
+  "comparisons": {
+    "default_vs_bypass": {
+      "level_segments": [
+        {
+          "source_peak_dbfs": -30.0,
+          "start_s": 0.0,
+          "steady_start_s": 0.15,
+          "steady_end_s": 1.2,
+          "reference_rms_dbfs": -33.010869,
+          "candidate_rms_dbfs": -33.010869,
+          "rms_delta_db": -0.0,
+          "reference_peak_dbfs": -30.001771,
+          "candidate_peak_dbfs": -30.001771,
+          "peak_delta_db": 0.0,
+          "crest_delta_db": 0.0,
+          "direct_correlation": 0.999999999993
+        },
+        {
+          "source_peak_dbfs": -24.0,
+          "start_s": 1.9,
+          "steady_start_s": 2.05,
+          "steady_end_s": 3.2,
+          "reference_rms_dbfs": -27.010592,
+          "candidate_rms_dbfs": -27.010592,
+          "rms_delta_db": 0.0,
+          "reference_peak_dbfs": -24.002173,
+          "candidate_peak_dbfs": -24.002173,
+          "peak_delta_db": 0.0,
+          "crest_delta_db": -0.0,
+          "direct_correlation": 0.999999999998
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "start_s": 3.9,
+          "steady_start_s": 4.05,
+          "steady_end_s": 5.2,
+          "reference_rms_dbfs": -21.01068,
+          "candidate_rms_dbfs": -21.01068,
+          "rms_delta_db": 0.0,
+          "reference_peak_dbfs": -18.000511,
+          "candidate_peak_dbfs": -18.000511,
+          "peak_delta_db": 0.0,
+          "crest_delta_db": -0.0,
+          "direct_correlation": 1.0
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "start_s": 5.9,
+          "steady_start_s": 6.05,
+          "steady_end_s": 7.2,
+          "reference_rms_dbfs": -15.023319,
+          "candidate_rms_dbfs": -15.023319,
+          "rms_delta_db": 0.0,
+          "reference_peak_dbfs": -11.999943,
+          "candidate_peak_dbfs": -11.999943,
+          "peak_delta_db": 0.0,
+          "crest_delta_db": -0.0,
+          "direct_correlation": 1.0
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "start_s": 7.85,
+          "steady_start_s": 8.05,
+          "steady_end_s": 9.1,
+          "reference_rms_dbfs": -9.010575,
+          "candidate_rms_dbfs": -9.010575,
+          "rms_delta_db": 0.0,
+          "reference_peak_dbfs": -6.000476,
+          "candidate_peak_dbfs": -6.000476,
+          "peak_delta_db": 0.0,
+          "crest_delta_db": -0.0,
+          "direct_correlation": 1.0
+        }
+      ],
+      "tone_onsets": [
+        {
+          "source_peak_dbfs": -24.0,
+          "onset_s": 1.9,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -144.604352,
+            "candidate_rms_dbfs": -144.774685,
+            "rms_delta_db": -0.170333,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.170333,
+            "direct_correlation": 0.017434522985
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -31.053031,
+            "candidate_rms_dbfs": -31.053031,
+            "rms_delta_db": 0.0,
+            "reference_peak_dbfs": -24.002173,
+            "candidate_peak_dbfs": -24.002173,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.0,
+            "direct_correlation": 0.999999999996
+          },
+          "steady_200_600ms": {
+            "reference_rms_dbfs": -27.010592,
+            "candidate_rms_dbfs": -27.010592,
+            "rms_delta_db": 0.0,
+            "reference_peak_dbfs": -24.002173,
+            "candidate_peak_dbfs": -24.002173,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.0,
+            "direct_correlation": 0.999999999998
+          }
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "onset_s": 3.9,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -144.494398,
+            "candidate_rms_dbfs": -144.82321,
+            "rms_delta_db": -0.328812,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.328812,
+            "direct_correlation": -0.004123167619
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -22.802988,
+            "candidate_rms_dbfs": -22.802988,
+            "rms_delta_db": 0.0,
+            "reference_peak_dbfs": -18.000511,
+            "candidate_peak_dbfs": -18.000511,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.0,
+            "direct_correlation": 0.999999999999
+          },
+          "steady_200_600ms": {
+            "reference_rms_dbfs": -21.010545,
+            "candidate_rms_dbfs": -21.010545,
+            "rms_delta_db": 0.0,
+            "reference_peak_dbfs": -18.000511,
+            "candidate_peak_dbfs": -18.000511,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.0,
+            "direct_correlation": 1.0
+          }
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "onset_s": 5.9,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -144.982237,
+            "candidate_rms_dbfs": -144.64163,
+            "rms_delta_db": 0.340607,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.340607,
+            "direct_correlation": 0.038015834615
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -15.308572,
+            "candidate_rms_dbfs": -15.308572,
+            "rms_delta_db": 0.0,
+            "reference_peak_dbfs": -11.999943,
+            "candidate_peak_dbfs": -11.999943,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.0,
+            "direct_correlation": 1.0
+          },
+          "steady_200_600ms": {
+            "reference_rms_dbfs": -15.010555,
+            "candidate_rms_dbfs": -15.010555,
+            "rms_delta_db": -0.0,
+            "reference_peak_dbfs": -11.999943,
+            "candidate_peak_dbfs": -11.999943,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.0,
+            "direct_correlation": 1.0
+          }
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "onset_s": 7.85,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -144.308433,
+            "candidate_rms_dbfs": -144.369541,
+            "rms_delta_db": -0.061108,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.061108,
+            "direct_correlation": -0.014015021962
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -10.537396,
+            "candidate_rms_dbfs": -10.537396,
+            "rms_delta_db": -0.0,
+            "reference_peak_dbfs": -6.000476,
+            "candidate_peak_dbfs": -6.000476,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.0,
+            "direct_correlation": 1.0
+          },
+          "steady_200_600ms": {
+            "reference_rms_dbfs": -9.010575,
+            "candidate_rms_dbfs": -9.010575,
+            "rms_delta_db": 0.0,
+            "reference_peak_dbfs": -6.000476,
+            "candidate_peak_dbfs": -6.000476,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.0,
+            "direct_correlation": 1.0
+          }
+        }
+      ],
+      "isolated_transients": [
+        {
+          "onset_s": 9.973333,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "candidate_rms_dbfs": -11.867905,
+            "rms_delta_db": -0.0,
+            "reference_peak_dbfs": -2.853704,
+            "candidate_peak_dbfs": -2.853702,
+            "peak_delta_db": 1e-06,
+            "crest_delta_db": 1e-06,
+            "direct_correlation": 1.0
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -53.61105,
+            "candidate_rms_dbfs": -53.61105,
+            "rms_delta_db": -0.0,
+            "reference_peak_dbfs": -37.599245,
+            "candidate_peak_dbfs": -37.599245,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.0,
+            "direct_correlation": 0.999999999101
+          },
+          "tail_120_300ms": {
+            "reference_rms_dbfs": -144.572505,
+            "candidate_rms_dbfs": -144.568413,
+            "rms_delta_db": 0.004092,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.004092,
+            "direct_correlation": -0.006361571976
+          },
+          "event_0_300ms": {
+            "reference_rms_dbfs": -23.627364,
+            "candidate_rms_dbfs": -23.627364,
+            "rms_delta_db": -0.0,
+            "reference_peak_dbfs": -2.853704,
+            "candidate_peak_dbfs": -2.853702,
+            "peak_delta_db": 1e-06,
+            "crest_delta_db": 1e-06,
+            "direct_correlation": 0.999999999999
+          }
+        },
+        {
+          "onset_s": 10.4,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "candidate_rms_dbfs": -11.867905,
+            "rms_delta_db": -0.0,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -2.853702,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.0,
+            "direct_correlation": 1.0
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -53.611056,
+            "candidate_rms_dbfs": -53.611053,
+            "rms_delta_db": 3e-06,
+            "reference_peak_dbfs": -37.599324,
+            "candidate_peak_dbfs": -37.599245,
+            "peak_delta_db": 7.9e-05,
+            "crest_delta_db": 7.6e-05,
+            "direct_correlation": 0.999999999115
+          },
+          "tail_120_300ms": {
+            "reference_rms_dbfs": -144.503455,
+            "candidate_rms_dbfs": -144.473338,
+            "rms_delta_db": 0.030118,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.030118,
+            "direct_correlation": -0.000648115082
+          },
+          "event_0_300ms": {
+            "reference_rms_dbfs": -23.627364,
+            "candidate_rms_dbfs": -23.627365,
+            "rms_delta_db": -0.0,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -2.853702,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.0,
+            "direct_correlation": 0.999999999999
+          }
+        },
+        {
+          "onset_s": 10.826667,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "candidate_rms_dbfs": -11.867905,
+            "rms_delta_db": 0.0,
+            "reference_peak_dbfs": -2.853704,
+            "candidate_peak_dbfs": -2.853704,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.0,
+            "direct_correlation": 1.0
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -53.611055,
+            "candidate_rms_dbfs": -53.611055,
+            "rms_delta_db": 0.0,
+            "reference_peak_dbfs": -37.599324,
+            "candidate_peak_dbfs": -37.599324,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.0,
+            "direct_correlation": 0.999999999117
+          },
+          "tail_120_300ms": {
+            "reference_rms_dbfs": -144.50547,
+            "candidate_rms_dbfs": -144.472337,
+            "rms_delta_db": 0.033133,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.033133,
+            "direct_correlation": -0.017564626828
+          },
+          "event_0_300ms": {
+            "reference_rms_dbfs": -23.627364,
+            "candidate_rms_dbfs": -23.627364,
+            "rms_delta_db": 0.0,
+            "reference_peak_dbfs": -2.853704,
+            "candidate_peak_dbfs": -2.853704,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.0,
+            "direct_correlation": 0.999999999999
+          }
+        },
+        {
+          "onset_s": 11.253333,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "candidate_rms_dbfs": -11.867905,
+            "rms_delta_db": -0.0,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -2.853704,
+            "peak_delta_db": -1e-06,
+            "crest_delta_db": -1e-06,
+            "direct_correlation": 1.0
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -53.611051,
+            "candidate_rms_dbfs": -53.611056,
+            "rms_delta_db": -5e-06,
+            "reference_peak_dbfs": -37.599245,
+            "candidate_peak_dbfs": -37.599324,
+            "peak_delta_db": -7.9e-05,
+            "crest_delta_db": -7.4e-05,
+            "direct_correlation": 0.99999999913
+          },
+          "tail_120_300ms": {
+            "reference_rms_dbfs": -144.463345,
+            "candidate_rms_dbfs": -144.428549,
+            "rms_delta_db": 0.034795,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.034795,
+            "direct_correlation": 0.002289404627
+          },
+          "event_0_300ms": {
+            "reference_rms_dbfs": -23.627364,
+            "candidate_rms_dbfs": -23.627364,
+            "rms_delta_db": -0.0,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -2.853704,
+            "peak_delta_db": -1e-06,
+            "crest_delta_db": -1e-06,
+            "direct_correlation": 0.999999999999
+          }
+        },
+        {
+          "onset_s": 11.68,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "candidate_rms_dbfs": -11.867905,
+            "rms_delta_db": 0.0,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -2.853702,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.0,
+            "direct_correlation": 1.0
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -53.611052,
+            "candidate_rms_dbfs": -53.611052,
+            "rms_delta_db": -1e-06,
+            "reference_peak_dbfs": -37.599324,
+            "candidate_peak_dbfs": -37.599324,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 1e-06,
+            "direct_correlation": 0.999999999112
+          },
+          "tail_120_300ms": {
+            "reference_rms_dbfs": -144.45736,
+            "candidate_rms_dbfs": -144.552082,
+            "rms_delta_db": -0.094722,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.094722,
+            "direct_correlation": 0.002560647078
+          },
+          "event_0_300ms": {
+            "reference_rms_dbfs": -23.627364,
+            "candidate_rms_dbfs": -23.627364,
+            "rms_delta_db": 0.0,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -2.853702,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.0,
+            "direct_correlation": 0.999999999999
+          }
+        }
+      ],
+      "whole_file": {
+        "reference_rms_dbfs": -17.19745,
+        "candidate_rms_dbfs": -17.19745,
+        "rms_delta_db": 0.0,
+        "reference_peak_dbfs": -2.853702,
+        "candidate_peak_dbfs": -2.853702,
+        "peak_delta_db": 0.0,
+        "crest_delta_db": -0.0,
+        "direct_correlation": 1.0
+      },
+      "difference_residual_rms_dbfs": -141.478402,
+      "left_right_residual_rms_dbfs": -141.469781
+    },
+    "attack_plus100_vs_default": {
+      "level_segments": [
+        {
+          "source_peak_dbfs": -30.0,
+          "start_s": 0.0,
+          "steady_start_s": 0.15,
+          "steady_end_s": 1.2,
+          "reference_rms_dbfs": -33.010869,
+          "candidate_rms_dbfs": -31.588331,
+          "rms_delta_db": 1.422538,
+          "reference_peak_dbfs": -30.001771,
+          "candidate_peak_dbfs": -28.517989,
+          "peak_delta_db": 1.483782,
+          "crest_delta_db": 0.061244,
+          "direct_correlation": 0.9999945662
+        },
+        {
+          "source_peak_dbfs": -24.0,
+          "start_s": 1.9,
+          "steady_start_s": 2.05,
+          "steady_end_s": 3.2,
+          "reference_rms_dbfs": -27.010592,
+          "candidate_rms_dbfs": -25.56315,
+          "rms_delta_db": 1.447442,
+          "reference_peak_dbfs": -24.002173,
+          "candidate_peak_dbfs": -22.420813,
+          "peak_delta_db": 1.581359,
+          "crest_delta_db": 0.133917,
+          "direct_correlation": 0.999994081839
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "start_s": 3.9,
+          "steady_start_s": 4.05,
+          "steady_end_s": 5.2,
+          "reference_rms_dbfs": -21.01068,
+          "candidate_rms_dbfs": -19.55043,
+          "rms_delta_db": 1.46025,
+          "reference_peak_dbfs": -18.000511,
+          "candidate_peak_dbfs": -16.466504,
+          "peak_delta_db": 1.534007,
+          "crest_delta_db": 0.073757,
+          "direct_correlation": 0.999994355326
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "start_s": 5.9,
+          "steady_start_s": 6.05,
+          "steady_end_s": 7.2,
+          "reference_rms_dbfs": -15.023319,
+          "candidate_rms_dbfs": -13.563315,
+          "rms_delta_db": 1.460005,
+          "reference_peak_dbfs": -11.999943,
+          "candidate_peak_dbfs": -10.472589,
+          "peak_delta_db": 1.527353,
+          "crest_delta_db": 0.067349,
+          "direct_correlation": 0.999978931712
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "start_s": 7.85,
+          "steady_start_s": 8.05,
+          "steady_end_s": 9.1,
+          "reference_rms_dbfs": -9.010575,
+          "candidate_rms_dbfs": -7.541047,
+          "rms_delta_db": 1.469528,
+          "reference_peak_dbfs": -6.000476,
+          "candidate_peak_dbfs": -4.471066,
+          "peak_delta_db": 1.52941,
+          "crest_delta_db": 0.059881,
+          "direct_correlation": 0.999994324736
+        }
+      ],
+      "tone_onsets": [
+        {
+          "source_peak_dbfs": -24.0,
+          "onset_s": 1.9,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -144.774685,
+            "candidate_rms_dbfs": -144.088704,
+            "rms_delta_db": 0.685981,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.685981,
+            "direct_correlation": -0.04610913039
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -31.053031,
+            "candidate_rms_dbfs": -24.937516,
+            "rms_delta_db": 6.115515,
+            "reference_peak_dbfs": -24.002173,
+            "candidate_peak_dbfs": -13.283273,
+            "peak_delta_db": 10.7189,
+            "crest_delta_db": 4.603386,
+            "direct_correlation": 0.909733713828
+          },
+          "steady_200_600ms": {
+            "reference_rms_dbfs": -27.010592,
+            "candidate_rms_dbfs": -25.564217,
+            "rms_delta_db": 1.446375,
+            "reference_peak_dbfs": -24.002173,
+            "candidate_peak_dbfs": -22.492131,
+            "peak_delta_db": 1.510042,
+            "crest_delta_db": 0.063667,
+            "direct_correlation": 0.999994417024
+          }
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "onset_s": 3.9,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -144.82321,
+            "candidate_rms_dbfs": -144.651,
+            "rms_delta_db": 0.17221,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.17221,
+            "direct_correlation": 0.004272519458
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -22.802988,
+            "candidate_rms_dbfs": -17.8512,
+            "rms_delta_db": 4.951788,
+            "reference_peak_dbfs": -18.000511,
+            "candidate_peak_dbfs": -7.231423,
+            "peak_delta_db": 10.769089,
+            "crest_delta_db": 5.8173,
+            "direct_correlation": 0.904467910697
+          },
+          "steady_200_600ms": {
+            "reference_rms_dbfs": -21.010545,
+            "candidate_rms_dbfs": -19.550466,
+            "rms_delta_db": 1.460079,
+            "reference_peak_dbfs": -18.000511,
+            "candidate_peak_dbfs": -16.480296,
+            "peak_delta_db": 1.520216,
+            "crest_delta_db": 0.060137,
+            "direct_correlation": 0.9999943816
+          }
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "onset_s": 5.9,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -144.64163,
+            "candidate_rms_dbfs": -144.214111,
+            "rms_delta_db": 0.42752,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.42752,
+            "direct_correlation": -0.03474761749
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -15.308572,
+            "candidate_rms_dbfs": -11.022673,
+            "rms_delta_db": 4.285899,
+            "reference_peak_dbfs": -11.999943,
+            "candidate_peak_dbfs": -1.161954,
+            "peak_delta_db": 10.837989,
+            "crest_delta_db": 6.55209,
+            "direct_correlation": 0.90749040788
+          },
+          "steady_200_600ms": {
+            "reference_rms_dbfs": -15.010555,
+            "candidate_rms_dbfs": -13.544195,
+            "rms_delta_db": 1.46636,
+            "reference_peak_dbfs": -11.999943,
+            "candidate_peak_dbfs": -10.474432,
+            "peak_delta_db": 1.52551,
+            "crest_delta_db": 0.05915,
+            "direct_correlation": 0.999994343897
+          }
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "onset_s": 7.85,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -144.369541,
+            "candidate_rms_dbfs": -144.449393,
+            "rms_delta_db": -0.079852,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.079852,
+            "direct_correlation": 0.016592634346
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -10.537396,
+            "candidate_rms_dbfs": -6.330802,
+            "rms_delta_db": 4.206593,
+            "reference_peak_dbfs": -6.000476,
+            "candidate_peak_dbfs": 0.0,
+            "peak_delta_db": 6.000476,
+            "crest_delta_db": 1.793882,
+            "direct_correlation": 0.929898295782
+          },
+          "steady_200_600ms": {
+            "reference_rms_dbfs": -9.010575,
+            "candidate_rms_dbfs": -7.541025,
+            "rms_delta_db": 1.469551,
+            "reference_peak_dbfs": -6.000476,
+            "candidate_peak_dbfs": -4.471066,
+            "peak_delta_db": 1.52941,
+            "crest_delta_db": 0.059859,
+            "direct_correlation": 0.999994324841
+          }
+        }
+      ],
+      "isolated_transients": [
+        {
+          "onset_s": 9.973333,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "candidate_rms_dbfs": -4.607146,
+            "rms_delta_db": 7.26076,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -1e-06,
+            "peak_delta_db": 2.853701,
+            "crest_delta_db": -4.407059,
+            "direct_correlation": 0.913552137392
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -53.61105,
+            "candidate_rms_dbfs": -43.726618,
+            "rms_delta_db": 9.884432,
+            "reference_peak_dbfs": -37.599245,
+            "candidate_peak_dbfs": -27.697675,
+            "peak_delta_db": 9.90157,
+            "crest_delta_db": 0.017138,
+            "direct_correlation": 0.999998832493
+          },
+          "tail_120_300ms": {
+            "reference_rms_dbfs": -144.568413,
+            "candidate_rms_dbfs": -144.495403,
+            "rms_delta_db": 0.073009,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.073009,
+            "direct_correlation": -0.011913280257
+          },
+          "event_0_300ms": {
+            "reference_rms_dbfs": -23.627364,
+            "candidate_rms_dbfs": -16.365399,
+            "rms_delta_db": 7.261965,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -1e-06,
+            "peak_delta_db": 2.853701,
+            "crest_delta_db": -4.408264,
+            "direct_correlation": 0.951992189293
+          }
+        },
+        {
+          "onset_s": 10.4,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "candidate_rms_dbfs": -4.607475,
+            "rms_delta_db": 7.260431,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -1e-06,
+            "peak_delta_db": 2.853701,
+            "crest_delta_db": -4.40673,
+            "direct_correlation": 0.913571129459
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -53.611053,
+            "candidate_rms_dbfs": -43.7275,
+            "rms_delta_db": 9.883553,
+            "reference_peak_dbfs": -37.599245,
+            "candidate_peak_dbfs": -27.698554,
+            "peak_delta_db": 9.900691,
+            "crest_delta_db": 0.017138,
+            "direct_correlation": 0.999998833441
+          },
+          "tail_120_300ms": {
+            "reference_rms_dbfs": -144.473338,
+            "candidate_rms_dbfs": -144.405834,
+            "rms_delta_db": 0.067503,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.067503,
+            "direct_correlation": 0.008801367862
+          },
+          "event_0_300ms": {
+            "reference_rms_dbfs": -23.627365,
+            "candidate_rms_dbfs": -16.365729,
+            "rms_delta_db": 7.261636,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -1e-06,
+            "peak_delta_db": 2.853701,
+            "crest_delta_db": -4.407935,
+            "direct_correlation": 0.952002650732
+          }
+        },
+        {
+          "onset_s": 10.826667,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "candidate_rms_dbfs": -4.607475,
+            "rms_delta_db": 7.26043,
+            "reference_peak_dbfs": -2.853704,
+            "candidate_peak_dbfs": -1e-06,
+            "peak_delta_db": 2.853702,
+            "crest_delta_db": -4.406728,
+            "direct_correlation": 0.913571131564
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -53.611055,
+            "candidate_rms_dbfs": -43.7275,
+            "rms_delta_db": 9.883554,
+            "reference_peak_dbfs": -37.599324,
+            "candidate_peak_dbfs": -27.698554,
+            "peak_delta_db": 9.90077,
+            "crest_delta_db": 0.017215,
+            "direct_correlation": 0.999998832998
+          },
+          "tail_120_300ms": {
+            "reference_rms_dbfs": -144.472337,
+            "candidate_rms_dbfs": -144.522638,
+            "rms_delta_db": -0.050301,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.050301,
+            "direct_correlation": -0.00394802205
+          },
+          "event_0_300ms": {
+            "reference_rms_dbfs": -23.627364,
+            "candidate_rms_dbfs": -16.365729,
+            "rms_delta_db": 7.261636,
+            "reference_peak_dbfs": -2.853704,
+            "candidate_peak_dbfs": -1e-06,
+            "peak_delta_db": 2.853702,
+            "crest_delta_db": -4.407933,
+            "direct_correlation": 0.952002649392
+          }
+        },
+        {
+          "onset_s": 11.253333,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "candidate_rms_dbfs": -4.607475,
+            "rms_delta_db": 7.26043,
+            "reference_peak_dbfs": -2.853704,
+            "candidate_peak_dbfs": -1e-06,
+            "peak_delta_db": 2.853702,
+            "crest_delta_db": -4.406728,
+            "direct_correlation": 0.91357113131
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -53.611056,
+            "candidate_rms_dbfs": -43.727499,
+            "rms_delta_db": 9.883557,
+            "reference_peak_dbfs": -37.599324,
+            "candidate_peak_dbfs": -27.698554,
+            "peak_delta_db": 9.90077,
+            "crest_delta_db": 0.017212,
+            "direct_correlation": 0.999998833078
+          },
+          "tail_120_300ms": {
+            "reference_rms_dbfs": -144.428549,
+            "candidate_rms_dbfs": -144.405834,
+            "rms_delta_db": 0.022715,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.022715,
+            "direct_correlation": -0.008632183261
+          },
+          "event_0_300ms": {
+            "reference_rms_dbfs": -23.627364,
+            "candidate_rms_dbfs": -16.365729,
+            "rms_delta_db": 7.261636,
+            "reference_peak_dbfs": -2.853704,
+            "candidate_peak_dbfs": -1e-06,
+            "peak_delta_db": 2.853702,
+            "crest_delta_db": -4.407933,
+            "direct_correlation": 0.952002650247
+          }
+        },
+        {
+          "onset_s": 11.68,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "candidate_rms_dbfs": -4.607475,
+            "rms_delta_db": 7.26043,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -1e-06,
+            "peak_delta_db": 2.853701,
+            "crest_delta_db": -4.406729,
+            "direct_correlation": 0.913571135499
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -53.611052,
+            "candidate_rms_dbfs": -43.7275,
+            "rms_delta_db": 9.883552,
+            "reference_peak_dbfs": -37.599324,
+            "candidate_peak_dbfs": -27.698579,
+            "peak_delta_db": 9.900744,
+            "crest_delta_db": 0.017192,
+            "direct_correlation": 0.999998832815
+          },
+          "tail_120_300ms": {
+            "reference_rms_dbfs": -144.552082,
+            "candidate_rms_dbfs": -144.536828,
+            "rms_delta_db": 0.015254,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.015254,
+            "direct_correlation": 0.007941767919
+          },
+          "event_0_300ms": {
+            "reference_rms_dbfs": -23.627364,
+            "candidate_rms_dbfs": -16.365729,
+            "rms_delta_db": 7.261636,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -1e-06,
+            "peak_delta_db": 2.853701,
+            "crest_delta_db": -4.407934,
+            "direct_correlation": 0.952002653872
+          }
+        }
+      ],
+      "whole_file": {
+        "reference_rms_dbfs": -17.19745,
+        "candidate_rms_dbfs": -15.23657,
+        "rms_delta_db": 1.96088,
+        "reference_peak_dbfs": -2.853702,
+        "candidate_peak_dbfs": 0.0,
+        "peak_delta_db": 2.853702,
+        "crest_delta_db": 0.892822,
+        "direct_correlation": 0.977742173425
+      },
+      "difference_residual_rms_dbfs": -26.40247,
+      "left_right_residual_rms_dbfs": -141.484701
+    },
+    "sustain_minus100_vs_default": {
+      "level_segments": [
+        {
+          "source_peak_dbfs": -30.0,
+          "start_s": 0.0,
+          "steady_start_s": 0.15,
+          "steady_end_s": 1.2,
+          "reference_rms_dbfs": -33.010869,
+          "candidate_rms_dbfs": -33.141194,
+          "rms_delta_db": -0.130325,
+          "reference_peak_dbfs": -30.001771,
+          "candidate_peak_dbfs": -30.001771,
+          "peak_delta_db": 0.0,
+          "crest_delta_db": 0.130325,
+          "direct_correlation": 0.9998560706
+        },
+        {
+          "source_peak_dbfs": -24.0,
+          "start_s": 1.9,
+          "steady_start_s": 2.05,
+          "steady_end_s": 3.2,
+          "reference_rms_dbfs": -27.010592,
+          "candidate_rms_dbfs": -27.141041,
+          "rms_delta_db": -0.130449,
+          "reference_peak_dbfs": -24.002173,
+          "candidate_peak_dbfs": -24.002173,
+          "peak_delta_db": 0.0,
+          "crest_delta_db": 0.130449,
+          "direct_correlation": 0.999855596509
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "start_s": 3.9,
+          "steady_start_s": 4.05,
+          "steady_end_s": 5.2,
+          "reference_rms_dbfs": -21.01068,
+          "candidate_rms_dbfs": -21.141598,
+          "rms_delta_db": -0.130918,
+          "reference_peak_dbfs": -18.000511,
+          "candidate_peak_dbfs": -18.000511,
+          "peak_delta_db": 0.0,
+          "crest_delta_db": 0.130918,
+          "direct_correlation": 0.999855317113
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "start_s": 5.9,
+          "steady_start_s": 6.05,
+          "steady_end_s": 7.2,
+          "reference_rms_dbfs": -15.023319,
+          "candidate_rms_dbfs": -15.164096,
+          "rms_delta_db": -0.140776,
+          "reference_peak_dbfs": -11.999943,
+          "candidate_peak_dbfs": -11.999943,
+          "peak_delta_db": 0.0,
+          "crest_delta_db": 0.140776,
+          "direct_correlation": 0.99981472848
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "start_s": 7.85,
+          "steady_start_s": 8.05,
+          "steady_end_s": 9.1,
+          "reference_rms_dbfs": -9.010575,
+          "candidate_rms_dbfs": -9.141508,
+          "rms_delta_db": -0.130932,
+          "reference_peak_dbfs": -6.000476,
+          "candidate_peak_dbfs": -6.000476,
+          "peak_delta_db": 0.0,
+          "crest_delta_db": 0.130932,
+          "direct_correlation": 0.999855169298
+        }
+      ],
+      "tone_onsets": [
+        {
+          "source_peak_dbfs": -24.0,
+          "onset_s": 1.9,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -144.774685,
+            "candidate_rms_dbfs": -144.413722,
+            "rms_delta_db": 0.360963,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.360963,
+            "direct_correlation": -0.004093272603
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -31.053031,
+            "candidate_rms_dbfs": -31.186588,
+            "rms_delta_db": -0.133558,
+            "reference_peak_dbfs": -24.002173,
+            "candidate_peak_dbfs": -24.002173,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.133558,
+            "direct_correlation": 0.999572886099
+          },
+          "steady_200_600ms": {
+            "reference_rms_dbfs": -27.010592,
+            "candidate_rms_dbfs": -27.141041,
+            "rms_delta_db": -0.130449,
+            "reference_peak_dbfs": -24.002173,
+            "candidate_peak_dbfs": -24.002173,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.130449,
+            "direct_correlation": 0.999855596467
+          }
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "onset_s": 3.9,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -144.82321,
+            "candidate_rms_dbfs": -144.613641,
+            "rms_delta_db": 0.209569,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.209569,
+            "direct_correlation": -0.041493724872
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -22.802988,
+            "candidate_rms_dbfs": -22.932801,
+            "rms_delta_db": -0.129813,
+            "reference_peak_dbfs": -18.000511,
+            "candidate_peak_dbfs": -18.000511,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.129813,
+            "direct_correlation": 0.999688161494
+          },
+          "steady_200_600ms": {
+            "reference_rms_dbfs": -21.010545,
+            "candidate_rms_dbfs": -21.141396,
+            "rms_delta_db": -0.130851,
+            "reference_peak_dbfs": -18.000511,
+            "candidate_peak_dbfs": -18.000511,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.130851,
+            "direct_correlation": 0.999855325164
+          }
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "onset_s": 5.9,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -144.64163,
+            "candidate_rms_dbfs": -144.387159,
+            "rms_delta_db": 0.254471,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.254471,
+            "direct_correlation": -0.010466244362
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -15.308572,
+            "candidate_rms_dbfs": -15.438784,
+            "rms_delta_db": -0.130212,
+            "reference_peak_dbfs": -11.999943,
+            "candidate_peak_dbfs": -11.999943,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.130212,
+            "direct_correlation": 0.999730596284
+          },
+          "steady_200_600ms": {
+            "reference_rms_dbfs": -15.010555,
+            "candidate_rms_dbfs": -15.141465,
+            "rms_delta_db": -0.13091,
+            "reference_peak_dbfs": -11.999943,
+            "candidate_peak_dbfs": -11.999943,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.13091,
+            "direct_correlation": 0.999855227858
+          }
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "onset_s": 7.85,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -144.369541,
+            "candidate_rms_dbfs": -144.395995,
+            "rms_delta_db": -0.026455,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.026455,
+            "direct_correlation": -0.042843730102
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -10.537396,
+            "candidate_rms_dbfs": -10.667739,
+            "rms_delta_db": -0.130343,
+            "reference_peak_dbfs": -6.000476,
+            "candidate_peak_dbfs": -6.000476,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.130343,
+            "direct_correlation": 0.999689246816
+          },
+          "steady_200_600ms": {
+            "reference_rms_dbfs": -9.010575,
+            "candidate_rms_dbfs": -9.141508,
+            "rms_delta_db": -0.130932,
+            "reference_peak_dbfs": -6.000476,
+            "candidate_peak_dbfs": -6.000476,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.130932,
+            "direct_correlation": 0.999855169294
+          }
+        }
+      ],
+      "isolated_transients": [
+        {
+          "onset_s": 9.973333,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "candidate_rms_dbfs": -12.175344,
+            "rms_delta_db": -0.307439,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -2.853702,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.307439,
+            "direct_correlation": 0.999353768308
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -53.61105,
+            "candidate_rms_dbfs": -60.766768,
+            "rms_delta_db": -7.155718,
+            "reference_peak_dbfs": -37.599245,
+            "candidate_peak_dbfs": -43.83252,
+            "peak_delta_db": -6.233275,
+            "crest_delta_db": 0.922443,
+            "direct_correlation": 0.994327129788
+          },
+          "tail_120_300ms": {
+            "reference_rms_dbfs": -144.568413,
+            "candidate_rms_dbfs": -144.516571,
+            "rms_delta_db": 0.051842,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": -0.051842,
+            "direct_correlation": 0.008426587651
+          },
+          "event_0_300ms": {
+            "reference_rms_dbfs": -23.627364,
+            "candidate_rms_dbfs": -23.935957,
+            "rms_delta_db": -0.308592,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -2.853702,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.308592,
+            "direct_correlation": 0.998186950108
+          }
+        },
+        {
+          "onset_s": 10.4,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "candidate_rms_dbfs": -12.175344,
+            "rms_delta_db": -0.307439,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -2.853702,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.307439,
+            "direct_correlation": 0.999353768236
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -53.611053,
+            "candidate_rms_dbfs": -60.766755,
+            "rms_delta_db": -7.155702,
+            "reference_peak_dbfs": -37.599245,
+            "candidate_peak_dbfs": -43.832681,
+            "peak_delta_db": -6.233436,
+            "crest_delta_db": 0.922266,
+            "direct_correlation": 0.994327123161
+          },
+          "tail_120_300ms": {
+            "reference_rms_dbfs": -144.473338,
+            "candidate_rms_dbfs": -144.578651,
+            "rms_delta_db": -0.105313,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.105313,
+            "direct_correlation": 0.00843534196
+          },
+          "event_0_300ms": {
+            "reference_rms_dbfs": -23.627365,
+            "candidate_rms_dbfs": -23.935957,
+            "rms_delta_db": -0.308592,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -2.853702,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.308592,
+            "direct_correlation": 0.998186951141
+          }
+        },
+        {
+          "onset_s": 10.826667,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "candidate_rms_dbfs": -12.175345,
+            "rms_delta_db": -0.307439,
+            "reference_peak_dbfs": -2.853704,
+            "candidate_peak_dbfs": -2.853702,
+            "peak_delta_db": 1e-06,
+            "crest_delta_db": 0.307441,
+            "direct_correlation": 0.99935376883
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -53.611055,
+            "candidate_rms_dbfs": -60.76677,
+            "rms_delta_db": -7.155715,
+            "reference_peak_dbfs": -37.599324,
+            "candidate_peak_dbfs": -43.832681,
+            "peak_delta_db": -6.233357,
+            "crest_delta_db": 0.922357,
+            "direct_correlation": 0.994327126104
+          },
+          "tail_120_300ms": {
+            "reference_rms_dbfs": -144.472337,
+            "candidate_rms_dbfs": -144.500434,
+            "rms_delta_db": -0.028097,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.028097,
+            "direct_correlation": 0.002993473139
+          },
+          "event_0_300ms": {
+            "reference_rms_dbfs": -23.627364,
+            "candidate_rms_dbfs": -23.935957,
+            "rms_delta_db": -0.308592,
+            "reference_peak_dbfs": -2.853704,
+            "candidate_peak_dbfs": -2.853702,
+            "peak_delta_db": 1e-06,
+            "crest_delta_db": 0.308594,
+            "direct_correlation": 0.998186951978
+          }
+        },
+        {
+          "onset_s": 11.253333,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "candidate_rms_dbfs": -12.175345,
+            "rms_delta_db": -0.307439,
+            "reference_peak_dbfs": -2.853704,
+            "candidate_peak_dbfs": -2.853704,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.307439,
+            "direct_correlation": 0.999353768284
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -53.611056,
+            "candidate_rms_dbfs": -60.766767,
+            "rms_delta_db": -7.155711,
+            "reference_peak_dbfs": -37.599324,
+            "candidate_peak_dbfs": -43.832681,
+            "peak_delta_db": -6.233357,
+            "crest_delta_db": 0.922354,
+            "direct_correlation": 0.994327227027
+          },
+          "tail_120_300ms": {
+            "reference_rms_dbfs": -144.428549,
+            "candidate_rms_dbfs": -144.446409,
+            "rms_delta_db": -0.01786,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.01786,
+            "direct_correlation": -0.000459051785
+          },
+          "event_0_300ms": {
+            "reference_rms_dbfs": -23.627364,
+            "candidate_rms_dbfs": -23.935957,
+            "rms_delta_db": -0.308592,
+            "reference_peak_dbfs": -2.853704,
+            "candidate_peak_dbfs": -2.853704,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.308592,
+            "direct_correlation": 0.998186951473
+          }
+        },
+        {
+          "onset_s": 11.68,
+          "head_0_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "candidate_rms_dbfs": -12.175344,
+            "rms_delta_db": -0.307439,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -2.853702,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.307439,
+            "direct_correlation": 0.999353767745
+          },
+          "body_20_120ms": {
+            "reference_rms_dbfs": -53.611052,
+            "candidate_rms_dbfs": -60.766776,
+            "rms_delta_db": -7.155723,
+            "reference_peak_dbfs": -37.599324,
+            "candidate_peak_dbfs": -43.832681,
+            "peak_delta_db": -6.233357,
+            "crest_delta_db": 0.922366,
+            "direct_correlation": 0.994327303885
+          },
+          "tail_120_300ms": {
+            "reference_rms_dbfs": -144.552082,
+            "candidate_rms_dbfs": -144.573529,
+            "rms_delta_db": -0.021447,
+            "reference_peak_dbfs": -138.473798,
+            "candidate_peak_dbfs": -138.473798,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.021447,
+            "direct_correlation": -0.002167890084
+          },
+          "event_0_300ms": {
+            "reference_rms_dbfs": -23.627364,
+            "candidate_rms_dbfs": -23.935957,
+            "rms_delta_db": -0.308592,
+            "reference_peak_dbfs": -2.853702,
+            "candidate_peak_dbfs": -2.853702,
+            "peak_delta_db": 0.0,
+            "crest_delta_db": 0.308592,
+            "direct_correlation": 0.998186950047
+          }
+        }
+      ],
+      "whole_file": {
+        "reference_rms_dbfs": -17.19745,
+        "candidate_rms_dbfs": -17.436356,
+        "rms_delta_db": -0.238906,
+        "reference_peak_dbfs": -2.853702,
+        "candidate_peak_dbfs": -2.853702,
+        "peak_delta_db": 0.0,
+        "crest_delta_db": 0.238906,
+        "direct_correlation": 0.997026981669
+      },
+      "difference_residual_rms_dbfs": -39.054455,
+      "left_right_residual_rms_dbfs": -141.489394
+    }
+  },
+  "interpretation_boundary": "Measurements apply only to this installed Waves Smack Attack VST3 Stereo instance, A: Default Preset, Guard Off, Output 0.0, the visible default detector/shape/duration/mix states, and the rendered 48 kHz fixture. The fixture was auto-warped by Ableton from 11.25 s to 12 s; all windows reference the rendered control. Attack +100 and Sustain -100 were tested as separate single-variable extremes. The test establishes envelope direction and magnitude on this synthetic stepped-tone/transient fixture, not speech-phoneme detection accuracy, perceived vocal quality, or a universal time constant. It does not establish other shapes, durations, sensitivities, Mix positions, Guard modes, stereo unlink behavior, mono, other formats/sample rates/versions, automation, CPU, or blind-listening preference."
+}

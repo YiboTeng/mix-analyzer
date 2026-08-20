@@ -1,0 +1,722 @@
+{
+  "schema_version": "1.0",
+  "cards": [
+    {
+      "id": "p0-reference-level-gate",
+      "title": "先做参考可比性与等响门控",
+      "diagnoses": ["loudness_bias_check", "reference_mismatch", "mix_context_comparison"],
+      "modes": ["vocal-reference", "mix-reference", "manual"],
+      "scopes": ["*"],
+      "chain_stage": "reference-gate",
+      "preferred_capabilities": ["reference-ab", "metering"],
+      "evidence_weight": 0.86,
+      "calibration_required": false,
+      "hypotheses": ["响度差使更响的一方被误判为更清晰、更饱满", "参考曲段落、编制、年代或母带完成度不可比"],
+      "disambiguation_tests": ["记录原始 Integrated LUFS 差，再启用 Level Match 快速切换", "只比较相同职责段落；更换一首低频/中频或动态更匹配的参考复核", "若频谱差在等响后不再对应听感，不进入 EQ 处方"],
+      "action": {
+        "routing": "参考 A/B 工具放在监听链最末端，不写入导出；响度表放在处理后计量位",
+        "steps": ["导入 2–5 首同风格、同段落职责的高质量参考", "先记录原始响度，再做 Level Match", "一次只确认一个宽带问题，修正后重跑分析"],
+        "parameter_start_ranges": ["Level Match 以听感等响和 LUFS 差双重确认，不把匹配增益当发布目标", "参考少于 3 首时只称单参考/初步范围，不称稳定共性"]
+      },
+      "verification": {
+        "listen_for": ["低频重量、中频密度、主唱前后、高频空气与瞬态是否仍有一致差异"],
+        "failure_signs": ["只因更响而显得更好", "为了追逐一条参考曲线破坏作品自身平衡"],
+        "stop_conditions": ["参考不再可比或差异低于稳定听辨阈值时停止追逐"],
+        "remeasure_metrics": ["Integrated LUFS", "宽带频谱差", "PLR/Crest", "参考兼容度"]
+      },
+      "provenance": {
+        "evidence_grade": "C+local-measurement",
+        "source_paths": ["notes/音乐制作/混音/用同风格参考曲做等响与频谱差值校准.md"]
+      }
+    },
+    {
+      "id": "p0-vocal-low-mid-triage",
+      "title": "把低频/低中频问题拆成量、动态与质感",
+      "diagnoses": ["mud", "low_mid_bloom", "tonal_imbalance"],
+      "modes": ["vocal-reference", "manual"],
+      "scopes": ["target-vocal", "lead-vocal", "vocal-bus"],
+      "chain_stage": "corrective-eq",
+      "preferred_capabilities": ["eq-surgical-dynamic", "eq-dynamic-flexible", "multiband-dynamics"],
+      "evidence_weight": 0.68,
+      "calibration_required": true,
+      "hypotheses": ["全程长期低频能量过多", "少数字句/近讲/爆破导致局部低频冒出", "与 Beat 的 Bass/Pad 频率占位冲突", "削减后缺的是谐波质感而非低频量"],
+      "disambiguation_tests": ["在整句和伴奏中确认问题是持续还是只在某些音节触发", "观察峰值是否随音高移动；随音高移动的更可能是基频/泛音", "先动 Clip Gain 或 Beat 电平；若问题消失，不在主唱做深静态削减"],
+      "action": {
+        "routing": "持续倾斜用前级修正 EQ；偶发事件用动态 EQ/多段；质感补偿放在清理后并等响",
+        "steps": ["无音乐意义的次低频才启用高通", "持续浑浊先用宽 Q、小增益静态减法", "偶发字句用有限 Range 的动态段", "若控制后变虚，再试低量饱和而不是把原低频补回"],
+        "parameter_start_ranges": ["男/低音域人声高通可从 60–90 Hz、12 或 24 dB/oct 试听上移；主体变薄立即回退", "宽幅减法约 -0.5 至 -2 dB、Q 0.7–1.5 起", "局部动态范围约 -1 至 -3 dB，先限 Range 再调 Threshold", "爆破单事件优先 Clip Gain -3 至 -9 dB 或音节自动化，再决定是否加动态低频 EQ"]
+      },
+      "verification": {
+        "listen_for": ["胸腔/厚度保留、歌词更清楚、Beat 低频不塌", "动态段只在问题音节动作"],
+        "failure_signs": ["元音主体被挖空", "低频问题移动而非改善", "动态 EQ 随每个音节抽动"],
+        "stop_conditions": ["再削 0.5–1 dB 只让人声变薄或更远时停止"],
+        "remeasure_metrics": ["150–600 Hz 相对能量", "问题音节低频峰值", "Vocal/Instrument mask", "等响旁路"]
+      },
+      "provenance": {
+        "evidence_grade": "C",
+        "source_paths": ["notes/音乐制作/人声处理/把人声低频的量动态与质感分开处理.md", "notes/音乐制作/人声处理/人声EQ应区分基频泛音与固定共振而不是找固定频点.md"]
+      }
+    },
+    {
+      "id": "p0-resonance-causality",
+      "title": "区分固定共振、移动泛音与动态刺耳",
+      "diagnoses": ["resonance", "dynamic_resonance", "moving_resonance", "dense_high_mid_buildup", "harshness"],
+      "modes": ["vocal-reference", "manual"],
+      "scopes": ["target-vocal", "lead-vocal", "vocal-bus"],
+      "chain_stage": "spectral-dynamics",
+      "preferred_capabilities": ["eq-surgical-dynamic", "eq-dynamic-flexible", "resonance-suppression"],
+      "evidence_weight": 0.72,
+      "calibration_required": true,
+      "hypotheses": ["跨音符固定的房间/麦克风/录音链共振", "随旋律移动的基频或音乐性泛音", "只有强辅音或高响度触发的动态刺耳"],
+      "disambiguation_tests": ["用窄带 Solo 只做短暂搜索，恢复零增益后在全混音确认", "比较不同音符：峰值是否随音高移动", "分开旁路静态、动态与自动共振抑制，确认最小职责层"],
+      "action": {
+        "routing": "固定共振用修正 EQ；偶发单区用动态 EQ；很多移动共振才使用自动抑制",
+        "steps": ["固定峰先小幅静态削减", "偶发峰限制最大动态范围", "自动抑制器从最低 Depth/Sharpness 逐步增加并频繁旁路"],
+        "parameter_start_ranges": ["固定窄削约 -1 至 -3 dB、Q 3–8 起；不是扫描后保留极端曲线", "动态 Range 约 -1 至 -3 dB，普通元音尽量不动作", "自动共振抑制先选最窄问题区域和 Soft 模式，再以等响判断是否需要 Hard/更深"]
+      },
+      "verification": {
+        "listen_for": ["问题音素不再抢注意力，元音主体和声线辨识度保留"],
+        "failure_signs": ["声音空洞、暗化、前后距离持续摆动", "频谱更平但人声更小或更塑料"],
+        "stop_conditions": ["旁通后只觉得处理版更小/更暗，而非更稳时回退"],
+        "remeasure_metrics": ["问题频带活动帧能量", "普通元音频谱差", "动态段占空比", "等响 AB"]
+      },
+      "provenance": {"evidence_grade": "C", "source_paths": ["notes/音乐制作/人声处理/人声EQ应区分基频泛音与固定共振而不是找固定频点.md"]}
+    },
+    {
+      "id": "p0-sibilance-harshness",
+      "title": "先分齿音、硬辅音与宽带高频刺耳",
+      "diagnoses": ["sibilance", "harsh_consonants", "voice_specific_harshness"],
+      "modes": ["vocal-reference", "manual"],
+      "scopes": ["target-vocal", "lead-vocal", "vocal-bus"],
+      "chain_stage": "deessing",
+      "preferred_capabilities": ["deessing-wide-split", "deessing-spectral"],
+      "evidence_weight": 0.76,
+      "calibration_required": true,
+      "hypotheses": ["S/Sh/T 等辅音的窄时域高频事件", "2–5 kHz 硬辅音或饱和后谐波", "房间/底噪在高频提升后被放大"],
+      "disambiguation_tests": ["只听 Difference/Solo，确认检测中主要是目标辅音而非元音", "把去齿放在饱和前后分别旁路，判断刺耳是输入已有还是失真新生", "Split 与 Wide 在相同主观衰减下比较主体暗化"],
+      "action": {
+        "routing": "通常清理 EQ 后、饱和/强压缩前；必要时饱和后加第二级轻量去齿",
+        "steps": ["先选能覆盖目标辅音的最窄可行频段", "先限最大 Range，再降低 Threshold/Sensitivity", "只让最坏齿音稳定，不追求每个 S 都同样暗"],
+        "parameter_start_ranges": ["男声常从约 5–9 kHz 搜索，女声/更亮素材可向 6–12 kHz 移动；频点只作搜索区", "最大衰减先约 2–4 dB；明显 lisping 前停止", "分频模式主体保留更好时优先 Split；需要整体柔化才试 Wide"]
+      },
+      "verification": {
+        "listen_for": ["最坏齿音不刺，歌词仍自然，元音亮度基本不变"],
+        "failure_signs": ["口齿含混、lisping、整体暗化、呼吸忽隐忽现"],
+        "stop_conditions": ["Difference 中出现完整元音/字头，或正常辅音明显塌陷时停止"],
+        "remeasure_metrics": ["齿音带事件能量", "非齿音元音高频变化", "最大/中位衰减", "饱和后复测"]
+      },
+      "provenance": {"evidence_grade": "D+P1-L3-controls", "source_paths": ["notes/音乐制作/人声处理/用多段动态分开控制人声亮度与刺耳峰值.md"]}
+    },
+    {
+      "id": "p0-vocal-macro-level",
+      "title": "先整理整句电平，再让压缩器处理峰值",
+      "diagnoses": ["macro_level_inconsistency", "phrase_level_automation_load", "smooth_leveling", "dense_close_vocal", "low_level_detail_missing"],
+      "modes": ["vocal-reference", "manual"],
+      "scopes": ["target-vocal", "lead-vocal", "vocal-bus"],
+      "chain_stage": "leveling",
+      "preferred_capabilities": ["level-riding", "compression-opto", "compression-upward-downward"],
+      "evidence_weight": 0.74,
+      "calibration_required": true,
+      "hypotheses": ["表演句间/句内电平跨度过大", "小声字迫使峰值压缩器持续深压", "上行压缩/回补同时抬高呼吸与噪声"],
+      "disambiguation_tests": ["先做音节/短语 Clip Gain，观察压缩 GR 是否明显更稳", "Solo 与整曲分别检查句尾和小字是否真被 Beat 吞没", "自动骑乘写入后检查最大增益范围和突变"],
+      "action": {
+        "routing": "Clip Gain/编辑 → Rider/慢速电平 → 峰值压缩；不要用单一重压缩完成全部层级",
+        "steps": ["手工修正少数极端字和呼吸", "Rider 只承担短语级稳定，限制上下范围", "需要密度时再加慢速压缩或少量上行压缩"],
+        "parameter_start_ranges": ["Clip Gain 常以 1–3 dB 小步修正；明显爆破/尖峰可更大但需淡化边界", "Rider 上下范围先约 ±3 dB，极端不超过约 ±6 dB 作为审查点", "慢速整句压缩以平均 1–3 dB GR 起，句尾和呼吸不应被持续抬高"]
+      },
+      "verification": {
+        "listen_for": ["每个字可懂但表演起伏仍在，峰值压缩不再长时间深压"],
+        "failure_signs": ["呼吸/底噪被抬、音量自动化抽动、情绪强弱被抹平"],
+        "stop_conditions": ["短语稳定后继续骑乘只让表演变平时停止"],
+        "remeasure_metrics": ["50 ms 活跃电平 P90-P10", "短语 LUFS-S", "骑乘范围", "后级压缩 GR 分布"]
+      },
+      "provenance": {"evidence_grade": "C+P1-L3", "source_paths": ["notes/音乐制作/人声处理/人声动态控制按峰值整句与频段三个层级升级.md"]}
+    },
+    {
+      "id": "p0-vocal-peak-dynamics",
+      "title": "用时间常数分开控制尖峰与主体",
+      "diagnoses": ["fast_peak_control", "peak_control", "dynamic_range_control", "aggressive_vocal_density", "simple_peak_and_body_control", "vocal_body_control", "quick_vocal_density"],
+      "modes": ["vocal-reference", "manual"],
+      "scopes": ["target-vocal", "lead-vocal", "vocal-bus"],
+      "chain_stage": "peak-dynamics",
+      "preferred_capabilities": ["compression-fet", "compression-flexible", "compression-vocal-fast", "compression-opto"],
+      "evidence_weight": 0.78,
+      "calibration_required": true,
+      "hypotheses": ["少数短峰值需要快速捕捉", "主体/短语需要更慢的稳定", "Input/Auto Gain 导致更响偏差", "Attack 太快抹字头或 Release 不合拍导致泵动"],
+      "disambiguation_tests": ["先关 Auto Gain/回补，在同输出响度下比较", "分别监听最强字头、持续元音、句尾与呼吸", "若只有少数峰值，先 Clip Gain 再判断是否需要第二台压缩器"],
+      "action": {
+        "routing": "峰值捕捉在前，慢速整句控制在后；选频问题另交给动态 EQ/多段",
+        "steps": ["峰值级先设中等 Ratio，调 Threshold/Input 到少量 GR", "Attack 从保留字头的中速开始，再只为刺峰加快", "Release 回到节奏和乐句，不让 GR 在下一字前仍深压", "第二级慢压只补稳定和音色"],
+        "parameter_start_ranges": ["第一层 Ratio 约 4:1 起，最强字峰值 GR 约 2–5 dB；持续深压前回到 Clip Gain", "Attack 可从约 10–30 ms 搜索，刺峰漏过再加快；超快模式必须复核辅音", "Release 可从约 40–120 ms 或随节拍调整，下一音节前应自然回弹", "第二层整句压缩约 1–3 dB GR 起；输出补偿到等响"]
+      },
+      "verification": {
+        "listen_for": ["尖峰稳定、字头仍清楚、主体更贴近但不喘动"],
+        "failure_signs": ["爆破/齿音失真、字头钝、低频泵动、声像摆动、回补削顶"],
+        "stop_conditions": ["GR 持续动作或等响后只剩更小、更暗、更扁时回退"],
+        "remeasure_metrics": ["Crest/PLR", "峰值分布", "50 ms 动态范围", "等响短句 AB"]
+      },
+      "provenance": {"evidence_grade": "B/C+P1-L3-controls", "source_paths": ["notes/音乐制作/人声处理/人声动态控制按峰值整句与频段三个层级升级.md"]}
+    },
+    {
+      "id": "p0-presence-air",
+      "title": "补存在感/空气前先排除齿音、噪声与遮蔽",
+      "diagnoses": ["presence_dullness", "lack_of_air", "broad_high_frequency_dullness"],
+      "modes": ["vocal-reference", "manual"],
+      "scopes": ["target-vocal", "lead-vocal", "vocal-bus"],
+      "chain_stage": "harmonic-tone",
+      "preferred_capabilities": ["exciter-air", "eq-air-color"],
+      "evidence_weight": 0.7,
+      "calibration_required": true,
+      "hypotheses": ["人声本身高频/存在感不足", "Beat 在 1.2–5 kHz 遮蔽而非人声缺高频", "齿音/底噪使高架提升不可用"],
+      "disambiguation_tests": ["先让 Beat 中央频谱临时让位；若人声清楚，不给主唱继续加亮", "独听最坏齿音、呼吸与房间尾巴", "EQ 与 Exciter 在等响条件下比较是否只是更响"],
+      "action": {
+        "routing": "清理和去齿后做宽带色调；并行 Air 返回可独立带限和自动化",
+        "steps": ["先用宽 Q 小幅存在感提升或 Air Shelf", "需要可感谐波而非纯增益时试 Exciter/并行饱和", "副歌/Ad-lib 可自动化，不把整曲固定推亮"],
+        "parameter_start_ranges": ["存在感宽提升约 +0.5 至 +2 dB 起，搜索区约 2–5 kHz", "Air Shelf 常从 10–16 kHz、+0.5 至 +2 dB 起；编码/分离素材更保守", "Exciter 从 5–15% 或低旋钮量起；输出/返回等响"]
+      },
+      "verification": {
+        "listen_for": ["更靠前、更清楚，但 S/T、呼吸和房间声不抢"],
+        "failure_signs": ["砂砾、刺耳、薄、噪声被抬、听觉疲劳"],
+        "stop_conditions": ["再加亮只让辅音更尖而元音不更清楚时停止"],
+        "remeasure_metrics": ["Presence/Air 相对能量", "齿音事件能量", "噪声底", "Beat mask"]
+      },
+      "provenance": {"evidence_grade": "C+P1-L3-controls", "source_paths": ["notes/音乐制作/人声处理/用七段职责链构建明亮柔顺的说唱人声.md"]}
+    },
+    {
+      "id": "p0-parallel-grain",
+      "title": "用带限并行失真增加颗粒与密度",
+      "diagnoses": ["harmonic_density", "parallel_distortion", "vocal_density", "midrange_character", "parallel_air", "tube_harmonic_density"],
+      "modes": ["vocal-reference", "manual"],
+      "scopes": ["target-vocal", "lead-vocal", "vocal-bus"],
+      "chain_stage": "harmonic-tone",
+      "preferred_capabilities": ["saturation-character", "saturation-multiband", "saturation-tube-parallel"],
+      "evidence_weight": 0.66,
+      "calibration_required": true,
+      "hypotheses": ["主唱缺可感中频谐波/颗粒", "直接插入失真破坏清晰度", "更响被误判为更有密度", "新生高次谐波放大齿音"],
+      "disambiguation_tests": ["先将失真返回完全静音，再缓慢推起做盲旁路", "失真前/后分别去齿，确认刺耳来源", "全混音与 Mono 中确认返回是支撑而非可单独听出的层"],
+      "action": {
+        "routing": "主唱发送到独立 Stereo/Mono Aux；Aux 上先带限，再重驱动，最后输出补偿并混回",
+        "steps": ["Aux 高通清掉无用低频", "低通收住新生高次谐波", "失真插件可重驱动但 Output 回调", "返回从 -inf 缓慢推到刚有支撑", "必要时按段落自动化"],
+        "parameter_start_ranges": ["Aux 高通常从约 100–180 Hz、12–24 dB/oct 起；低音男声需更低并听证", "Aux 低通常从约 6–10 kHz 起，齿音仍尖则下移", "饱和/失真处理器在 Aux 保持 100% Wet；Drive/Input 推到单听明显，再用 Aux Fader 控制", "返回电平常从比主唱低 15–25 dB 的区域向上搜索，不把该范围当固定值"]
+      },
+      "verification": {
+        "listen_for": ["近距离感、辅音颗粒和中频支撑增加，但歌词主体仍来自干声"],
+        "failure_signs": ["齿音/底噪抬升、低中频堆积、字头扁、Mono 变浑"],
+        "stop_conditions": ["能清楚辨认一个独立失真层，或再推只增加响度/毛刺时回退"],
+        "remeasure_metrics": ["高阶谐波份额", "等响 LUFS-S", "6–12 kHz 事件能量", "Mono fold", "峰值余量"]
+      },
+      "provenance": {"evidence_grade": "D+P1-L3-controls", "source_paths": ["notes/音乐制作/人声处理/把激进失真放到并行返回并用高切收住新生谐波.md"]}
+    },
+    {
+      "id": "p0-vocal-width",
+      "title": "主唱保持中心，把宽度交给辅助层",
+      "diagnoses": ["adlib_width", "vocal_width_deficit", "double_track_effect", "mono_to_stereo_effect", "subtle_parallel_space"],
+      "modes": ["vocal-reference", "manual"],
+      "scopes": ["target-vocal", "lead-vocal", "chorus-adlib", "vocal-bus"],
+      "chain_stage": "width-layering",
+      "preferred_capabilities": ["width-multivoice", "width-psychoacoustic", "stereo-utility"],
+      "evidence_weight": 0.74,
+      "calibration_required": true,
+      "hypotheses": ["主体本身过宽导致中心变薄", "缺少独立双轨/Ad-lib/返回层", "Haas/Detune 在 Mono 折叠中相消", "低频 Side 不稳定"],
+      "disambiguation_tests": ["只听主唱 Dry，确认中心和字头先稳定", "分别 Solo Side、Mono Fold-down 与相关度", "真实双轨、多声部微移相与心理声学宽化在等响下比较"],
+      "action": {
+        "routing": "主唱主体居中；多声部微移相/心理声学宽化/短混响放独立返回或辅助层；低频优先 Mono",
+        "steps": ["辅助层高通/低通让位主唱主体", "Detune/Delay 左右不完全对称", "返回音量从静音推起", "段落自动化：主歌窄、副歌/Ad-lib 适当扩"],
+        "parameter_start_ranges": ["宽化返回高通常从 120–250 Hz 起，低通常从 6–12 kHz 起", "Detune 可从左右约 ±4–9 cents、Delay 约 8–25 ms 搜索；Haas 超短延迟必须 Mono 检查", "相关度持续接近或低于 0 时降低宽化/调整延迟", "低频侧面高通只在证据下工作，截止常从 80–150 Hz 搜索"]
+      },
+      "verification": {
+        "listen_for": ["立体声更开但中心歌词不后退，Mono 仍有主体和清晰度"],
+        "failure_signs": ["中心空、声像漂、梳状滤波、Mono 音色骤变"],
+        "stop_conditions": ["Mono Fold-down 主体下降或相关度风险持续时停止"],
+        "remeasure_metrics": ["Side/Mid", "LR correlation", "Mono fold loss", "核心/尾部宽度"]
+      },
+      "provenance": {"evidence_grade": "D+P1-L3-controls", "source_paths": ["notes/音乐制作/人声处理/让主唱保持中心并把宽度交给辅助层.md"]}
+    },
+    {
+      "id": "p0-vocal-depth",
+      "title": "用短空间、长尾和 Predelay 分工构建纵深",
+      "diagnoses": ["vocal_depth", "natural_vocal_depth", "room_distance", "vocal_plate_depth", "dense_bright_tail", "vintage_hall_or_plate", "speaker_mic_room_colour", "vintage_chamber_depth"],
+      "modes": ["vocal-reference", "manual"],
+      "scopes": ["target-vocal", "lead-vocal", "chorus-adlib", "vocal-bus"],
+      "chain_stage": "space-delay",
+      "preferred_capabilities": ["reverb-natural", "reverb-plate", "reverb-vintage-algorithmic", "reverb-chamber"],
+      "evidence_weight": 0.7,
+      "calibration_required": true,
+      "hypotheses": ["主唱过干且与 Beat 不共享空间", "混响过多但 Predelay 太短导致字头后退", "低频/高频尾巴遮蔽词与齿音"],
+      "disambiguation_tests": ["先用短 Room/ER 判断融合，再加长尾", "将 Reverb 返回静音后从 -inf 推起，确认何时只感到空间不听出尾巴", "监听句尾与密集 Flow，确认尾巴是否跨词叠加"],
+      "action": {
+        "routing": "独立 Reverb Aux 100% Wet；返回前/后 EQ 带限；需要清晰度时由 Dry Vocal 侧链 Duck 返回",
+        "steps": ["短 Room/ER 负责粘合", "Plate/Hall 负责情绪长尾", "Predelay 给字头留空间", "返回高通、低通并按段落自动化", "密集说唱可 Duck 2–4 dB，在停唱时释放"],
+        "parameter_start_ranges": ["短 Room/ER Decay 约 0.3–0.8 s，Predelay 0–20 ms 起", "Plate/Hall Decay 约 1.2–2.5 s，Predelay 30–80 ms 起；BPM/Flow 快时更短", "返回高通约 120–250 Hz，低通约 6–12 kHz 起", "Ducking Range 约 2–4 dB，Release 贴合句尾而非每个音节抽动"]
+      },
+      "verification": {
+        "listen_for": ["人声进入同一空间但字头、近距离感和歌词仍清楚"],
+        "failure_signs": ["尾巴糊词、齿音扩散、低频堆积、前后位置抽动"],
+        "stop_conditions": ["独听返回很美但整曲歌词更远时停止并缩短/带限"],
+        "remeasure_metrics": ["Reverb onset/predelay", "Decay/T60", "尾部 Side/Mid", "短语遮蔽", "返回电平"]
+      },
+      "provenance": {"evidence_grade": "C+P1-L3-controls", "source_paths": ["notes/音乐制作/人声处理/用短长混响与双Delay分工构建氛围人声.md"]}
+    },
+    {
+      "id": "p0-vocal-delay",
+      "title": "用 Slap、节拍 Echo 与 Throw 分工",
+      "diagnoses": ["slap_delay", "tempo_echo", "throw_delay", "ducked_echo", "creative_multitap", "modulated_delay"],
+      "modes": ["vocal-reference", "manual"],
+      "scopes": ["target-vocal", "lead-vocal", "chorus-adlib", "vocal-bus"],
+      "chain_stage": "space-delay",
+      "preferred_capabilities": ["delay-vocal", "delay-creative"],
+      "evidence_weight": 0.69,
+      "calibration_required": true,
+      "hypotheses": ["人声需要厚度但不适合增加长混响", "持续 Delay 堆叠歌词", "Throw 自动化比全程 Wet 更合适"],
+      "disambiguation_tests": ["Slap 与短 Room 在等响下比较厚度与可懂度", "把 Feedback 暂时降到一次回声确认时间是否正确", "只在句尾自动化 Send，确认是否比 Ducking 更干净"],
+      "action": {
+        "routing": "Delay Aux 100% Wet；返回带限；由主唱侧链 Duck 或自动化 Send 做句尾 Throw",
+        "steps": ["Slap 提供厚度", "1/8 或 1/4 节拍 Echo 提供律动", "Throw 只在关键词/句尾出现", "Feedback 先低后加"],
+        "parameter_start_ranges": ["Slap 约 70–140 ms，Feedback 0–15% 起", "Tempo Echo 从 1/8、1/8D、1/4 三者试听，Feedback 10–30% 起", "返回高通约 150–300 Hz、低通约 4–9 kHz", "Ducking 约 2–6 dB，Release 让回声在词后自然抬起"]
+      },
+      "verification": {
+        "listen_for": ["节奏和厚度增加，当前歌词不被上一句遮蔽"],
+        "failure_signs": ["反馈堆积、辅音重复抢词、低中频变糊、立体声声像乱"],
+        "stop_conditions": ["Delay 成为第二个主唱或跨句遮蔽时减少 Send/Feedback"],
+        "remeasure_metrics": ["Tap 时间误差", "Feedback 衰减", "短语遮蔽", "返回峰值"]
+      },
+      "provenance": {"evidence_grade": "C+P1-L3-controls", "source_paths": ["notes/音乐制作/人声处理/用短长混响与双Delay分工构建氛围人声.md"]}
+    },
+    {
+      "id": "p0-noise-restoration",
+      "title": "把噪声、房间、点击与句间底噪分开修复",
+      "diagnoses": ["broadband_stationary_noise", "broadband_dialogue_noise", "quick_noise_cleanup", "frequency_skewed_room_noise", "inter_phrase_noise", "room_tone_between_lines", "mouth_click_or_short_impulse", "digital_click"],
+      "modes": ["vocal-reference", "manual"],
+      "scopes": ["target-vocal", "lead-vocal", "vocal-bus"],
+      "chain_stage": "editing-restoration",
+      "preferred_capabilities": ["noise-reduction-simple", "noise-reduction-multiband-dialogue", "gate-expander", "restoration-click-mouth-adjacent"],
+      "evidence_weight": 0.72,
+      "calibration_required": true,
+      "hypotheses": ["稳定宽带噪声", "频率倾斜的房间/设备噪声", "仅句间可见的噪声", "单个短点击/嘴声", "Source Separation 伪影被误判为噪声"],
+      "disambiguation_tests": ["Difference/Noise Only 监听是否包含语音主体", "放大事件波形判断是单点点击还是连续摩擦/房间尾巴", "门限只在句间测试，不能截断弱字尾"],
+      "action": {
+        "routing": "事件编辑/修复最前；宽带降噪在压缩前；Gate/Expander 只处理句间并保留自然尾巴",
+        "steps": ["少数点击优先手工修复/专用点击工具", "稳定噪声从最低有效强度开始", "句间噪声用 Range 有限的 Expander 而非硬门", "处理后听 Difference"],
+        "parameter_start_ranges": ["简单降噪强度从 10–30% 起，50% 以上必须重点审查弱字/尾音", "Expander Range 先约 -6 至 -12 dB，不直接关到 -inf", "Attack 约 1–10 ms、Hold 20–80 ms、Release 80–250 ms 作搜索起点", "点击修复 Threshold/Sensitivity 从最低能稳定命中目标事件的位置起"]
+      },
+      "verification": {
+        "listen_for": ["噪声降低但弱字、气息、尾音和房间自然性保留"],
+        "failure_signs": ["水声、金属感、抽吸、字尾被切、Difference 含完整语音"],
+        "stop_conditions": ["继续降噪只增加伪影或损失语音时停止"],
+        "remeasure_metrics": ["Noise RMS", "弱字保留", "Difference audition", "事件峰值", "门限占空比"]
+      },
+      "provenance": {"evidence_grade": "C+P1-L3-boundary", "source_paths": ["notes/音乐制作/人声处理/把人声不干净拆成房间声高频毛边与动态刺耳.md"]}
+    },
+    {
+      "id": "p0-pitch-timing",
+      "title": "把实时音高校正与逐音编辑分开",
+      "diagnoses": ["pitch_drift_realtime", "intentional_hard_tune", "note_level_pitch_error", "timing_or_pitch_drift_edit"],
+      "modes": ["vocal-reference", "manual"],
+      "scopes": ["target-vocal", "lead-vocal"],
+      "chain_stage": "pitch-timing",
+      "preferred_capabilities": ["pitch-realtime", "pitch-editor"],
+      "evidence_weight": 0.8,
+      "calibration_required": true,
+      "hypotheses": ["整段需要实时风格化校正", "少数音符中心/漂移/边界错误", "Key/Scale 设置错误", "过快 Retune 抹平自然滑音与颤音"],
+      "disambiguation_tests": ["先人工确认 Key/Scale 与非和声音", "实时校正先中速，逐音编辑只修明显错误音符", "比较 Formant 保持开/关和低延迟/高质量模式"],
+      "action": {
+        "routing": "Clip Gain/清理后、重压缩/饱和前；实时追踪用实时音高校正器，离线细修用逐音编辑器",
+        "steps": ["设置正确 Key/Scale/Input Type", "自然校正先保留音符运动", "硬调音明确作为风格而非修复", "复杂音符边界转离线编辑"],
+        "parameter_start_ranges": ["自然校正 Retune 可从约 15–40 ms 搜索，Humanize/Flex-Tune 中等；具体范围按版本手册", "硬调音 Retune 0–10 ms 起并复核辅音/滑音", "逐音 Pitch Center/Drift 先 20–60% 小幅修正，不默认 100%", "Formant 通常先保持，变声效果才有意关闭/偏移"]
+      },
+      "verification": {
+        "listen_for": ["音高中心更稳但滑音、颤音、情绪和辅音自然"],
+        "failure_signs": ["音符吸附错误、抖动、Formant 塑料感、延迟影响跟唱"],
+        "stop_conditions": ["校正误差小于表演自然波动但音色副作用增加时停止"],
+        "remeasure_metrics": ["目标音 cents", "帧间音高运动", "音符中心/漂移", "延迟", "伪影"]
+      },
+      "provenance": {"evidence_grade": "B+P1-L3-controls", "source_paths": ["notes/音乐制作/插件/Antares/Auto-Tune Pro.md", "notes/音乐制作/插件/Celemony/Melodyne.md"]}
+    },
+    {
+      "id": "p0-vocal-instrument-width-gap",
+      "title": "把人声与伴奏的宽度差拆成中心、辅助层与翻译问题",
+      "diagnoses": ["vocal_instrument_width_gap"],
+      "modes": ["mix-reference", "manual"],
+      "scopes": ["vocal-instrument-relationship"],
+      "requires_stems": true,
+      "chain_stage": "width-layering",
+      "preferred_capabilities": ["stereo-utility", "width-multivoice", "width-psychoacoustic"],
+      "evidence_weight": 0.66,
+      "calibration_required": true,
+      "hypotheses": ["主唱核心比参考更宽", "Beat 比参考更宽而人声并无问题", "辅助人声/空间层不足", "Source Separation 伪影放大宽度差"],
+      "disambiguation_tests": ["分别读取 Vocal 与 Instrument Side/Mid，绝对差值本身不能决定该加宽哪一侧", "Solo 主唱核心、双轨/Ad-lib、空间返回和 Beat，定位差值来源", "Source-separated Stem 只作中低置信度实验，并以原 Master 的 Mono 翻译复核"],
+      "action": {
+        "routing": "主唱核心优先居中；需要补宽时处理辅助层/返回，需要收窄时回调问题层；不在 Master 根据绝对差值反推单轨参数",
+        "steps": ["确认是 Vocal 还是 Instrument 造成差值", "主唱过宽时回调宽化返回/双轨", "主唱过窄但核心稳定时补辅助层而非直接扩核心", "Beat 侧问题回到对应 Stem 或空间返回"],
+        "parameter_start_ranges": ["宽化/返回电平每次只改 1–2 dB", "辅助层宽化返回高通约 120–250 Hz、低通约 6–12 kHz 起", "左右微移调约 ±4–9 cents、延迟约 8–25 ms 只作辅助层搜索起点", "Source-separated Stem 不启用确定性旋钮，除非原始多轨复核"]
+      },
+      "verification": {
+        "listen_for": ["中心歌词稳定，人声与 Beat 形成层次，Mono 主体不掉"],
+        "failure_signs": ["中心空、声像漂、Mono 变色、分离伪影被放大"],
+        "stop_conditions": ["差值更接近参考但中心与 Mono 翻译变差时回退"],
+        "remeasure_metrics": ["Vocal Side/Mid", "Instrument Side/Mid", "宽度差", "LR correlation", "Mono fold loss"]
+      },
+      "provenance": {"evidence_grade": "C", "source_paths": ["notes/音乐制作/混音/用五维匹配解决贴唱人声与伴奏分离.md"]}
+    },
+    {
+      "id": "p0-vocal-beat-masking",
+      "title": "优先让 Beat 在人声出现时动态让位",
+      "diagnoses": ["frequency_masking", "sidechain_compression", "presence_dullness"],
+      "modes": ["mix-reference", "manual"],
+      "scopes": ["vocal-instrument-relationship"],
+      "requires_stems": true,
+      "chain_stage": "bus-balance",
+      "preferred_capabilities": ["eq-dynamic-flexible", "eq-surgical-dynamic", "compression-flexible"],
+      "evidence_weight": 0.68,
+      "calibration_required": true,
+      "hypotheses": ["人声本身足够清楚，但 Beat 中央 1–5 kHz 同时占位", "静态挖空 Beat 会在停唱时变薄", "全带侧链造成不必要泵动"],
+      "disambiguation_tests": ["先临时降低 Beat 1–2 dB；若歌词立刻清楚，优先平衡/让位", "只在 Vocal active 帧比较重叠频带", "Mid-only 与全 Stereo 让位在 Mono/宽度下比较"],
+      "action": {
+        "routing": "频谱侧链/动态 EQ 插在 Beat 或冲突 Stem；主唱作为外部侧链；必要时只处理 Mid",
+        "steps": ["先限制参与让位的频带", "Amount/Range 从低量增加到刚解除遮蔽", "Attack 保留 Beat 瞬态，Release 避免词间抽吸", "停唱、强辅音和副歌密集段复核"],
+        "parameter_start_ranges": ["保守频带可从约 100 Hz–4 kHz 起，再缩到实际冲突区", "频谱侧链强度从最低有效量开始，以停唱时完全恢复为硬条件", "动态 EQ Range 常从 -1 至 -3 dB 起，不追求大洞", "Mid-only 仅在主唱居中/Beat 较宽且 Mono 检查通过时使用"]
+      },
+      "verification": {
+        "listen_for": ["歌词更清楚，停唱时 Beat 完整，鼓/Lead 不抽吸"],
+        "failure_signs": ["Beat 变薄、声像晃动、每个辅音触发明显洞、低频泵动"],
+        "stop_conditions": ["再增加让位只让 Beat 退后而人声不更清楚时停止"],
+        "remeasure_metrics": ["Presence mask %", "Vocal/Instrument dB", "Mid/Side 能量", "停唱恢复", "Mono"]
+      },
+      "provenance": {"evidence_grade": "C", "source_paths": ["notes/音乐制作/混音/用Trackspacer侧链在中间声道为人声动态让位.md"]}
+    },
+    {
+      "id": "p0-articulation-transient",
+      "title": "用瞬态与局部自动化恢复咬字",
+      "diagnoses": ["articulation_too_soft", "sustain_too_long"],
+      "modes": ["vocal-reference", "manual"],
+      "scopes": ["target-vocal", "lead-vocal", "vocal-bus"],
+      "chain_stage": "peak-dynamics",
+      "preferred_capabilities": ["transient-shaping"],
+      "evidence_weight": 0.63,
+      "calibration_required": true,
+      "hypotheses": ["压缩 Attack 太快抹掉字头", "混响/延迟尾巴过长", "直接加高频会放大齿音而非恢复瞬态"],
+      "disambiguation_tests": ["先旁路压缩/空间返回，确认字头是否恢复", "只在问题辅音前后做 Clip Gain/自动化测试", "瞬态塑形与压缩 Attack 调整等响比较"],
+      "action": {
+        "routing": "先修正上游压缩/空间；仍不足时在主唱或并行层轻用 Transient Shaper",
+        "steps": ["减少过快压缩或延长 Attack", "少量提高 Attack/降低 Sustain", "必要时对字头做 0.5–2 dB 音节自动化"],
+        "parameter_start_ranges": ["Transient Attack 从 +5 至 +20% 起", "Sustain 从 -5 至 -20% 起", "字头 Clip Gain 约 +0.5 至 +2 dB；爆破/齿音不是目标"]
+      },
+      "verification": {
+        "listen_for": ["辅音更清楚但不硬、不点击，主体不变薄"],
+        "failure_signs": ["点击、爆破更突出、底噪泵动、尾音被截"],
+        "stop_conditions": ["Attack 更清楚但开始听到机械点击时停止"],
+        "remeasure_metrics": ["起音前 20 ms 能量", "20–120 ms Sustain", "峰值", "齿音事件"]
+      },
+      "provenance": {"evidence_grade": "C+P1-L3", "source_paths": ["notes/音乐制作/人声处理/用瞬态动态和混响尾巴把人声推到前景.md"]}
+    },
+    {
+      "id": "p0-vocal-weight-deficit",
+      "title": "在确认不是电平与遮蔽后补回人声重量",
+      "diagnoses": ["vocal_weight_deficit"],
+      "modes": ["vocal-reference", "manual"],
+      "scopes": ["target-vocal", "lead-vocal", "vocal-bus"],
+      "chain_stage": "harmonic-tone",
+      "preferred_capabilities": ["eq-surgical-dynamic", "saturation-tape", "saturation-tube-parallel"],
+      "evidence_weight": 0.64,
+      "calibration_required": true,
+      "hypotheses": ["人声主体低中频确实偏轻", "参考更响或更近造成重量错觉", "Beat 中央占位让主体显薄", "此前高通/减法/压缩过度"],
+      "disambiguation_tests": ["先旁路高通、低中频减法和压缩逐级检查", "临时降低 Beat 中央 1–2 dB；若重量恢复，优先做平衡/让位", "宽低架与带限饱和做等响比较"],
+      "action": {
+        "routing": "先修正上游过度削减；仍不足时在主唱 Insert 做极小宽带补偿，或用带限并行谐波返回",
+        "steps": ["把已有高通下移或减小斜率", "低中频用宽 Q 小幅加法，不追固定频点", "需要可感厚度时改用带限并行饱和", "补偿输出并在伴奏中判断"],
+        "parameter_start_ranges": ["高通先下移 10–30 Hz 或从 24 dB/oct 改为 12 dB/oct 做旁路", "宽 Bell/低架约 +0.5 至 +1.5 dB、Q 0.5–1.0 起，搜索约 120–350 Hz", "并行返回高通约 80–150 Hz、低通约 4–8 kHz，返回从 -inf 推至刚感到支撑"]
+      },
+      "verification": {
+        "listen_for": ["胸腔和近距离感恢复，歌词仍清楚，Beat 低频不拥挤"],
+        "failure_signs": ["浑浊、箱体感、爆破被放大、只是更响"],
+        "stop_conditions": ["再增加 0.5 dB 只让人声更糊或挤占 Bass 时停止"],
+        "remeasure_metrics": ["150–350 Hz 相对能量", "Vocal/Instrument mask", "等响 AB", "爆破事件能量"]
+      },
+      "provenance": {"evidence_grade": "C", "source_paths": ["notes/音乐制作/人声处理/把人声低频的量动态与质感分开处理.md"]}
+    },
+    {
+      "id": "p0-vocal-overcompressed",
+      "title": "低动态先恢复表演与瞬态，不再追加压缩",
+      "diagnoses": ["overcompressed_vocal"],
+      "modes": ["vocal-reference", "manual"],
+      "scopes": ["target-vocal", "lead-vocal", "vocal-bus"],
+      "chain_stage": "leveling",
+      "preferred_capabilities": ["reference-ab", "metering"],
+      "evidence_weight": 0.72,
+      "calibration_required": true,
+      "hypotheses": ["峰值压缩 Attack 过快或 GR 过深", "多级压缩职责重复", "Limiter/Clipper 在人声总线持续工作", "参考素材本身已母带化而目标是干声"],
+      "disambiguation_tests": ["按链路从后向前逐级旁路并做输出等响", "检查强字字头、持续元音和句间宏动态分别在哪一级消失", "若只有处理后版本低动态，优先回退处理而非加瞬态插件"],
+      "action": {
+        "routing": "在原链上回退或重设，不新增压缩器；保留可回滚版本",
+        "steps": ["关闭自动回补并等响", "降低 Threshold/Input 或 Ratio，减少持续 GR", "延长 Attack 恢复字头", "删除职责重复的一级压缩/限制", "用 Clip Gain 处理少数突出字而不是重新重压"],
+        "parameter_start_ranges": ["每次减少约 1–2 dB 峰值 GR 后复听", "Attack 可从当前值加倍或向 10–30 ms 搜索；爆破漏过再回调", "整句级平均 GR 先回到约 1–3 dB，峰值级只在最强字动作", "若总线 Limiter 持续 GR，先恢复 3–6 dB 头部空间"]
+      },
+      "verification": {
+        "listen_for": ["字头、句间强弱和呼吸节奏恢复，峰值仍受控"],
+        "failure_signs": ["爆峰、辅音刺出、句尾重新被吞、只是变响"],
+        "stop_conditions": ["动态已恢复而峰值开始失控时停止回退，转事件级 Clip Gain"],
+        "remeasure_metrics": ["Crest/PLR", "Macro/Micro range", "压缩 GR 分布", "等响短句 AB"]
+      },
+      "provenance": {"evidence_grade": "C", "source_paths": ["notes/音乐制作/人声处理/人声动态控制按峰值整句与频段三个层级升级.md"]}
+    },
+    {
+      "id": "p0-vocal-width-safety",
+      "title": "过宽或 Mono 风险先回收辅助层与低频 Side",
+      "diagnoses": ["vocal_width_excess", "mono_translation_risk", "low_frequency_mono"],
+      "modes": ["vocal-reference", "mix-reference", "manual"],
+      "scopes": ["target-vocal", "lead-vocal", "vocal-bus", "bass-stem"],
+      "chain_stage": "width-layering",
+      "preferred_capabilities": ["stereo-utility", "width-psychoacoustic"],
+      "evidence_weight": 0.76,
+      "calibration_required": true,
+      "hypotheses": ["微延迟/移调返回过响", "低频 Side 过多", "Source Separation 伪影降低相关度", "真实双轨时序未对齐"],
+      "disambiguation_tests": ["依次静音宽化返回、双轨与空间尾巴，定位风险来源", "做 Mono Fold-down 并监听主体音色而不只看相关度", "分频听低频 Side 是否来自音乐内容或分离残留"],
+      "action": {
+        "routing": "优先回调产生问题的辅助层；必要时在该返回或 Bass Stem 做 Side 低频管理，不在 Master 盲目收窄",
+        "steps": ["降低宽化返回或缩小左右时差/移调", "对宽化返回做高通", "低频 Side 有证据时再做侧面高通/Mono", "真实双轨先人工对齐关键字头"],
+        "parameter_start_ranges": ["宽化返回先回调 1–3 dB", "返回高通从约 120–250 Hz 搜索", "Bass Stem 侧面高通/Mono 截止从约 60–120 Hz 搜索，主体变小立即下移", "将超短左右延迟差每次缩小 2–5 ms 并复核 Mono"]
+      },
+      "verification": {
+        "listen_for": ["中心更稳、Mono 主体不掉，立体声仍有辅助层宽度"],
+        "failure_signs": ["整体变窄、空间塌陷、低频变小、分离伪影被误当宽度"],
+        "stop_conditions": ["Mono 不再明显变色且继续收窄只损失氛围时停止"],
+        "remeasure_metrics": ["LR correlation", "Mono fold loss", "低频 Side/Mid", "核心/尾部宽度"]
+      },
+      "provenance": {"evidence_grade": "C", "source_paths": ["notes/音乐制作/人声处理/让主唱保持中心并把宽度交给辅助层.md", "notes/音乐制作/混音/用声场相位扇形图检查单声道兼容性.md"]}
+    },
+    {
+      "id": "p0-master-low-end-excess",
+      "title": "Master 低频偏多先定位 Mix/Stems，再做总线最小修正",
+      "diagnoses": ["master_low_end_excess"],
+      "modes": ["mix-reference", "manual"],
+      "scopes": ["mix-master"],
+      "chain_stage": "bus-balance",
+      "preferred_capabilities": ["eq-surgical-dynamic", "multiband-dynamics"],
+      "evidence_weight": 0.74,
+      "calibration_required": true,
+      "hypotheses": ["Kick/808/Bass 平衡偏高", "少数低频峰值而非长期色调", "参考段落低频职责不同", "母带 Limiter 让低频显得持续"],
+      "disambiguation_tests": ["若有原始 Stems，先分别降低 Kick/808/Bass 0.5–1.5 dB 验证", "比较持续低架与仅峰值触发的动态低架", "更换低频职责相同的段落参考"],
+      "action": {
+        "routing": "优先回到 Mix/低频 Stem；只有 Master-only 时才在总线色调阶段做宽带、小幅、可回滚处理",
+        "steps": ["先确认是持续偏多还是少数峰值", "持续问题用宽低架微调", "局部问题用有限 Range 动态低架/低频多段", "处理后重新检查 Limiter GR"],
+        "parameter_start_ranges": ["Master 宽低架从 -0.5 至 -1.5 dB 起，转折约 60–150 Hz；禁止套用人声高通", "动态低频 Range 从 -0.5 至 -2 dB 起，只在异常峰触发", "若有 Stems，先以 0.5–1.5 dB 电平步进找责任轨"]
+      },
+      "verification": {
+        "listen_for": ["低频更紧但 Kick/808 重量和副歌规模保留"],
+        "failure_signs": ["整曲变薄、Kick 失去冲击、Limiter 泵动未改善"],
+        "stop_conditions": ["再减 0.5 dB 开始损失作品低频身份时停止"],
+        "remeasure_metrics": ["Sub band relative dB", "低频 Crest", "Limiter GR", "多设备低频翻译"]
+      },
+      "provenance": {"evidence_grade": "C", "source_paths": ["notes/音乐制作/混音/从分轨准备到削波限制完成母带闭环.md"]}
+    },
+    {
+      "id": "p0-master-low-end-deficit",
+      "title": "Master 低频不足先恢复平衡，不用限制器制造重量",
+      "diagnoses": ["master_low_end_deficit"],
+      "modes": ["mix-reference", "manual"],
+      "scopes": ["mix-master"],
+      "chain_stage": "bus-balance",
+      "preferred_capabilities": ["eq-surgical-dynamic", "saturation-tape"],
+      "evidence_weight": 0.72,
+      "calibration_required": true,
+      "hypotheses": ["Kick/808/Bass 电平或谐波不足", "总线高通/低架削减过度", "参考低频职责更重", "监听环境造成低频误判"],
+      "disambiguation_tests": ["旁路 Master 高通/低架与多段动态", "若有 Stems，分别提高 Bass/808 0.5–1 dB 验证", "小音箱与耳机检查谐波可闻性，而非只追次低频"],
+      "action": {
+        "routing": "优先回到低频 Stem 或撤销过度总线削减；Master-only 只做宽带微量恢复",
+        "steps": ["撤销不必要的高通/动态低频抑制", "有 Stems 时先修责任轨电平与谐波", "Master-only 才用宽低架小幅补偿", "不靠 Limiter/Clipper 增加低频"],
+        "parameter_start_ranges": ["Master 宽低架从 +0.5 至 +1.0 dB 起，转折约 50–120 Hz", "有 Stems 时先以 +0.5 至 +1 dB 电平步进", "若需要小音箱可闻性，优先在 Bass/808 Stem 试低量谐波而非给 Master 堆次低频"]
+      },
+      "verification": {
+        "listen_for": ["低频规模恢复且 Kick/Bass 边界仍清楚"],
+        "failure_signs": ["轰鸣、Limiter 泵动、中心头部空间减少、只是更响"],
+        "stop_conditions": ["Limiter GR 明显增加或 Kick/Bass 开始混成一团时停止"],
+        "remeasure_metrics": ["Sub band relative dB", "Kick/Bass crest", "Limiter GR", "小音箱谐波翻译"]
+      },
+      "provenance": {"evidence_grade": "C", "source_paths": ["notes/音乐制作/混音/从分轨准备到削波限制完成母带闭环.md"]}
+    },
+    {
+      "id": "p0-master-presence-excess",
+      "title": "Master 存在感偏多先定位来源，再做宽带微调",
+      "diagnoses": ["master_presence_excess"],
+      "modes": ["mix-reference", "manual"],
+      "scopes": ["mix-master"],
+      "chain_stage": "bus-balance",
+      "preferred_capabilities": ["eq-surgical-dynamic", "resonance-suppression"],
+      "evidence_weight": 0.73,
+      "calibration_required": true,
+      "hypotheses": ["主唱、军鼓或 Lead 中频同时叠加", "母带饱和/激励新增高次谐波", "只有强段落动态刺耳", "参考更暗或段落不可比"],
+      "disambiguation_tests": ["按 Stem/段落定位是全程色调还是单源事件", "旁路总线饱和/激励", "宽 Bell 与动态段在相同最大衰减下比较"],
+      "action": {
+        "routing": "优先回到责任 Stem；Master-only 时用宽 Q、小幅或动态范围受限的总线修正",
+        "steps": ["先定位 2–6 kHz 责任来源", "持续偏多用宽 Bell 小幅削减", "仅强段触发用动态段", "处理后复核主唱咬字与军鼓冲击"],
+        "parameter_start_ranges": ["Master 宽 Bell 从 -0.5 至 -1.5 dB、Q 0.5–1.2 起，搜索约 2–6 kHz", "动态 Range 从 -0.5 至 -2 dB 起，只在刺耳段落动作", "自动共振抑制只限定问题区域并从最低 Depth 起"]
+      },
+      "verification": {
+        "listen_for": ["疲劳下降但主唱咬字、军鼓存在感与整体明亮度保留"],
+        "failure_signs": ["整曲后退、变暗、元音空、鼓失去冲击"],
+        "stop_conditions": ["再减 0.5 dB 只让 Mix 更远时停止"],
+        "remeasure_metrics": ["2–6 kHz relative dB", "动态频带占空比", "主唱可懂度", "等响 AB"]
+      },
+      "provenance": {"evidence_grade": "C", "source_paths": ["notes/音乐制作/母带/按清理冲击宽度染色响度与监测搭建母带链.md"]}
+    },
+    {
+      "id": "p0-master-presence-deficit",
+      "title": "Master 存在感不足先排除遮蔽与过度限制",
+      "diagnoses": ["master_presence_deficit"],
+      "modes": ["mix-reference", "manual"],
+      "scopes": ["mix-master"],
+      "chain_stage": "bus-balance",
+      "preferred_capabilities": ["eq-surgical-dynamic", "exciter-air"],
+      "evidence_weight": 0.7,
+      "calibration_required": true,
+      "hypotheses": ["主唱/Lead 本身偏后", "低中频遮蔽造成相对暗", "Limiter/压缩抹掉字头", "Master 亮度确实不足"],
+      "disambiguation_tests": ["先减少低中频遮蔽或旁路过度总线压缩", "若有 Stems，临时提升主唱/Lead 0.5–1 dB", "宽 Bell 与低量激励等响比较"],
+      "action": {
+        "routing": "优先修 Mix 平衡；Master-only 才在色调阶段做宽带微量提升",
+        "steps": ["先恢复过度压缩的字头", "检查低中频是否遮蔽", "仍不足时做宽存在感提升", "激励只在 EQ 无法提供所需谐波时低量加入"],
+        "parameter_start_ranges": ["Master 宽 Bell 从 +0.5 至 +1 dB、Q 0.5–1.0 起，搜索约 2–5 kHz", "激励从最低可听量开始并输出等响", "若齿音/军鼓先刺而清晰度未增加，立即回退"]
+      },
+      "verification": {
+        "listen_for": ["主唱、Lead 和字头更清楚但不尖、不薄"],
+        "failure_signs": ["齿音、军鼓刺耳、噪声上升、只是更响"],
+        "stop_conditions": ["辅音先变尖而主体可懂度不再增加时停止"],
+        "remeasure_metrics": ["2–5 kHz relative dB", "Crest/PLR", "齿音事件", "等响 AB"]
+      },
+      "provenance": {"evidence_grade": "C", "source_paths": ["notes/音乐制作/母带/按清理冲击宽度染色响度与监测搭建母带链.md"]}
+    },
+    {
+      "id": "p0-master-peak-excess",
+      "title": "Master 高 PLR 先区分少数峰值与整体动态",
+      "diagnoses": ["master_peak_excess"],
+      "modes": ["mix-reference", "manual"],
+      "scopes": ["mix-master"],
+      "chain_stage": "clip-limit",
+      "preferred_capabilities": ["limiting", "metering", "transient-shaping"],
+      "evidence_weight": 0.8,
+      "calibration_required": true,
+      "hypotheses": ["少数鼓峰值抬高 PLR", "整体宏动态本来合理", "目标响度未定义", "Limiter 只需保护而非持续增响"],
+      "disambiguation_tests": ["列出最高峰发生位置并回到责任 Stem", "Clipper 与 Limiter 分别只削 0.5–1 dB 做等响对照", "不先设 LUFS 目标，确认峰值是否真的妨碍交付"],
+      "action": {
+        "routing": "优先修责任 Stem/事件；确需母带控制时在末端用轻量 Clipper → True-Peak Limiter",
+        "steps": ["事件级 Clip Gain 或鼓组瞬态先修少数峰", "Clipper 只削最短峰", "Limiter 建立最终上限", "每级输出等响并检查 True Peak"],
+        "parameter_start_ranges": ["责任事件先 -0.5 至 -2 dB Clip Gain", "Clipper 约 0.5–1 dB 峰值削减起", "Limiter 最大 GR 约 0.5–2 dB 起，Ceiling 服从交付规格"]
+      },
+      "verification": {
+        "listen_for": ["峰值受控、鼓冲击和空间保留"],
+        "failure_signs": ["鼓变扁、低频失真、齿音裂、只是更响"],
+        "stop_conditions": ["进一步削峰开始改变节奏冲击而交付收益有限时停止"],
+        "remeasure_metrics": ["PLR/Crest", "Sample/True Peak", "Clipper/Limiter GR", "等响 AB"]
+      },
+      "provenance": {"evidence_grade": "A/C", "source_paths": ["notes/音乐制作/混音/从分轨准备到削波限制完成母带闭环.md"]}
+    },
+    {
+      "id": "p0-master-overlimited",
+      "title": "低 PLR 先恢复头部空间，不再追加压缩限制",
+      "diagnoses": ["master_overlimited"],
+      "modes": ["mix-reference", "manual"],
+      "scopes": ["mix-master"],
+      "chain_stage": "clip-limit",
+      "preferred_capabilities": ["reference-ab", "metering"],
+      "evidence_weight": 0.84,
+      "calibration_required": true,
+      "hypotheses": ["总线压缩、Clipper 或 Limiter 持续深度工作", "输入电平过高", "参考母带响度与目标工作阶段不可比", "混音本身缺宏动态"],
+      "disambiguation_tests": ["从 Limiter 向前逐级旁路并做输出等响", "降低末级输入 1–3 dB，检查瞬态和空间是否恢复", "比较未母带 Pre-master 参考或降低参考响度"],
+      "action": {
+        "routing": "在现有总线链上回退；不新增压缩、Clipper 或 Limiter",
+        "steps": ["降低 Limiter/Clipper 输入或提高 Threshold", "减少总线压缩 GR 或放慢 Attack", "恢复 3–6 dB 头部空间后重新平衡", "若源 Mix 已扁，回分轨恢复鼓与段落动态"],
+        "parameter_start_ranges": ["Limiter/Clipper 输入每次回退 1 dB 并等响", "总线压缩平均 GR 回到约 0.5–2 dB 起", "Attack 向更慢方向小步调整以恢复瞬态", "不要用 Upward Compression 补救已经过限的 Master"]
+      },
+      "verification": {
+        "listen_for": ["鼓瞬态、低频呼吸、段落起伏和空间尾巴恢复"],
+        "failure_signs": ["峰值失控、响度骤降但动态未恢复、Mix 内部仍扁"],
+        "stop_conditions": ["瞬态恢复后继续回退开始造成不可交付过峰时停止"],
+        "remeasure_metrics": ["PLR/Crest", "LUFS-S range", "Limiter/Bus GR", "True Peak", "等响 AB"]
+      },
+      "provenance": {"evidence_grade": "A/C", "source_paths": ["notes/音乐制作/混音/从分轨准备到削波限制完成母带闭环.md"]}
+    },
+    {
+      "id": "p0-master-width-translation",
+      "title": "Master 宽度只做翻译安全与最小总线修正",
+      "diagnoses": ["master_high_side_excess", "master_high_side_deficit", "mono_translation_risk"],
+      "modes": ["mix-reference", "manual"],
+      "scopes": ["mix-master"],
+      "chain_stage": "width-layering",
+      "preferred_capabilities": ["stereo-utility", "width-psychoacoustic", "metering"],
+      "evidence_weight": 0.77,
+      "calibration_required": true,
+      "hypotheses": ["高频辅助层过宽或不足", "Master 宽度差来自编曲而非总线", "超短延迟导致 Mono 相消", "分离/编码伪影影响 Side"],
+      "disambiguation_tests": ["优先检查原始 Stems/返回；Master-only 不反推单轨参数", "按频带听 Side 与 Mono Fold-down", "旁路所有总线 Imager/Exciter 后比较"],
+      "action": {
+        "routing": "优先回 Mix/返回层；Master-only 只在证据明确的频带做小幅 M/S 或宽度调整",
+        "steps": ["高 Side 过多先回调宽化/空间返回", "高 Side 不足先确认是否真需更宽", "Mono 风险优先修相位来源", "总线宽度只作末端最小修正"],
+        "parameter_start_ranges": ["Master 宽度每次只改约 5–10% 做 Mono/相关度复核", "M/S 高架从约 ±0.5 dB 起，搜索 4–10 kHz", "低于约 120 Hz 默认不增加 Side；具体截止必须听证"]
+      },
+      "verification": {
+        "listen_for": ["立体声目标达到且 Mono 主体、低频和音色稳定"],
+        "failure_signs": ["中心空、军鼓/主唱变小、Mono 变色、编码后闪烁"],
+        "stop_conditions": ["继续调整只改变宽度数字而不改善翻译时停止"],
+        "remeasure_metrics": ["High Side/Mid", "LR correlation", "Mono fold loss", "低频 Side"]
+      },
+      "provenance": {"evidence_grade": "C", "source_paths": ["notes/音乐制作/混音/用声场相位扇形图检查单声道兼容性.md"]}
+    },
+    {
+      "id": "p0-master-clip-limit",
+      "title": "让 Clipper 削最短峰值、Limiter 建立最终上限",
+      "diagnoses": ["true_peak_ceiling", "vocal_bus_peak_protection", "loudness_measurement", "true_peak_check"],
+      "modes": ["mix-reference", "manual"],
+      "scopes": ["mix-master"],
+      "chain_stage": "clip-limit",
+      "preferred_capabilities": ["limiting", "metering"],
+      "evidence_weight": 0.9,
+      "calibration_required": true,
+      "hypotheses": ["少数短峰值迫使 Limiter 过度工作", "硬削波引入谐波/混叠/True Peak overshoot", "目标平台/交付规格未定义", "更高 LUFS 牺牲瞬态、低频、齿音与空间"],
+      "disambiguation_tests": ["先确认混音平衡已可交付，能回分轨解决的问题不进母带链", "Clipper 与 Limiter 分别做单级和串联等响对照", "打开 True Peak Meter，做编码预览/再测", "输出规格不明确时不声称唯一 LUFS/ceiling"],
+      "action": {
+        "routing": "总线色调/胶合后 → Clipper → True-Peak Limiter → Loudness/TP Meter；Dither 只在最终位深转换一次",
+        "steps": ["Clipper 只削最短峰值", "Limiter 负责剩余峰值和目标上限", "Oversampling 降低削波/快速限制的混叠", "输出 Ceiling 按交付规范设置并用 True Peak 复核"],
+        "parameter_start_ranges": ["Clipper 先从 0.5–1.5 dB 短峰削减起，鼓/低频/齿音失真前停止；Softness 从接近硬削到轻微软化做等响对照", "非线性 Clipper 建议先 4x–8x Oversampling；实时 CPU 不足再降，离线可更高；最小相位低延迟会相移，线性相位有延迟", "Limiter 常从 1–3 dB 最大 GR 起；持续深限前回到混音/Clipper", "通用流媒体安全实验可从 -1 dBTP 起，但最终必须服从实际平台/发行规格；广播 EBU R128 是 -23 LUFS 与最大 -1 dBTP，不等于商业音乐创作目标"]
+      },
+      "verification": {
+        "listen_for": ["瞬态、低频、齿音和空间保持，目标上限满足，等响后串联确有收益"],
+        "failure_signs": ["毛刺、混叠、低频松动、齿音扁裂、尾巴收缩、编码后过峰"],
+        "stop_conditions": ["再增响只增加失真/疲劳或破坏瞬态时停止"],
+        "remeasure_metrics": ["LUFS-I/S/M", "Sample Peak", "dBTP", "PLR/Crest", "Limiter GR", "编码后 True Peak", "Mono"]
+      },
+      "provenance": {
+        "evidence_grade": "A/C",
+        "source_paths": ["notes/音乐制作/混音/从分轨准备到削波限制完成母带闭环.md"],
+        "official_urls": ["https://www.itu.int/rec/R-REC-BS.1770-5-202311-I/en", "https://tech.ebu.ch/publications/r128", "https://www.siraudiotools.com/StandardCLIP_manual.php", "https://www.fabfilter.com/help/pro-l/using/truepeaklimiting"]
+      }
+    },
+    {
+      "id": "p0-breath-plosive-edit",
+      "title": "呼吸与爆破优先事件级编辑",
+      "diagnoses": ["breath_too_loud", "breath_level_inconsistent", "plosive_low_frequency_event"],
+      "modes": ["vocal-reference", "manual"],
+      "scopes": ["target-vocal", "lead-vocal"],
+      "chain_stage": "editing-restoration",
+      "preferred_capabilities": ["restoration-breath", "eq-surgical-dynamic", "eq-dynamic-flexible"],
+      "capability_by_diagnosis": {
+        "breath_too_loud": ["restoration-breath"],
+        "breath_level_inconsistent": ["restoration-breath"],
+        "plosive_low_frequency_event": ["eq-surgical-dynamic", "eq-dynamic-flexible"]
+      },
+      "evidence_weight": 0.73,
+      "calibration_required": true,
+      "hypotheses": ["呼吸是表演的一部分但局部过响", "全自动移除会使乐句不自然", "爆破是短时低频事件而非整轨低频过多", "高延迟呼吸工具不适合实时跟踪"],
+      "disambiguation_tests": ["放大波形并逐事件标记呼吸/爆破", "实时与离线需求分开；延迟超预算时改 Clip Gain", "爆破先做音节 Clip Gain，再判断动态低频是否仍需要"],
+      "action": {
+        "routing": "事件 Clip Gain/淡化在链首；离线 DeBreath 可在修音前后比较；爆破动态 EQ 只覆盖事件",
+        "steps": ["呼吸逐个降低而非全部删除", "爆破事件做 Clip Gain 与短淡化", "残余低频用动态 Bell/Low Shelf，只在事件触发"],
+        "parameter_start_ranges": ["呼吸 Clip Gain 常从 -3 至 -8 dB 起，保留自然吸气节奏", "爆破 Clip Gain 常从 -3 至 -12 dB 起并用 2–10 ms 淡化避免波形不连续", "动态低频搜索约 60–180 Hz、Range -2 至 -6 dB；只在爆破瞬间动作"]
+      },
+      "verification": {
+        "listen_for": ["乐句呼吸自然、爆破不推低频、相邻元音主体保留"],
+        "failure_signs": ["呼吸完全消失导致剪辑感、淡化点击、元音胸腔被削"],
+        "stop_conditions": ["Difference/事件处理开始包含完整语音主体时停止"],
+        "remeasure_metrics": ["Breath-to-phrase ratio", "事件 20–180 Hz 能量", "波形连续性", "延迟"]
+      },
+      "provenance": {"evidence_grade": "B/C+P1-boundary", "source_paths": ["projects/p1-plugin-knowledge-base/TRACEABILITY_REPORT.md"]}
+    }
+  ]
+}

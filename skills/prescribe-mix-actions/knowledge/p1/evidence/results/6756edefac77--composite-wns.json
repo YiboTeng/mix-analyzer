@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "test_id": "composite-wns-neutral-broad-reduction",
+  "family_id": "6756edefac77",
+  "plugin": "Waves WNS Stereo 12.7.0.209 VST3",
+  "host": "Ableton Live 11.3.43",
+  "sample_rate_hz": 48000,
+  "host_reported_latency_samples": 0,
+  "controls": {
+    "default": {
+      "threshold_db": -20.0,
+      "band_gains_db": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "smoothing": 50
+    },
+    "broad_reduction": {
+      "threshold_db": -20.0,
+      "band_gains_db": [
+        -9.4,
+        -6.7,
+        -6.7,
+        -6.7,
+        -6.7,
+        -6.7
+      ],
+      "smoothing": 50
+    },
+    "band_centres_hz": [
+      30,
+      99,
+      330,
+      1094,
+      3627,
+      12027
+    ]
+  },
+  "files": {
+    "shared_bypass": {
+      "path": "renders\\75f2f9574990--composite--bypass.wav",
+      "sha256": "c9802fbfa40487d6d60676d831f1ecb3a35d18ffca5ecb2d26361af56e429f04"
+    },
+    "default_neutral": {
+      "path": "renders\\6756edefac77--composite--default-neutral.wav",
+      "sha256": "dd1bad827e1b8fb21e0ee3ba08faa0601a7c1626ee81540f7ca54f875d0899d7"
+    },
+    "broad_reduction": {
+      "path": "renders\\6756edefac77--composite--threshold-20-broad-reduction.wav",
+      "sha256": "e2d1569a471a682f1847a1ca016cacb7236f34264e179e9087b4d4275346fa05"
+    }
+  },
+  "full_file": {
+    "neutral_vs_shared_bypass": {
+      "candidate_minus_reference_db": 1.0332302063479263e-08,
+      "correlation": 0.8566935427152189,
+      "residual_rms_dbfs": -26.8649922338202,
+      "candidate_peak_dbfs": -1.972698830050922
+    },
+    "broad_reduction_vs_neutral": {
+      "candidate_minus_reference_db": -12.705818893469376,
+      "correlation": 0.9098749614777799,
+      "residual_rms_dbfs": -23.429250861656797,
+      "candidate_peak_dbfs": -11.072285721978716
+    }
+  },
+  "regions": {
+    "impulse_train": {
+      "neutral_vs_shared_bypass": {
+        "candidate_minus_reference_db": 9.182689832301258e-08,
+        "correlation": -0.001768987736412949,
+        "residual_rms_dbfs": -51.78742625703127,
+        "candidate_peak_dbfs": -1.972698830050922
+      },
+      "broad_reduction_vs_neutral": {
+        "candidate_minus_reference_db": -7.220847926666516,
+        "correlation": 0.7453953809825212,
+        "residual_rms_dbfs": -57.477888161935994,
+        "candidate_peak_dbfs": -11.765542729162508
+      }
+    },
+    "steady_multitone": {
+      "neutral_vs_shared_bypass": {
+        "candidate_minus_reference_db": 7.318613509034045e-07,
+        "correlation": 0.9997571272355842,
+        "residual_rms_dbfs": -52.63112070369844,
+        "candidate_peak_dbfs": -15.020554491897462
+      },
+      "broad_reduction_vs_neutral": {
+        "candidate_minus_reference_db": -13.991557055906549,
+        "correlation": 0.9673359645548979,
+        "residual_rms_dbfs": -21.34278587573832,
+        "candidate_peak_dbfs": -21.453097460502136
+      }
+    },
+    "fixed_vocal": {
+      "neutral_vs_shared_bypass": {
+        "candidate_minus_reference_db": 1.9997124402205358e-07,
+        "correlation": 0.9472770976481549,
+        "residual_rms_dbfs": -35.70786629690015,
+        "candidate_peak_dbfs": -15.290650653494476
+      },
+      "broad_reduction_vs_neutral": {
+        "candidate_minus_reference_db": -13.914924913567086,
+        "correlation": 0.982438361406026,
+        "residual_rms_dbfs": -27.844609926979146,
+        "candidate_peak_dbfs": -26.297118098934877
+      }
+    },
+    "spatial": {
+      "neutral_vs_shared_bypass": {
+        "candidate_minus_reference_db": -2.3986257132080445e-08,
+        "correlation": 0.38381706614722755,
+        "residual_rms_dbfs": -19.886411089051137,
+        "candidate_peak_dbfs": -10.01061460001451
+      },
+      "broad_reduction_vs_neutral": {
+        "candidate_minus_reference_db": -11.278415722220085,
+        "correlation": 0.8686033186541693,
+        "residual_rms_dbfs": -23.009869780717235,
+        "candidate_peak_dbfs": -15.294131395172103
+      }
+    },
+    "dynamics": {
+      "neutral_vs_shared_bypass": {
+        "candidate_minus_reference_db": 1.3079283352345975e-08,
+        "correlation": 0.9578871208851034,
+        "residual_rms_dbfs": -27.943516730918848,
+        "candidate_peak_dbfs": -2.872612973462088
+      },
+      "broad_reduction_vs_neutral": {
+        "candidate_minus_reference_db": -12.545595784126613,
+        "correlation": 0.9010783451710371,
+        "residual_rms_dbfs": -19.199228766322104,
+        "candidate_peak_dbfs": -11.072285721978716
+      }
+    }
+  },
+  "boundaries": [
+    "The composite has no calibrated stationary-noise bed; results validate the local instance, zero-latency report, six-band gain behavior, neutrality boundary, and collateral program attenuation, not SNR improvement.",
+    "WNS is a broadband dialogue noise suppressor and is not treated as a dedicated de-plosive replacement.",
+    "The broad-reduction condition is an intentionally coarse stress profile, not a recommendation.",
+    "Only Stereo VST3 at 48 kHz was tested."
+  ]
+}

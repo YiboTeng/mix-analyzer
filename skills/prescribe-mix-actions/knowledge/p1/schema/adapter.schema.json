@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aizen.local/p1/adapter.schema.json",
+  "title": "P1 Plugin Knowledge Adapter",
+  "type": "object",
+  "required": ["schema_version", "adapter_id", "family_id", "identity", "capabilities", "routing", "parameter_strategy", "input_requirements", "risks", "stop_conditions", "alternatives", "version_policy", "evidence", "p0_contract", "conflict_rules", "validation"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "adapter_id": {"type": "string", "pattern": "^[a-f0-9]{12}--[a-z0-9-]+$"},
+    "family_id": {"type": "string", "pattern": "^[a-f0-9]{12}$"},
+    "identity": {
+      "type": "object",
+      "required": ["vendor", "product", "version_range", "formats", "availability", "tested_host"],
+      "properties": {
+        "vendor": {"type": "string", "minLength": 1}, "product": {"type": "string", "minLength": 1},
+        "version_range": {"type": "string", "minLength": 1}, "formats": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "availability": {"enum": ["current-filesystem-match", "host-native-cache", "unavailable"]},
+        "tested_host": {"type": "string", "minLength": 1}
+      }
+    },
+    "capabilities": {
+      "type": "object", "required": ["primary", "secondary", "diagnoses", "not_for"],
+      "properties": {
+        "primary": {"type": "string", "minLength": 1},
+        "secondary": {"type": "array", "items": {"type": "string"}},
+        "diagnoses": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "not_for": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    },
+    "routing": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["position", "when"], "properties": {"position": {"type": "string"}, "when": {"type": "string"}}}},
+    "parameter_strategy": {
+      "type": "object", "required": ["targets", "controls", "no_universal_values"],
+      "properties": {
+        "targets": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "controls": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["name", "action"], "properties": {"name": {"type": "string"}, "action": {"type": "string"}}}},
+        "no_universal_values": {"const": true}
+      }
+    },
+    "input_requirements": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "risks": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "stop_conditions": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "alternatives": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["condition", "fallback"], "properties": {"condition": {"type": "string"}, "fallback": {"type": "string"}}}},
+    "version_policy": {"type": "object", "required": ["match", "mismatch"], "properties": {"match": {"type": "string"}, "mismatch": {"type": "string"}}},
+    "evidence": {
+      "type": "object", "required": ["level", "card", "source_note", "validation_report", "result_files"],
+      "properties": {"level": {"const": "L3"}, "card": {"type": "string"}, "source_note": {"type": "string"}, "validation_report": {"type": "string"}, "result_files": {"type": "array", "minItems": 1, "items": {"type": "string"}}}
+    },
+    "p0_contract": {"type": "object", "required": ["diagnosis_inputs", "outputs"], "properties": {"diagnosis_inputs": {"type": "array", "minItems": 1, "items": {"type": "string"}}, "outputs": {"type": "array", "minItems": 6, "items": {"type": "string"}}}},
+    "conflict_rules": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["if", "action"], "properties": {"if": {"type": "string"}, "action": {"type": "string"}}}},
+    "validation": {"type": "object", "required": ["status", "matrix_status", "boundary"], "properties": {"status": {"const": "passed-l3"}, "matrix_status": {"const": "passed-l3"}, "boundary": {"type": "string", "minLength": 1}}}
+  }
+}

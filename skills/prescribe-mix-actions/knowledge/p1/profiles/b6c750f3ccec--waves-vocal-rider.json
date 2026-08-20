@@ -1,0 +1,208 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "b6c750f3ccec--waves-vocal-rider",
+  "family_id": "b6c750f3ccec",
+  "identity": {
+    "vendor": "Waves",
+    "product": "Vocal Rider",
+    "version_range": "12.7.0.209",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "level-riding",
+    "secondary": [
+      "automation",
+      "pre-compression"
+    ],
+    "diagnoses": [
+      "macro_level_inconsistency",
+      "phrase_level_automation_load"
+    ],
+    "not_for": [
+      "peak_limiting",
+      "microdynamic compression"
+    ]
+  },
+  "routing": [
+    {
+      "position": "before or after compression according to goal",
+      "when": "macro_level_inconsistency"
+    },
+    {
+      "position": "before or after compression according to goal",
+      "when": "phrase_level_automation_load"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "narrow gain range",
+      "smooth phrase movement",
+      "do not lift noise floors"
+    ],
+    "controls": [
+      {
+        "name": "Target/Range",
+        "action": "set a narrow permitted ride window"
+      },
+      {
+        "name": "Fast/Slow",
+        "action": "choose by acceptable movement roughness"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "pumping",
+    "noise and breaths lifted",
+    "automation conflicts"
+  ],
+  "stop_conditions": [
+    "range limits are hit often",
+    "movement becomes audible"
+  ],
+  "alternatives": [
+    {
+      "condition": "manual automation",
+      "fallback": "clip gain or DAW automation"
+    },
+    {
+      "condition": "microdynamic control",
+      "fallback": "compressor"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 12.7.0.209.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Waves/Vocal Rider.md",
+    "source_note": "sources/音乐制作/插件资料/Waves/Vocal Rider资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/b6c750f3ccec--Waves-Vocal-Rider.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/b6c750f3ccec--composite-vocal-rider-fast-slow.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Waves/Vocal Rider.md",
+        "packaged_path": "evidence/cards/Vocal Rider.md",
+        "sha256": "af7c9a28b2481e4603d0e18f26e7f72703e6f0d2485a0b32a6edf4c44d24737c"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Waves/Vocal Rider资料.md",
+        "packaged_path": "evidence/sources/Vocal Rider资料.md",
+        "sha256": "ff585bf04d27e483ebcc6c9357f3468cf66dde1d429d3f2e36bcf917044a6f43"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/b6c750f3ccec--Waves-Vocal-Rider.md",
+        "packaged_path": "evidence/validation/b6c750f3ccec--Waves-Vocal-Rider.md",
+        "sha256": "309ef07ee36e29f21e6fe377d703cfdbcc20952b33a5f75d77af7155b13a125e"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/b6c750f3ccec--composite-vocal-rider-fast-slow.json",
+          "packaged_path": "evidence/results/b6c750f3ccec--composite-vocal-rider-fast-slow.json",
+          "sha256": "76aba622942e4fa51fc6c462450e8a416fe8217fb0bb6ae88028e4008518f7f4"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "macro_level_inconsistency",
+      "phrase_level_automation_load"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Default Slow and Fast/Slow behaviour tested without music sidechain."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "常用顺序：Clip Gain/源修复 → Vocal Rider 宏观整理 → FET/Opto 压缩与音色链。",
+      "也可放在后段做轻微 Mix-relative 修正，但必须避免与已有自动化和总线压缩互相追逐。",
+      "官方工程师案例支持放在压缩前，让压缩器获得更一致输入与颜色。"
+    ],
+    "routing": [
+      "主唱 Insert；Instrumental Bus Send 到插件 Sidechain。",
+      "若使用 Write/Read，先保存版本并确认 DAW Automation 模式，避免覆盖已有自动化。"
+    ],
+    "controls": [
+      {
+        "name": "Target",
+        "meaning": "人声定位参考；改变 Rider Fader 的 0 校准。",
+        "action": "让大多数正常句的 Rider 围绕 0 小幅动作，不把 Target 当输出音量。"
+      },
+      {
+        "name": "Vocal Sensitivity",
+        "meaning": "区分人声与噪声/泄漏并识别词头词尾。",
+        "action": "Activity 漏掉弱词时提高，句间噪声也 Ride 时降低。"
+      },
+      {
+        "name": "Attack Fast/Slow",
+        "meaning": "同时影响检测时机和 Rider 速度。",
+        "action": "密集 Rap 先试 Fast；自然长句先试 Slow，并听是否追逐音节。"
+      },
+      {
+        "name": "Music Sensitivity",
+        "meaning": "根据侧链伴奏电平改变 Ride。",
+        "action": "先正确路由 Instrumental Bus，再从 0 小步调。"
+      },
+      {
+        "name": "Range Min/Max",
+        "meaning": "自动衰减/增益的最大边界。",
+        "action": "把范围限制在必要的少量 dB，避免补偿录音根本问题。"
+      },
+      {
+        "name": "Idle Arrow",
+        "meaning": "无检测活动时 Rider 返回值。",
+        "action": "保持接近 0，避免词间大跳。"
+      }
+    ],
+    "parameter_start_points": [
+      "Target 调到 Rider 大部分时间围绕 0；Range 先限制约 -3 至 +2 dB。",
+      "Vocal Sensitivity 从 0 开始，按 Activity Display 校准；密集 Rap 试 Fast，自然演唱试 Slow。",
+      "Music Sensitivity 从 0 开始，只在侧链已正确路由后小步增加。"
+    ],
+    "listen_for": [
+      "Fast 是否造成音节级泵动，Slow 是否漏掉快速弱词。",
+      "句间噪声、呼吸和效果尾是否被错误抬高。",
+      "音乐侧链变化是否让主唱不自然地随编曲起伏。"
+    ],
+    "stop": [
+      "Rider 多数动作在小范围内且解决宏观不稳时停止。",
+      "需要持续超过 3–4 dB 的快速补偿时，回到 Clip Gain/Comping/压缩，而不是扩大 Range。"
+    ],
+    "latency": [
+      "Waves 官方称实时、零延迟且无需预扫描；本机 `Vocal Rider Stereo` VST3 在 Ableton Live 11.3.43 / 48 kHz 中报告 `0 samples`。该结果不外推到 Live/VST2/其它版本或 Studio One。"
+    ]
+  }
+}

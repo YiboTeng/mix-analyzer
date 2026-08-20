@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "7b4d8c94b025--antares-auto-tune-pro",
+  "family_id": "7b4d8c94b025",
+  "identity": {
+    "vendor": "Antares",
+    "product": "Auto-Tune Pro",
+    "version_range": "10.0.0",
+    "formats": [
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "pitch-realtime",
+    "secondary": [
+      "pitch-graph",
+      "formant"
+    ],
+    "diagnoses": [
+      "pitch_drift_realtime",
+      "intentional_hard_tune"
+    ],
+    "not_for": [
+      "manual_note_timing",
+      "transparent_formant_repair"
+    ]
+  },
+  "routing": [
+    {
+      "position": "first corrective insert before dynamics",
+      "when": "pitch_drift_realtime"
+    },
+    {
+      "position": "first corrective insert before dynamics",
+      "when": "intentional_hard_tune"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "correct target key/scale",
+      "minimum retune needed for intent",
+      "preserve intended slides or deliberately flatten"
+    ],
+    "controls": [
+      {
+        "name": "Key/Scale",
+        "action": "derive from song, never assume Chromatic for final work"
+      },
+      {
+        "name": "Retune/Flex/Humanize",
+        "action": "tighten until pitch intent is met, then restore motion"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "wrong-scale notes",
+    "robotic motion",
+    "monitoring latency"
+  ],
+  "stop_conditions": [
+    "correct notes move to wrong targets",
+    "vibrato or slides lose intent"
+  ],
+  "alternatives": [
+    {
+      "condition": "note-level correction",
+      "fallback": "Melodyne"
+    },
+    {
+      "condition": "creative octave/formant",
+      "fallback": "Vocal Bender"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 10.0.0.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Antares/Auto-Tune Pro.md",
+    "source_note": "sources/音乐制作/插件资料/Antares/Auto-Tune Pro资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/7b4d8c94b025--Antares-Auto-Tune-Pro.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/7b4d8c94b025--fixed-vocal-chromatic-retune-speed.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Antares/Auto-Tune Pro.md",
+        "packaged_path": "evidence/cards/Auto-Tune Pro.md",
+        "sha256": "22d817ddbffff7774fb3dc5c408d3d755c6f9d035fbd55844906c42053bc2c4b"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Antares/Auto-Tune Pro资料.md",
+        "packaged_path": "evidence/sources/Auto-Tune Pro资料.md",
+        "sha256": "17418ba016719551483f51b6047ec9690557a0f9917511db4c51c5599b0313aa"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/7b4d8c94b025--Antares-Auto-Tune-Pro.md",
+        "packaged_path": "evidence/validation/7b4d8c94b025--Antares-Auto-Tune-Pro.md",
+        "sha256": "4153fdfecde457a3de6d14997fabf56ca60d491db0e965460c937fa227563070"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/7b4d8c94b025--fixed-vocal-chromatic-retune-speed.json",
+          "packaged_path": "evidence/results/7b4d8c94b025--fixed-vocal-chromatic-retune-speed.json",
+          "sha256": "57084956596e3e49a16c3b95dc01d1af14f537c45e89aae3f49df38edcf99b8e"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "pitch_drift_realtime",
+      "intentional_hard_tune"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Retune 20/0 tested in C Chromatic; musical correctness and other modes remain unverified."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "典型顺序：剪辑/Clip Gain 与必要的点击、爆破、噪声修复之后，主压缩、饱和与大幅调制之前。",
+      "若齿音或呼吸严重干扰检测，可在前级做轻量清理；最终去齿通常仍放在激励/饱和之后复查。",
+      "Graph Mode 或 ARA 式精修应在音频剪辑结构稳定后完成，避免后续重剪导致映射失效。"
+    ],
+    "routing": [
+      "主唱 Insert；优先放在主要动态与非线性处理之前。",
+      "Ad-lib/低八度角色声可复制轨道后单独设置 Formant/Throat，避免改变主唱本体。"
+    ],
+    "controls": [
+      {
+        "name": "Key / Scale / Scale Controls",
+        "meaning": "定义 Auto Mode 允许的目标音集合。",
+        "action": "先核对歌曲调性、转调与借用音；错误音阶比速度设置更致命。"
+      },
+      {
+        "name": "Retune Speed",
+        "meaning": "输入音高趋近目标音的时间行为；越快效果越明显。",
+        "action": "先把 Humanize 归零，从较慢向快调，直到短音稳定，再决定是否追求机器感。"
+      },
+      {
+        "name": "Flex-Tune",
+        "meaning": "允许目标音附近的表现性偏移通过。",
+        "action": "滑音被吸平时增加；需要硬切换时降低。"
+      },
+      {
+        "name": "Humanize",
+        "meaning": "快速 Retune 下对持续音段放慢校正。",
+        "action": "短音满意但长音僵硬时增加，不用它修正错误音阶。"
+      },
+      {
+        "name": "Input Type / Tracking",
+        "meaning": "约束检测音域并在噪声与不规则波形间取舍。",
+        "action": "按声部选 Input Type；只在漏检或噪声误跟踪时调整 Tracking。"
+      },
+      {
+        "name": "Formant / Throat",
+        "meaning": "控制移调时的共振峰补偿与声道模型长度。",
+        "action": "透明校音保持 Formant；角色化处理再小步改变 Throat 并等响度比较。"
+      }
+    ],
+    "parameter_start_points": [
+      "硬调音起点：正确 Key/Scale；Retune Speed 0–10 ms；Flex-Tune 0–10；Humanize 0，确认长音后再加。",
+      "自然起点：Retune Speed 15–50 ms；Flex-Tune 15–30；Humanize 先 0，再对僵硬长音尝试 10–30。",
+      "所有数值是工作起点；音节速度、滑音、颤音和风格比固定数值更重要。"
+    ],
+    "listen_for": [
+      "音符边界是否出现不合调的吸附、颤动或八度误检。",
+      "辅音、气息和滑音是否被不自然地拉扯。",
+      "Formant 打开/关闭时角色是否改变而非单纯更亮。"
+    ],
+    "stop": [
+      "短音稳定、长音自然或已达到明确机器美学时停止。",
+      "继续加快只让转音更碎、长音更僵而没有提升旋律清晰度时退回。"
+    ],
+    "latency": [
+      "本机 v10.0.0 VST3 在 Ableton Live 11.3.43 / 48 kHz 的 Auto/Modern 状态报告 `2670 samples / 55.6 ms`；导出由宿主 PDC 对齐。Graph、Classic、低延迟选项、其它采样率与 Studio One 尚未回读，因此这个数字只适用于当前实例和状态。录音监听前必须做实际往返延迟预算，不能把 Auto Mode 等同于零延迟。"
+    ]
+  }
+}

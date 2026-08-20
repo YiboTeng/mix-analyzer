@@ -1,0 +1,618 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T03:24:35+08:00",
+  "family_id": "1034f31ae5fd",
+  "test_id": "bx-control-ms-utility-v1",
+  "files": {
+    "bypass": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\1034f31ae5fd--spatial--bypass.wav",
+      "sha256": "b75b10db069eced8f13030c8178ffe3ea1bf1e979e3df59b3a1671665540b353",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -16.000626,
+      "rms_dbfs": -19.495209
+    },
+    "default_100_percent": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\1034f31ae5fd--spatial--default-neutral.wav",
+      "sha256": "a7788a2c7975f63b243988d1ee685b9183ac8bc7f092c0146ca4c0f7500d5f39",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -16.000619,
+      "rms_dbfs": -19.495209
+    },
+    "width_0_percent": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\1034f31ae5fd--spatial--width-0.wav",
+      "sha256": "cfc3815437e41b6f3a55c08cf2d897dc4dc953de941d5396e59b779ad24d2be1",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -16.000626,
+      "rms_dbfs": -22.002936
+    },
+    "mono_maker_117_hz": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\1034f31ae5fd--spatial--mono-maker-117hz.wav",
+      "sha256": "7c1f3cef6a69af549df1568ce95536135d27a62c7a2df0dceaa2b8533289596b",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -14.117583,
+      "rms_dbfs": -19.50315
+    },
+    "mono_maker_5_82_khz": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\1034f31ae5fd--spatial--mono-maker-5.82khz.wav",
+      "sha256": "d74a95f5aa1e060b111d82a1d54d209e31b78fce24c66d028aa9f2d116810a04",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -15.784569,
+      "rms_dbfs": -21.793471
+    }
+  },
+  "host_observation": {
+    "host": "Ableton Live 11.3.43",
+    "component": "bx_control V2 VST3",
+    "reported_plugin_latency_samples": 0,
+    "sample_rate_hz": 48000,
+    "render": "Master, 48 kHz, 24-bit WAV, Normalize off, Triangular dither",
+    "fixture_note": "The 10-second fixture was auto-warped by Ableton into a 12-second selected clip; all conditions use the same warp and selection."
+  },
+  "conditions": {
+    "bypass": {
+      "overall": {
+        "left_right_correlation": 0.1232910412,
+        "mid_rms_dbfs": -22.002936,
+        "side_rms_dbfs": -23.073945,
+        "side_to_mid_db": -1.071009,
+        "mono_fold_delta_db": -2.507727,
+        "left_minus_right_rms_dbfs": -17.053345
+      },
+      "overall_delta_from_bypass": {
+        "mid_rms_db": 0.0,
+        "side_rms_db": 0.0,
+        "side_to_mid_db": 0.0
+      },
+      "segments": [
+        {
+          "segment": "correlated_lr",
+          "start_frame": 0,
+          "end_frame": 115200,
+          "metrics": {
+            "left_right_correlation": 0.999999938578,
+            "mid_rms_dbfs": -23.111464,
+            "side_rms_dbfs": -27.548469,
+            "side_to_mid_db": -4.437005,
+            "mono_fold_delta_db": -1.335381,
+            "left_minus_right_rms_dbfs": -21.527869
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.0,
+            "side_rms_db": 0.0,
+            "side_to_mid_db": 0.0
+          }
+        },
+        {
+          "segment": "polarity_inverted_right",
+          "start_frame": 115200,
+          "end_frame": 230400,
+          "metrics": {
+            "left_right_correlation": 0.131019765965,
+            "mid_rms_dbfs": -21.667033,
+            "side_rms_dbfs": -22.811378,
+            "side_to_mid_db": -1.144346,
+            "mono_fold_delta_db": -2.47571,
+            "left_minus_right_rms_dbfs": -16.790779
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.0,
+            "side_rms_db": 0.0,
+            "side_to_mid_db": 0.0
+          }
+        },
+        {
+          "segment": "right_delayed_24_samples_before_warp",
+          "start_frame": 230400,
+          "end_frame": 345600,
+          "metrics": {
+            "left_right_correlation": 0.186603215277,
+            "mid_rms_dbfs": -21.295154,
+            "side_rms_dbfs": -22.935174,
+            "side_to_mid_db": -1.64002,
+            "mono_fold_delta_db": -2.267249,
+            "left_minus_right_rms_dbfs": -16.914574
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.0,
+            "side_rms_db": 0.0,
+            "side_to_mid_db": 0.0
+          }
+        },
+        {
+          "segment": "right_detuned_444hz",
+          "start_frame": 345600,
+          "end_frame": 460800,
+          "metrics": {
+            "left_right_correlation": -0.99999999928,
+            "mid_rms_dbfs": -113.466822,
+            "side_rms_dbfs": -19.029075,
+            "side_to_mid_db": 94.437747,
+            "mono_fold_delta_db": -94.437747,
+            "left_minus_right_rms_dbfs": -13.008475
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.0,
+            "side_rms_db": 0.0,
+            "side_to_mid_db": 0.0
+          }
+        },
+        {
+          "segment": "right_level_25_percent",
+          "start_frame": 460800,
+          "end_frame": 576000,
+          "metrics": {
+            "left_right_correlation": 0.991826997509,
+            "mid_rms_dbfs": -19.063003,
+            "side_rms_dbfs": -42.931563,
+            "side_to_mid_db": -23.86856,
+            "mono_fold_delta_db": -0.017784,
+            "left_minus_right_rms_dbfs": -36.910963
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.0,
+            "side_rms_db": 0.0,
+            "side_to_mid_db": 0.0
+          }
+        }
+      ]
+    },
+    "default_100_percent": {
+      "overall": {
+        "left_right_correlation": 0.123291041144,
+        "mid_rms_dbfs": -22.002936,
+        "side_rms_dbfs": -23.073945,
+        "side_to_mid_db": -1.071009,
+        "mono_fold_delta_db": -2.507727,
+        "left_minus_right_rms_dbfs": -17.053345
+      },
+      "overall_delta_from_bypass": {
+        "mid_rms_db": 0.0,
+        "side_rms_db": 0.0,
+        "side_to_mid_db": 0.0
+      },
+      "segments": [
+        {
+          "segment": "correlated_lr",
+          "start_frame": 0,
+          "end_frame": 115200,
+          "metrics": {
+            "left_right_correlation": 0.999999938574,
+            "mid_rms_dbfs": -23.111464,
+            "side_rms_dbfs": -27.548469,
+            "side_to_mid_db": -4.437005,
+            "mono_fold_delta_db": -1.335381,
+            "left_minus_right_rms_dbfs": -21.527869
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.0,
+            "side_rms_db": 0.0,
+            "side_to_mid_db": 0.0
+          }
+        },
+        {
+          "segment": "polarity_inverted_right",
+          "start_frame": 115200,
+          "end_frame": 230400,
+          "metrics": {
+            "left_right_correlation": 0.131019760509,
+            "mid_rms_dbfs": -21.667033,
+            "side_rms_dbfs": -22.811378,
+            "side_to_mid_db": -1.144346,
+            "mono_fold_delta_db": -2.47571,
+            "left_minus_right_rms_dbfs": -16.790779
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.0,
+            "side_rms_db": 0.0,
+            "side_to_mid_db": 0.0
+          }
+        },
+        {
+          "segment": "right_delayed_24_samples_before_warp",
+          "start_frame": 230400,
+          "end_frame": 345600,
+          "metrics": {
+            "left_right_correlation": 0.186603214005,
+            "mid_rms_dbfs": -21.295154,
+            "side_rms_dbfs": -22.935174,
+            "side_to_mid_db": -1.64002,
+            "mono_fold_delta_db": -2.267249,
+            "left_minus_right_rms_dbfs": -16.914574
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.0,
+            "side_rms_db": 0.0,
+            "side_to_mid_db": 0.0
+          }
+        },
+        {
+          "segment": "right_detuned_444hz",
+          "start_frame": 345600,
+          "end_frame": 460800,
+          "metrics": {
+            "left_right_correlation": -0.99999999928,
+            "mid_rms_dbfs": -113.467575,
+            "side_rms_dbfs": -19.029075,
+            "side_to_mid_db": 94.4385,
+            "mono_fold_delta_db": -94.4385,
+            "left_minus_right_rms_dbfs": -13.008475
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": -0.000753,
+            "side_rms_db": 0.0,
+            "side_to_mid_db": 0.000753
+          }
+        },
+        {
+          "segment": "right_level_25_percent",
+          "start_frame": 460800,
+          "end_frame": 576000,
+          "metrics": {
+            "left_right_correlation": 0.991826998085,
+            "mid_rms_dbfs": -19.063003,
+            "side_rms_dbfs": -42.931563,
+            "side_to_mid_db": -23.86856,
+            "mono_fold_delta_db": -0.017784,
+            "left_minus_right_rms_dbfs": -36.910963
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.0,
+            "side_rms_db": 0.0,
+            "side_to_mid_db": 0.0
+          }
+        }
+      ]
+    },
+    "width_0_percent": {
+      "overall": {
+        "left_right_correlation": 0.999999999999,
+        "mid_rms_dbfs": -22.002936,
+        "side_rms_dbfs": -147.503431,
+        "side_to_mid_db": -125.500495,
+        "mono_fold_delta_db": -0.0,
+        "left_minus_right_rms_dbfs": -141.482831
+      },
+      "overall_delta_from_bypass": {
+        "mid_rms_db": 0.0,
+        "side_rms_db": -124.429486,
+        "side_to_mid_db": -124.429486
+      },
+      "segments": [
+        {
+          "segment": "correlated_lr",
+          "start_frame": 0,
+          "end_frame": 115200,
+          "metrics": {
+            "left_right_correlation": 0.999999999999,
+            "mid_rms_dbfs": -23.111464,
+            "side_rms_dbfs": -147.515115,
+            "side_to_mid_db": -124.403651,
+            "mono_fold_delta_db": -0.0,
+            "left_minus_right_rms_dbfs": -141.494515
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.0,
+            "side_rms_db": -119.966646,
+            "side_to_mid_db": -119.966646
+          }
+        },
+        {
+          "segment": "polarity_inverted_right",
+          "start_frame": 115200,
+          "end_frame": 230400,
+          "metrics": {
+            "left_right_correlation": 0.999999999999,
+            "mid_rms_dbfs": -21.667033,
+            "side_rms_dbfs": -147.509526,
+            "side_to_mid_db": -125.842493,
+            "mono_fold_delta_db": -0.0,
+            "left_minus_right_rms_dbfs": -141.488926
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.0,
+            "side_rms_db": -124.698148,
+            "side_to_mid_db": -124.698147
+          }
+        },
+        {
+          "segment": "right_delayed_24_samples_before_warp",
+          "start_frame": 230400,
+          "end_frame": 345600,
+          "metrics": {
+            "left_right_correlation": 1.0,
+            "mid_rms_dbfs": -21.295154,
+            "side_rms_dbfs": -147.500704,
+            "side_to_mid_db": -126.20555,
+            "mono_fold_delta_db": -0.0,
+            "left_minus_right_rms_dbfs": -141.480104
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.0,
+            "side_rms_db": -124.56553,
+            "side_to_mid_db": -124.56553
+          }
+        },
+        {
+          "segment": "right_detuned_444hz",
+          "start_frame": 345600,
+          "end_frame": 460800,
+          "metrics": {
+            "left_right_correlation": 0.999207399313,
+            "mid_rms_dbfs": -113.46832,
+            "side_rms_dbfs": -147.486565,
+            "side_to_mid_db": -34.018245,
+            "mono_fold_delta_db": -0.001721,
+            "left_minus_right_rms_dbfs": -141.465965
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": -0.001498,
+            "side_rms_db": -128.45749,
+            "side_to_mid_db": -128.455992
+          }
+        },
+        {
+          "segment": "right_level_25_percent",
+          "start_frame": 460800,
+          "end_frame": 576000,
+          "metrics": {
+            "left_right_correlation": 1.0,
+            "mid_rms_dbfs": -19.063003,
+            "side_rms_dbfs": -147.505301,
+            "side_to_mid_db": -128.442299,
+            "mono_fold_delta_db": -0.0,
+            "left_minus_right_rms_dbfs": -141.484701
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.0,
+            "side_rms_db": -104.573738,
+            "side_to_mid_db": -104.573739
+          }
+        }
+      ]
+    },
+    "mono_maker_117_hz": {
+      "overall": {
+        "left_right_correlation": 0.126628788594,
+        "mid_rms_dbfs": -22.000325,
+        "side_rms_dbfs": -23.095428,
+        "side_to_mid_db": -1.095103,
+        "mono_fold_delta_db": -2.497175,
+        "left_minus_right_rms_dbfs": -17.074828
+      },
+      "overall_delta_from_bypass": {
+        "mid_rms_db": 0.002611,
+        "side_rms_db": -0.021483,
+        "side_to_mid_db": -0.024094
+      },
+      "segments": [
+        {
+          "segment": "correlated_lr",
+          "start_frame": 0,
+          "end_frame": 115200,
+          "metrics": {
+            "left_right_correlation": 0.8122408742,
+            "mid_rms_dbfs": -23.108815,
+            "side_rms_dbfs": -27.570584,
+            "side_to_mid_db": -4.461769,
+            "mono_fold_delta_db": -1.32884,
+            "left_minus_right_rms_dbfs": -21.549985
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.002649,
+            "side_rms_db": -0.022115,
+            "side_to_mid_db": -0.024764
+          }
+        },
+        {
+          "segment": "polarity_inverted_right",
+          "start_frame": 115200,
+          "end_frame": 230400,
+          "metrics": {
+            "left_right_correlation": 0.133880291858,
+            "mid_rms_dbfs": -21.664449,
+            "side_rms_dbfs": -22.832438,
+            "side_to_mid_db": -1.167989,
+            "mono_fold_delta_db": -2.465453,
+            "left_minus_right_rms_dbfs": -16.811838
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.002584,
+            "side_rms_db": -0.02106,
+            "side_to_mid_db": -0.023643
+          }
+        },
+        {
+          "segment": "right_delayed_24_samples_before_warp",
+          "start_frame": 230400,
+          "end_frame": 345600,
+          "metrics": {
+            "left_right_correlation": 0.195090795052,
+            "mid_rms_dbfs": -21.29255,
+            "side_rms_dbfs": -22.957039,
+            "side_to_mid_db": -1.664489,
+            "mono_fold_delta_db": -2.257314,
+            "left_minus_right_rms_dbfs": -16.936439
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.002604,
+            "side_rms_db": -0.021865,
+            "side_to_mid_db": -0.024469
+          }
+        },
+        {
+          "segment": "right_detuned_444hz",
+          "start_frame": 345600,
+          "end_frame": 460800,
+          "metrics": {
+            "left_right_correlation": -0.999999921253,
+            "mid_rms_dbfs": -93.095152,
+            "side_rms_dbfs": -19.050968,
+            "side_to_mid_db": 74.044185,
+            "mono_fold_delta_db": -74.044185,
+            "left_minus_right_rms_dbfs": -13.030368
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 20.37167,
+            "side_rms_db": -0.021893,
+            "side_to_mid_db": -20.393562
+          }
+        },
+        {
+          "segment": "right_level_25_percent",
+          "start_frame": 460800,
+          "end_frame": 576000,
+          "metrics": {
+            "left_right_correlation": 0.991653619025,
+            "mid_rms_dbfs": -19.060385,
+            "side_rms_dbfs": -42.837142,
+            "side_to_mid_db": -23.776757,
+            "mono_fold_delta_db": -0.018164,
+            "left_minus_right_rms_dbfs": -36.816542
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.002618,
+            "side_rms_db": 0.094421,
+            "side_to_mid_db": 0.091803
+          }
+        }
+      ]
+    },
+    "mono_maker_5_82_khz": {
+      "overall": {
+        "left_right_correlation": 0.999955940103,
+        "mid_rms_dbfs": -21.793568,
+        "side_rms_dbfs": -68.331354,
+        "side_to_mid_db": -46.537786,
+        "mono_fold_delta_db": -9.6e-05,
+        "left_minus_right_rms_dbfs": -62.310754
+      },
+      "overall_delta_from_bypass": {
+        "mid_rms_db": 0.209368,
+        "side_rms_db": -45.257409,
+        "side_to_mid_db": -45.466777
+      },
+      "segments": [
+        {
+          "segment": "correlated_lr",
+          "start_frame": 0,
+          "end_frame": 115200,
+          "metrics": {
+            "left_right_correlation": 0.999999883217,
+            "mid_rms_dbfs": -22.901511,
+            "side_rms_dbfs": -73.245585,
+            "side_to_mid_db": -50.344074,
+            "mono_fold_delta_db": -4e-05,
+            "left_minus_right_rms_dbfs": -67.224985
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.209953,
+            "side_rms_db": -45.697116,
+            "side_to_mid_db": -45.907069
+          }
+        },
+        {
+          "segment": "polarity_inverted_right",
+          "start_frame": 115200,
+          "end_frame": 230400,
+          "metrics": {
+            "left_right_correlation": 0.999960036091,
+            "mid_rms_dbfs": -21.459562,
+            "side_rms_dbfs": -68.450532,
+            "side_to_mid_db": -46.99097,
+            "mono_fold_delta_db": -8.7e-05,
+            "left_minus_right_rms_dbfs": -62.429932
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.207471,
+            "side_rms_db": -45.639154,
+            "side_to_mid_db": -45.846624
+          }
+        },
+        {
+          "segment": "right_delayed_24_samples_before_warp",
+          "start_frame": 230400,
+          "end_frame": 345600,
+          "metrics": {
+            "left_right_correlation": 0.999953556398,
+            "mid_rms_dbfs": -21.085393,
+            "side_rms_dbfs": -67.420015,
+            "side_to_mid_db": -46.334622,
+            "mono_fold_delta_db": -0.000101,
+            "left_minus_right_rms_dbfs": -61.399415
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.209761,
+            "side_rms_db": -44.484841,
+            "side_to_mid_db": -44.694602
+          }
+        },
+        {
+          "segment": "right_detuned_444hz",
+          "start_frame": 345600,
+          "end_frame": 460800,
+          "metrics": {
+            "left_right_correlation": -0.99914911936,
+            "mid_rms_dbfs": -98.123612,
+            "side_rms_dbfs": -64.419063,
+            "side_to_mid_db": 33.704549,
+            "mono_fold_delta_db": -33.706399,
+            "left_minus_right_rms_dbfs": -58.398463
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 15.34321,
+            "side_rms_db": -45.389988,
+            "side_to_mid_db": -60.733198
+          }
+        },
+        {
+          "segment": "right_level_25_percent",
+          "start_frame": 460800,
+          "end_frame": 576000,
+          "metrics": {
+            "left_right_correlation": 0.999999788403,
+            "mid_rms_dbfs": -18.853057,
+            "side_rms_dbfs": -88.608056,
+            "side_to_mid_db": -69.754998,
+            "mono_fold_delta_db": -0.0,
+            "left_minus_right_rms_dbfs": -82.587456
+          },
+          "delta_from_bypass": {
+            "mid_rms_db": 0.209946,
+            "side_rms_db": -45.676493,
+            "side_to_mid_db": -45.886438
+          }
+        }
+      ]
+    }
+  },
+  "summary": {
+    "default_vs_bypass_note": "See paired neutral-analysis JSON for exact residual and lag.",
+    "width_zero_left_right_correlation": 0.999999999999,
+    "width_zero_side_rms_dbfs": -147.503431,
+    "width_zero_left_minus_right_rms_dbfs": -141.482831,
+    "mono_maker_117_side_delta_db": -0.021483,
+    "mono_maker_extreme_left_right_correlation": 0.999955940103,
+    "mono_maker_extreme_side_rms_dbfs": -68.331354
+  },
+  "interpretation_boundary": "Width=0 and the extreme Mono Maker setting are functional endpoint checks, not recommended mix settings. The deterministic source is a 440 Hz stereo correlation fixture with five two-second source states; after Ableton auto-warp, the rendered segments are equal 2.4-second windows. Mono Maker at 117 Hz is expected to leave this 440 Hz fixture essentially unchanged and therefore serves as an above-cutoff control, while 5.82 kHz deliberately places the whole fixture below the cutoff."
+}

@@ -1,0 +1,2131 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T09:32:53+08:00",
+  "family_id": "0188bc583c26",
+  "test_id": "composite-e2deesser-mode-auto-smooth",
+  "fixed_state": {
+    "host": "Ableton Live 11.3.43",
+    "format": "VST3",
+    "plugin_version_inventory": "1.0.9.3",
+    "preset": "Default",
+    "shared_controls": {
+      "sensitivity_percent": 50.0,
+      "amount_percent": 50.0,
+      "gain_db": 0.0,
+      "dry_wet_percent": 50.0,
+      "voiced_eq": "On",
+      "sibilants_eq": "On"
+    },
+    "isolated_states": {
+      "solo_default": "Solo Vocal; Auto 50%; Smooth 50%",
+      "voice_over_default": "Voice Over; Auto 50%; Smooth 50%; only Mode changed",
+      "auto100_smooth0": "Solo Vocal; Auto 100%; Smooth 0%",
+      "auto0_smooth100": "Solo Vocal; Auto 0%; Smooth 100%",
+      "auto100_smooth50": "Solo Vocal; Auto 100%; Smooth 50%; only Auto changed from default",
+      "auto50_smooth100": "Solo Vocal; Auto 50%; Smooth 100%; only Smooth changed from default"
+    },
+    "render": "Master; 2.1.1 start; 48.0.0 length; 72 s output; 48 kHz; stereo 24-bit WAV; normalize off; triangular dither",
+    "host_reported_latency_samples": 720,
+    "host_reported_latency_ms_at_48khz": 15.0,
+    "latency_note": "Ableton export PDC aligns the rendered files; reported latency is fixed for all four tested states."
+  },
+  "regions": {
+    "early_source_events": {
+      "start_seconds": 0.0,
+      "end_seconds": 6.0
+    },
+    "steady_multitone": {
+      "start_seconds": 8.0,
+      "end_seconds": 20.0
+    },
+    "late_dynamics": {
+      "start_seconds": 66.0,
+      "end_seconds": 72.0
+    }
+  },
+  "files": {
+    "bypass": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\7a146380912e--composite--bypass.wav",
+      "sha256": "38a74287a951ad7a62a6abeb219aa91afdd0e4f2abde062b972361851e0de16f",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938332,
+      "rms_dbfs": -21.437912,
+      "left_right_correlation": 0.771435140941
+    },
+    "solo_default": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\0188bc583c26--composite--solo-default.wav",
+      "sha256": "b6832dcb0adc27a24faaa6fb0421ef9549d1eeda1869aa32364ae1cc25c98efc",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1e-06,
+      "rms_dbfs": -21.132251,
+      "left_right_correlation": 0.78648621468
+    },
+    "voice_over_default": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\0188bc583c26--composite--voice-over-default.wav",
+      "sha256": "c345cab326094696af41634aeeedaae335b9f6bd5a74b2ad3a9b999cd4411177",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1e-06,
+      "rms_dbfs": -21.132245,
+      "left_right_correlation": 0.786486465279
+    },
+    "auto100_smooth0": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\0188bc583c26--composite--solo-auto100-smooth0.wav",
+      "sha256": "f4d6870745e93194d77d4105bc08a9d48e01f4c8de1204dc2bff9467581b5613",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1e-06,
+      "rms_dbfs": -21.132247,
+      "left_right_correlation": 0.786486420384
+    },
+    "auto0_smooth100": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\0188bc583c26--composite--solo-auto0-smooth100.wav",
+      "sha256": "1c5901e19e62e06b89b8c33c6188210fc25110fb27bb5b650f14abfa633ff707",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1e-06,
+      "rms_dbfs": -21.132258,
+      "left_right_correlation": 0.78648586691
+    },
+    "auto100_smooth50": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\0188bc583c26--composite--solo-auto100-smooth50.wav",
+      "sha256": "efb2217cff7d35e0f3f0ff02c773d2721bb523befb614367d3784f7c8f0c4b3e",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1e-06,
+      "rms_dbfs": -21.132251,
+      "left_right_correlation": 0.786486190038
+    },
+    "auto50_smooth100": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\0188bc583c26--composite--solo-auto50-smooth100.wav",
+      "sha256": "19121c476107c381ec8a9bf8ff08a50336ea7ada2a1faa322f41677567a67eee",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1e-06,
+      "rms_dbfs": -21.132253,
+      "left_right_correlation": 0.786486079735
+    }
+  },
+  "snapshot": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\host\\snapshots\\0072a637f389--FabFilter-Saturn-2 Project\\0188bc583c26--Eiosis-E2Deesser.als",
+    "sha256": "fd159e51d20de2662559e8cd69896434d468bcf814b217bacfd2f0759ecd4e58"
+  },
+  "comparisons": {
+    "solo_default_vs_bypass": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -54.805363,
+          "candidate_rms_dbfs": -57.254029,
+          "level_delta_db": -2.448666,
+          "peak_delta_db": -2.46627,
+          "correlation": 0.99797543622,
+          "residual_rms_dbfs": -66.784203,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 39.951497,
+              "candidate_db": 37.402395,
+              "candidate_minus_reference_db": -2.549102
+            },
+            "deessing_7_14khz": {
+              "reference_db": 39.963923,
+              "candidate_db": 37.44931,
+              "candidate_minus_reference_db": -2.514613
+            },
+            "above_14khz": {
+              "reference_db": 41.513069,
+              "candidate_db": 39.173971,
+              "candidate_minus_reference_db": -2.339099
+            }
+          }
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.495209,
+          "candidate_rms_dbfs": -19.48565,
+          "level_delta_db": 0.00956,
+          "peak_delta_db": 4.008096,
+          "correlation": 0.999678841161,
+          "residual_rms_dbfs": -51.404748,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 85.350683,
+              "candidate_db": 85.360242,
+              "candidate_minus_reference_db": 0.009559
+            },
+            "deessing_7_14khz": {
+              "reference_db": 29.306824,
+              "candidate_db": 32.091493,
+              "candidate_minus_reference_db": 2.784668
+            },
+            "above_14khz": {
+              "reference_db": 27.135616,
+              "candidate_db": 32.025288,
+              "candidate_minus_reference_db": 4.889673
+            }
+          }
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.504447,
+          "candidate_rms_dbfs": -14.501578,
+          "level_delta_db": 0.002869,
+          "peak_delta_db": 2.853701,
+          "correlation": 0.999902978815,
+          "residual_rms_dbfs": -51.622693,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 89.930048,
+              "candidate_db": 89.932447,
+              "candidate_minus_reference_db": 0.002399
+            },
+            "deessing_7_14khz": {
+              "reference_db": 41.849141,
+              "candidate_db": 44.378098,
+              "candidate_minus_reference_db": 2.528957
+            },
+            "above_14khz": {
+              "reference_db": 39.693037,
+              "candidate_db": 44.205577,
+              "candidate_minus_reference_db": 4.512539
+            }
+          }
+        }
+      },
+      "short_event_windows": {
+        "event_0_50s": {
+          "start_seconds": 0.5,
+          "end_seconds": 0.75,
+          "reference_rms_dbfs": -42.730144,
+          "candidate_rms_dbfs": -45.17881,
+          "level_delta_db": -2.448666,
+          "peak_delta_db": -2.46627,
+          "correlation": 0.997977013018,
+          "residual_rms_dbfs": -54.708983,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.623361,
+              "candidate_db": -78.214985,
+              "candidate_minus_reference_db": 0.408376
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.443924,
+              "candidate_db": -78.53232,
+              "candidate_minus_reference_db": -0.088397
+            },
+            "above_14khz": {
+              "reference_db": -76.870201,
+              "candidate_db": -76.613493,
+              "candidate_minus_reference_db": 0.256708
+            }
+          }
+        },
+        "event_2_50s": {
+          "start_seconds": 2.5,
+          "end_seconds": 2.75,
+          "reference_rms_dbfs": -46.812412,
+          "candidate_rms_dbfs": -49.261078,
+          "level_delta_db": -2.448666,
+          "peak_delta_db": -2.46627,
+          "correlation": 0.997977009762,
+          "residual_rms_dbfs": -58.791253,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.81183,
+              "candidate_db": -78.566943,
+              "candidate_minus_reference_db": 0.244887
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.65307,
+              "candidate_db": -78.752454,
+              "candidate_minus_reference_db": -0.099384
+            },
+            "above_14khz": {
+              "reference_db": -76.73397,
+              "candidate_db": -77.017087,
+              "candidate_minus_reference_db": -0.283117
+            }
+          }
+        },
+        "event_4_50s": {
+          "start_seconds": 4.5,
+          "end_seconds": 4.75,
+          "reference_rms_dbfs": -52.833012,
+          "candidate_rms_dbfs": -55.281675,
+          "level_delta_db": -2.448663,
+          "peak_delta_db": -2.466265,
+          "correlation": 0.997977003683,
+          "residual_rms_dbfs": -64.81186,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.656667,
+              "candidate_db": -78.50783,
+              "candidate_minus_reference_db": 0.148837
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.537532,
+              "candidate_db": -78.550058,
+              "candidate_minus_reference_db": -0.012527
+            },
+            "above_14khz": {
+              "reference_db": -77.132598,
+              "candidate_db": -77.00183,
+              "candidate_minus_reference_db": 0.130768
+            }
+          }
+        }
+      },
+      "active_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 1037,
+        "attenuated_at_least_0_05_db_count": 4,
+        "attenuated_fraction": 0.003857,
+        "strongest_attenuation_windows": [
+          {
+            "start_seconds": 0.5,
+            "reference_rms_dbfs": -35.740444,
+            "level_delta_db": -2.448666,
+            "residual_rms_dbfs": -47.719283
+          },
+          {
+            "start_seconds": 2.5,
+            "reference_rms_dbfs": -39.822712,
+            "level_delta_db": -2.448666,
+            "residual_rms_dbfs": -51.801553
+          },
+          {
+            "start_seconds": 4.5,
+            "reference_rms_dbfs": -45.843312,
+            "level_delta_db": -2.448663,
+            "residual_rms_dbfs": -57.82216
+          },
+          {
+            "start_seconds": 37.25,
+            "reference_rms_dbfs": -27.663858,
+            "level_delta_db": -0.071265,
+            "residual_rms_dbfs": -51.460997
+          },
+          {
+            "start_seconds": 71.7,
+            "reference_rms_dbfs": -50.600758,
+            "level_delta_db": -0.015947,
+            "residual_rms_dbfs": -101.357882
+          },
+          {
+            "start_seconds": 70.85,
+            "reference_rms_dbfs": -56.421562,
+            "level_delta_db": -0.015889,
+            "residual_rms_dbfs": -103.050909
+          },
+          {
+            "start_seconds": 70.0,
+            "reference_rms_dbfs": -62.328172,
+            "level_delta_db": -0.015446,
+            "residual_rms_dbfs": -103.822041
+          },
+          {
+            "start_seconds": 63.45,
+            "reference_rms_dbfs": -55.627534,
+            "level_delta_db": -0.00701,
+            "residual_rms_dbfs": -93.218275
+          },
+          {
+            "start_seconds": 65.4,
+            "reference_rms_dbfs": -40.550084,
+            "level_delta_db": -0.002067,
+            "residual_rms_dbfs": -78.611206
+          },
+          {
+            "start_seconds": 67.4,
+            "reference_rms_dbfs": -45.4835,
+            "level_delta_db": -0.001139,
+            "residual_rms_dbfs": -83.821357
+          },
+          {
+            "start_seconds": 63.4,
+            "reference_rms_dbfs": -40.894874,
+            "level_delta_db": -0.000393,
+            "residual_rms_dbfs": -78.764113
+          },
+          {
+            "start_seconds": 65.35,
+            "reference_rms_dbfs": -31.644342,
+            "level_delta_db": 0.000508,
+            "residual_rms_dbfs": -69.640839
+          }
+        ]
+      }
+    },
+    "voice_over_default_vs_bypass": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -54.805363,
+          "candidate_rms_dbfs": -57.929922,
+          "level_delta_db": -3.124558,
+          "peak_delta_db": -3.153977,
+          "correlation": 0.996619127384,
+          "residual_rms_dbfs": -64.982462,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 39.951497,
+              "candidate_db": 37.201786,
+              "candidate_minus_reference_db": -2.74971
+            },
+            "deessing_7_14khz": {
+              "reference_db": 39.963923,
+              "candidate_db": 36.817634,
+              "candidate_minus_reference_db": -3.146289
+            },
+            "above_14khz": {
+              "reference_db": 41.513069,
+              "candidate_db": 38.116199,
+              "candidate_minus_reference_db": -3.39687
+            }
+          }
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.495209,
+          "candidate_rms_dbfs": -19.48565,
+          "level_delta_db": 0.00956,
+          "peak_delta_db": 4.0081,
+          "correlation": 0.999678841169,
+          "residual_rms_dbfs": -51.404748,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 85.350683,
+              "candidate_db": 85.360242,
+              "candidate_minus_reference_db": 0.009559
+            },
+            "deessing_7_14khz": {
+              "reference_db": 29.306824,
+              "candidate_db": 32.091484,
+              "candidate_minus_reference_db": 2.78466
+            },
+            "above_14khz": {
+              "reference_db": 27.135616,
+              "candidate_db": 32.025294,
+              "candidate_minus_reference_db": 4.889678
+            }
+          }
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.504447,
+          "candidate_rms_dbfs": -14.501578,
+          "level_delta_db": 0.002869,
+          "peak_delta_db": 2.853701,
+          "correlation": 0.999902978821,
+          "residual_rms_dbfs": -51.622694,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 89.930048,
+              "candidate_db": 89.932447,
+              "candidate_minus_reference_db": 0.002399
+            },
+            "deessing_7_14khz": {
+              "reference_db": 41.849141,
+              "candidate_db": 44.378096,
+              "candidate_minus_reference_db": 2.528955
+            },
+            "above_14khz": {
+              "reference_db": 39.693037,
+              "candidate_db": 44.205578,
+              "candidate_minus_reference_db": 4.512541
+            }
+          }
+        }
+      },
+      "short_event_windows": {
+        "event_0_50s": {
+          "start_seconds": 0.5,
+          "end_seconds": 0.75,
+          "reference_rms_dbfs": -42.730144,
+          "candidate_rms_dbfs": -45.854703,
+          "level_delta_db": -3.124559,
+          "peak_delta_db": -3.153977,
+          "correlation": 0.996622069724,
+          "residual_rms_dbfs": -52.907242,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.623361,
+              "candidate_db": -78.141645,
+              "candidate_minus_reference_db": 0.481716
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.443924,
+              "candidate_db": -78.292917,
+              "candidate_minus_reference_db": 0.151006
+            },
+            "above_14khz": {
+              "reference_db": -76.870201,
+              "candidate_db": -76.890173,
+              "candidate_minus_reference_db": -0.019971
+            }
+          }
+        },
+        "event_2_50s": {
+          "start_seconds": 2.5,
+          "end_seconds": 2.75,
+          "reference_rms_dbfs": -46.812412,
+          "candidate_rms_dbfs": -49.93697,
+          "level_delta_db": -3.124558,
+          "peak_delta_db": -3.153975,
+          "correlation": 0.996622048143,
+          "residual_rms_dbfs": -56.989511,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.81183,
+              "candidate_db": -78.677111,
+              "candidate_minus_reference_db": 0.134719
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.65307,
+              "candidate_db": -78.663157,
+              "candidate_minus_reference_db": -0.010086
+            },
+            "above_14khz": {
+              "reference_db": -76.73397,
+              "candidate_db": -76.916272,
+              "candidate_minus_reference_db": -0.182302
+            }
+          }
+        },
+        "event_4_50s": {
+          "start_seconds": 4.5,
+          "end_seconds": 4.75,
+          "reference_rms_dbfs": -52.833012,
+          "candidate_rms_dbfs": -55.957569,
+          "level_delta_db": -3.124556,
+          "peak_delta_db": -3.153975,
+          "correlation": 0.996622023732,
+          "residual_rms_dbfs": -63.010113,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.656667,
+              "candidate_db": -78.469672,
+              "candidate_minus_reference_db": 0.186996
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.537532,
+              "candidate_db": -78.779671,
+              "candidate_minus_reference_db": -0.242139
+            },
+            "above_14khz": {
+              "reference_db": -77.132598,
+              "candidate_db": -77.171178,
+              "candidate_minus_reference_db": -0.03858
+            }
+          }
+        }
+      },
+      "active_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 1037,
+        "attenuated_at_least_0_05_db_count": 3,
+        "attenuated_fraction": 0.002893,
+        "strongest_attenuation_windows": [
+          {
+            "start_seconds": 0.5,
+            "reference_rms_dbfs": -35.740444,
+            "level_delta_db": -3.124559,
+            "residual_rms_dbfs": -45.917542
+          },
+          {
+            "start_seconds": 2.5,
+            "reference_rms_dbfs": -39.822712,
+            "level_delta_db": -3.124558,
+            "residual_rms_dbfs": -49.999811
+          },
+          {
+            "start_seconds": 4.5,
+            "reference_rms_dbfs": -45.843312,
+            "level_delta_db": -3.124556,
+            "residual_rms_dbfs": -56.020413
+          },
+          {
+            "start_seconds": 71.7,
+            "reference_rms_dbfs": -50.600758,
+            "level_delta_db": -0.015947,
+            "residual_rms_dbfs": -101.360398
+          },
+          {
+            "start_seconds": 70.85,
+            "reference_rms_dbfs": -56.421562,
+            "level_delta_db": -0.0159,
+            "residual_rms_dbfs": -103.048945
+          },
+          {
+            "start_seconds": 70.0,
+            "reference_rms_dbfs": -62.328172,
+            "level_delta_db": -0.015438,
+            "residual_rms_dbfs": -103.824078
+          },
+          {
+            "start_seconds": 63.45,
+            "reference_rms_dbfs": -55.627534,
+            "level_delta_db": -0.007006,
+            "residual_rms_dbfs": -93.218558
+          },
+          {
+            "start_seconds": 65.4,
+            "reference_rms_dbfs": -40.550084,
+            "level_delta_db": -0.002066,
+            "residual_rms_dbfs": -78.611353
+          },
+          {
+            "start_seconds": 67.4,
+            "reference_rms_dbfs": -45.4835,
+            "level_delta_db": -0.001135,
+            "residual_rms_dbfs": -83.821469
+          },
+          {
+            "start_seconds": 63.4,
+            "reference_rms_dbfs": -40.894874,
+            "level_delta_db": -0.000391,
+            "residual_rms_dbfs": -78.764025
+          },
+          {
+            "start_seconds": 65.35,
+            "reference_rms_dbfs": -31.644342,
+            "level_delta_db": 0.000508,
+            "residual_rms_dbfs": -69.640843
+          },
+          {
+            "start_seconds": 63.35,
+            "reference_rms_dbfs": -35.012964,
+            "level_delta_db": 0.000933,
+            "residual_rms_dbfs": -72.920622
+          }
+        ]
+      }
+    },
+    "voice_over_default_vs_solo_default": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -57.254029,
+          "candidate_rms_dbfs": -57.929922,
+          "level_delta_db": -0.675892,
+          "peak_delta_db": -0.687707,
+          "correlation": 0.998101932161,
+          "residual_rms_dbfs": -77.655689,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 37.402395,
+              "candidate_db": 37.201786,
+              "candidate_minus_reference_db": -0.200608
+            },
+            "deessing_7_14khz": {
+              "reference_db": 37.44931,
+              "candidate_db": 36.817634,
+              "candidate_minus_reference_db": -0.631676
+            },
+            "above_14khz": {
+              "reference_db": 39.173971,
+              "candidate_db": 38.116199,
+              "candidate_minus_reference_db": -1.057772
+            }
+          }
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.48565,
+          "candidate_rms_dbfs": -19.48565,
+          "level_delta_db": -0.0,
+          "peak_delta_db": 4e-06,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.479358,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 85.360242,
+              "candidate_db": 85.360242,
+              "candidate_minus_reference_db": -0.0
+            },
+            "deessing_7_14khz": {
+              "reference_db": 32.091493,
+              "candidate_db": 32.091484,
+              "candidate_minus_reference_db": -8e-06
+            },
+            "above_14khz": {
+              "reference_db": 32.025288,
+              "candidate_db": 32.025294,
+              "candidate_minus_reference_db": 6e-06
+            }
+          }
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.501578,
+          "candidate_rms_dbfs": -14.501578,
+          "level_delta_db": 0.0,
+          "peak_delta_db": 0.0,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.482455,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 89.932447,
+              "candidate_db": 89.932447,
+              "candidate_minus_reference_db": 0.0
+            },
+            "deessing_7_14khz": {
+              "reference_db": 44.378098,
+              "candidate_db": 44.378096,
+              "candidate_minus_reference_db": -1e-06
+            },
+            "above_14khz": {
+              "reference_db": 44.205577,
+              "candidate_db": 44.205578,
+              "candidate_minus_reference_db": 2e-06
+            }
+          }
+        }
+      },
+      "short_event_windows": {
+        "event_0_50s": {
+          "start_seconds": 0.5,
+          "end_seconds": 0.75,
+          "reference_rms_dbfs": -45.17881,
+          "candidate_rms_dbfs": -45.854703,
+          "level_delta_db": -0.675892,
+          "peak_delta_db": -0.687707,
+          "correlation": 0.998101942369,
+          "residual_rms_dbfs": -65.580473,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.214985,
+              "candidate_db": -78.141645,
+              "candidate_minus_reference_db": 0.07334
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.53232,
+              "candidate_db": -78.292917,
+              "candidate_minus_reference_db": 0.239403
+            },
+            "above_14khz": {
+              "reference_db": -76.613493,
+              "candidate_db": -76.890173,
+              "candidate_minus_reference_db": -0.276679
+            }
+          }
+        },
+        "event_2_50s": {
+          "start_seconds": 2.5,
+          "end_seconds": 2.75,
+          "reference_rms_dbfs": -49.261078,
+          "candidate_rms_dbfs": -49.93697,
+          "level_delta_db": -0.675892,
+          "peak_delta_db": -0.687705,
+          "correlation": 0.998101940475,
+          "residual_rms_dbfs": -69.662739,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.566943,
+              "candidate_db": -78.677111,
+              "candidate_minus_reference_db": -0.110168
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.752454,
+              "candidate_db": -78.663157,
+              "candidate_minus_reference_db": 0.089297
+            },
+            "above_14khz": {
+              "reference_db": -77.017087,
+              "candidate_db": -76.916272,
+              "candidate_minus_reference_db": 0.100814
+            }
+          }
+        },
+        "event_4_50s": {
+          "start_seconds": 4.5,
+          "end_seconds": 4.75,
+          "reference_rms_dbfs": -55.281675,
+          "candidate_rms_dbfs": -55.957569,
+          "level_delta_db": -0.675893,
+          "peak_delta_db": -0.68771,
+          "correlation": 0.998101939243,
+          "residual_rms_dbfs": -75.683328,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.50783,
+              "candidate_db": -78.469672,
+              "candidate_minus_reference_db": 0.038158
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.550058,
+              "candidate_db": -78.779671,
+              "candidate_minus_reference_db": -0.229613
+            },
+            "above_14khz": {
+              "reference_db": -77.00183,
+              "candidate_db": -77.171178,
+              "candidate_minus_reference_db": -0.169348
+            }
+          }
+        }
+      },
+      "active_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 1038,
+        "attenuated_at_least_0_05_db_count": 3,
+        "attenuated_fraction": 0.00289,
+        "strongest_attenuation_windows": [
+          {
+            "start_seconds": 4.5,
+            "reference_rms_dbfs": -48.291975,
+            "level_delta_db": -0.675893,
+            "residual_rms_dbfs": -68.693629
+          },
+          {
+            "start_seconds": 0.5,
+            "reference_rms_dbfs": -38.18911,
+            "level_delta_db": -0.675892,
+            "residual_rms_dbfs": -58.590773
+          },
+          {
+            "start_seconds": 2.5,
+            "reference_rms_dbfs": -42.271378,
+            "level_delta_db": -0.675892,
+            "residual_rms_dbfs": -62.673039
+          },
+          {
+            "start_seconds": 20.95,
+            "reference_rms_dbfs": -68.902589,
+            "level_delta_db": -3.4e-05,
+            "residual_rms_dbfs": -141.568146
+          },
+          {
+            "start_seconds": 7.95,
+            "reference_rms_dbfs": -60.978901,
+            "level_delta_db": -2.4e-05,
+            "residual_rms_dbfs": -141.414092
+          },
+          {
+            "start_seconds": 70.85,
+            "reference_rms_dbfs": -56.43745,
+            "level_delta_db": -1.1e-05,
+            "residual_rms_dbfs": -141.525919
+          },
+          {
+            "start_seconds": 61.45,
+            "reference_rms_dbfs": -51.765198,
+            "level_delta_db": -6e-06,
+            "residual_rms_dbfs": -141.601482
+          },
+          {
+            "start_seconds": 56.95,
+            "reference_rms_dbfs": -43.992922,
+            "level_delta_db": -2e-06,
+            "residual_rms_dbfs": -141.595908
+          },
+          {
+            "start_seconds": 21.85,
+            "reference_rms_dbfs": -27.589179,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.599623
+          },
+          {
+            "start_seconds": 22.5,
+            "reference_rms_dbfs": -28.835528,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.6746
+          },
+          {
+            "start_seconds": 30.15,
+            "reference_rms_dbfs": -29.693384,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.478673
+          },
+          {
+            "start_seconds": 39.35,
+            "reference_rms_dbfs": -27.496964,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.535064
+          }
+        ]
+      }
+    },
+    "auto100_smooth0_vs_solo_default": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -57.254029,
+          "candidate_rms_dbfs": -56.819748,
+          "level_delta_db": 0.434281,
+          "peak_delta_db": 0.442729,
+          "correlation": 0.999564053921,
+          "residual_rms_dbfs": -81.757497,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 37.402395,
+              "candidate_db": 37.708784,
+              "candidate_minus_reference_db": 0.30639
+            },
+            "deessing_7_14khz": {
+              "reference_db": 37.44931,
+              "candidate_db": 37.967576,
+              "candidate_minus_reference_db": 0.518266
+            },
+            "above_14khz": {
+              "reference_db": 39.173971,
+              "candidate_db": 39.637479,
+              "candidate_minus_reference_db": 0.463508
+            }
+          }
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.48565,
+          "candidate_rms_dbfs": -19.48565,
+          "level_delta_db": 0.0,
+          "peak_delta_db": 8e-06,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.47518,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 85.360242,
+              "candidate_db": 85.360242,
+              "candidate_minus_reference_db": 0.0
+            },
+            "deessing_7_14khz": {
+              "reference_db": 32.091493,
+              "candidate_db": 32.091487,
+              "candidate_minus_reference_db": -6e-06
+            },
+            "above_14khz": {
+              "reference_db": 32.025288,
+              "candidate_db": 32.025295,
+              "candidate_minus_reference_db": 7e-06
+            }
+          }
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.501578,
+          "candidate_rms_dbfs": -14.501578,
+          "level_delta_db": -0.0,
+          "peak_delta_db": 0.0,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.486496,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 89.932447,
+              "candidate_db": 89.932447,
+              "candidate_minus_reference_db": -0.0
+            },
+            "deessing_7_14khz": {
+              "reference_db": 44.378098,
+              "candidate_db": 44.378097,
+              "candidate_minus_reference_db": -1e-06
+            },
+            "above_14khz": {
+              "reference_db": 44.205577,
+              "candidate_db": 44.205578,
+              "candidate_minus_reference_db": 1e-06
+            }
+          }
+        }
+      },
+      "short_event_windows": {
+        "event_0_50s": {
+          "start_seconds": 0.5,
+          "end_seconds": 0.75,
+          "reference_rms_dbfs": -45.17881,
+          "candidate_rms_dbfs": -44.744529,
+          "level_delta_db": 0.434282,
+          "peak_delta_db": 0.442729,
+          "correlation": 0.999564644938,
+          "residual_rms_dbfs": -69.682277,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.214985,
+              "candidate_db": -78.212463,
+              "candidate_minus_reference_db": 0.002522
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.53232,
+              "candidate_db": -78.356937,
+              "candidate_minus_reference_db": 0.175383
+            },
+            "above_14khz": {
+              "reference_db": -76.613493,
+              "candidate_db": -77.179143,
+              "candidate_minus_reference_db": -0.565649
+            }
+          }
+        },
+        "event_2_50s": {
+          "start_seconds": 2.5,
+          "end_seconds": 2.75,
+          "reference_rms_dbfs": -49.261078,
+          "candidate_rms_dbfs": -48.826797,
+          "level_delta_db": 0.434281,
+          "peak_delta_db": 0.442728,
+          "correlation": 0.999564649051,
+          "residual_rms_dbfs": -73.76456,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.566943,
+              "candidate_db": -78.590886,
+              "candidate_minus_reference_db": -0.023943
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.752454,
+              "candidate_db": -78.362542,
+              "candidate_minus_reference_db": 0.389912
+            },
+            "above_14khz": {
+              "reference_db": -77.017087,
+              "candidate_db": -76.983787,
+              "candidate_minus_reference_db": 0.0333
+            }
+          }
+        },
+        "event_4_50s": {
+          "start_seconds": 4.5,
+          "end_seconds": 4.75,
+          "reference_rms_dbfs": -55.281675,
+          "candidate_rms_dbfs": -54.847397,
+          "level_delta_db": 0.434279,
+          "peak_delta_db": 0.442722,
+          "correlation": 0.999564629175,
+          "residual_rms_dbfs": -79.785148,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.50783,
+              "candidate_db": -78.743182,
+              "candidate_minus_reference_db": -0.235352
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.550058,
+              "candidate_db": -78.614858,
+              "candidate_minus_reference_db": -0.0648
+            },
+            "above_14khz": {
+              "reference_db": -77.00183,
+              "candidate_db": -77.072552,
+              "candidate_minus_reference_db": -0.070723
+            }
+          }
+        }
+      },
+      "active_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 1038,
+        "attenuated_at_least_0_05_db_count": 0,
+        "attenuated_fraction": 0.0,
+        "strongest_attenuation_windows": [
+          {
+            "start_seconds": 37.25,
+            "reference_rms_dbfs": -27.735123,
+            "level_delta_db": -0.035488,
+            "residual_rms_dbfs": -66.958699
+          },
+          {
+            "start_seconds": 7.95,
+            "reference_rms_dbfs": -60.978901,
+            "level_delta_db": -2.3e-05,
+            "residual_rms_dbfs": -141.469646
+          },
+          {
+            "start_seconds": 20.95,
+            "reference_rms_dbfs": -68.902589,
+            "level_delta_db": -1.2e-05,
+            "residual_rms_dbfs": -141.408754
+          },
+          {
+            "start_seconds": 61.45,
+            "reference_rms_dbfs": -51.765198,
+            "level_delta_db": -8e-06,
+            "residual_rms_dbfs": -141.581079
+          },
+          {
+            "start_seconds": 70.85,
+            "reference_rms_dbfs": -56.43745,
+            "level_delta_db": -6e-06,
+            "residual_rms_dbfs": -141.607063
+          },
+          {
+            "start_seconds": 71.7,
+            "reference_rms_dbfs": -50.616705,
+            "level_delta_db": -3e-06,
+            "residual_rms_dbfs": -141.525919
+          },
+          {
+            "start_seconds": 24.55,
+            "reference_rms_dbfs": -27.543059,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.385695
+          },
+          {
+            "start_seconds": 25.2,
+            "reference_rms_dbfs": -28.73022,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.380392
+          },
+          {
+            "start_seconds": 29.9,
+            "reference_rms_dbfs": -26.549599,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.405198
+          },
+          {
+            "start_seconds": 35.05,
+            "reference_rms_dbfs": -25.582317,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.462437
+          },
+          {
+            "start_seconds": 36.2,
+            "reference_rms_dbfs": -26.991861,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.487719
+          },
+          {
+            "start_seconds": 36.9,
+            "reference_rms_dbfs": -28.384937,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.423005
+          }
+        ]
+      }
+    },
+    "auto0_smooth100_vs_solo_default": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -57.254029,
+          "candidate_rms_dbfs": -57.88102,
+          "level_delta_db": -0.62699,
+          "peak_delta_db": -0.638621,
+          "correlation": 0.999299678595,
+          "residual_rms_dbfs": -79.363133,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 37.402395,
+              "candidate_db": 37.059535,
+              "candidate_minus_reference_db": -0.342859
+            },
+            "deessing_7_14khz": {
+              "reference_db": 37.44931,
+              "candidate_db": 36.809259,
+              "candidate_minus_reference_db": -0.640051
+            },
+            "above_14khz": {
+              "reference_db": 39.173971,
+              "candidate_db": 38.354404,
+              "candidate_minus_reference_db": -0.819567
+            }
+          }
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.48565,
+          "candidate_rms_dbfs": -19.48565,
+          "level_delta_db": -0.0,
+          "peak_delta_db": 4e-06,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.48085,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 85.360242,
+              "candidate_db": 85.360242,
+              "candidate_minus_reference_db": -0.0
+            },
+            "deessing_7_14khz": {
+              "reference_db": 32.091493,
+              "candidate_db": 32.091483,
+              "candidate_minus_reference_db": -1e-05
+            },
+            "above_14khz": {
+              "reference_db": 32.025288,
+              "candidate_db": 32.02529,
+              "candidate_minus_reference_db": 2e-06
+            }
+          }
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.501578,
+          "candidate_rms_dbfs": -14.501578,
+          "level_delta_db": -0.0,
+          "peak_delta_db": 0.0,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.471344,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 89.932447,
+              "candidate_db": 89.932447,
+              "candidate_minus_reference_db": -0.0
+            },
+            "deessing_7_14khz": {
+              "reference_db": 44.378098,
+              "candidate_db": 44.378098,
+              "candidate_minus_reference_db": -0.0
+            },
+            "above_14khz": {
+              "reference_db": 44.205577,
+              "candidate_db": 44.205578,
+              "candidate_minus_reference_db": 1e-06
+            }
+          }
+        }
+      },
+      "short_event_windows": {
+        "event_0_50s": {
+          "start_seconds": 0.5,
+          "end_seconds": 0.75,
+          "reference_rms_dbfs": -45.17881,
+          "candidate_rms_dbfs": -45.805801,
+          "level_delta_db": -0.62699,
+          "peak_delta_db": -0.638621,
+          "correlation": 0.999299881158,
+          "residual_rms_dbfs": -67.287911,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.214985,
+              "candidate_db": -78.308026,
+              "candidate_minus_reference_db": -0.093041
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.53232,
+              "candidate_db": -78.204308,
+              "candidate_minus_reference_db": 0.328012
+            },
+            "above_14khz": {
+              "reference_db": -76.613493,
+              "candidate_db": -77.069618,
+              "candidate_minus_reference_db": -0.456124
+            }
+          }
+        },
+        "event_2_50s": {
+          "start_seconds": 2.5,
+          "end_seconds": 2.75,
+          "reference_rms_dbfs": -49.261078,
+          "candidate_rms_dbfs": -49.888068,
+          "level_delta_db": -0.62699,
+          "peak_delta_db": -0.63862,
+          "correlation": 0.999299889666,
+          "residual_rms_dbfs": -71.370199,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.566943,
+              "candidate_db": -78.38124,
+              "candidate_minus_reference_db": 0.185702
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.752454,
+              "candidate_db": -78.433092,
+              "candidate_minus_reference_db": 0.319362
+            },
+            "above_14khz": {
+              "reference_db": -77.017087,
+              "candidate_db": -76.838838,
+              "candidate_minus_reference_db": 0.178249
+            }
+          }
+        },
+        "event_4_50s": {
+          "start_seconds": 4.5,
+          "end_seconds": 4.75,
+          "reference_rms_dbfs": -55.281675,
+          "candidate_rms_dbfs": -55.908668,
+          "level_delta_db": -0.626992,
+          "peak_delta_db": -0.638625,
+          "correlation": 0.999299902113,
+          "residual_rms_dbfs": -77.390784,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.50783,
+              "candidate_db": -78.413489,
+              "candidate_minus_reference_db": 0.094341
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.550058,
+              "candidate_db": -78.344221,
+              "candidate_minus_reference_db": 0.205837
+            },
+            "above_14khz": {
+              "reference_db": -77.00183,
+              "candidate_db": -76.822335,
+              "candidate_minus_reference_db": 0.179495
+            }
+          }
+        }
+      },
+      "active_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 1038,
+        "attenuated_at_least_0_05_db_count": 3,
+        "attenuated_fraction": 0.00289,
+        "strongest_attenuation_windows": [
+          {
+            "start_seconds": 4.5,
+            "reference_rms_dbfs": -48.291975,
+            "level_delta_db": -0.626992,
+            "residual_rms_dbfs": -70.401085
+          },
+          {
+            "start_seconds": 0.5,
+            "reference_rms_dbfs": -38.18911,
+            "level_delta_db": -0.62699,
+            "residual_rms_dbfs": -60.298211
+          },
+          {
+            "start_seconds": 2.5,
+            "reference_rms_dbfs": -42.271378,
+            "level_delta_db": -0.62699,
+            "residual_rms_dbfs": -64.380499
+          },
+          {
+            "start_seconds": 61.45,
+            "reference_rms_dbfs": -51.765198,
+            "level_delta_db": -6e-06,
+            "residual_rms_dbfs": -141.581079
+          },
+          {
+            "start_seconds": 7.95,
+            "reference_rms_dbfs": -60.978901,
+            "level_delta_db": -2e-06,
+            "residual_rms_dbfs": -141.520441
+          },
+          {
+            "start_seconds": 21.65,
+            "reference_rms_dbfs": -25.59867,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.37333
+          },
+          {
+            "start_seconds": 22.5,
+            "reference_rms_dbfs": -28.835528,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.48048
+          },
+          {
+            "start_seconds": 30.4,
+            "reference_rms_dbfs": -27.738778,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.460637
+          },
+          {
+            "start_seconds": 39.85,
+            "reference_rms_dbfs": -27.453829,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.345197
+          },
+          {
+            "start_seconds": 45.0,
+            "reference_rms_dbfs": -43.991468,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.498599
+          },
+          {
+            "start_seconds": 60.8,
+            "reference_rms_dbfs": -33.008484,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.458838
+          },
+          {
+            "start_seconds": 60.85,
+            "reference_rms_dbfs": -33.008485,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.531403
+          }
+        ]
+      }
+    },
+    "auto100_smooth0_vs_auto0_smooth100": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -57.88102,
+          "candidate_rms_dbfs": -56.819748,
+          "level_delta_db": 1.061272,
+          "peak_delta_db": 1.08135,
+          "correlation": 0.99807538616,
+          "residual_rms_dbfs": -74.609506,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 37.059535,
+              "candidate_db": 37.708784,
+              "candidate_minus_reference_db": 0.649249
+            },
+            "deessing_7_14khz": {
+              "reference_db": 36.809259,
+              "candidate_db": 37.967576,
+              "candidate_minus_reference_db": 1.158317
+            },
+            "above_14khz": {
+              "reference_db": 38.354404,
+              "candidate_db": 39.637479,
+              "candidate_minus_reference_db": 1.283075
+            }
+          }
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.48565,
+          "candidate_rms_dbfs": -19.48565,
+          "level_delta_db": 0.0,
+          "peak_delta_db": 4e-06,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.481106,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 85.360242,
+              "candidate_db": 85.360242,
+              "candidate_minus_reference_db": 0.0
+            },
+            "deessing_7_14khz": {
+              "reference_db": 32.091483,
+              "candidate_db": 32.091487,
+              "candidate_minus_reference_db": 4e-06
+            },
+            "above_14khz": {
+              "reference_db": 32.02529,
+              "candidate_db": 32.025295,
+              "candidate_minus_reference_db": 5e-06
+            }
+          }
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.501578,
+          "candidate_rms_dbfs": -14.501578,
+          "level_delta_db": 0.0,
+          "peak_delta_db": 0.0,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.483223,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 89.932447,
+              "candidate_db": 89.932447,
+              "candidate_minus_reference_db": 0.0
+            },
+            "deessing_7_14khz": {
+              "reference_db": 44.378098,
+              "candidate_db": 44.378097,
+              "candidate_minus_reference_db": -1e-06
+            },
+            "above_14khz": {
+              "reference_db": 44.205578,
+              "candidate_db": 44.205578,
+              "candidate_minus_reference_db": 0.0
+            }
+          }
+        }
+      },
+      "short_event_windows": {
+        "event_0_50s": {
+          "start_seconds": 0.5,
+          "end_seconds": 0.75,
+          "reference_rms_dbfs": -45.805801,
+          "candidate_rms_dbfs": -44.744529,
+          "level_delta_db": 1.061272,
+          "peak_delta_db": 1.08135,
+          "correlation": 0.998076950295,
+          "residual_rms_dbfs": -62.534284,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.308026,
+              "candidate_db": -78.212463,
+              "candidate_minus_reference_db": 0.095563
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.204308,
+              "candidate_db": -78.356937,
+              "candidate_minus_reference_db": -0.152629
+            },
+            "above_14khz": {
+              "reference_db": -77.069618,
+              "candidate_db": -77.179143,
+              "candidate_minus_reference_db": -0.109525
+            }
+          }
+        },
+        "event_2_50s": {
+          "start_seconds": 2.5,
+          "end_seconds": 2.75,
+          "reference_rms_dbfs": -49.888068,
+          "candidate_rms_dbfs": -48.826797,
+          "level_delta_db": 1.061271,
+          "peak_delta_db": 1.081347,
+          "correlation": 0.998076965849,
+          "residual_rms_dbfs": -66.616565,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.38124,
+              "candidate_db": -78.590886,
+              "candidate_minus_reference_db": -0.209646
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.433092,
+              "candidate_db": -78.362542,
+              "candidate_minus_reference_db": 0.07055
+            },
+            "above_14khz": {
+              "reference_db": -76.838838,
+              "candidate_db": -76.983787,
+              "candidate_minus_reference_db": -0.14495
+            }
+          }
+        },
+        "event_4_50s": {
+          "start_seconds": 4.5,
+          "end_seconds": 4.75,
+          "reference_rms_dbfs": -55.908668,
+          "candidate_rms_dbfs": -54.847397,
+          "level_delta_db": 1.061271,
+          "peak_delta_db": 1.081347,
+          "correlation": 0.998076949851,
+          "residual_rms_dbfs": -72.637158,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.413489,
+              "candidate_db": -78.743182,
+              "candidate_minus_reference_db": -0.329693
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.344221,
+              "candidate_db": -78.614858,
+              "candidate_minus_reference_db": -0.270637
+            },
+            "above_14khz": {
+              "reference_db": -76.822335,
+              "candidate_db": -77.072552,
+              "candidate_minus_reference_db": -0.250217
+            }
+          }
+        }
+      },
+      "active_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 1038,
+        "attenuated_at_least_0_05_db_count": 1,
+        "attenuated_fraction": 0.000963,
+        "strongest_attenuation_windows": [
+          {
+            "start_seconds": 37.25,
+            "reference_rms_dbfs": -27.70187,
+            "level_delta_db": -0.068742,
+            "residual_rms_dbfs": -60.584629
+          },
+          {
+            "start_seconds": 7.95,
+            "reference_rms_dbfs": -60.978902,
+            "level_delta_db": -2.1e-05,
+            "residual_rms_dbfs": -141.631331
+          },
+          {
+            "start_seconds": 20.95,
+            "reference_rms_dbfs": -68.902585,
+            "level_delta_db": -1.7e-05,
+            "residual_rms_dbfs": -141.406976
+          },
+          {
+            "start_seconds": 63.45,
+            "reference_rms_dbfs": -55.634535,
+            "level_delta_db": -9e-06,
+            "residual_rms_dbfs": -141.573684
+          },
+          {
+            "start_seconds": 70.85,
+            "reference_rms_dbfs": -56.43745,
+            "level_delta_db": -6e-06,
+            "residual_rms_dbfs": -141.714488
+          },
+          {
+            "start_seconds": 71.7,
+            "reference_rms_dbfs": -50.616703,
+            "level_delta_db": -4e-06,
+            "residual_rms_dbfs": -141.202115
+          },
+          {
+            "start_seconds": 61.3,
+            "reference_rms_dbfs": -36.077119,
+            "level_delta_db": -2e-06,
+            "residual_rms_dbfs": -141.513148
+          },
+          {
+            "start_seconds": 61.45,
+            "reference_rms_dbfs": -51.765204,
+            "level_delta_db": -2e-06,
+            "residual_rms_dbfs": -141.391006
+          },
+          {
+            "start_seconds": 65.4,
+            "reference_rms_dbfs": -40.552148,
+            "level_delta_db": -2e-06,
+            "residual_rms_dbfs": -141.387465
+          },
+          {
+            "start_seconds": 25.2,
+            "reference_rms_dbfs": -28.73022,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.451647
+          },
+          {
+            "start_seconds": 28.6,
+            "reference_rms_dbfs": -28.077562,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.544228
+          },
+          {
+            "start_seconds": 36.05,
+            "reference_rms_dbfs": -25.281757,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.520441
+          }
+        ]
+      }
+    },
+    "auto100_smooth50_vs_solo_default": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -57.254029,
+          "candidate_rms_dbfs": -57.190675,
+          "level_delta_db": 0.063354,
+          "peak_delta_db": 0.063176,
+          "correlation": 0.999990230864,
+          "residual_rms_dbfs": -98.604641,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 37.402395,
+              "candidate_db": 37.431009,
+              "candidate_minus_reference_db": 0.028615
+            },
+            "deessing_7_14khz": {
+              "reference_db": 37.44931,
+              "candidate_db": 37.507272,
+              "candidate_minus_reference_db": 0.057962
+            },
+            "above_14khz": {
+              "reference_db": 39.173971,
+              "candidate_db": 39.264027,
+              "candidate_minus_reference_db": 0.090056
+            }
+          }
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.48565,
+          "candidate_rms_dbfs": -19.48565,
+          "level_delta_db": -0.0,
+          "peak_delta_db": 4e-06,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.476203,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 85.360242,
+              "candidate_db": 85.360242,
+              "candidate_minus_reference_db": -0.0
+            },
+            "deessing_7_14khz": {
+              "reference_db": 32.091493,
+              "candidate_db": 32.091492,
+              "candidate_minus_reference_db": -1e-06
+            },
+            "above_14khz": {
+              "reference_db": 32.025288,
+              "candidate_db": 32.025292,
+              "candidate_minus_reference_db": 4e-06
+            }
+          }
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.501578,
+          "candidate_rms_dbfs": -14.501578,
+          "level_delta_db": -0.0,
+          "peak_delta_db": 0.0,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.487009,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 89.932447,
+              "candidate_db": 89.932447,
+              "candidate_minus_reference_db": -0.0
+            },
+            "deessing_7_14khz": {
+              "reference_db": 44.378098,
+              "candidate_db": 44.378098,
+              "candidate_minus_reference_db": -0.0
+            },
+            "above_14khz": {
+              "reference_db": 44.205577,
+              "candidate_db": 44.205577,
+              "candidate_minus_reference_db": 1e-06
+            }
+          }
+        }
+      },
+      "short_event_windows": {
+        "event_0_50s": {
+          "start_seconds": 0.5,
+          "end_seconds": 0.75,
+          "reference_rms_dbfs": -45.17881,
+          "candidate_rms_dbfs": -45.115457,
+          "level_delta_db": 0.063354,
+          "peak_delta_db": 0.063176,
+          "correlation": 0.999990234002,
+          "residual_rms_dbfs": -86.529689,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.214985,
+              "candidate_db": -78.305981,
+              "candidate_minus_reference_db": -0.090996
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.53232,
+              "candidate_db": -78.691215,
+              "candidate_minus_reference_db": -0.158895
+            },
+            "above_14khz": {
+              "reference_db": -76.613493,
+              "candidate_db": -77.067284,
+              "candidate_minus_reference_db": -0.45379
+            }
+          }
+        },
+        "event_2_50s": {
+          "start_seconds": 2.5,
+          "end_seconds": 2.75,
+          "reference_rms_dbfs": -49.261078,
+          "candidate_rms_dbfs": -49.197724,
+          "level_delta_db": 0.063355,
+          "peak_delta_db": 0.06318,
+          "correlation": 0.999990232864,
+          "residual_rms_dbfs": -90.611758,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.566943,
+              "candidate_db": -78.504921,
+              "candidate_minus_reference_db": 0.062022
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.752454,
+              "candidate_db": -78.566086,
+              "candidate_minus_reference_db": 0.186368
+            },
+            "above_14khz": {
+              "reference_db": -77.017087,
+              "candidate_db": -77.041209,
+              "candidate_minus_reference_db": -0.024122
+            }
+          }
+        },
+        "event_4_50s": {
+          "start_seconds": 4.5,
+          "end_seconds": 4.75,
+          "reference_rms_dbfs": -55.281675,
+          "candidate_rms_dbfs": -55.218323,
+          "level_delta_db": 0.063352,
+          "peak_delta_db": 0.063171,
+          "correlation": 0.999990229984,
+          "residual_rms_dbfs": -96.632263,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.50783,
+              "candidate_db": -78.752448,
+              "candidate_minus_reference_db": -0.244618
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.550058,
+              "candidate_db": -78.575127,
+              "candidate_minus_reference_db": -0.025069
+            },
+            "above_14khz": {
+              "reference_db": -77.00183,
+              "candidate_db": -77.119596,
+              "candidate_minus_reference_db": -0.117766
+            }
+          }
+        }
+      },
+      "active_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 1038,
+        "attenuated_at_least_0_05_db_count": 0,
+        "attenuated_fraction": 0.0,
+        "strongest_attenuation_windows": [
+          {
+            "start_seconds": 37.25,
+            "reference_rms_dbfs": -27.735123,
+            "level_delta_db": -0.012174,
+            "residual_rms_dbfs": -69.675466
+          },
+          {
+            "start_seconds": 7.95,
+            "reference_rms_dbfs": -60.978901,
+            "level_delta_db": -1.3e-05,
+            "residual_rms_dbfs": -141.305073
+          },
+          {
+            "start_seconds": 70.85,
+            "reference_rms_dbfs": -56.43745,
+            "level_delta_db": -1.2e-05,
+            "residual_rms_dbfs": -141.469646
+          },
+          {
+            "start_seconds": 61.45,
+            "reference_rms_dbfs": -51.765198,
+            "level_delta_db": -5e-06,
+            "residual_rms_dbfs": -141.442676
+          },
+          {
+            "start_seconds": 70.0,
+            "reference_rms_dbfs": -62.343618,
+            "level_delta_db": -2e-06,
+            "residual_rms_dbfs": -141.464238
+          },
+          {
+            "start_seconds": 22.3,
+            "reference_rms_dbfs": -27.574939,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.462437
+          },
+          {
+            "start_seconds": 30.6,
+            "reference_rms_dbfs": -28.319696,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.348704
+          },
+          {
+            "start_seconds": 30.65,
+            "reference_rms_dbfs": -25.501917,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.482289
+          },
+          {
+            "start_seconds": 32.2,
+            "reference_rms_dbfs": -27.277257,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.48953
+          },
+          {
+            "start_seconds": 39.85,
+            "reference_rms_dbfs": -27.453829,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.341694
+          },
+          {
+            "start_seconds": 45.1,
+            "reference_rms_dbfs": -31.154979,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.2964
+          },
+          {
+            "start_seconds": 60.8,
+            "reference_rms_dbfs": -33.008484,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.569991
+          }
+        ]
+      }
+    },
+    "auto50_smooth100_vs_solo_default": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -57.254029,
+          "candidate_rms_dbfs": -57.570326,
+          "level_delta_db": -0.316297,
+          "peak_delta_db": -0.331157,
+          "correlation": 0.999650323912,
+          "residual_rms_dbfs": -84.346512,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 37.402395,
+              "candidate_db": 37.178362,
+              "candidate_minus_reference_db": -0.224033
+            },
+            "deessing_7_14khz": {
+              "reference_db": 37.44931,
+              "candidate_db": 37.03902,
+              "candidate_minus_reference_db": -0.410291
+            },
+            "above_14khz": {
+              "reference_db": 39.173971,
+              "candidate_db": 38.855716,
+              "candidate_minus_reference_db": -0.318255
+            }
+          }
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.48565,
+          "candidate_rms_dbfs": -19.48565,
+          "level_delta_db": -0.0,
+          "peak_delta_db": 4e-06,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.488941,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 85.360242,
+              "candidate_db": 85.360242,
+              "candidate_minus_reference_db": -0.0
+            },
+            "deessing_7_14khz": {
+              "reference_db": 32.091493,
+              "candidate_db": 32.091485,
+              "candidate_minus_reference_db": -8e-06
+            },
+            "above_14khz": {
+              "reference_db": 32.025288,
+              "candidate_db": 32.025284,
+              "candidate_minus_reference_db": -4e-06
+            }
+          }
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.501578,
+          "candidate_rms_dbfs": -14.501578,
+          "level_delta_db": -0.0,
+          "peak_delta_db": 0.0,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.458523,
+          "bands": {
+            "below_7khz": {
+              "reference_db": 89.932447,
+              "candidate_db": 89.932447,
+              "candidate_minus_reference_db": -0.0
+            },
+            "deessing_7_14khz": {
+              "reference_db": 44.378098,
+              "candidate_db": 44.378097,
+              "candidate_minus_reference_db": -0.0
+            },
+            "above_14khz": {
+              "reference_db": 44.205577,
+              "candidate_db": 44.205578,
+              "candidate_minus_reference_db": 1e-06
+            }
+          }
+        }
+      },
+      "short_event_windows": {
+        "event_0_50s": {
+          "start_seconds": 0.5,
+          "end_seconds": 0.75,
+          "reference_rms_dbfs": -45.17881,
+          "candidate_rms_dbfs": -45.495107,
+          "level_delta_db": -0.316297,
+          "peak_delta_db": -0.331157,
+          "correlation": 0.999650770398,
+          "residual_rms_dbfs": -72.271301,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.214985,
+              "candidate_db": -78.074949,
+              "candidate_minus_reference_db": 0.140036
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.53232,
+              "candidate_db": -78.686001,
+              "candidate_minus_reference_db": -0.153681
+            },
+            "above_14khz": {
+              "reference_db": -76.613493,
+              "candidate_db": -76.922147,
+              "candidate_minus_reference_db": -0.308654
+            }
+          }
+        },
+        "event_2_50s": {
+          "start_seconds": 2.5,
+          "end_seconds": 2.75,
+          "reference_rms_dbfs": -49.261078,
+          "candidate_rms_dbfs": -49.577376,
+          "level_delta_db": -0.316298,
+          "peak_delta_db": -0.331156,
+          "correlation": 0.999650772101,
+          "residual_rms_dbfs": -76.353553,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.566943,
+              "candidate_db": -78.354038,
+              "candidate_minus_reference_db": 0.212904
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.752454,
+              "candidate_db": -78.660954,
+              "candidate_minus_reference_db": 0.0915
+            },
+            "above_14khz": {
+              "reference_db": -77.017087,
+              "candidate_db": -77.079905,
+              "candidate_minus_reference_db": -0.062819
+            }
+          }
+        },
+        "event_4_50s": {
+          "start_seconds": 4.5,
+          "end_seconds": 4.75,
+          "reference_rms_dbfs": -55.281675,
+          "candidate_rms_dbfs": -55.597972,
+          "level_delta_db": -0.316297,
+          "peak_delta_db": -0.331159,
+          "correlation": 0.999650784244,
+          "residual_rms_dbfs": -82.374226,
+          "bands": {
+            "below_7khz": {
+              "reference_db": -78.50783,
+              "candidate_db": -78.764301,
+              "candidate_minus_reference_db": -0.256471
+            },
+            "deessing_7_14khz": {
+              "reference_db": -78.550058,
+              "candidate_db": -78.516411,
+              "candidate_minus_reference_db": 0.033647
+            },
+            "above_14khz": {
+              "reference_db": -77.00183,
+              "candidate_db": -76.81122,
+              "candidate_minus_reference_db": 0.19061
+            }
+          }
+        }
+      },
+      "active_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 1038,
+        "attenuated_at_least_0_05_db_count": 3,
+        "attenuated_fraction": 0.00289,
+        "strongest_attenuation_windows": [
+          {
+            "start_seconds": 2.5,
+            "reference_rms_dbfs": -42.271378,
+            "level_delta_db": -0.316298,
+            "residual_rms_dbfs": -69.363854
+          },
+          {
+            "start_seconds": 0.5,
+            "reference_rms_dbfs": -38.18911,
+            "level_delta_db": -0.316297,
+            "residual_rms_dbfs": -65.281602
+          },
+          {
+            "start_seconds": 4.5,
+            "reference_rms_dbfs": -48.291975,
+            "level_delta_db": -0.316297,
+            "residual_rms_dbfs": -75.38453
+          },
+          {
+            "start_seconds": 70.85,
+            "reference_rms_dbfs": -56.43745,
+            "level_delta_db": -1.4e-05,
+            "residual_rms_dbfs": -141.449852
+          },
+          {
+            "start_seconds": 7.95,
+            "reference_rms_dbfs": -60.978901,
+            "level_delta_db": -1e-05,
+            "residual_rms_dbfs": -141.430148
+          },
+          {
+            "start_seconds": 61.45,
+            "reference_rms_dbfs": -51.765198,
+            "level_delta_db": -5e-06,
+            "residual_rms_dbfs": -141.48953
+          },
+          {
+            "start_seconds": 45.0,
+            "reference_rms_dbfs": -43.991468,
+            "level_delta_db": -2e-06,
+            "residual_rms_dbfs": -141.58293
+          },
+          {
+            "start_seconds": 27.1,
+            "reference_rms_dbfs": -24.433374,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.564458
+          },
+          {
+            "start_seconds": 28.55,
+            "reference_rms_dbfs": -32.111876,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.412312
+          },
+          {
+            "start_seconds": 30.15,
+            "reference_rms_dbfs": -29.693384,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.524092
+          },
+          {
+            "start_seconds": 33.8,
+            "reference_rms_dbfs": -25.573449,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.594052
+          },
+          {
+            "start_seconds": 36.9,
+            "reference_rms_dbfs": -28.384937,
+            "level_delta_db": -1e-06,
+            "residual_rms_dbfs": -141.504049
+          }
+        ]
+      }
+    }
+  },
+  "interpretation_boundary": "These are independent, host-PDC-compensated exports of one installed E2Deesser VST3 instance over a deterministic 72-second composite arrangement. The evidence isolates Solo Vocal versus Voice Over with otherwise default controls; Auto 100% with Smooth held at 50%; Smooth 100% with Auto held at 50%; and a deliberately extreme Auto/Smooth endpoint contrast while Sensitivity, Amount, Gain and Dry/Wet remain fixed. Because Dry/Wet is 50%, measured attenuation is not a fully wet ceiling. Auto and Smooth were changed together in opposite directions, so their comparison establishes endpoint behavior rather than an additive transfer function for either control in isolation. The fixture is not an annotated speech corpus; results do not establish detection recall or preference across singers, languages, microphones or consonant classes. Alternate modes, custom EQ curves, automation, CPU use and listening preference remain outside this test."
+}

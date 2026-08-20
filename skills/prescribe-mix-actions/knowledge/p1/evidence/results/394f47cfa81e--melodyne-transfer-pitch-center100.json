@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T10:02:42+08:00",
+  "family_id": "394f47cfa81e",
+  "test_id": "melodyne-transfer-pitch-center100",
+  "fixed_state": {
+    "host": "Ableton Live 11.3.43",
+    "format": "VST3",
+    "plugin": "Celemony Melodyne Studio 5.4.1",
+    "host_reported_latency_samples": 0,
+    "detected_key": "D Minor",
+    "transfer_host_bars": "27.1.1 to approximately 31.3.4",
+    "analysis_window_seconds": "37.2 to 41.65, bounded by measured corrected residual localization",
+    "selected_notes": "all transferred notes",
+    "correct_pitch_macro": "Pitch Center 100%; Pitch Drift 0%; Snap to chord scale off",
+    "render": "Master; 2.1.1 start; 48.0.0 length; 72 s output; 48 kHz; stereo 24-bit WAV; normalize off; triangular dither"
+  },
+  "files": {
+    "bypass": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\7a146380912e--composite--bypass.wav",
+      "sha256": "38a74287a951ad7a62a6abeb219aa91afdd0e4f2abde062b972361851e0de16f",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938332,
+      "rms_dbfs": -21.437912,
+      "left_right_correlation": 0.771435140941
+    },
+    "empty_transfer": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\394f47cfa81e--composite--empty-transfer.wav",
+      "sha256": "e0d395a9127c8504b1378f46ad68715b312d3002ce359f58e84cafe0e96b5a06",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938333,
+      "rms_dbfs": -21.437912,
+      "left_right_correlation": 0.771435140642
+    },
+    "corrected": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\394f47cfa81e--composite--pitch-center100-drift0.wav",
+      "sha256": "e21aca8a3cf0d5dc32b8d4e61c0c0ec1539ff340276db49d756772916d87dc59",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938332,
+      "rms_dbfs": -21.440628,
+      "left_right_correlation": 0.771293408711
+    }
+  },
+  "snapshot": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\host\\snapshots\\0072a637f389--FabFilter-Saturn-2 Project\\394f47cfa81e--Celemony-Melodyne.als",
+    "sha256": "5ce9e3091be2630f53ca65cd79a313b121bc2061341ca5269592e2f2ea7c8f53"
+  },
+  "empty_transfer_vs_bypass": {
+    "before_transfer": {
+      "start_seconds": 21.0,
+      "end_seconds": 37.0,
+      "reference_rms_dbfs": -25.674697,
+      "candidate_rms_dbfs": -25.674697,
+      "candidate_minus_reference_db": -0.0,
+      "residual_rms_dbfs": -141.480333,
+      "correlation": 0.999999999999
+    },
+    "transferred_fixed_vocal": {
+      "start_seconds": 37.15,
+      "end_seconds": 41.7,
+      "reference_rms_dbfs": -26.703241,
+      "candidate_rms_dbfs": -26.703241,
+      "candidate_minus_reference_db": -0.0,
+      "residual_rms_dbfs": -141.502571,
+      "correlation": 0.999999999998
+    },
+    "after_fixed_vocal": {
+      "start_seconds": 45.0,
+      "end_seconds": 57.0,
+      "reference_rms_dbfs": -20.793808,
+      "candidate_rms_dbfs": -20.793808,
+      "candidate_minus_reference_db": -0.0,
+      "residual_rms_dbfs": -141.483947,
+      "correlation": 1.0
+    },
+    "late_dynamics": {
+      "start_seconds": 60.0,
+      "end_seconds": 72.0,
+      "reference_rms_dbfs": -17.19745,
+      "candidate_rms_dbfs": -17.19745,
+      "candidate_minus_reference_db": -0.0,
+      "residual_rms_dbfs": -141.490715,
+      "correlation": 1.0
+    }
+  },
+  "corrected_vs_empty_transfer": {
+    "before_transfer": {
+      "start_seconds": 21.0,
+      "end_seconds": 37.0,
+      "reference_rms_dbfs": -25.674697,
+      "candidate_rms_dbfs": -25.674697,
+      "candidate_minus_reference_db": -0.0,
+      "residual_rms_dbfs": -141.484856,
+      "correlation": 0.999999999999
+    },
+    "transferred_fixed_vocal": {
+      "start_seconds": 37.15,
+      "end_seconds": 41.7,
+      "reference_rms_dbfs": -26.703241,
+      "candidate_rms_dbfs": -26.850136,
+      "candidate_minus_reference_db": -0.146895,
+      "residual_rms_dbfs": -23.253995,
+      "correlation": -0.125082040702
+    },
+    "after_fixed_vocal": {
+      "start_seconds": 45.0,
+      "end_seconds": 57.0,
+      "reference_rms_dbfs": -20.793808,
+      "candidate_rms_dbfs": -20.793808,
+      "candidate_minus_reference_db": 0.0,
+      "residual_rms_dbfs": -141.483367,
+      "correlation": 1.0
+    },
+    "late_dynamics": {
+      "start_seconds": 60.0,
+      "end_seconds": 72.0,
+      "reference_rms_dbfs": -17.19745,
+      "candidate_rms_dbfs": -17.19745,
+      "candidate_minus_reference_db": 0.0,
+      "residual_rms_dbfs": -141.494251,
+      "correlation": 1.0
+    }
+  },
+  "corrected_residual_localization": {
+    "window_seconds": 0.05,
+    "count_above_minus_80_dbfs": 72,
+    "first_window_seconds": 37.15,
+    "last_window_seconds": 41.65,
+    "maximum_residual_dbfs": -19.439989
+  },
+  "pitch_analysis": {
+    "start_seconds": 37.2,
+    "end_seconds": 41.65,
+    "common_voiced_frames": 85,
+    "median_absolute_nearest_semitone_deviation_cents": {
+      "reference": 5.929326,
+      "candidate": 6.141237
+    },
+    "within_5_cents_fraction": {
+      "reference": 0.4,
+      "candidate": 0.388235
+    },
+    "within_10_cents_fraction": {
+      "reference": 0.917647,
+      "candidate": 0.776471
+    },
+    "candidate_closer_to_nearest_semitone_fraction": 0.435294,
+    "frame_motion_median_cents": {
+      "reference": 8.450101,
+      "candidate": 8.105199
+    },
+    "signed_pitch_shift_cents": {
+      "median": 0.731804,
+      "p10": -3.614897,
+      "p90": 3.767214
+    },
+    "method": "120 ms autocorrelation frames at 12 kHz decimated rate; 40 ms hop; common voiced frames only"
+  },
+  "interpretation_boundary": "This validates one installed Melodyne Studio 5.4.1 VST3 instance, a real-time Transfer of approximately bars 27.1.1-31.3.4, and one macro state on all transferred notes. Pitch Center 100% was isolated while Pitch Drift remained 0% and Snap to chord scale was off. Nearest-semitone statistics describe center correction, not musical correctness in D minor; the automatically detected key was not used as a snap target. Only the measured 37.2-41.65 second corrected fixed-vocal tail is used for pitch statistics. The test does not validate ARA, timing/formant/amplitude tools, note separation, chord-scale snapping, manual per-note editing, other algorithms, other editions/formats/sample rates, Studio One integration, or subjective naturalness."
+}

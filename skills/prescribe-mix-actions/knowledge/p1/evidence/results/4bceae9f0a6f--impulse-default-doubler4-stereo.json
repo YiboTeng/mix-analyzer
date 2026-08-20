@@ -1,0 +1,182 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T01:55:02+08:00",
+  "family_id": "4bceae9f0a6f",
+  "test_id": "impulse-default-doubler4-stereo",
+  "reference": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\fixtures\\impulse_train_48k.wav",
+    "sha256": "aafbd0a42ee57fde77b79aae591d54f87383b391e76803af9405757f92e3cf2e",
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "sample_width_bytes": 2,
+    "frames": 384000,
+    "duration_seconds": 8.0,
+    "peak_dbfs": -1.938333,
+    "rms_dbfs": -56.054751
+  },
+  "candidate": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\4bceae9f0a6f--impulse--default-doubler4-stereo.wav",
+    "sha256": "d4a45e3d46ea40eb943e85cbdc08e137b16907f19fe434218b5e8b3cb6633356",
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "sample_width_bytes": 3,
+    "frames": 288000,
+    "duration_seconds": 6.0,
+    "peak_dbfs": -1.938333,
+    "rms_dbfs": -53.405739
+  },
+  "comparison_window": {
+    "frames": 288000,
+    "duration_seconds": 6.0,
+    "reference_was_cropped": true,
+    "candidate_was_cropped": false
+  },
+  "host_observation": {
+    "reported_plugin_latency_samples": 0,
+    "component": "Doubler4 Stereo VST3",
+    "range_hz": 80,
+    "align_direct": false,
+    "voice_delay_ms": [
+      9.4,
+      16.0,
+      23.7,
+      21.0
+    ],
+    "voice_detune_cents": [
+      6,
+      10,
+      -6,
+      -10
+    ],
+    "voice_pan": [
+      -45,
+      45,
+      45,
+      -45
+    ],
+    "voice_gain_db": [
+      -6,
+      -12,
+      -6,
+      -12
+    ],
+    "mod_depth": 0,
+    "feedback": 0
+  },
+  "summary": {
+    "side_to_mid_db_mean": -7.747021,
+    "mono_fold_delta_db_mean": -0.675734,
+    "left_right_correlation_mean": 0.712931697019
+  },
+  "impulses": [
+    {
+      "impulse": 1,
+      "time_seconds": 0.5,
+      "input_peak_dbfs": -1.938333,
+      "direct_peak_left_dbfs": -1.938333,
+      "direct_peak_right_dbfs": -1.938334,
+      "direct_peak_gain_left_db": 0.0,
+      "direct_peak_gain_right_db": -1e-06,
+      "arrival_clusters": {
+        "left": [
+          {
+            "offset_samples": 592,
+            "offset_ms": 12.333333,
+            "envelope_rms_dbfs": -17.980796,
+            "sample_peak_dbfs": -5.926151
+          }
+        ],
+        "right": [
+          {
+            "offset_samples": 1388,
+            "offset_ms": 28.916667,
+            "envelope_rms_dbfs": -19.388418,
+            "sample_peak_dbfs": -8.415914
+          }
+        ]
+      },
+      "active_0_65_ms": {
+        "left_rms_dbfs": -35.348237,
+        "right_rms_dbfs": -35.721103,
+        "left_right_correlation": 0.733492550862,
+        "mid_rms_dbfs": -36.15309,
+        "side_rms_dbfs": -44.275173,
+        "side_to_mid_db": -8.122083,
+        "mono_fold_delta_db": -0.62242
+      }
+    },
+    {
+      "impulse": 2,
+      "time_seconds": 2.5,
+      "input_peak_dbfs": -6.0206,
+      "direct_peak_left_dbfs": -6.0206,
+      "direct_peak_right_dbfs": -6.020602,
+      "direct_peak_gain_left_db": 0.0,
+      "direct_peak_gain_right_db": -2e-06,
+      "arrival_clusters": {
+        "left": [
+          {
+            "offset_samples": 260,
+            "offset_ms": 5.416667,
+            "envelope_rms_dbfs": -23.16594,
+            "sample_peak_dbfs": -11.706569
+          }
+        ],
+        "right": [
+          {
+            "offset_samples": 1190,
+            "offset_ms": 24.791667,
+            "envelope_rms_dbfs": -21.511637,
+            "sample_peak_dbfs": -9.265939
+          }
+        ]
+      },
+      "active_0_65_ms": {
+        "left_rms_dbfs": -39.730061,
+        "right_rms_dbfs": -39.259191,
+        "left_right_correlation": 0.713112795094,
+        "mid_rms_dbfs": -40.162969,
+        "side_rms_dbfs": -47.90784,
+        "side_to_mid_db": -7.744871,
+        "mono_fold_delta_db": -0.674721
+      }
+    },
+    {
+      "impulse": 3,
+      "time_seconds": 4.5,
+      "input_peak_dbfs": -12.0412,
+      "direct_peak_left_dbfs": -12.0412,
+      "direct_peak_right_dbfs": -12.0412,
+      "direct_peak_gain_left_db": 0.0,
+      "direct_peak_gain_right_db": 0.0,
+      "arrival_clusters": {
+        "left": [
+          {
+            "offset_samples": 660,
+            "offset_ms": 13.75,
+            "envelope_rms_dbfs": -26.920308,
+            "sample_peak_dbfs": -14.676628
+          }
+        ],
+        "right": [
+          {
+            "offset_samples": 1043,
+            "offset_ms": 21.729167,
+            "envelope_rms_dbfs": -28.985846,
+            "sample_peak_dbfs": -17.404876
+          }
+        ]
+      },
+      "active_0_65_ms": {
+        "left_rms_dbfs": -45.071696,
+        "right_rms_dbfs": -45.700219,
+        "left_right_correlation": 0.692189745101,
+        "mid_rms_dbfs": -46.104658,
+        "side_rms_dbfs": -53.478768,
+        "side_to_mid_db": -7.37411,
+        "mono_fold_delta_db": -0.730061
+      }
+    }
+  ],
+  "interpretation_boundary": "The test uses the real default Doubler4 Stereo VST3 state found in the local host. Arrival clusters are peaks of a 0.35 ms moving-RMS envelope, separated by at least 2 ms; they describe energy concentrations rather than four perfectly isolated voice delays. The 80 Hz Range algorithm has an approximately 7 ms voice-path delay according to the official manual, while each voice also has its displayed delay. Host PDC, algorithmic effect timing, and displayed voice delay are therefore reported separately. Mono-fold delta is measured over each 0-65 ms impulse response relative to per-channel stereo RMS; it does not predict all musical material or modulation states."
+}

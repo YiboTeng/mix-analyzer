@@ -1,0 +1,927 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T08:44:49+08:00",
+  "family_id": "a8c2063eb007",
+  "test_id": "composite-multiband-single-band-lookahead",
+  "fixed_state": {
+    "host": "Ableton Live 11.3.43",
+    "format": "VST3 Stereo",
+    "plugin_version_filesystem": "1.2.8.0",
+    "default": "Default Setting; no bands; Dynamic Phase; Oversampling Off; global Lookahead On; Analyzer Pre+Post; Mix 100%; Output 0 dB",
+    "single_band": "Compress band centered 1720.8 Hz; Threshold -32.10 dB; Range -6.00 dB; Ratio 4.00:1; Knee 24.00 dB; Attack 20.0%; Release 20.0%; Output 0.00 dB; band Lookahead 1.000 ms; Dynamic Phase; Oversampling Off",
+    "host_reported_latency_samples": {
+      "default_global_lookahead_on": 960,
+      "single_band_global_lookahead_on": 960,
+      "single_band_global_lookahead_off": 0
+    },
+    "render": "Master; 2.1.1 start; 48.0.0 length; 72 s output; 48 kHz; stereo 24-bit WAV; normalize off; triangular dither",
+    "fixture": "deterministic composite with ten-tone steady segment at 8-20 s and level-stepped dynamics at 66-72 s"
+  },
+  "regions": {
+    "early_source_events": {
+      "start_seconds": 0.0,
+      "end_seconds": 6.0
+    },
+    "steady_multitone": {
+      "start_seconds": 8.0,
+      "end_seconds": 20.0
+    },
+    "late_dynamics": {
+      "start_seconds": 66.0,
+      "end_seconds": 72.0
+    }
+  },
+  "files": {
+    "bypass": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\7a146380912e--composite--bypass.wav",
+      "sha256": "38a74287a951ad7a62a6abeb219aa91afdd0e4f2abde062b972361851e0de16f",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938332,
+      "rms_dbfs": -21.437912,
+      "left_right_correlation": 0.771435140941
+    },
+    "default": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\a8c2063eb007--composite--default-no-bands.wav",
+      "sha256": "b4117392811b1aaec185e0e59edc807dfe0e2717ca25f82084685f66ccdb9e7a",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938332,
+      "rms_dbfs": -21.437912,
+      "left_right_correlation": 0.771435140755
+    },
+    "lookahead_on": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\a8c2063eb007--composite--band-compress-lookahead-on.wav",
+      "sha256": "0359eb74f5898f833e8f03ef2709e3f0b9f79567a0c3324f6f4eb0b75688dc8d",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -2.195756,
+      "rms_dbfs": -21.537897,
+      "left_right_correlation": 0.766253600586
+    },
+    "lookahead_off": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\a8c2063eb007--composite--band-compress-lookahead-off.wav",
+      "sha256": "218d701e831909a78c50008b9a75bf4c10c2cec2af0ceeb68b65692a4df71502",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938333,
+      "rms_dbfs": -21.532875,
+      "left_right_correlation": 0.766466376758
+    }
+  },
+  "snapshot": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\host\\snapshots\\0072a637f389--FabFilter-Saturn-2 Project\\a8c2063eb007--FabFilter-Pro-MB.als",
+    "sha256": "9da2aa84339d4b789c20613620cfe187ef4376b1778f0ce1d67d2d6d4bd84fef"
+  },
+  "comparisons": {
+    "default_no_bands_vs_shared_bypass": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -54.805363,
+          "candidate_rms_dbfs": -54.805364,
+          "level_delta_db": -1e-06,
+          "peak_delta_db": 0.0,
+          "correlation": 0.999999998924,
+          "residual_rms_dbfs": -141.476851
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.495209,
+          "candidate_rms_dbfs": -19.495209,
+          "level_delta_db": 0.0,
+          "peak_delta_db": 0.0,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.488028
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.504447,
+          "candidate_rms_dbfs": -14.504447,
+          "level_delta_db": 0.0,
+          "peak_delta_db": 0.0,
+          "correlation": 1.0,
+          "residual_rms_dbfs": -141.483977
+        }
+      },
+      "steady_multitone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": 0.000313,
+          "phase_degrees": 0.003577
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": -0.000267,
+          "phase_degrees": -0.000223
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": 6.1e-05,
+          "phase_degrees": -0.000308
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": 0.0,
+          "phase_degrees": -0.0
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": 6e-06,
+          "phase_degrees": -5.8e-05
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": 6e-05,
+          "phase_degrees": -0.000919
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": 0.000381,
+          "phase_degrees": 0.001805
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": -0.000801,
+          "phase_degrees": -0.001845
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": 0.003622,
+          "phase_degrees": -0.005023
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": -0.000342,
+          "phase_degrees": -0.0235
+        }
+      ],
+      "early_source_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 3,
+        "changed_at_least_0_05_db_count": 0,
+        "changed_fraction": 0.0,
+        "median_level_delta_db": -1e-06,
+        "p10_level_delta_db": -1e-06,
+        "p90_level_delta_db": -0.0,
+        "minimum_level_delta_db": -1e-06,
+        "maximum_level_delta_db": 0.0,
+        "strongest_absolute_windows": [
+          {
+            "start_seconds": 0.5,
+            "reference_rms_dbfs": -35.740444,
+            "level_delta_db": -1e-06
+          },
+          {
+            "start_seconds": 2.5,
+            "reference_rms_dbfs": -39.822712,
+            "level_delta_db": -1e-06
+          },
+          {
+            "start_seconds": 4.5,
+            "reference_rms_dbfs": -45.843312,
+            "level_delta_db": 0.0
+          }
+        ]
+      },
+      "late_dynamics_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 68,
+        "changed_at_least_0_05_db_count": 0,
+        "changed_fraction": 0.0,
+        "median_level_delta_db": 0.0,
+        "p10_level_delta_db": 0.0,
+        "p90_level_delta_db": 0.0,
+        "minimum_level_delta_db": -1.2e-05,
+        "maximum_level_delta_db": 1e-05,
+        "strongest_absolute_windows": [
+          {
+            "start_seconds": 70.85,
+            "reference_rms_dbfs": -56.421562,
+            "level_delta_db": -1.2e-05
+          },
+          {
+            "start_seconds": 70.0,
+            "reference_rms_dbfs": -62.328172,
+            "level_delta_db": 1e-05
+          },
+          {
+            "start_seconds": 67.4,
+            "reference_rms_dbfs": -45.4835,
+            "level_delta_db": -3e-06
+          },
+          {
+            "start_seconds": 71.7,
+            "reference_rms_dbfs": -50.600758,
+            "level_delta_db": 2e-06
+          },
+          {
+            "start_seconds": 66.0,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": 0.0
+          },
+          {
+            "start_seconds": 66.05,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.1,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": 0.0
+          },
+          {
+            "start_seconds": 66.15,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.2,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": 0.0
+          },
+          {
+            "start_seconds": 66.25,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": 0.0
+          },
+          {
+            "start_seconds": 66.3,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": 0.0
+          },
+          {
+            "start_seconds": 66.35,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": 0.0
+          },
+          {
+            "start_seconds": 66.4,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.45,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": 0.0
+          },
+          {
+            "start_seconds": 66.5,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.55,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          }
+        ]
+      }
+    },
+    "single_band_lookahead_on_vs_default": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -54.805364,
+          "candidate_rms_dbfs": -54.999318,
+          "level_delta_db": -0.193954,
+          "peak_delta_db": -0.257425,
+          "correlation": 0.997384282164,
+          "residual_rms_dbfs": -77.320772
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.495209,
+          "candidate_rms_dbfs": -19.496885,
+          "level_delta_db": -0.001676,
+          "peak_delta_db": 1.3e-05,
+          "correlation": 0.999968479144,
+          "residual_rms_dbfs": -61.497203
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.504447,
+          "candidate_rms_dbfs": -14.507719,
+          "level_delta_db": -0.003272,
+          "peak_delta_db": -0.43196,
+          "correlation": 0.999932286294,
+          "residual_rms_dbfs": -53.185541
+        }
+      },
+      "steady_multitone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": 0.467156,
+          "phase_degrees": -11.301226
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": 0.180806,
+          "phase_degrees": -10.491349
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": 0.787875,
+          "phase_degrees": -0.347
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": 0.035729,
+          "phase_degrees": -0.167803
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": -1.3677,
+          "phase_degrees": -4.310902
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": -0.450128,
+          "phase_degrees": -2.108175
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": -0.34083,
+          "phase_degrees": 1.028279
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": -0.053902,
+          "phase_degrees": 0.939285
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": -0.009465,
+          "phase_degrees": 0.43632
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": -0.000201,
+          "phase_degrees": 0.257543
+        }
+      ],
+      "early_source_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 3,
+        "changed_at_least_0_05_db_count": 2,
+        "changed_fraction": 0.666667,
+        "median_level_delta_db": -0.148266,
+        "p10_level_delta_db": -0.212266,
+        "p90_level_delta_db": -0.054308,
+        "minimum_level_delta_db": -0.228266,
+        "maximum_level_delta_db": -0.030818,
+        "strongest_absolute_windows": [
+          {
+            "start_seconds": 0.5,
+            "reference_rms_dbfs": -35.740445,
+            "level_delta_db": -0.228266
+          },
+          {
+            "start_seconds": 2.5,
+            "reference_rms_dbfs": -39.822713,
+            "level_delta_db": -0.148266
+          },
+          {
+            "start_seconds": 4.5,
+            "reference_rms_dbfs": -45.843312,
+            "level_delta_db": -0.030818
+          }
+        ]
+      },
+      "late_dynamics_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 68,
+        "changed_at_least_0_05_db_count": 8,
+        "changed_fraction": 0.117647,
+        "median_level_delta_db": 0.0,
+        "p10_level_delta_db": -0.0,
+        "p90_level_delta_db": 0.0,
+        "minimum_level_delta_db": -0.108295,
+        "maximum_level_delta_db": 0.074826,
+        "strongest_absolute_windows": [
+          {
+            "start_seconds": 71.65,
+            "reference_rms_dbfs": -15.847305,
+            "level_delta_db": -0.108295
+          },
+          {
+            "start_seconds": 69.95,
+            "reference_rms_dbfs": -15.84595,
+            "level_delta_db": -0.108253
+          },
+          {
+            "start_seconds": 70.8,
+            "reference_rms_dbfs": -15.846232,
+            "level_delta_db": -0.108248
+          },
+          {
+            "start_seconds": 70.4,
+            "reference_rms_dbfs": -15.845852,
+            "level_delta_db": -0.108232
+          },
+          {
+            "start_seconds": 71.25,
+            "reference_rms_dbfs": -15.845852,
+            "level_delta_db": -0.108232
+          },
+          {
+            "start_seconds": 71.7,
+            "reference_rms_dbfs": -50.600755,
+            "level_delta_db": 0.074826
+          },
+          {
+            "start_seconds": 70.85,
+            "reference_rms_dbfs": -56.421574,
+            "level_delta_db": 0.069494
+          },
+          {
+            "start_seconds": 70.0,
+            "reference_rms_dbfs": -62.328162,
+            "level_delta_db": 0.064802
+          },
+          {
+            "start_seconds": 67.4,
+            "reference_rms_dbfs": -45.483502,
+            "level_delta_db": 1e-06
+          },
+          {
+            "start_seconds": 66.0,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.05,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.1,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.15,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.2,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.25,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.3,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          }
+        ]
+      }
+    },
+    "single_band_lookahead_off_vs_default": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -54.805364,
+          "candidate_rms_dbfs": -54.805365,
+          "level_delta_db": -1e-06,
+          "peak_delta_db": -1e-06,
+          "correlation": 0.999999998599,
+          "residual_rms_dbfs": -140.33116
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.495209,
+          "candidate_rms_dbfs": -19.496129,
+          "level_delta_db": -0.000919,
+          "peak_delta_db": 3.3e-05,
+          "correlation": 0.999990020891,
+          "residual_rms_dbfs": -66.492013
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.504447,
+          "candidate_rms_dbfs": -14.508902,
+          "level_delta_db": -0.004455,
+          "peak_delta_db": -6e-06,
+          "correlation": 0.999955933502,
+          "residual_rms_dbfs": -55.043011
+        }
+      },
+      "steady_multitone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": 0.542296,
+          "phase_degrees": 8.155041
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": 0.868499,
+          "phase_degrees": 3.743168
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": 0.135548,
+          "phase_degrees": 2.294052
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": 0.018869,
+          "phase_degrees": -0.086432
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": 0.044913,
+          "phase_degrees": 5.528111
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": 0.20418,
+          "phase_degrees": -2.544928
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": -0.008039,
+          "phase_degrees": -0.467402
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": 0.00515,
+          "phase_degrees": -0.008402
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": -0.00217,
+          "phase_degrees": -0.0023
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": 0.000283,
+          "phase_degrees": 0.016227
+        }
+      ],
+      "early_source_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 3,
+        "changed_at_least_0_05_db_count": 0,
+        "changed_fraction": 0.0,
+        "median_level_delta_db": -1e-06,
+        "p10_level_delta_db": -5e-06,
+        "p90_level_delta_db": -1e-06,
+        "minimum_level_delta_db": -6e-06,
+        "maximum_level_delta_db": -1e-06,
+        "strongest_absolute_windows": [
+          {
+            "start_seconds": 4.5,
+            "reference_rms_dbfs": -45.843312,
+            "level_delta_db": -6e-06
+          },
+          {
+            "start_seconds": 0.5,
+            "reference_rms_dbfs": -35.740445,
+            "level_delta_db": -1e-06
+          },
+          {
+            "start_seconds": 2.5,
+            "reference_rms_dbfs": -39.822713,
+            "level_delta_db": -1e-06
+          }
+        ]
+      },
+      "late_dynamics_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 68,
+        "changed_at_least_0_05_db_count": 6,
+        "changed_fraction": 0.088235,
+        "median_level_delta_db": 0.0,
+        "p10_level_delta_db": -0.0,
+        "p90_level_delta_db": 0.0,
+        "minimum_level_delta_db": -0.148087,
+        "maximum_level_delta_db": 0.050501,
+        "strongest_absolute_windows": [
+          {
+            "start_seconds": 71.65,
+            "reference_rms_dbfs": -15.847305,
+            "level_delta_db": -0.148087
+          },
+          {
+            "start_seconds": 69.95,
+            "reference_rms_dbfs": -15.84595,
+            "level_delta_db": -0.148057
+          },
+          {
+            "start_seconds": 70.8,
+            "reference_rms_dbfs": -15.846232,
+            "level_delta_db": -0.148036
+          },
+          {
+            "start_seconds": 70.4,
+            "reference_rms_dbfs": -15.845852,
+            "level_delta_db": -0.14802
+          },
+          {
+            "start_seconds": 71.25,
+            "reference_rms_dbfs": -15.845852,
+            "level_delta_db": -0.148019
+          },
+          {
+            "start_seconds": 71.7,
+            "reference_rms_dbfs": -50.600755,
+            "level_delta_db": 0.050501
+          },
+          {
+            "start_seconds": 70.85,
+            "reference_rms_dbfs": -56.421574,
+            "level_delta_db": 0.046752
+          },
+          {
+            "start_seconds": 70.0,
+            "reference_rms_dbfs": -62.328162,
+            "level_delta_db": 0.043436
+          },
+          {
+            "start_seconds": 67.85,
+            "reference_rms_dbfs": -25.831623,
+            "level_delta_db": -1e-06
+          },
+          {
+            "start_seconds": 66.0,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.05,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.1,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.15,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.2,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.25,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.3,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          }
+        ]
+      }
+    },
+    "single_band_lookahead_off_vs_on": {
+      "regions": {
+        "early_source_events": {
+          "start_seconds": 0.0,
+          "end_seconds": 6.0,
+          "reference_rms_dbfs": -54.999318,
+          "candidate_rms_dbfs": -54.805365,
+          "level_delta_db": 0.193953,
+          "peak_delta_db": 0.257423,
+          "correlation": 0.997383473694,
+          "residual_rms_dbfs": -77.319551
+        },
+        "steady_multitone": {
+          "start_seconds": 8.0,
+          "end_seconds": 20.0,
+          "reference_rms_dbfs": -19.496885,
+          "candidate_rms_dbfs": -19.496129,
+          "level_delta_db": 0.000757,
+          "peak_delta_db": 2e-05,
+          "correlation": 0.999993121654,
+          "residual_rms_dbfs": -68.108967
+        },
+        "late_dynamics": {
+          "start_seconds": 66.0,
+          "end_seconds": 72.0,
+          "reference_rms_dbfs": -14.507719,
+          "candidate_rms_dbfs": -14.508902,
+          "level_delta_db": -0.001183,
+          "peak_delta_db": 0.431954,
+          "correlation": 0.999926970433,
+          "residual_rms_dbfs": -52.863409
+        }
+      },
+      "steady_multitone_transfer": [
+        {
+          "frequency_hz": 55,
+          "gain_db": 0.07514,
+          "phase_degrees": 19.456267
+        },
+        {
+          "frequency_hz": 110,
+          "gain_db": 0.687694,
+          "phase_degrees": 14.234517
+        },
+        {
+          "frequency_hz": 220,
+          "gain_db": -0.652327,
+          "phase_degrees": 2.641052
+        },
+        {
+          "frequency_hz": 440,
+          "gain_db": -0.01686,
+          "phase_degrees": 0.081371
+        },
+        {
+          "frequency_hz": 880,
+          "gain_db": 1.412613,
+          "phase_degrees": 9.839013
+        },
+        {
+          "frequency_hz": 1760,
+          "gain_db": 0.654308,
+          "phase_degrees": -0.436753
+        },
+        {
+          "frequency_hz": 3520,
+          "gain_db": 0.332791,
+          "phase_degrees": -1.495681
+        },
+        {
+          "frequency_hz": 7040,
+          "gain_db": 0.059052,
+          "phase_degrees": -0.947687
+        },
+        {
+          "frequency_hz": 12000,
+          "gain_db": 0.007295,
+          "phase_degrees": -0.43862
+        },
+        {
+          "frequency_hz": 16000,
+          "gain_db": 0.000484,
+          "phase_degrees": -0.241316
+        }
+      ],
+      "early_source_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 3,
+        "changed_at_least_0_05_db_count": 2,
+        "changed_fraction": 0.666667,
+        "median_level_delta_db": 0.148265,
+        "p10_level_delta_db": 0.054303,
+        "p90_level_delta_db": 0.212265,
+        "minimum_level_delta_db": 0.030812,
+        "maximum_level_delta_db": 0.228265,
+        "strongest_absolute_windows": [
+          {
+            "start_seconds": 0.5,
+            "reference_rms_dbfs": -35.96871,
+            "level_delta_db": 0.228265
+          },
+          {
+            "start_seconds": 2.5,
+            "reference_rms_dbfs": -39.970979,
+            "level_delta_db": 0.148265
+          },
+          {
+            "start_seconds": 4.5,
+            "reference_rms_dbfs": -45.87413,
+            "level_delta_db": 0.030812
+          }
+        ]
+      },
+      "late_dynamics_window_scan": {
+        "window_seconds": 0.05,
+        "active_threshold_dbfs": -70.0,
+        "active_window_count": 68,
+        "changed_at_least_0_05_db_count": 0,
+        "changed_fraction": 0.0,
+        "median_level_delta_db": 0.0,
+        "p10_level_delta_db": -0.021779,
+        "p90_level_delta_db": 0.0,
+        "minimum_level_delta_db": -0.039804,
+        "maximum_level_delta_db": 0.0,
+        "strongest_absolute_windows": [
+          {
+            "start_seconds": 69.95,
+            "reference_rms_dbfs": -15.954203,
+            "level_delta_db": -0.039804
+          },
+          {
+            "start_seconds": 71.65,
+            "reference_rms_dbfs": -15.9556,
+            "level_delta_db": -0.039793
+          },
+          {
+            "start_seconds": 70.4,
+            "reference_rms_dbfs": -15.954084,
+            "level_delta_db": -0.039788
+          },
+          {
+            "start_seconds": 70.8,
+            "reference_rms_dbfs": -15.95448,
+            "level_delta_db": -0.039788
+          },
+          {
+            "start_seconds": 71.25,
+            "reference_rms_dbfs": -15.954084,
+            "level_delta_db": -0.039786
+          },
+          {
+            "start_seconds": 71.7,
+            "reference_rms_dbfs": -50.525929,
+            "level_delta_db": -0.024325
+          },
+          {
+            "start_seconds": 70.85,
+            "reference_rms_dbfs": -56.35208,
+            "level_delta_db": -0.022742
+          },
+          {
+            "start_seconds": 70.0,
+            "reference_rms_dbfs": -62.26336,
+            "level_delta_db": -0.021366
+          },
+          {
+            "start_seconds": 67.4,
+            "reference_rms_dbfs": -45.483502,
+            "level_delta_db": -1e-06
+          },
+          {
+            "start_seconds": 66.0,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": 0.0
+          },
+          {
+            "start_seconds": 66.05,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": 0.0
+          },
+          {
+            "start_seconds": 66.1,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": -0.0
+          },
+          {
+            "start_seconds": 66.15,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": 0.0
+          },
+          {
+            "start_seconds": 66.2,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": 0.0
+          },
+          {
+            "start_seconds": 66.25,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": 0.0
+          },
+          {
+            "start_seconds": 66.3,
+            "reference_rms_dbfs": -15.010555,
+            "level_delta_db": 0.0
+          }
+        ]
+      }
+    }
+  },
+  "interpretation_boundary": "Measurements compare independent, host-PDC-compensated Ableton exports of one installed FabFilter Pro-MB VST3 instance over a deterministic 72-second composite arrangement. They establish the no-band default audio boundary, one downward compression band, the installed build's global Lookahead latency behavior, and content-local differences between global Lookahead On and Off at 48 kHz. The shared bypass was rendered from the same arrangement and chain before Pro-MB loading; triangular dither prevents a bit-perfect null and therefore small residual noise is expected. The experiment does not establish exact crossover transfer, separate sine-sweep behavior, external-sidechain routing, Expand/upward modes, Minimum/Linear Phase, oversampling, stereo-link or M/S behavior, automation, CPU cost, other formats/sample rates, or musical preference on real vocals."
+}

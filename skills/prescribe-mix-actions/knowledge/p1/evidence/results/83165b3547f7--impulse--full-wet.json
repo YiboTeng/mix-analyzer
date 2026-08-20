@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T01:10:34+08:00",
+  "family_id": "83165b3547f7",
+  "test_id": "impulse-full-wet",
+  "host_bpm": 160.0,
+  "timing_mode": "manual-ms",
+  "sync_division": null,
+  "expected_repeat_ms": 350.0,
+  "render": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\83165b3547f7--impulse--full-wet.wav",
+    "sha256": "d04f00ea4d52711870cc761f563f1aa78f6343c97ab965c56a83b3322c079a6c",
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "sample_width_bytes": 3,
+    "frames": 288000,
+    "duration_seconds": 6.0
+  },
+  "levels": {
+    "peak_dbfs": -4.954,
+    "rms_dbfs": -56.8989
+  },
+  "stereo": {
+    "correlation": 0.809128,
+    "side_to_mid_db": -9.7673
+  },
+  "impulses": [
+    {
+      "expected_impulse_seconds": 0.5,
+      "first_hit_ms_by_channel": [
+        350.229,
+        353.729
+      ],
+      "repeat_hits": [
+        {
+          "offset_ms": 353.229,
+          "peak_dbfs": -18.4448
+        },
+        {
+          "offset_ms": 706.021,
+          "peak_dbfs": -30.9966
+        },
+        {
+          "offset_ms": 1057.979,
+          "peak_dbfs": -42.6345
+        },
+        {
+          "offset_ms": 1410.583,
+          "peak_dbfs": -51.3951
+        },
+        {
+          "offset_ms": 1763.604,
+          "peak_dbfs": -60.6956
+        }
+      ],
+      "inter_repeat_intervals_ms": [
+        352.792,
+        351.958,
+        352.604,
+        353.021
+      ],
+      "detection_boundary": "2 ms smoothed peak envelope; -45 dB relative threshold; 30 ms grouping; first 8 hits"
+    },
+    {
+      "expected_impulse_seconds": 2.5,
+      "first_hit_ms_by_channel": [
+        95.979,
+        116.958
+      ],
+      "repeat_hits": [
+        {
+          "offset_ms": 95.979,
+          "peak_dbfs": -70.4183
+        },
+        {
+          "offset_ms": 353.875,
+          "peak_dbfs": -21.4626
+        },
+        {
+          "offset_ms": 708.208,
+          "peak_dbfs": -33.9824
+        },
+        {
+          "offset_ms": 1062.792,
+          "peak_dbfs": -45.5031
+        },
+        {
+          "offset_ms": 1418.271,
+          "peak_dbfs": -54.2519
+        },
+        {
+          "offset_ms": 1774.25,
+          "peak_dbfs": -63.5411
+        }
+      ],
+      "inter_repeat_intervals_ms": [
+        257.896,
+        354.333,
+        354.584,
+        355.479,
+        355.979
+      ],
+      "detection_boundary": "2 ms smoothed peak envelope; -45 dB relative threshold; 30 ms grouping; first 8 hits"
+    },
+    {
+      "expected_impulse_seconds": 4.5,
+      "first_hit_ms_by_channel": [
+        108.896,
+        130.104
+      ],
+      "repeat_hits": [
+        {
+          "offset_ms": 130.104,
+          "peak_dbfs": -73.1633
+        },
+        {
+          "offset_ms": 356.104,
+          "peak_dbfs": -26.5268
+        },
+        {
+          "offset_ms": 705.125,
+          "peak_dbfs": -39.1762
+        },
+        {
+          "offset_ms": 1056.917,
+          "peak_dbfs": -50.6859
+        },
+        {
+          "offset_ms": 1408.729,
+          "peak_dbfs": -59.3832
+        }
+      ],
+      "inter_repeat_intervals_ms": [
+        226.0,
+        349.021,
+        351.792,
+        351.812
+      ],
+      "detection_boundary": "2 ms smoothed peak envelope; -45 dB relative threshold; 30 ms grouping; first 8 hits"
+    }
+  ],
+  "interpretation_boundary": "This measures the observed delay render only. Ableton exported a 6 s, 48 kHz/24-bit WAV with Triangular dither; effect delay is not plugin PDC."
+}

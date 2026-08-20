@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T02:48:42+08:00",
+  "family_id": "06fad1aad9d8",
+  "test_id": "fixed-vocal-pitch-minus12-formant0",
+  "reference": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\fixtures\\fixed_vocal_reference.wav",
+    "sha256": "0027fe37914eb6558ee55dfd2f6af4af8d012372437daf9eddd601197a104701",
+    "sample_rate_hz": 24000,
+    "channels": 2,
+    "sample_width_bytes": 3,
+    "frames": 768000,
+    "duration_seconds": 32.0,
+    "peak_dbfs": -16.48598,
+    "rms_dbfs": -27.461474
+  },
+  "candidate": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\06fad1aad9d8--fixed-vocal--pitch-minus12-formant0.wav",
+    "sha256": "c8fd7db1a212e8b3ab41c02f5a695cd987ed67bb6f7401fedac923ad94c942c8",
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "sample_width_bytes": 3,
+    "frames": 1152000,
+    "duration_seconds": 24.0,
+    "peak_dbfs": -17.861609,
+    "rms_dbfs": -29.662471
+  },
+  "pitch_tracking": {
+    "reference": {
+      "analyzed_frames": 652,
+      "weighted_median_hz": 173.771698,
+      "weighted_p10_hz": 146.622128,
+      "weighted_p90_hz": 219.074405,
+      "unweighted_median_hz": 173.764476,
+      "mean_confidence": 0.938469,
+      "analysis_rate_hz": 12000,
+      "frame_ms": 120.0,
+      "hop_ms": 40.0,
+      "search_range_hz": [
+        45.0,
+        600.0
+      ],
+      "gate_dbfs": -50.0
+    },
+    "candidate": {
+      "analyzed_frames": 492,
+      "weighted_median_hz": 86.945707,
+      "weighted_p10_hz": 73.293245,
+      "weighted_p90_hz": 109.950655,
+      "unweighted_median_hz": 87.134323,
+      "mean_confidence": 0.82422,
+      "analysis_rate_hz": 12000,
+      "frame_ms": 120.0,
+      "hop_ms": 40.0,
+      "search_range_hz": [
+        35.0,
+        600.0
+      ],
+      "gate_dbfs": -50.0
+    },
+    "median_frequency_ratio": 0.500344463,
+    "measured_shift_cents": -1198.808,
+    "measured_shift_semitones": -11.98808,
+    "expected_shift_cents": -1200.0,
+    "absolute_error_cents": 1.192
+  },
+  "interpretation_boundary": "This deterministic offline estimate compares weighted median autocorrelation F0 distributions rather than frame-aligning the two files. It is robust to different sample rates and unequal render durations, but octave errors, Ableton clip warping, unvoiced consonants, polyphony, and formant processing can bias the median. Treat the cents result as validation of the commanded octave-scale pitch change, not as a transparent-vocoder quality score or a substitute for listening tests."
+}

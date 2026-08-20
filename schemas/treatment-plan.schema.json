@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mix-analyzer.local/schemas/treatment-plan.schema.json",
+  "title": "Mix Analyzer Treatment Plan",
+  "type": "object",
+  "required": ["schema_version", "decision_engine_version", "analysis_mode", "summary", "actions", "global_verification"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "plugin_id": {"const": "mix-analyzer"},
+    "decision_engine_version": {"type": "string"},
+    "analysis_mode": {"enum": ["vocal-reference", "mix-reference", "manual"]},
+    "source_diagnosis_schema": {"type": ["string", "null"]},
+    "context": {"type": "object"},
+    "summary": {
+      "type": "object",
+      "required": ["finding_count", "action_count", "deferred_count", "unresolved_count", "automatic_thresholds_calibrated"],
+      "properties": {
+        "finding_count": {"type": "integer", "minimum": 0},
+        "action_count": {"type": "integer", "minimum": 0},
+        "deferred_count": {"type": "integer", "minimum": 0},
+        "unresolved_count": {"type": "integer", "minimum": 0},
+        "automatic_thresholds_calibrated": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["action_id", "card_id", "diagnosis_id", "diagnosis_ids", "action_status", "priority_score", "confidence", "chain_stage", "scope", "routing_type", "routing_contract", "why", "operation", "plugin_options", "verification", "verification_protocol", "provenance", "calibration_required"],
+        "properties": {
+          "action_id": {"type": "string"},
+          "card_id": {"type": "string"},
+          "diagnosis_id": {"type": "string"},
+          "diagnosis_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "title": {"type": "string"},
+          "action_status": {"enum": ["standard", "conditional-hypothesis"]},
+          "priority_score": {"type": "number"},
+          "confidence": {"type": "object"},
+          "chain_stage": {"type": "string"},
+          "scope": {"type": "string", "minLength": 1},
+          "routing_type": {"enum": ["monitoring-only", "send-return", "event-edit", "bus-insert", "track-insert-or-upstream-correction"]},
+          "routing_contract": {
+            "type": "object",
+            "required": ["routing_type", "source_scope", "target_bus", "wet_policy", "detector"],
+            "properties": {
+              "routing_type": {"type": "string"},
+              "source_scope": {"type": ["string", "null"]},
+              "target_bus": {"type": ["string", "null"]},
+              "wet_policy": {"type": "string"},
+              "detector": {"type": ["string", "null"]}
+            },
+            "additionalProperties": false
+          },
+          "why": {"type": "object"},
+          "disambiguation_tests": {"type": "array", "items": {"type": "string"}},
+          "operation": {
+            "type": "object",
+            "required": ["routing", "steps", "parameter_start_ranges"],
+            "properties": {
+              "routing": {"type": "string"},
+              "steps": {"type": "array", "items": {"type": "string"}},
+              "parameter_start_ranges": {"type": "array", "items": {"type": "string"}}
+            },
+            "additionalProperties": false
+          },
+          "plugin_options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["family_id", "product", "version_range", "runtime_warnings", "runtime_confirmation", "exact_controls_allowed"],
+              "properties": {
+                "adapter_id": {"type": ["string", "null"]},
+                "family_id": {"type": ["string", "null"]},
+                "vendor": {"type": ["string", "null"]},
+                "product": {"type": ["string", "null"]},
+                "version_range": {"type": ["string", "null"]},
+                "tested_host": {"type": ["string", "null"]},
+                "route_options": {"type": "array"},
+                "control_actions": {"type": "array"},
+                "parameter_targets": {"type": "array"},
+                "start_points": {"type": "array"},
+                "control_table": {"type": "array"},
+                "listen_for": {"type": "array"},
+                "stop_conditions": {"type": "array"},
+                "risks": {"type": "array"},
+                "alternatives": {"type": "array"},
+                "runtime_warnings": {"type": "array", "items": {"type": "string"}},
+                "runtime_constraints": {"type": "object"},
+                "runtime_confirmation": {
+                  "type": "object",
+                  "required": ["status", "installed_version", "host", "format", "sample_rate_hz", "inventory_provided"],
+                  "properties": {
+                    "status": {"enum": ["live-context-confirmed", "snapshot-explicit", "incomplete"]},
+                    "installed_version": {"type": ["string", "null"]},
+                    "host": {"type": ["string", "null"]},
+                    "format": {"type": ["string", "null"]},
+                    "sample_rate_hz": {"type": ["integer", "number", "null"]},
+                    "inventory_provided": {"type": "boolean"}
+                  },
+                  "additionalProperties": false
+                },
+                "estimated_latency_ms": {"type": ["number", "null"]},
+                "exact_controls_allowed": {"type": "boolean"},
+                "evidence": {"type": "object"}
+              },
+              "additionalProperties": false,
+              "allOf": [{
+                "if": {"properties": {"exact_controls_allowed": {"const": true}}},
+                "then": {"properties": {"runtime_confirmation": {"properties": {"status": {"enum": ["live-context-confirmed", "snapshot-explicit"]}}}}}
+              }]
+            }
+          },
+          "rejected_plugins": {"type": "array"},
+          "verification": {"type": "object"},
+          "verification_protocol": {
+            "type": "object",
+            "required": ["baseline", "measurement_window", "comparison", "acceptance", "rollback"],
+            "properties": {
+              "baseline": {"type": "string", "minLength": 1},
+              "measurement_window": {"type": "string", "minLength": 1},
+              "comparison": {"type": "string", "minLength": 1},
+              "acceptance": {"type": "string", "minLength": 1},
+              "rollback": {"type": "string", "minLength": 1}
+            },
+            "additionalProperties": false
+          },
+          "provenance": {
+            "type": "object",
+            "required": ["evidence_grade", "source_paths", "p0_action_suitability_grade", "p1_control_validation_level", "packaged_sources"],
+            "properties": {
+              "evidence_grade": {"type": "string"},
+              "source_paths": {"type": "array", "items": {"type": "string"}},
+              "official_urls": {"type": "array", "items": {"type": "string"}},
+              "p0_action_suitability_grade": {"type": "string", "minLength": 1},
+              "p1_control_validation_level": {"type": ["string", "null"]},
+              "packaged_sources": {"type": "array"}
+            },
+            "additionalProperties": false
+          },
+          "calibration_required": {"type": "boolean"},
+          "chain_warnings": {"type": "array", "items": {"type": "string"}}
+          ,"prerequisite_action_ids": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "deferred_actions": {"type": "array"},
+    "unresolved": {"type": "array"},
+    "global_verification": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

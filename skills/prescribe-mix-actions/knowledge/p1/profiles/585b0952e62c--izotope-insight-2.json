@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "585b0952e62c--izotope-insight-2",
+  "family_id": "585b0952e62c",
+  "identity": {
+    "vendor": "iZotope",
+    "product": "Insight 2",
+    "version_range": "2.0.6.0 | 2.6.0",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "metering",
+    "secondary": [
+      "loudness",
+      "spectrum",
+      "stereo"
+    ],
+    "diagnoses": [
+      "loudness_measurement",
+      "true_peak_check",
+      "spectrum_or_stereo_diagnosis"
+    ],
+    "not_for": [
+      "audio_processing",
+      "automatic_mix_fix"
+    ]
+  },
+  "routing": [
+    {
+      "position": "monitoring-only final slot",
+      "when": "loudness_measurement"
+    },
+    {
+      "position": "monitoring-only final slot",
+      "when": "true_peak_check"
+    },
+    {
+      "position": "monitoring-only final slot",
+      "when": "spectrum_or_stereo_diagnosis"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "choose metric for delivery or diagnosis",
+      "measure stable time window",
+      "do not alter signal"
+    ],
+    "controls": [
+      {
+        "name": "View/Module",
+        "action": "show only relevant loudness, spectrum or sound-field metric"
+      },
+      {
+        "name": "Reset/History",
+        "action": "define measurement window"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "wrong window",
+    "metric chasing",
+    "delivery standard mismatch"
+  ],
+  "stop_conditions": [
+    "reading is used without a defined target",
+    "meter changes audio path"
+  ],
+  "alternatives": [
+    {
+      "condition": "reference comparison",
+      "fallback": "ADPTR MetricAB"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 2.0.6.0 | 2.6.0.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/iZotope/Insight 2.md",
+    "source_note": "sources/音乐制作/插件资料/iZotope/Insight 2资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/585b0952e62c--Insight-2.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/585b0952e62c--neutral-default-meter.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/iZotope/Insight 2.md",
+        "packaged_path": "evidence/cards/Insight 2.md",
+        "sha256": "729ccc6ea791d5a0e2948083f160d0b5d20ecc9eca6cb72ac66aee2d7fab9f7a"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/iZotope/Insight 2资料.md",
+        "packaged_path": "evidence/sources/Insight 2资料.md",
+        "sha256": "404fb4f8857d0ddac6b8457e379705c4813cf7ec3295d2167b21d0c449dfb994"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/585b0952e62c--Insight-2.md",
+        "packaged_path": "evidence/validation/585b0952e62c--Insight-2.md",
+        "sha256": "1e5c1c4fb7402f9c8fb166f090f3c4ddece0672f195c96d81072cd7e99d8fd4f"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/585b0952e62c--neutral-default-meter.json",
+          "packaged_path": "evidence/results/585b0952e62c--neutral-default-meter.json",
+          "sha256": "0c2931115d68790e0296304154a269bb795dfddde344f2167590c9fbee33d3d0"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "loudness_measurement",
+      "true_peak_check",
+      "spectrum_or_stereo_diagnosis"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Default loudness/levels view, zero latency and representative readings measured."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "放在Vocal Bus/Main/Monitor末端只测不处理；Relay放在需要对照的干声、处理声、伴奏或参考轨。",
+      "固定窗口和Reset时点，避免不同段落历史混在一起。"
+    ],
+    "routing": [
+      "VocalBus/Main末端。",
+      "Relay在干声、处理声、伴奏、参考。"
+    ],
+    "controls": [
+      {
+        "name": "Momentary/Short-term/Integrated/LRA",
+        "meaning": "约400ms、3s、累计响度及范围。",
+        "action": "短人声用Momentary/Short-term；整段/整曲才Integrated/LRA。"
+      },
+      {
+        "name": "True Peak/Levels",
+        "meaning": "估算重建峰值与样本电平。",
+        "action": "限制/饱和后监控dBTP，不只Sample Peak。"
+      },
+      {
+        "name": "Sound Field",
+        "meaning": "声像、相关性和Mono兼容。",
+        "action": "宽化/混响/Delay后检查相关与中心。"
+      },
+      {
+        "name": "Spectrum/Spectrogram",
+        "meaning": "频率与时间/多Relay可视化。",
+        "action": "定位音素/尾部，不追静态曲线。"
+      },
+      {
+        "name": "Relay/Intelligibility",
+        "meaning": "跨轨发送与语音相对背景评估。",
+        "action": "标注Relay身份；音乐人声适用性先做实验。"
+      }
+    ],
+    "parameter_start_points": [
+      "Reset后播放固定30–60秒代表段。",
+      "记录M/S/I/LRA/TP及窗口/标准。",
+      "宽化实验同时截图SoundField和Mono RMS。"
+    ],
+    "listen_for": [
+      "Gate/历史未Reset。",
+      "Meter窗口不同。",
+      "标准预设版本变化。",
+      "Relay选错源。"
+    ],
+    "stop": [
+      "测量重复三次在容差内。",
+      "增加更多图表不再改变诊断时停止。"
+    ],
+    "latency": [
+      "默认 VST3 的 Ableton 设备栏报告 2399 samples（约 50 ms）延迟；宿主 PDC 后导出最佳整数延迟 0 samples、RMS 电平差 -0.000000 dB。Relay 通信与其它模块仍需扩展测试。"
+    ]
+  }
+}

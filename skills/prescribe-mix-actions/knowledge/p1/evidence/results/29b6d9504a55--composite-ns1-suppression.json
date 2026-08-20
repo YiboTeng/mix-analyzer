@@ -1,0 +1,393 @@
+{
+  "schema_version": "1.0",
+  "test_id": "composite-ns1-suppression-0-50-100",
+  "family_id": "29b6d9504a55",
+  "plugin": "Waves NS1 Stereo 12.7.0.209 VST3",
+  "host": "Ableton Live 11.3.43",
+  "sample_rate_hz": 48000,
+  "host_reported_latency_samples": 0,
+  "controls": {
+    "suppression_0": 0.0,
+    "suppression_50": 50.0,
+    "suppression_100": 100.0,
+    "preset": "A: Default Preset"
+  },
+  "isolation": "NS1 enabled; Melodyne, Pro-G, and all earlier chain devices disabled.",
+  "files": {
+    "shared_bypass": {
+      "path": "renders\\7a146380912e--composite--bypass.wav",
+      "sha256": "38a74287a951ad7a62a6abeb219aa91afdd0e4f2abde062b972361851e0de16f"
+    },
+    "suppression_0": {
+      "path": "renders\\29b6d9504a55--composite--ns1-suppression0.wav",
+      "sha256": "cb299966166b5c1b958d3ed2b82d311be177b21bb22d11260d027991c307272d"
+    },
+    "suppression_50": {
+      "path": "renders\\29b6d9504a55--composite--ns1-suppression50.wav",
+      "sha256": "4450d7c53d13519bedb760394409631dbe6c4d21d1c2550bcb69f294be0a02df"
+    },
+    "suppression_100": {
+      "path": "renders\\29b6d9504a55--composite--ns1-suppression100.wav",
+      "sha256": "48138ccde817b188813674c89a27a693b00e5503305395ed8566c2887cb6ae90"
+    }
+  },
+  "neutral_control": {
+    "impulse_train": {
+      "suppression0_minus_shared_bypass_db": -0.07709522423908523,
+      "correlation": 0.3470959567194515,
+      "residual_rms_dbfs": -53.68489353899321
+    },
+    "steady_multitone": {
+      "suppression0_minus_shared_bypass_db": -0.023590357862209428,
+      "correlation": 0.9717282581516584,
+      "residual_rms_dbfs": -31.982612239977804
+    },
+    "fixed_vocal": {
+      "suppression0_minus_shared_bypass_db": -0.0002902682820976891,
+      "correlation": 0.8120060465325548,
+      "residual_rms_dbfs": -30.18656580958988
+    },
+    "spatial": {
+      "suppression0_minus_shared_bypass_db": -0.00019227780656641915,
+      "correlation": 0.39339367682137893,
+      "residual_rms_dbfs": -19.954534543387826
+    },
+    "dynamics": {
+      "suppression0_minus_shared_bypass_db": -0.0008331329338471013,
+      "correlation": 0.8378914041173838,
+      "residual_rms_dbfs": -22.09002167075979
+    }
+  },
+  "conditions": {
+    "suppression_50": {
+      "regions": {
+        "impulse_train": {
+          "candidate_minus_reference_db": -2.8079410171147527,
+          "correlation": 0.751386514428207,
+          "residual_rms_dbfs": -58.48574686281793
+        },
+        "steady_multitone": {
+          "candidate_minus_reference_db": -1.977853653459761,
+          "correlation": 0.8892508732761806,
+          "residual_rms_dbfs": -26.13697829477269
+        },
+        "fixed_vocal": {
+          "candidate_minus_reference_db": -0.27063793032147815,
+          "correlation": 0.9961052747694691,
+          "residual_rms_dbfs": -46.638929920442735
+        },
+        "spatial": {
+          "candidate_minus_reference_db": -1.1930328027374657,
+          "correlation": 0.9212639779711255,
+          "residual_rms_dbfs": -28.926316389274103
+        },
+        "dynamics": {
+          "candidate_minus_reference_db": -0.2571141371087327,
+          "correlation": 0.9792940971477608,
+          "residual_rms_dbfs": -31.052379509528247
+        }
+      },
+      "active_50ms_windows": {
+        "impulse_train": {
+          "count": 3,
+          "minimum_db": -2.834002619815844,
+          "p10_db": -2.831350658101168,
+          "median_db": -2.8207428112424635,
+          "p90_db": -2.804478925111761,
+          "maximum_db": -2.8004129535790856,
+          "count_attenuated_ge_0_05_db": 3,
+          "count_attenuated_ge_1_db": 3,
+          "count_attenuated_ge_6_db": 0
+        },
+        "steady_multitone": {
+          "count": 240,
+          "minimum_db": -26.79752310924688,
+          "p10_db": -26.797520102304556,
+          "median_db": -0.849778163537466,
+          "p90_db": -0.6607595329637143,
+          "maximum_db": -0.1168302325981754,
+          "count_attenuated_ge_0_05_db": 240,
+          "count_attenuated_ge_1_db": 80,
+          "count_attenuated_ge_6_db": 47
+        },
+        "fixed_vocal": {
+          "count": 390,
+          "minimum_db": -1.0745042569158223,
+          "p10_db": -0.388866434045801,
+          "median_db": -0.2724849200000046,
+          "p90_db": -0.19285490532152377,
+          "maximum_db": -0.11327004474848756,
+          "count_attenuated_ge_0_05_db": 390,
+          "count_attenuated_ge_1_db": 2,
+          "count_attenuated_ge_6_db": 0
+        },
+        "spatial": {
+          "count": 240,
+          "minimum_db": -5.716270634469804,
+          "p10_db": -1.2141454042479924,
+          "median_db": -1.1953659299183401,
+          "p90_db": -1.174641554210889,
+          "maximum_db": -1.1540525147913634,
+          "count_attenuated_ge_0_05_db": 240,
+          "count_attenuated_ge_1_db": 240,
+          "count_attenuated_ge_6_db": 0
+        },
+        "dynamics": {
+          "count": 162,
+          "minimum_db": -22.51011079098025,
+          "p10_db": -2.0570331211803214,
+          "median_db": -0.5127044361669033,
+          "p90_db": -0.0933741905475809,
+          "maximum_db": -0.08855870628255892,
+          "count_attenuated_ge_0_05_db": 162,
+          "count_attenuated_ge_1_db": 45,
+          "count_attenuated_ge_6_db": 10
+        }
+      },
+      "fixed_vocal_by_input_level": [
+        {
+          "reference_rms_bin_dbfs": [
+            -40.0,
+            -30.0
+          ],
+          "count": 6,
+          "minimum_db": -0.9341147468750844,
+          "p10_db": -0.7364010543637611,
+          "median_db": -0.5128658827242842,
+          "p90_db": -0.412947447705973,
+          "maximum_db": -0.40750784386978217
+        },
+        {
+          "reference_rms_bin_dbfs": [
+            -30.0,
+            -20.0
+          ],
+          "count": 384,
+          "minimum_db": -1.0745042569158223,
+          "p10_db": -0.38225525955303347,
+          "median_db": -0.2711955017694508,
+          "p90_db": -0.19230707185165827,
+          "maximum_db": -0.11327004474848756
+        }
+      ],
+      "fixed_vocal_spectral_bands": [
+        {
+          "band_hz": [
+            20,
+            120
+          ],
+          "candidate_minus_reference_db": -1.2988453736319758
+        },
+        {
+          "band_hz": [
+            120,
+            500
+          ],
+          "candidate_minus_reference_db": -0.20858645510634632
+        },
+        {
+          "band_hz": [
+            500,
+            2000
+          ],
+          "candidate_minus_reference_db": -0.4895185670314749
+        },
+        {
+          "band_hz": [
+            2000,
+            7000
+          ],
+          "candidate_minus_reference_db": -0.9712709678722686
+        },
+        {
+          "band_hz": [
+            7000,
+            14000
+          ],
+          "candidate_minus_reference_db": -2.0559140069711814
+        },
+        {
+          "band_hz": [
+            14000,
+            24000
+          ],
+          "candidate_minus_reference_db": -4.066217236768308
+        }
+      ],
+      "full_file": {
+        "candidate_minus_reference_db": -0.8262147928347853,
+        "correlation": 0.9465353346281126,
+        "residual_rms_dbfs": -31.21303765359821,
+        "peak_dbfs": -6.078061752536214
+      }
+    },
+    "suppression_100": {
+      "regions": {
+        "impulse_train": {
+          "candidate_minus_reference_db": -21.704182361981722,
+          "correlation": 0.8161294605995871,
+          "residual_rms_dbfs": -55.474265307627235
+        },
+        "steady_multitone": {
+          "candidate_minus_reference_db": -16.438304096242536,
+          "correlation": 0.6501459650638522,
+          "residual_rms_dbfs": -20.344971586434873
+        },
+        "fixed_vocal": {
+          "candidate_minus_reference_db": -13.140719070890212,
+          "correlation": 0.7865714844538464,
+          "residual_rms_dbfs": -27.47498647645191
+        },
+        "spatial": {
+          "candidate_minus_reference_db": -7.387261126052024,
+          "correlation": 0.749632361886591,
+          "residual_rms_dbfs": -23.45376692586251
+        },
+        "dynamics": {
+          "candidate_minus_reference_db": -4.0815039173726815,
+          "correlation": 0.9478132415504673,
+          "residual_rms_dbfs": -24.06205940996008
+        }
+      },
+      "active_50ms_windows": {
+        "impulse_train": {
+          "count": 3,
+          "minimum_db": -21.7493924805806,
+          "p10_db": -21.743946105556248,
+          "median_db": -21.722160605458836,
+          "p90_db": -21.69866587255927,
+          "maximum_db": -21.69279218933438,
+          "count_attenuated_ge_0_05_db": 3,
+          "count_attenuated_ge_1_db": 3,
+          "count_attenuated_ge_6_db": 3
+        },
+        "steady_multitone": {
+          "count": 240,
+          "minimum_db": -28.783098071027275,
+          "p10_db": -28.560480736627227,
+          "median_db": -19.966355981881897,
+          "p90_db": -16.06446408773002,
+          "maximum_db": -2.1587180238895955,
+          "count_attenuated_ge_0_05_db": 240,
+          "count_attenuated_ge_1_db": 240,
+          "count_attenuated_ge_6_db": 231
+        },
+        "fixed_vocal": {
+          "count": 390,
+          "minimum_db": -23.346306421989816,
+          "p10_db": -18.080907920383016,
+          "median_db": -14.321901026403292,
+          "p90_db": -11.257034576085761,
+          "maximum_db": -7.610144792959401,
+          "count_attenuated_ge_0_05_db": 390,
+          "count_attenuated_ge_1_db": 390,
+          "count_attenuated_ge_6_db": 390
+        },
+        "spatial": {
+          "count": 240,
+          "minimum_db": -22.36210119334209,
+          "p10_db": -7.744795861063656,
+          "median_db": -7.606966074648607,
+          "p90_db": -7.22105886650075,
+          "maximum_db": -4.523411472123796,
+          "count_attenuated_ge_0_05_db": 240,
+          "count_attenuated_ge_1_db": 240,
+          "count_attenuated_ge_6_db": 224
+        },
+        "dynamics": {
+          "count": 162,
+          "minimum_db": -30.60316997250842,
+          "p10_db": -26.6311785096728,
+          "median_db": -12.119878933396858,
+          "p90_db": -3.8847496854828774,
+          "maximum_db": -1.5616710348083043,
+          "count_attenuated_ge_0_05_db": 162,
+          "count_attenuated_ge_1_db": 162,
+          "count_attenuated_ge_6_db": 98
+        }
+      },
+      "fixed_vocal_by_input_level": [
+        {
+          "reference_rms_bin_dbfs": [
+            -40.0,
+            -30.0
+          ],
+          "count": 6,
+          "minimum_db": -23.346306421989816,
+          "p10_db": -21.73040590375794,
+          "median_db": -18.692902569734883,
+          "p90_db": -16.22646714840642,
+          "maximum_db": -16.17878290680504
+        },
+        {
+          "reference_rms_bin_dbfs": [
+            -30.0,
+            -20.0
+          ],
+          "count": 384,
+          "minimum_db": -19.92164060376597,
+          "p10_db": -18.053264469605057,
+          "median_db": -14.259626842521268,
+          "p90_db": -11.237122444065132,
+          "maximum_db": -7.610144792959401
+        }
+      ],
+      "fixed_vocal_spectral_bands": [
+        {
+          "band_hz": [
+            20,
+            120
+          ],
+          "candidate_minus_reference_db": -18.898206156615526
+        },
+        {
+          "band_hz": [
+            120,
+            500
+          ],
+          "candidate_minus_reference_db": -15.10299251153479
+        },
+        {
+          "band_hz": [
+            500,
+            2000
+          ],
+          "candidate_minus_reference_db": -9.09789598234364
+        },
+        {
+          "band_hz": [
+            2000,
+            7000
+          ],
+          "candidate_minus_reference_db": -17.293729243013704
+        },
+        {
+          "band_hz": [
+            7000,
+            14000
+          ],
+          "candidate_minus_reference_db": -19.035930389917063
+        },
+        {
+          "band_hz": [
+            14000,
+            24000
+          ],
+          "candidate_minus_reference_db": -19.582681528341098
+        }
+      ],
+      "full_file": {
+        "candidate_minus_reference_db": -6.588308645671964,
+        "correlation": 0.7854387149453702,
+        "residual_rms_dbfs": -24.599414736225526,
+        "peak_dbfs": -6.949922862164385
+      }
+    }
+  },
+  "boundaries": [
+    "The shared composite contains no purpose-added stationary noise; results describe adaptive discrimination on its existing impulse, multitone, fixed-vocal, spatial, and dynamics regions.",
+    "Suppression 0 from the same inserted instance is the primary reference for 50/100 comparisons; the older shared bypass is only a level boundary because independently saved host states do not null reliably.",
+    "Suppression 100 is an endpoint stress test, not a recommendation.",
+    "No claims are made for Mono, VST2, other sample rates, stereo-link internals, or subjective artifact quality."
+  ]
+}

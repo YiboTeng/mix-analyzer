@@ -1,0 +1,217 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "7a146380912e--oeksound-soothe2",
+  "family_id": "7a146380912e",
+  "identity": {
+    "vendor": "oeksound",
+    "product": "soothe2",
+    "version_range": "1.1.2",
+    "formats": [
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "resonance-suppression",
+    "secondary": [
+      "harshness",
+      "dynamic-resonance"
+    ],
+    "diagnoses": [
+      "moving_resonance",
+      "harshness",
+      "dense_high_mid_buildup"
+    ],
+    "not_for": [
+      "single_static_resonance",
+      "pitch_error"
+    ]
+  },
+  "routing": [
+    {
+      "position": "after broad corrective EQ, often after compression",
+      "when": "moving_resonance"
+    },
+    {
+      "position": "after broad corrective EQ, often after compression",
+      "when": "harshness"
+    },
+    {
+      "position": "after broad corrective EQ, often after compression",
+      "when": "dense_high_mid_buildup"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "1-4 dB moving peak control",
+      "preserve articulation",
+      "use lowest sufficient Depth"
+    ],
+    "controls": [
+      {
+        "name": "Depth",
+        "action": "increase to excess then back off"
+      },
+      {
+        "name": "Sharpness/Selectivity",
+        "action": "match broad harshness versus narrow whistles"
+      },
+      {
+        "name": "Soft/Hard",
+        "action": "choose by acceptable event sensitivity"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "lifeless tone",
+    "high-frequency holes",
+    "latency"
+  ],
+  "stop_conditions": [
+    "consonants retreat",
+    "spectral motion becomes audible"
+  ],
+  "alternatives": [
+    {
+      "condition": "single nodes",
+      "fallback": "Pro-Q 3"
+    },
+    {
+      "condition": "six controllable bands",
+      "fallback": "F6"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 1.1.2.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/oeksound/soothe2.md",
+    "source_note": "sources/音乐制作/插件资料/oeksound/soothe2资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/7a146380912e--oeksound-soothe2.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/7a146380912e--composite-resonance-soft-hard.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/oeksound/soothe2.md",
+        "packaged_path": "evidence/cards/soothe2.md",
+        "sha256": "5d26b04b1024ad93811d17b450e6dbaa045cd02f6e9c167f80e7feb24947dd41"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/oeksound/soothe2资料.md",
+        "packaged_path": "evidence/sources/soothe2资料.md",
+        "sha256": "91ccb2e8c39e2ac35cad45fc00572d01685aad046700d1a63a805f6c11b6268e"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/7a146380912e--oeksound-soothe2.md",
+        "packaged_path": "evidence/validation/7a146380912e--oeksound-soothe2.md",
+        "sha256": "580b1557a5c183ef99559f563c25280aec138c1921679c0b86ac44ee820f7448"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/7a146380912e--composite-resonance-soft-hard.json",
+          "packaged_path": "evidence/results/7a146380912e--composite-resonance-soft-hard.json",
+          "sha256": "0658919ef4b428a05714790d4780791af91f52ed7a0a5f05a7b2a7b536c78c2d"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "moving_resonance",
+      "harshness",
+      "dense_high_mid_buildup"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Soft/Hard programme dependence and 2048-sample latency tested; no subjective blind test."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "通常放在清理 EQ 后、主压缩前控制音素相关共振；若饱和或压缩后产生新刺耳，可在后段再用更轻实例。",
+      "用作去齿时与专用 De-esser 二选一或分担不同区域，避免 2–12 kHz 多重压制。",
+      "外部侧链让位放在被让位的伴奏/效果返回，不放在主唱本体。"
+    ],
+    "routing": [
+      "主唱 Insert，修正 EQ 后、主要压缩前。",
+      "伴奏/混响总线外部侧链动态让位。"
+    ],
+    "controls": [
+      {
+        "name": "Soft / Hard",
+        "meaning": "选择透明、较不依赖电平或更强、更可调的行为。",
+        "action": "先 Soft；突出共振仍穿出时才试 Hard，并重新校准 Depth。"
+      },
+      {
+        "name": "Depth",
+        "meaning": "全局灵敏度/处理量，越高通常减得越多。",
+        "action": "从默认上推到明显过量，再回退到刚好不显处理。"
+      },
+      {
+        "name": "Sharpness",
+        "meaning": "凹口的深窄程度。",
+        "action": "宽泛堆积用低值；口哨式窄共振提高，但出现噪声状失真即回退。"
+      },
+      {
+        "name": "Selectivity",
+        "meaning": "选择只削最突出共振还是更广泛均衡。",
+        "action": "窄口哨提高；宽带齿音/不均衡降低，并联动 Depth。"
+      },
+      {
+        "name": "Attack / Release",
+        "meaning": "频率相关的反应与恢复速度。",
+        "action": "瞬态被吞放慢 Attack；滤波移动/相位伪影明显时加长 Release。"
+      },
+      {
+        "name": "Delta / Mix",
+        "meaning": "Delta 独听被移除内容；Mix 平行混合。",
+        "action": "用 Delta 校准目标，回全信号后以 100% Wet 优先，必要时再小幅并行。"
+      }
+    ],
+    "parameter_start_points": [
+      "Soft 默认；Depth 从默认上推至过量后回退，目标常是峰值衰减约 1–4 dB 而非固定旋钮值。",
+      "宽泛粗糙：较低 Sharpness、中低 Selectivity；窄口哨：中高 Sharpness/Selectivity。",
+      "实时 Quality 先 Normal/Eco 可工作设置，离线 High；实际档名和 CPU 在 S4 回读。"
+    ],
+    "listen_for": [
+      "齿音是否变成咬舌、lisp 或暗哑。",
+      "低中频是否被持续抽走，使人声忽远忽近。",
+      "快速深凹口造成的噪声状失真、相位飘动或瞬态变软。"
+    ],
+    "stop": [
+      "最坏音素稳定且普通音素几乎听不出处理。",
+      "Delta 开始包含完整元音或旁通后人声明显更有生命力时退回。"
+    ],
+    "latency": [
+      "Attack/Release 是频率相关常数；快移动深凹口可能产生可听相位失真。高 Oversample 提升频率分辨率并让高 Sharpness 更平滑，高 Resolution 提升时域更新平滑度，二者增加 CPU；实时与离线可分设，S4 必须验证导出是否切换。"
+    ]
+  }
+}

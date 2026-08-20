@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "analysis_mode": "manual",
+  "context": {
+    "reference_count": 3,
+    "automatic_thresholds_calibrated": false,
+    "max_actions": 6,
+    "realtime": false
+  },
+  "findings": [
+    {
+      "diagnosis_id": "sibilance",
+      "direction": "high",
+      "severity": 0.75,
+      "confidence": 0.70,
+      "severity_basis": "用户认为是高影响问题；人工四档量表 0.75",
+      "scope": "lead-vocal",
+      "calibration_required": true,
+      "evidence": [{"evidence_kind": "equal_loudness_listening_confirmation", "reported_band_hz": [7000, 10000], "metric": "7-10k active consonant energy", "listening_confirmation": "等响后 S/T 仍明显刺耳"}]
+    },
+    {
+      "diagnosis_id": "parallel_distortion",
+      "direction": "missing",
+      "severity": 0.75,
+      "confidence": 0.70,
+      "severity_basis": "用户认为是高影响问题；人工四档量表 0.75",
+      "scope": "lead-vocal",
+      "calibration_required": true,
+      "evidence": [{"evidence_kind": "equal_loudness_listening_confirmation", "metric": "upper_harmonic_share", "listening_confirmation": "主体清楚但比参考缺少中频颗粒"}]
+    },
+    {
+      "diagnosis_id": "adlib_width",
+      "direction": "low",
+      "severity": 0.50,
+      "confidence": 0.70,
+      "severity_basis": "用户认为是中等影响问题；人工四档量表 0.50",
+      "scope": "chorus-adlib",
+      "calibration_required": true,
+      "evidence": [{"evidence_kind": "equal_loudness_listening_confirmation", "metric": "side_mid_db", "listening_confirmation": "副歌 adlib 明显窄于参考"}]
+    }
+  ]
+}

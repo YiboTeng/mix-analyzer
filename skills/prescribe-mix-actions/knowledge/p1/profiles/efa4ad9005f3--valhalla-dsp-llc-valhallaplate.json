@@ -1,0 +1,203 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "efa4ad9005f3--valhalla-dsp-llc-valhallaplate",
+  "family_id": "efa4ad9005f3",
+  "identity": {
+    "vendor": "Valhalla DSP, LLC",
+    "product": "ValhallaPlate",
+    "version_range": "1.6.3",
+    "formats": [
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "reverb-plate",
+    "secondary": [
+      "vocal-plate",
+      "diffusion"
+    ],
+    "diagnoses": [
+      "vocal_plate_depth",
+      "dense_bright_tail"
+    ],
+    "not_for": [
+      "natural_room_localisation",
+      "dry_intimate_only"
+    ]
+  },
+  "routing": [
+    {
+      "position": "100% wet aux",
+      "when": "vocal_plate_depth"
+    },
+    {
+      "position": "100% wet aux",
+      "when": "dense_bright_tail"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "pre-delay protects words",
+      "decay fits gaps",
+      "filter low/high tail"
+    ],
+    "controls": [
+      {
+        "name": "Decay/PreDelay",
+        "action": "fit tempo and phrase"
+      },
+      {
+        "name": "Mode/Color",
+        "action": "choose plate density"
+      },
+      {
+        "name": "Mix",
+        "action": "100% wet on aux"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "sibilant tail",
+    "masking",
+    "low-frequency buildup"
+  ],
+  "stop_conditions": [
+    "tail hides next phrase",
+    "sibilance blooms"
+  ],
+  "alternatives": [
+    {
+      "condition": "natural room",
+      "fallback": "Pro-R"
+    },
+    {
+      "condition": "vintage algorithms",
+      "fallback": "ValhallaVintageVerb"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 1.6.3.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Valhalla DSP, LLC/ValhallaPlate.md",
+    "source_note": "sources/音乐制作/插件资料/Valhalla DSP, LLC/ValhallaPlate资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/efa4ad9005f3--ValhallaPlate.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/efa4ad9005f3--impulse--default-wet.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Valhalla DSP, LLC/ValhallaPlate.md",
+        "packaged_path": "evidence/cards/ValhallaPlate.md",
+        "sha256": "f79eb2dcf8b8283c5df4c2fc7058c4c3c5bdc84c38a915470411c94613f71982"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Valhalla DSP, LLC/ValhallaPlate资料.md",
+        "packaged_path": "evidence/sources/ValhallaPlate资料.md",
+        "sha256": "6414379f50a71c5443c9c45f37bc08dbee8a6b341fb5eaca799f3877474c0ddd"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/efa4ad9005f3--ValhallaPlate.md",
+        "packaged_path": "evidence/validation/efa4ad9005f3--ValhallaPlate.md",
+        "sha256": "10eebf57ee7d3fed61aec4fbd1ba4b2351c35b42d3ea7d25da45ab16663c333b"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/efa4ad9005f3--impulse--default-wet.json",
+          "packaged_path": "evidence/results/efa4ad9005f3--impulse--default-wet.json",
+          "sha256": "da9377be8285572ce7233794a9302299a851af531e32bc54e52ccf91335d838c"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "vocal_plate_depth",
+      "dense_bright_tail"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Default Chrome wet impulse onset and T60 measured."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "100% Wet Aux；低切返回并缩短高频尾，必要时 duck。",
+      "Plate 常提供密度，Predelay 保留主唱前景。"
+    ],
+    "routing": [
+      "Stereo Aux 100% Wet。",
+      "链后 EQ/Duck。"
+    ],
+    "controls": [
+      {
+        "name": "Mode",
+        "meaning": "改变板式模态、频率衰减和调制。",
+        "action": "从 Smooth/Chrome 类候选逐个等响度，按本机模式名回读。"
+      },
+      {
+        "name": "Decay / Size",
+        "meaning": "中频 RT60 与模态密度；大 Size 更平滑。",
+        "action": "先 Decay 配节奏，金属感强再加 Size。"
+      },
+      {
+        "name": "Predelay",
+        "meaning": "混响进入前间隔。",
+        "action": "20–80 ms 分离词头。"
+      },
+      {
+        "name": "Low/High Shelf",
+        "meaning": "温和输出音色；行为会随 Decay/Mode 变化。",
+        "action": "低频减量、高频按齿音和空间亮度调。"
+      },
+      {
+        "name": "Mod / Width / Mix Lock",
+        "meaning": "减金属并控制湿声宽度/干湿。",
+        "action": "自然用低调制；Aux 100% Wet并锁。"
+      }
+    ],
+    "parameter_start_points": [
+      "Decay 0.8–1.8 s、Predelay 30–70 ms、Size 100–150%、Width 70–100%。",
+      "Low Shelf 150–250 Hz 下减，高频按齿音调。"
+    ],
+    "listen_for": [
+      "金属 ring、齿音尾、低频长尾。",
+      "Width 超宽相消。"
+    ],
+    "stop": [
+      "板式质感支持主唱而不独立成声源。",
+      "下一句被尾巴覆盖时缩 Decay/高频尾。"
+    ],
+    "latency": [
+      "官方未列延迟/OS；调制目的之一是减金属而非制造明显 Chorus。S4 测脉冲与 PDC。"
+    ]
+  }
+}

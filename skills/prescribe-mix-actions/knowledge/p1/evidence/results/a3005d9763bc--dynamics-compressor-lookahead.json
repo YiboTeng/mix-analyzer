@@ -1,0 +1,858 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T04:28:31+08:00",
+  "family_id": "a3005d9763bc",
+  "test_id": "dynamics-steps-compressor-lookahead",
+  "fixed_state": {
+    "host": "Ableton Live 11.3.43",
+    "format": "VST3 Stereo",
+    "preset": "Default Setting",
+    "style": "Clean",
+    "threshold_db": -18.0,
+    "ratio": "4:1",
+    "attack_ms": 0.255,
+    "release_ms": 209.2,
+    "knee_db": 18.0,
+    "range_db": 60.0,
+    "hold_ms": 0.0,
+    "auto_release": "Off",
+    "auto_gain": "On (yellow UI state; corroborated by below-threshold makeup gain)",
+    "output_gain_db": 0.0,
+    "wet_percent": 100.0,
+    "oversampling": "Off",
+    "host_reported_latency_samples_default": 0,
+    "host_reported_latency_samples_mapping_probe": 0,
+    "render": "Master; 42.1.1-50.1.1; 12 s; 48 kHz; 24-bit WAV; normalize off; triangular dither",
+    "fixture": "dynamics_steps_48k.wav warped by Ableton to 8 bars at 160 BPM",
+    "controlled_variables": [
+      "Valid DSP variant: Attack 0.255 ms -> 75.19 ms in the Pro-C 2 UI; Lookahead remained Off and all other visible controls fixed",
+      "Host-mapping probe: Ableton's exposed Lookahead readout 0.000 ms -> 20.00 ms, but the Pro-C 2 UI remained Off"
+    ]
+  },
+  "files": {
+    "bypass": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\a3005d9763bc--dynamics--bypass.wav",
+      "sha256": "5261897d7fcba3a600162969b2a2c55fcc20d3023f3fa1701110c409c0a6bf91",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -2.853702,
+      "rms_dbfs": -17.19745,
+      "left_right_correlation": 1.0,
+      "left_right_residual_rms_dbfs": -141.480661
+    },
+    "default_lookahead_0ms": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\a3005d9763bc--dynamics--default.wav",
+      "sha256": "169dd9a9a1b8d6afb190929b49135b2e7e50f73823e59e0c0f65eef307fa7ce8",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -1e-06,
+      "rms_dbfs": -18.568767,
+      "left_right_correlation": 1.0,
+      "left_right_residual_rms_dbfs": -141.490572
+    },
+    "host_mapping_probe_lookahead_20ms": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\a3005d9763bc--dynamics--lookahead-20ms.wav",
+      "sha256": "ccaa34a4ef08c6c56473127ca5599ff4e26949aaaa79b4aa00a14732f60da5d2",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -1e-06,
+      "rms_dbfs": -18.568767,
+      "left_right_correlation": 1.0,
+      "left_right_residual_rms_dbfs": -141.479757
+    },
+    "variant_attack_75_19ms": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\a3005d9763bc--dynamics--attack-75.19ms.wav",
+      "sha256": "1c641fc699775b300d433382ea5029da4860b0d1145d9fe932c4076978a5aef2",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 576000,
+      "duration_seconds": 12.0,
+      "peak_dbfs": -2.325197,
+      "rms_dbfs": -21.383146,
+      "left_right_correlation": 1.0,
+      "left_right_residual_rms_dbfs": -141.481656
+    }
+  },
+  "snapshot": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\host\\snapshots\\0072a637f389--FabFilter-Saturn-2 Project\\a3005d9763bc--FabFilter-Pro-C-2.als",
+    "sha256": "c9e2286261282163b1c4268a58ea942ed4be6398ecf6681c6747212a35663718"
+  },
+  "comparisons": {
+    "default_lookahead_0ms_vs_bypass": {
+      "time_alignment": {
+        "candidate_delay_samples": 0,
+        "candidate_delay_ms": 0.0,
+        "search_limit_ms": 50.0,
+        "analysis_downsample_factor": 4
+      },
+      "level_segments": [
+        {
+          "source_peak_dbfs": -30.0,
+          "start_s": 0.0,
+          "steady_start_s": 0.15,
+          "steady_end_s": 1.2,
+          "reference_rms_dbfs": -33.010869,
+          "candidate_rms_dbfs": -28.175165,
+          "steady_gain_db": 4.835705,
+          "reference_peak_dbfs": -30.001771,
+          "candidate_peak_dbfs": -25.166081,
+          "steady_peak_gain_db": 4.83569
+        },
+        {
+          "source_peak_dbfs": -24.0,
+          "start_s": 1.9,
+          "steady_start_s": 2.05,
+          "steady_end_s": 3.2,
+          "reference_rms_dbfs": -27.010592,
+          "candidate_rms_dbfs": -22.275558,
+          "steady_gain_db": 4.735034,
+          "reference_peak_dbfs": -24.002173,
+          "candidate_peak_dbfs": -19.247294,
+          "steady_peak_gain_db": 4.754879
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "start_s": 3.9,
+          "steady_start_s": 4.05,
+          "steady_end_s": 5.2,
+          "reference_rms_dbfs": -21.01068,
+          "candidate_rms_dbfs": -17.570356,
+          "steady_gain_db": 3.440324,
+          "reference_peak_dbfs": -18.000511,
+          "candidate_peak_dbfs": -14.523782,
+          "steady_peak_gain_db": 3.47673
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "start_s": 5.9,
+          "steady_start_s": 6.05,
+          "steady_end_s": 7.2,
+          "reference_rms_dbfs": -15.023319,
+          "candidate_rms_dbfs": -14.336116,
+          "steady_gain_db": 0.687204,
+          "reference_peak_dbfs": -11.999943,
+          "candidate_peak_dbfs": -11.277149,
+          "steady_peak_gain_db": 0.722793
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "start_s": 7.85,
+          "steady_start_s": 8.05,
+          "steady_end_s": 9.1,
+          "reference_rms_dbfs": -9.010575,
+          "candidate_rms_dbfs": -12.292746,
+          "steady_gain_db": -3.282171,
+          "reference_peak_dbfs": -6.000476,
+          "candidate_peak_dbfs": -9.238814,
+          "steady_peak_gain_db": -3.238338
+        }
+      ],
+      "static_curve": {
+        "output_vs_input_slope": 0.66185,
+        "output_vs_input_intercept_db": -5.022392,
+        "gain_change_low_to_high_db": -8.117876,
+        "effective_ratio_from_slope": 1.510916
+      },
+      "tone_onsets": [
+        {
+          "source_peak_dbfs": -24.0,
+          "onset_s": 1.9,
+          "initial_gain_db_first_10ms": -0.178747,
+          "steady_gain_db": 4.733752,
+          "gain_reduction_development_db": 4.9125,
+          "time_to_within_1db_of_steady_for_20ms_ms": 71.229167
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "onset_s": 3.9,
+          "initial_gain_db_first_10ms": -1.003705,
+          "steady_gain_db": 3.435272,
+          "gain_reduction_development_db": 4.438978,
+          "time_to_within_1db_of_steady_for_20ms_ms": 58.9375
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "onset_s": 5.9,
+          "initial_gain_db_first_10ms": -0.081848,
+          "steady_gain_db": 0.676978,
+          "gain_reduction_development_db": 0.758826,
+          "time_to_within_1db_of_steady_for_20ms_ms": 34.5625
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "onset_s": 7.85,
+          "initial_gain_db_first_10ms": 0.177288,
+          "steady_gain_db": -3.291797,
+          "gain_reduction_development_db": -3.469085,
+          "time_to_within_1db_of_steady_for_20ms_ms": 56.833333
+        }
+      ],
+      "isolated_transients": [
+        {
+          "onset_s": 9.973333,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -1e-06,
+          "peak_gain_db": 2.853701,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 10.4,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -1e-06,
+          "peak_gain_db": 2.853701,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 10.826667,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -1e-06,
+          "peak_gain_db": 2.853701,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 11.253333,
+          "reference_peak_dbfs": -2.853704,
+          "candidate_peak_dbfs": -1e-06,
+          "peak_gain_db": 2.853702,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 11.68,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -1e-06,
+          "peak_gain_db": 2.853701,
+          "candidate_peak_time_shift_ms": 0.0
+        }
+      ],
+      "whole_file_level_delta_db": -1.371318,
+      "whole_file_peak_delta_db": 2.853701,
+      "difference_rms_dbfs": -27.479498,
+      "difference_peak_dbfs": -11.055931,
+      "direct_correlation": 0.957618009042,
+      "left_right_residual_rms_dbfs": -141.490572
+    },
+    "host_mapping_probe_lookahead_20ms_vs_bypass": {
+      "time_alignment": {
+        "candidate_delay_samples": 0,
+        "candidate_delay_ms": 0.0,
+        "search_limit_ms": 50.0,
+        "analysis_downsample_factor": 4
+      },
+      "level_segments": [
+        {
+          "source_peak_dbfs": -30.0,
+          "start_s": 0.0,
+          "steady_start_s": 0.15,
+          "steady_end_s": 1.2,
+          "reference_rms_dbfs": -33.010869,
+          "candidate_rms_dbfs": -28.175165,
+          "steady_gain_db": 4.835704,
+          "reference_peak_dbfs": -30.001771,
+          "candidate_peak_dbfs": -25.166081,
+          "steady_peak_gain_db": 4.83569
+        },
+        {
+          "source_peak_dbfs": -24.0,
+          "start_s": 1.9,
+          "steady_start_s": 2.05,
+          "steady_end_s": 3.2,
+          "reference_rms_dbfs": -27.010592,
+          "candidate_rms_dbfs": -22.275558,
+          "steady_gain_db": 4.735034,
+          "reference_peak_dbfs": -24.002173,
+          "candidate_peak_dbfs": -19.247303,
+          "steady_peak_gain_db": 4.754869
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "start_s": 3.9,
+          "steady_start_s": 4.05,
+          "steady_end_s": 5.2,
+          "reference_rms_dbfs": -21.01068,
+          "candidate_rms_dbfs": -17.570356,
+          "steady_gain_db": 3.440324,
+          "reference_peak_dbfs": -18.000511,
+          "candidate_peak_dbfs": -14.523787,
+          "steady_peak_gain_db": 3.476724
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "start_s": 5.9,
+          "steady_start_s": 6.05,
+          "steady_end_s": 7.2,
+          "reference_rms_dbfs": -15.023319,
+          "candidate_rms_dbfs": -14.336116,
+          "steady_gain_db": 0.687204,
+          "reference_peak_dbfs": -11.999943,
+          "candidate_peak_dbfs": -11.277149,
+          "steady_peak_gain_db": 0.722793
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "start_s": 7.85,
+          "steady_start_s": 8.05,
+          "steady_end_s": 9.1,
+          "reference_rms_dbfs": -9.010575,
+          "candidate_rms_dbfs": -12.292746,
+          "steady_gain_db": -3.282171,
+          "reference_peak_dbfs": -6.000476,
+          "candidate_peak_dbfs": -9.238811,
+          "steady_peak_gain_db": -3.238335
+        }
+      ],
+      "static_curve": {
+        "output_vs_input_slope": 0.66185,
+        "output_vs_input_intercept_db": -5.022392,
+        "gain_change_low_to_high_db": -8.117875,
+        "effective_ratio_from_slope": 1.510916
+      },
+      "tone_onsets": [
+        {
+          "source_peak_dbfs": -24.0,
+          "onset_s": 1.9,
+          "initial_gain_db_first_10ms": 0.539352,
+          "steady_gain_db": 4.733752,
+          "gain_reduction_development_db": 4.1944,
+          "time_to_within_1db_of_steady_for_20ms_ms": 71.229167
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "onset_s": 3.9,
+          "initial_gain_db_first_10ms": -0.03895,
+          "steady_gain_db": 3.435272,
+          "gain_reduction_development_db": 3.474223,
+          "time_to_within_1db_of_steady_for_20ms_ms": 58.9375
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "onset_s": 5.9,
+          "initial_gain_db_first_10ms": -0.952358,
+          "steady_gain_db": 0.676978,
+          "gain_reduction_development_db": 1.629336,
+          "time_to_within_1db_of_steady_for_20ms_ms": 34.5625
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "onset_s": 7.85,
+          "initial_gain_db_first_10ms": -0.17657,
+          "steady_gain_db": -3.291797,
+          "gain_reduction_development_db": -3.115227,
+          "time_to_within_1db_of_steady_for_20ms_ms": 56.833333
+        }
+      ],
+      "isolated_transients": [
+        {
+          "onset_s": 9.973333,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -1e-06,
+          "peak_gain_db": 2.853701,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 10.4,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -1e-06,
+          "peak_gain_db": 2.853701,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 10.826667,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -1e-06,
+          "peak_gain_db": 2.853701,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 11.253333,
+          "reference_peak_dbfs": -2.853704,
+          "candidate_peak_dbfs": -1e-06,
+          "peak_gain_db": 2.853702,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 11.68,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -1e-06,
+          "peak_gain_db": 2.853701,
+          "candidate_peak_time_shift_ms": 0.0
+        }
+      ],
+      "whole_file_level_delta_db": -1.371318,
+      "whole_file_peak_delta_db": 2.853701,
+      "difference_rms_dbfs": -27.479498,
+      "difference_peak_dbfs": -11.055931,
+      "direct_correlation": 0.957618009161,
+      "left_right_residual_rms_dbfs": -141.479757
+    },
+    "host_mapping_probe_lookahead_20ms_vs_default_0ms": {
+      "time_alignment": {
+        "candidate_delay_samples": 0,
+        "candidate_delay_ms": 0.0,
+        "search_limit_ms": 50.0,
+        "analysis_downsample_factor": 4
+      },
+      "level_segments": [
+        {
+          "source_peak_dbfs": -30.0,
+          "start_s": 0.0,
+          "steady_start_s": 0.15,
+          "steady_end_s": 1.2,
+          "reference_rms_dbfs": -28.175165,
+          "candidate_rms_dbfs": -28.175165,
+          "steady_gain_db": -0.0,
+          "reference_peak_dbfs": -25.166081,
+          "candidate_peak_dbfs": -25.166081,
+          "steady_peak_gain_db": 0.0
+        },
+        {
+          "source_peak_dbfs": -24.0,
+          "start_s": 1.9,
+          "steady_start_s": 2.05,
+          "steady_end_s": 3.2,
+          "reference_rms_dbfs": -22.275558,
+          "candidate_rms_dbfs": -22.275558,
+          "steady_gain_db": -0.0,
+          "reference_peak_dbfs": -19.247294,
+          "candidate_peak_dbfs": -19.247303,
+          "steady_peak_gain_db": -9e-06
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "start_s": 3.9,
+          "steady_start_s": 4.05,
+          "steady_end_s": 5.2,
+          "reference_rms_dbfs": -17.570356,
+          "candidate_rms_dbfs": -17.570356,
+          "steady_gain_db": 0.0,
+          "reference_peak_dbfs": -14.523782,
+          "candidate_peak_dbfs": -14.523787,
+          "steady_peak_gain_db": -6e-06
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "start_s": 5.9,
+          "steady_start_s": 6.05,
+          "steady_end_s": 7.2,
+          "reference_rms_dbfs": -14.336116,
+          "candidate_rms_dbfs": -14.336116,
+          "steady_gain_db": 0.0,
+          "reference_peak_dbfs": -11.277149,
+          "candidate_peak_dbfs": -11.277149,
+          "steady_peak_gain_db": 0.0
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "start_s": 7.85,
+          "steady_start_s": 8.05,
+          "steady_end_s": 9.1,
+          "reference_rms_dbfs": -12.292746,
+          "candidate_rms_dbfs": -12.292746,
+          "steady_gain_db": -0.0,
+          "reference_peak_dbfs": -9.238814,
+          "candidate_peak_dbfs": -9.238811,
+          "steady_peak_gain_db": 3e-06
+        }
+      ],
+      "static_curve": {
+        "output_vs_input_slope": 1.0,
+        "output_vs_input_intercept_db": 0.0,
+        "gain_change_low_to_high_db": 0.0,
+        "effective_ratio_from_slope": 1.0
+      },
+      "tone_onsets": [
+        {
+          "source_peak_dbfs": -24.0,
+          "onset_s": 1.9,
+          "initial_gain_db_first_10ms": 0.595411,
+          "steady_gain_db": -0.0,
+          "gain_reduction_development_db": -0.595411,
+          "time_to_within_1db_of_steady_for_20ms_ms": 64.770833
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "onset_s": 3.9,
+          "initial_gain_db_first_10ms": 0.65752,
+          "steady_gain_db": 0.0,
+          "gain_reduction_development_db": -0.65752,
+          "time_to_within_1db_of_steady_for_20ms_ms": 28.25
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "onset_s": 5.9,
+          "initial_gain_db_first_10ms": -0.839815,
+          "steady_gain_db": -0.0,
+          "gain_reduction_development_db": 0.839815,
+          "time_to_within_1db_of_steady_for_20ms_ms": 17.583333
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "onset_s": 7.85,
+          "initial_gain_db_first_10ms": 0.0,
+          "steady_gain_db": -0.0,
+          "gain_reduction_development_db": -0.0,
+          "time_to_within_1db_of_steady_for_20ms_ms": 14.729167
+        }
+      ],
+      "isolated_transients": [
+        {
+          "onset_s": 9.973333,
+          "reference_peak_dbfs": -1e-06,
+          "candidate_peak_dbfs": -1e-06,
+          "peak_gain_db": 0.0,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 10.4,
+          "reference_peak_dbfs": -1e-06,
+          "candidate_peak_dbfs": -1e-06,
+          "peak_gain_db": 0.0,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 10.826667,
+          "reference_peak_dbfs": -1e-06,
+          "candidate_peak_dbfs": -1e-06,
+          "peak_gain_db": 0.0,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 11.253333,
+          "reference_peak_dbfs": -1e-06,
+          "candidate_peak_dbfs": -1e-06,
+          "peak_gain_db": 0.0,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 11.68,
+          "reference_peak_dbfs": -1e-06,
+          "candidate_peak_dbfs": -1e-06,
+          "peak_gain_db": 0.0,
+          "candidate_peak_time_shift_ms": 0.0
+        }
+      ],
+      "whole_file_level_delta_db": -0.0,
+      "whole_file_peak_delta_db": 0.0,
+      "difference_rms_dbfs": -141.484799,
+      "difference_peak_dbfs": -132.453198,
+      "direct_correlation": 1.0,
+      "left_right_residual_rms_dbfs": -141.479757
+    },
+    "variant_attack_75_19ms_vs_bypass": {
+      "time_alignment": {
+        "candidate_delay_samples": 0,
+        "candidate_delay_ms": 0.0,
+        "search_limit_ms": 50.0,
+        "analysis_downsample_factor": 4
+      },
+      "level_segments": [
+        {
+          "source_peak_dbfs": -30.0,
+          "start_s": 0.0,
+          "steady_start_s": 0.15,
+          "steady_end_s": 1.2,
+          "reference_rms_dbfs": -33.010869,
+          "candidate_rms_dbfs": -32.472103,
+          "steady_gain_db": 0.538767,
+          "reference_peak_dbfs": -30.001771,
+          "candidate_peak_dbfs": -29.462996,
+          "steady_peak_gain_db": 0.538774
+        },
+        {
+          "source_peak_dbfs": -24.0,
+          "start_s": 1.9,
+          "steady_start_s": 2.05,
+          "steady_end_s": 3.2,
+          "reference_rms_dbfs": -27.010592,
+          "candidate_rms_dbfs": -26.530843,
+          "steady_gain_db": 0.479748,
+          "reference_peak_dbfs": -24.002173,
+          "candidate_peak_dbfs": -23.505975,
+          "steady_peak_gain_db": 0.496198
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "start_s": 3.9,
+          "steady_start_s": 4.05,
+          "steady_end_s": 5.2,
+          "reference_rms_dbfs": -21.01068,
+          "candidate_rms_dbfs": -21.46796,
+          "steady_gain_db": -0.45728,
+          "reference_peak_dbfs": -18.000511,
+          "candidate_peak_dbfs": -18.334676,
+          "steady_peak_gain_db": -0.334164
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "start_s": 5.9,
+          "steady_start_s": 6.05,
+          "steady_end_s": 7.2,
+          "reference_rms_dbfs": -15.023319,
+          "candidate_rms_dbfs": -17.707121,
+          "steady_gain_db": -2.683802,
+          "reference_peak_dbfs": -11.999943,
+          "candidate_peak_dbfs": -14.51233,
+          "steady_peak_gain_db": -2.512387
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "start_s": 7.85,
+          "steady_start_s": 8.05,
+          "steady_end_s": 9.1,
+          "reference_rms_dbfs": -9.010575,
+          "candidate_rms_dbfs": -15.107772,
+          "steady_gain_db": -6.097197,
+          "reference_peak_dbfs": -6.000476,
+          "candidate_peak_dbfs": -11.928165,
+          "steady_peak_gain_db": -5.927689
+        }
+      ],
+      "static_curve": {
+        "output_vs_input_slope": 0.725999,
+        "output_vs_input_intercept_db": -7.401588,
+        "gain_change_low_to_high_db": -6.635964,
+        "effective_ratio_from_slope": 1.377412
+      },
+      "tone_onsets": [
+        {
+          "source_peak_dbfs": -24.0,
+          "onset_s": 1.9,
+          "initial_gain_db_first_10ms": 0.320532,
+          "steady_gain_db": 0.478751,
+          "gain_reduction_development_db": 0.158219,
+          "time_to_within_1db_of_steady_for_20ms_ms": 0.0
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "onset_s": 3.9,
+          "initial_gain_db_first_10ms": 0.276514,
+          "steady_gain_db": -0.464507,
+          "gain_reduction_development_db": -0.741021,
+          "time_to_within_1db_of_steady_for_20ms_ms": 51.9375
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "onset_s": 5.9,
+          "initial_gain_db_first_10ms": -0.357113,
+          "steady_gain_db": -2.695812,
+          "gain_reduction_development_db": -2.338699,
+          "time_to_within_1db_of_steady_for_20ms_ms": 73.6875
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "onset_s": 7.85,
+          "initial_gain_db_first_10ms": 0.0,
+          "steady_gain_db": -6.109114,
+          "gain_reduction_development_db": -6.109114,
+          "time_to_within_1db_of_steady_for_20ms_ms": 123.854167
+        }
+      ],
+      "isolated_transients": [
+        {
+          "onset_s": 9.973333,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -2.344911,
+          "peak_gain_db": 0.508791,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 10.4,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -2.326453,
+          "peak_gain_db": 0.527249,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 10.826667,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -2.325273,
+          "peak_gain_db": 0.528429,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 11.253333,
+          "reference_peak_dbfs": -2.853704,
+          "candidate_peak_dbfs": -2.325203,
+          "peak_gain_db": 0.528501,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 11.68,
+          "reference_peak_dbfs": -2.853702,
+          "candidate_peak_dbfs": -2.325197,
+          "peak_gain_db": 0.528505,
+          "candidate_peak_time_shift_ms": 0.0
+        }
+      ],
+      "whole_file_level_delta_db": -4.185696,
+      "whole_file_peak_delta_db": 0.528505,
+      "difference_rms_dbfs": -24.445153,
+      "difference_peak_dbfs": -11.909081,
+      "direct_correlation": 0.965812775262,
+      "left_right_residual_rms_dbfs": -141.481656
+    },
+    "variant_attack_75_19ms_vs_default_0_255ms": {
+      "time_alignment": {
+        "candidate_delay_samples": 0,
+        "candidate_delay_ms": 0.0,
+        "search_limit_ms": 50.0,
+        "analysis_downsample_factor": 4
+      },
+      "level_segments": [
+        {
+          "source_peak_dbfs": -30.0,
+          "start_s": 0.0,
+          "steady_start_s": 0.15,
+          "steady_end_s": 1.2,
+          "reference_rms_dbfs": -28.175165,
+          "candidate_rms_dbfs": -32.472103,
+          "steady_gain_db": -4.296938,
+          "reference_peak_dbfs": -25.166081,
+          "candidate_peak_dbfs": -29.462996,
+          "steady_peak_gain_db": -4.296915
+        },
+        {
+          "source_peak_dbfs": -24.0,
+          "start_s": 1.9,
+          "steady_start_s": 2.05,
+          "steady_end_s": 3.2,
+          "reference_rms_dbfs": -22.275558,
+          "candidate_rms_dbfs": -26.530843,
+          "steady_gain_db": -4.255286,
+          "reference_peak_dbfs": -19.247294,
+          "candidate_peak_dbfs": -23.505975,
+          "steady_peak_gain_db": -4.258681
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "start_s": 3.9,
+          "steady_start_s": 4.05,
+          "steady_end_s": 5.2,
+          "reference_rms_dbfs": -17.570356,
+          "candidate_rms_dbfs": -21.46796,
+          "steady_gain_db": -3.897604,
+          "reference_peak_dbfs": -14.523782,
+          "candidate_peak_dbfs": -18.334676,
+          "steady_peak_gain_db": -3.810894
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "start_s": 5.9,
+          "steady_start_s": 6.05,
+          "steady_end_s": 7.2,
+          "reference_rms_dbfs": -14.336116,
+          "candidate_rms_dbfs": -17.707121,
+          "steady_gain_db": -3.371005,
+          "reference_peak_dbfs": -11.277149,
+          "candidate_peak_dbfs": -14.51233,
+          "steady_peak_gain_db": -3.235181
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "start_s": 7.85,
+          "steady_start_s": 8.05,
+          "steady_end_s": 9.1,
+          "reference_rms_dbfs": -12.292746,
+          "candidate_rms_dbfs": -15.107772,
+          "steady_gain_db": -2.815026,
+          "reference_peak_dbfs": -9.238814,
+          "candidate_peak_dbfs": -11.928165,
+          "steady_peak_gain_db": -2.689351
+        }
+      ],
+      "static_curve": {
+        "output_vs_input_slope": 1.08855,
+        "output_vs_input_intercept_db": -2.05093,
+        "gain_change_low_to_high_db": 1.481912,
+        "effective_ratio_from_slope": 0.918654
+      },
+      "tone_onsets": [
+        {
+          "source_peak_dbfs": -24.0,
+          "onset_s": 1.9,
+          "initial_gain_db_first_10ms": 0.507535,
+          "steady_gain_db": -4.255004,
+          "gain_reduction_development_db": -4.76254,
+          "time_to_within_1db_of_steady_for_20ms_ms": 71.229167
+        },
+        {
+          "source_peak_dbfs": -18.0,
+          "onset_s": 3.9,
+          "initial_gain_db_first_10ms": 1.29993,
+          "steady_gain_db": -3.89978,
+          "gain_reduction_development_db": -5.19971,
+          "time_to_within_1db_of_steady_for_20ms_ms": 44.395833
+        },
+        {
+          "source_peak_dbfs": -12.0,
+          "onset_s": 5.9,
+          "initial_gain_db_first_10ms": -0.244246,
+          "steady_gain_db": -3.37304,
+          "gain_reduction_development_db": -3.128794,
+          "time_to_within_1db_of_steady_for_20ms_ms": 68.791667
+        },
+        {
+          "source_peak_dbfs": -6.0,
+          "onset_s": 7.85,
+          "initial_gain_db_first_10ms": -0.178017,
+          "steady_gain_db": -2.818099,
+          "gain_reduction_development_db": -2.640082,
+          "time_to_within_1db_of_steady_for_20ms_ms": 121.1875
+        }
+      ],
+      "isolated_transients": [
+        {
+          "onset_s": 9.973333,
+          "reference_peak_dbfs": -1e-06,
+          "candidate_peak_dbfs": -2.344911,
+          "peak_gain_db": -2.34491,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 10.4,
+          "reference_peak_dbfs": -1e-06,
+          "candidate_peak_dbfs": -2.326453,
+          "peak_gain_db": -2.326452,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 10.826667,
+          "reference_peak_dbfs": -1e-06,
+          "candidate_peak_dbfs": -2.325273,
+          "peak_gain_db": -2.325272,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 11.253333,
+          "reference_peak_dbfs": -1e-06,
+          "candidate_peak_dbfs": -2.325203,
+          "peak_gain_db": -2.325202,
+          "candidate_peak_time_shift_ms": 0.0
+        },
+        {
+          "onset_s": 11.68,
+          "reference_peak_dbfs": -1e-06,
+          "candidate_peak_dbfs": -2.325197,
+          "peak_gain_db": -2.325196,
+          "candidate_peak_time_shift_ms": 0.0
+        }
+      ],
+      "whole_file_level_delta_db": -2.814378,
+      "whole_file_peak_delta_db": -2.325196,
+      "difference_rms_dbfs": -28.695562,
+      "difference_peak_dbfs": -12.323984,
+      "direct_correlation": 0.985843691238,
+      "left_right_residual_rms_dbfs": -141.481656
+    }
+  },
+  "interpretation_boundary": "Measurements apply only to the installed FabFilter Pro-C 2 2.1.7.0 VST3 Stereo instance, Default Setting, Clean style, and the exposed fixed parameters recorded above. The fixture was auto-warped by Ableton from 11.25 s to 12 s, so analysis windows reference the rendered control. Attack was the valid single-variable DSP change. The attempted Lookahead probe is negative host-integration evidence: Ableton's exposed readout reached 20.00 ms, but the plugin UI still displayed Off and the render nulled against the default at approximately the dither floor. It therefore does not establish Pro-C 2 Lookahead DSP behavior. Ableton's device status displayed 0 samples in the observed states; the separate cross-correlation estimate reports rendered timing offset and must not be conflated with host-reported latency. This test does not establish the other seven styles, oversampling, Auto Gain/Release, external sidechain, Stereo Link/M/S behavior, other sample rates/formats, or musical preference."
+}

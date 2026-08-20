@@ -1,0 +1,2691 @@
+{
+  "schema_version": "1.0",
+  "keys": {
+    "adlib": [
+      {
+        "family_id": "4bceae9f0a6f",
+        "adapter_id": "4bceae9f0a6f--waves-doubler",
+        "vendor": "Waves",
+        "product": "Doubler",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/4bceae9f0a6f--waves-doubler.json",
+        "primary": "width-multivoice",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "adlib_width": [
+      {
+        "family_id": "4bceae9f0a6f",
+        "adapter_id": "4bceae9f0a6f--waves-doubler",
+        "vendor": "Waves",
+        "product": "Doubler",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/4bceae9f0a6f--waves-doubler.json",
+        "primary": "width-multivoice",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "2035ec8dd8df",
+        "adapter_id": "2035ec8dd8df--waves-ps22-spread",
+        "vendor": "Waves",
+        "product": "PS22 Spread",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/2035ec8dd8df--waves-ps22-spread.json",
+        "primary": "width-psychoacoustic",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "aggressive_vocal_density": [
+      {
+        "family_id": "47e12f69eb3c",
+        "adapter_id": "47e12f69eb3c--waves-cla-76",
+        "vendor": "Waves",
+        "product": "CLA-76",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/47e12f69eb3c--waves-cla-76.json",
+        "primary": "compression-fet",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "air": [
+      {
+        "family_id": "1994a7f7d443",
+        "adapter_id": "1994a7f7d443--plugin-alliance-black-box-analog-design-hg-2",
+        "vendor": "Plugin Alliance",
+        "product": "Black Box Analog Design HG-2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/1994a7f7d443--plugin-alliance-black-box-analog-design-hg-2.json",
+        "primary": "saturation-tube-parallel",
+        "versions": "1.3.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "air-band": [
+      {
+        "family_id": "e98173f7f4df",
+        "adapter_id": "e98173f7f4df--plugin-alliance-maag-eq4",
+        "vendor": "Plugin Alliance",
+        "product": "Maag EQ4",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/e98173f7f4df--plugin-alliance-maag-eq4.json",
+        "primary": "eq-air-color",
+        "versions": "1.3.0.0 | 1.9.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "allround": [
+      {
+        "family_id": "5d8d036ccd33",
+        "adapter_id": "5d8d036ccd33--fabfilter-pro-ds",
+        "vendor": "FabFilter",
+        "product": "Pro-DS",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/5d8d036ccd33--fabfilter-pro-ds.json",
+        "primary": "deessing-wide-split",
+        "versions": "1.2.1.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "analog": [
+      {
+        "family_id": "bbf795a9fd06",
+        "adapter_id": "bbf795a9fd06--waves-h-delay",
+        "vendor": "Waves",
+        "product": "H-Delay",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/bbf795a9fd06--waves-h-delay.json",
+        "primary": "delay-vocal",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "articulation": [
+      {
+        "family_id": "ddb1354cf0c2",
+        "adapter_id": "ddb1354cf0c2--waves-smack-attack",
+        "vendor": "Waves",
+        "product": "Smack Attack",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/ddb1354cf0c2--waves-smack-attack.json",
+        "primary": "transient-shaping",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "articulation_too_soft": [
+      {
+        "family_id": "ddb1354cf0c2",
+        "adapter_id": "ddb1354cf0c2--waves-smack-attack",
+        "vendor": "Waves",
+        "product": "Smack Attack",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/ddb1354cf0c2--waves-smack-attack.json",
+        "primary": "transient-shaping",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "automation": [
+      {
+        "family_id": "b6c750f3ccec",
+        "adapter_id": "b6c750f3ccec--waves-vocal-rider",
+        "vendor": "Waves",
+        "product": "Vocal Rider",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/b6c750f3ccec--waves-vocal-rider.json",
+        "primary": "level-riding",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "band_limited_dynamic_imbalance": [
+      {
+        "family_id": "a8c2063eb007",
+        "adapter_id": "a8c2063eb007--fabfilter-pro-mb",
+        "vendor": "FabFilter",
+        "product": "Pro-MB",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a8c2063eb007--fabfilter-pro-mb.json",
+        "primary": "multiband-dynamics",
+        "versions": "1.2.8.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "breath-monitor": [
+      {
+        "family_id": "ad123c8856d3",
+        "adapter_id": "ad123c8856d3--waves-debreath",
+        "vendor": "Waves",
+        "product": "DeBreath",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/ad123c8856d3--waves-debreath.json",
+        "primary": "restoration-breath",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "breath_level_inconsistent": [
+      {
+        "family_id": "ad123c8856d3",
+        "adapter_id": "ad123c8856d3--waves-debreath",
+        "vendor": "Waves",
+        "product": "DeBreath",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/ad123c8856d3--waves-debreath.json",
+        "primary": "restoration-breath",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "breath_too_loud": [
+      {
+        "family_id": "ad123c8856d3",
+        "adapter_id": "ad123c8856d3--waves-debreath",
+        "vendor": "Waves",
+        "product": "DeBreath",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/ad123c8856d3--waves-debreath.json",
+        "primary": "restoration-breath",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "broad-tone": [
+      {
+        "family_id": "e98173f7f4df",
+        "adapter_id": "e98173f7f4df--plugin-alliance-maag-eq4",
+        "vendor": "Plugin Alliance",
+        "product": "Maag EQ4",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/e98173f7f4df--plugin-alliance-maag-eq4.json",
+        "primary": "eq-air-color",
+        "versions": "1.3.0.0 | 1.9.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "broad_high_frequency_dullness": [
+      {
+        "family_id": "e98173f7f4df",
+        "adapter_id": "e98173f7f4df--plugin-alliance-maag-eq4",
+        "vendor": "Plugin Alliance",
+        "product": "Maag EQ4",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/e98173f7f4df--plugin-alliance-maag-eq4.json",
+        "primary": "eq-air-color",
+        "versions": "1.3.0.0 | 1.9.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "broadband_dialogue_noise": [
+      {
+        "family_id": "6756edefac77",
+        "adapter_id": "6756edefac77--waves-wns",
+        "vendor": "Waves",
+        "product": "WNS",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/6756edefac77--waves-wns.json",
+        "primary": "noise-reduction-multiband-dialogue",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "broadband_stationary_noise": [
+      {
+        "family_id": "29b6d9504a55",
+        "adapter_id": "29b6d9504a55--waves-ns1",
+        "vendor": "Waves",
+        "product": "NS1",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/29b6d9504a55--waves-ns1.json",
+        "primary": "noise-reduction-simple",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "channel-strip": [
+      {
+        "family_id": "a094b33b301c",
+        "adapter_id": "a094b33b301c--waves-scheps-omni-channel",
+        "vendor": "Waves",
+        "product": "Scheps Omni Channel",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a094b33b301c--waves-scheps-omni-channel.json",
+        "primary": "channel-strip",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "chorus": [
+      {
+        "family_id": "a0c159c0ffd1",
+        "adapter_id": "a0c159c0ffd1--valhalla-dsp-llc-valhallavintageverb",
+        "vendor": "Valhalla DSP, LLC",
+        "product": "ValhallaVintageVerb",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a0c159c0ffd1--valhalla-dsp-llc-valhallavintageverb.json",
+        "primary": "reverb-vintage-algorithmic",
+        "versions": "2.2.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "clean": [
+      {
+        "family_id": "a3005d9763bc",
+        "adapter_id": "a3005d9763bc--fabfilter-pro-c-2",
+        "vendor": "FabFilter",
+        "product": "Pro-C 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a3005d9763bc--fabfilter-pro-c-2.json",
+        "primary": "compression-flexible",
+        "versions": "2.1.7.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "compander": [
+      {
+        "family_id": "edb2c31ffd45",
+        "adapter_id": "edb2c31ffd45--waves-abbey-road-saturator",
+        "vendor": "Waves",
+        "product": "Abbey Road Saturator",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/edb2c31ffd45--waves-abbey-road-saturator.json",
+        "primary": "saturation-character",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "compression": [
+      {
+        "family_id": "6d808184e53c",
+        "adapter_id": "6d808184e53c--slate-digital-virtual-tape-machines",
+        "vendor": "Slate Digital",
+        "product": "Virtual Tape Machines",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/6d808184e53c--slate-digital-virtual-tape-machines.json",
+        "primary": "saturation-tape",
+        "versions": "1.1.11.1 | 1.2.1.1",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "compression-fet": [
+      {
+        "family_id": "47e12f69eb3c",
+        "adapter_id": "47e12f69eb3c--waves-cla-76",
+        "vendor": "Waves",
+        "product": "CLA-76",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/47e12f69eb3c--waves-cla-76.json",
+        "primary": "compression-fet",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "compression-flexible": [
+      {
+        "family_id": "a3005d9763bc",
+        "adapter_id": "a3005d9763bc--fabfilter-pro-c-2",
+        "vendor": "FabFilter",
+        "product": "Pro-C 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a3005d9763bc--fabfilter-pro-c-2.json",
+        "primary": "compression-flexible",
+        "versions": "2.1.7.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "compression-opto": [
+      {
+        "family_id": "aeaf742fd9a2",
+        "adapter_id": "aeaf742fd9a2--softube-tube-tech-cl-1b-mk-ii",
+        "vendor": "Softube",
+        "product": "Tube-Tech CL 1B mk II",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/aeaf742fd9a2--softube-tube-tech-cl-1b-mk-ii.json",
+        "primary": "compression-opto",
+        "versions": "2.5.0.9 | 2.5.9",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "compression-upward-downward": [
+      {
+        "family_id": "98b9ef89ee33",
+        "adapter_id": "98b9ef89ee33--waves-mv2",
+        "vendor": "Waves",
+        "product": "MV2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/98b9ef89ee33--waves-mv2.json",
+        "primary": "compression-upward-downward",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "compression-vocal-fast": [
+      {
+        "family_id": "fbfdbc32d12d",
+        "adapter_id": "fbfdbc32d12d--waves-rvox",
+        "vendor": "Waves",
+        "product": "RVox",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/fbfdbc32d12d--waves-rvox.json",
+        "primary": "compression-vocal-fast",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "creative_modulation": [
+      {
+        "family_id": "0072a637f389",
+        "adapter_id": "0072a637f389--fabfilter-saturn-2",
+        "vendor": "FabFilter",
+        "product": "Saturn 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/0072a637f389--fabfilter-saturn-2.json",
+        "primary": "saturation-multiband",
+        "versions": "2.0.8.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "creative_multitap": [
+      {
+        "family_id": "83165b3547f7",
+        "adapter_id": "83165b3547f7--fabfilter-timeless-3",
+        "vendor": "FabFilter",
+        "product": "Timeless 3",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/83165b3547f7--fabfilter-timeless-3.json",
+        "primary": "delay-creative",
+        "versions": "3.0.5.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "creative_octave_layer": [
+      {
+        "family_id": "06fad1aad9d8",
+        "adapter_id": "06fad1aad9d8--waves-vocal-bender",
+        "vendor": "Waves",
+        "product": "Vocal Bender",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/06fad1aad9d8--waves-vocal-bender.json",
+        "primary": "pitch-formant-creative",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "decay-rate-eq": [
+      {
+        "family_id": "8987809250b1",
+        "adapter_id": "8987809250b1--fabfilter-pro-r",
+        "vendor": "FabFilter",
+        "product": "Pro-R",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/8987809250b1--fabfilter-pro-r.json",
+        "primary": "reverb-natural",
+        "versions": "1.1.5.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "deessing": [
+      {
+        "family_id": "a8c2063eb007",
+        "adapter_id": "a8c2063eb007--fabfilter-pro-mb",
+        "vendor": "FabFilter",
+        "product": "Pro-MB",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a8c2063eb007--fabfilter-pro-mb.json",
+        "primary": "multiband-dynamics",
+        "versions": "1.2.8.0",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "a094b33b301c",
+        "adapter_id": "a094b33b301c--waves-scheps-omni-channel",
+        "vendor": "Waves",
+        "product": "Scheps Omni Channel",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a094b33b301c--waves-scheps-omni-channel.json",
+        "primary": "channel-strip",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "deessing-spectral": [
+      {
+        "family_id": "0188bc583c26",
+        "adapter_id": "0188bc583c26--eiosis-eiosis-e2deesser",
+        "vendor": "Eiosis",
+        "product": "Eiosis E2Deesser",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/0188bc583c26--eiosis-eiosis-e2deesser.json",
+        "primary": "deessing-spectral",
+        "versions": "1.0.9.3",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "deessing-wide-split": [
+      {
+        "family_id": "5d8d036ccd33",
+        "adapter_id": "5d8d036ccd33--fabfilter-pro-ds",
+        "vendor": "FabFilter",
+        "product": "Pro-DS",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/5d8d036ccd33--fabfilter-pro-ds.json",
+        "primary": "deessing-wide-split",
+        "versions": "1.2.1.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "delay-creative": [
+      {
+        "family_id": "83165b3547f7",
+        "adapter_id": "83165b3547f7--fabfilter-timeless-3",
+        "vendor": "FabFilter",
+        "product": "Timeless 3",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/83165b3547f7--fabfilter-timeless-3.json",
+        "primary": "delay-creative",
+        "versions": "3.0.5.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "delay-vocal": [
+      {
+        "family_id": "bbf795a9fd06",
+        "adapter_id": "bbf795a9fd06--waves-h-delay",
+        "vendor": "Waves",
+        "product": "H-Delay",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/bbf795a9fd06--waves-h-delay.json",
+        "primary": "delay-vocal",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "dense_bright_tail": [
+      {
+        "family_id": "efa4ad9005f3",
+        "adapter_id": "efa4ad9005f3--valhalla-dsp-llc-valhallaplate",
+        "vendor": "Valhalla DSP, LLC",
+        "product": "ValhallaPlate",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/efa4ad9005f3--valhalla-dsp-llc-valhallaplate.json",
+        "primary": "reverb-plate",
+        "versions": "1.6.3",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "dense_close_vocal": [
+      {
+        "family_id": "98b9ef89ee33",
+        "adapter_id": "98b9ef89ee33--waves-mv2",
+        "vendor": "Waves",
+        "product": "MV2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/98b9ef89ee33--waves-mv2.json",
+        "primary": "compression-upward-downward",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "dense_high_mid_buildup": [
+      {
+        "family_id": "7a146380912e",
+        "adapter_id": "7a146380912e--oeksound-soothe2",
+        "vendor": "oeksound",
+        "product": "soothe2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/7a146380912e--oeksound-soothe2.json",
+        "primary": "resonance-suppression",
+        "versions": "1.1.2",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "density": [
+      {
+        "family_id": "98b9ef89ee33",
+        "adapter_id": "98b9ef89ee33--waves-mv2",
+        "vendor": "Waves",
+        "product": "MV2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/98b9ef89ee33--waves-mv2.json",
+        "primary": "compression-upward-downward",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "difference-monitor": [
+      {
+        "family_id": "75f2f9574990",
+        "adapter_id": "75f2f9574990--waves-x-click",
+        "vendor": "Waves",
+        "product": "X-Click",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/75f2f9574990--waves-x-click.json",
+        "primary": "restoration-click-mouth-adjacent",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "diffusion": [
+      {
+        "family_id": "efa4ad9005f3",
+        "adapter_id": "efa4ad9005f3--valhalla-dsp-llc-valhallaplate",
+        "vendor": "Valhalla DSP, LLC",
+        "product": "ValhallaPlate",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/efa4ad9005f3--valhalla-dsp-llc-valhallaplate.json",
+        "primary": "reverb-plate",
+        "versions": "1.6.3",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "digital_click": [
+      {
+        "family_id": "75f2f9574990",
+        "adapter_id": "75f2f9574990--waves-x-click",
+        "vendor": "Waves",
+        "product": "X-Click",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/75f2f9574990--waves-x-click.json",
+        "primary": "restoration-click-mouth-adjacent",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "distance": [
+      {
+        "family_id": "8987809250b1",
+        "adapter_id": "8987809250b1--fabfilter-pro-r",
+        "vendor": "FabFilter",
+        "product": "Pro-R",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/8987809250b1--fabfilter-pro-r.json",
+        "primary": "reverb-natural",
+        "versions": "1.1.5.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "double_track_effect": [
+      {
+        "family_id": "4bceae9f0a6f",
+        "adapter_id": "4bceae9f0a6f--waves-doubler",
+        "vendor": "Waves",
+        "product": "Doubler",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/4bceae9f0a6f--waves-doubler.json",
+        "primary": "width-multivoice",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "ducked_echo": [
+      {
+        "family_id": "83165b3547f7",
+        "adapter_id": "83165b3547f7--fabfilter-timeless-3",
+        "vendor": "FabFilter",
+        "product": "Timeless 3",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/83165b3547f7--fabfilter-timeless-3.json",
+        "primary": "delay-creative",
+        "versions": "3.0.5.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "ducking": [
+      {
+        "family_id": "83165b3547f7",
+        "adapter_id": "83165b3547f7--fabfilter-timeless-3",
+        "vendor": "FabFilter",
+        "product": "Timeless 3",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/83165b3547f7--fabfilter-timeless-3.json",
+        "primary": "delay-creative",
+        "versions": "3.0.5.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "dynamic-resonance": [
+      {
+        "family_id": "7a146380912e",
+        "adapter_id": "7a146380912e--oeksound-soothe2",
+        "vendor": "oeksound",
+        "product": "soothe2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/7a146380912e--oeksound-soothe2.json",
+        "primary": "resonance-suppression",
+        "versions": "1.1.2",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "dynamic-tone": [
+      {
+        "family_id": "a8c2063eb007",
+        "adapter_id": "a8c2063eb007--fabfilter-pro-mb",
+        "vendor": "FabFilter",
+        "product": "Pro-MB",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a8c2063eb007--fabfilter-pro-mb.json",
+        "primary": "multiband-dynamics",
+        "versions": "1.2.8.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "dynamic_range_control": [
+      {
+        "family_id": "a3005d9763bc",
+        "adapter_id": "a3005d9763bc--fabfilter-pro-c-2",
+        "vendor": "FabFilter",
+        "product": "Pro-C 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a3005d9763bc--fabfilter-pro-c-2.json",
+        "primary": "compression-flexible",
+        "versions": "2.1.7.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "dynamic_resonance": [
+      {
+        "family_id": "5cc7ad8baf95",
+        "adapter_id": "5cc7ad8baf95--waves-f6",
+        "vendor": "Waves",
+        "product": "F6",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/5cc7ad8baf95--waves-f6.json",
+        "primary": "eq-dynamic-flexible",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "dynamics": [
+      {
+        "family_id": "a094b33b301c",
+        "adapter_id": "a094b33b301c--waves-scheps-omni-channel",
+        "vendor": "Waves",
+        "product": "Scheps Omni Channel",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a094b33b301c--waves-scheps-omni-channel.json",
+        "primary": "channel-strip",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "envelope": [
+      {
+        "family_id": "ddb1354cf0c2",
+        "adapter_id": "ddb1354cf0c2--waves-smack-attack",
+        "vendor": "Waves",
+        "product": "Smack Attack",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/ddb1354cf0c2--waves-smack-attack.json",
+        "primary": "transient-shaping",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "eq": [
+      {
+        "family_id": "a094b33b301c",
+        "adapter_id": "a094b33b301c--waves-scheps-omni-channel",
+        "vendor": "Waves",
+        "product": "Scheps Omni Channel",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a094b33b301c--waves-scheps-omni-channel.json",
+        "primary": "channel-strip",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "eq-air-color": [
+      {
+        "family_id": "e98173f7f4df",
+        "adapter_id": "e98173f7f4df--plugin-alliance-maag-eq4",
+        "vendor": "Plugin Alliance",
+        "product": "Maag EQ4",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/e98173f7f4df--plugin-alliance-maag-eq4.json",
+        "primary": "eq-air-color",
+        "versions": "1.3.0.0 | 1.9.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "eq-dynamic-flexible": [
+      {
+        "family_id": "5cc7ad8baf95",
+        "adapter_id": "5cc7ad8baf95--waves-f6",
+        "vendor": "Waves",
+        "product": "F6",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/5cc7ad8baf95--waves-f6.json",
+        "primary": "eq-dynamic-flexible",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "eq-surgical-dynamic": [
+      {
+        "family_id": "497c2536aeff",
+        "adapter_id": "497c2536aeff--fabfilter-pro-q-3",
+        "vendor": "FabFilter",
+        "product": "Pro-Q 3",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/497c2536aeff--fabfilter-pro-q-3.json",
+        "primary": "eq-surgical-dynamic",
+        "versions": "3.2.3.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "exciter-air": [
+      {
+        "family_id": "0c0769036773",
+        "adapter_id": "0c0769036773--slate-digital-fresh-air",
+        "vendor": "Slate Digital",
+        "product": "Fresh Air",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/0c0769036773--slate-digital-fresh-air.json",
+        "primary": "exciter-air",
+        "versions": "1.1.1",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "external-sidechain": [
+      {
+        "family_id": "5cc7ad8baf95",
+        "adapter_id": "5cc7ad8baf95--waves-f6",
+        "vendor": "Waves",
+        "product": "F6",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/5cc7ad8baf95--waves-f6.json",
+        "primary": "eq-dynamic-flexible",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "fast_integrated_chain": [
+      {
+        "family_id": "a094b33b301c",
+        "adapter_id": "a094b33b301c--waves-scheps-omni-channel",
+        "vendor": "Waves",
+        "product": "Scheps Omni Channel",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a094b33b301c--waves-scheps-omni-channel.json",
+        "primary": "channel-strip",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "fast_peak_control": [
+      {
+        "family_id": "47e12f69eb3c",
+        "adapter_id": "47e12f69eb3c--waves-cla-76",
+        "vendor": "Waves",
+        "product": "CLA-76",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/47e12f69eb3c--waves-cla-76.json",
+        "primary": "compression-fet",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "filter": [
+      {
+        "family_id": "bbf795a9fd06",
+        "adapter_id": "bbf795a9fd06--waves-h-delay",
+        "vendor": "Waves",
+        "product": "H-Delay",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/bbf795a9fd06--waves-h-delay.json",
+        "primary": "delay-vocal",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "formant": [
+      {
+        "family_id": "7b4d8c94b025",
+        "adapter_id": "7b4d8c94b025--antares-auto-tune-pro",
+        "vendor": "Antares",
+        "product": "Auto-Tune Pro",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/7b4d8c94b025--antares-auto-tune-pro.json",
+        "primary": "pitch-realtime",
+        "versions": "10.0.0",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "06fad1aad9d8",
+        "adapter_id": "06fad1aad9d8--waves-vocal-bender",
+        "vendor": "Waves",
+        "product": "Vocal Bender",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/06fad1aad9d8--waves-vocal-bender.json",
+        "primary": "pitch-formant-creative",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "formant_character": [
+      {
+        "family_id": "06fad1aad9d8",
+        "adapter_id": "06fad1aad9d8--waves-vocal-bender",
+        "vendor": "Waves",
+        "product": "Vocal Bender",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/06fad1aad9d8--waves-vocal-bender.json",
+        "primary": "pitch-formant-creative",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "frequency_dependent_decay": [
+      {
+        "family_id": "8987809250b1",
+        "adapter_id": "8987809250b1--fabfilter-pro-r",
+        "vendor": "FabFilter",
+        "product": "Pro-R",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/8987809250b1--fabfilter-pro-r.json",
+        "primary": "reverb-natural",
+        "versions": "1.1.5.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "frequency_masking": [
+      {
+        "family_id": "497c2536aeff",
+        "adapter_id": "497c2536aeff--fabfilter-pro-q-3",
+        "vendor": "FabFilter",
+        "product": "Pro-Q 3",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/497c2536aeff--fabfilter-pro-q-3.json",
+        "primary": "eq-surgical-dynamic",
+        "versions": "3.2.3.0",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "5cc7ad8baf95",
+        "adapter_id": "5cc7ad8baf95--waves-f6",
+        "vendor": "Waves",
+        "product": "F6",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/5cc7ad8baf95--waves-f6.json",
+        "primary": "eq-dynamic-flexible",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "frequency_selective_saturation": [
+      {
+        "family_id": "0072a637f389",
+        "adapter_id": "0072a637f389--fabfilter-saturn-2",
+        "vendor": "FabFilter",
+        "product": "Saturn 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/0072a637f389--fabfilter-saturn-2.json",
+        "primary": "saturation-multiband",
+        "versions": "2.0.8.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "frequency_skewed_room_noise": [
+      {
+        "family_id": "6756edefac77",
+        "adapter_id": "6756edefac77--waves-wns",
+        "vendor": "Waves",
+        "product": "WNS",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/6756edefac77--waves-wns.json",
+        "primary": "noise-reduction-multiband-dialogue",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "gate": [
+      {
+        "family_id": "fbfdbc32d12d",
+        "adapter_id": "fbfdbc32d12d--waves-rvox",
+        "vendor": "Waves",
+        "product": "RVox",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/fbfdbc32d12d--waves-rvox.json",
+        "primary": "compression-vocal-fast",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "gate-expander": [
+      {
+        "family_id": "290814706035",
+        "adapter_id": "290814706035--fabfilter-pro-g",
+        "vendor": "FabFilter",
+        "product": "Pro-G",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/290814706035--fabfilter-pro-g.json",
+        "primary": "gate-expander",
+        "versions": "1.3.1.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "hall": [
+      {
+        "family_id": "a0c159c0ffd1",
+        "adapter_id": "a0c159c0ffd1--valhalla-dsp-llc-valhallavintageverb",
+        "vendor": "Valhalla DSP, LLC",
+        "product": "ValhallaVintageVerb",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a0c159c0ffd1--valhalla-dsp-llc-valhallavintageverb.json",
+        "primary": "reverb-vintage-algorithmic",
+        "versions": "2.2.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "harmonic_density": [
+      {
+        "family_id": "0072a637f389",
+        "adapter_id": "0072a637f389--fabfilter-saturn-2",
+        "vendor": "FabFilter",
+        "product": "Saturn 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/0072a637f389--fabfilter-saturn-2.json",
+        "primary": "saturation-multiband",
+        "versions": "2.0.8.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "harmonics": [
+      {
+        "family_id": "1994a7f7d443",
+        "adapter_id": "1994a7f7d443--plugin-alliance-black-box-analog-design-hg-2",
+        "vendor": "Plugin Alliance",
+        "product": "Black Box Analog Design HG-2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/1994a7f7d443--plugin-alliance-black-box-analog-design-hg-2.json",
+        "primary": "saturation-tube-parallel",
+        "versions": "1.3.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "harsh_consonants": [
+      {
+        "family_id": "5d8d036ccd33",
+        "adapter_id": "5d8d036ccd33--fabfilter-pro-ds",
+        "vendor": "FabFilter",
+        "product": "Pro-DS",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/5d8d036ccd33--fabfilter-pro-ds.json",
+        "primary": "deessing-wide-split",
+        "versions": "1.2.1.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "harshness": [
+      {
+        "family_id": "7a146380912e",
+        "adapter_id": "7a146380912e--oeksound-soothe2",
+        "vendor": "oeksound",
+        "product": "soothe2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/7a146380912e--oeksound-soothe2.json",
+        "primary": "resonance-suppression",
+        "versions": "1.1.2",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "7a146380912e",
+        "adapter_id": "7a146380912e--oeksound-soothe2",
+        "vendor": "oeksound",
+        "product": "soothe2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/7a146380912e--oeksound-soothe2.json",
+        "primary": "resonance-suppression",
+        "versions": "1.1.2",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "head-bump": [
+      {
+        "family_id": "6d808184e53c",
+        "adapter_id": "6d808184e53c--slate-digital-virtual-tape-machines",
+        "vendor": "Slate Digital",
+        "product": "Virtual Tape Machines",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/6d808184e53c--slate-digital-virtual-tape-machines.json",
+        "primary": "saturation-tape",
+        "versions": "1.1.11.1 | 1.2.1.1",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "head_bump": [
+      {
+        "family_id": "6d808184e53c",
+        "adapter_id": "6d808184e53c--slate-digital-virtual-tape-machines",
+        "vendor": "Slate Digital",
+        "product": "Virtual Tape Machines",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/6d808184e53c--slate-digital-virtual-tape-machines.json",
+        "primary": "saturation-tape",
+        "versions": "1.1.11.1 | 1.2.1.1",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "high_frequency_softening": [
+      {
+        "family_id": "6d808184e53c",
+        "adapter_id": "6d808184e53c--slate-digital-virtual-tape-machines",
+        "vendor": "Slate Digital",
+        "product": "Virtual Tape Machines",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/6d808184e53c--slate-digital-virtual-tape-machines.json",
+        "primary": "saturation-tape",
+        "versions": "1.1.11.1 | 1.2.1.1",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "intentional_hard_tune": [
+      {
+        "family_id": "7b4d8c94b025",
+        "adapter_id": "7b4d8c94b025--antares-auto-tune-pro",
+        "vendor": "Antares",
+        "product": "Auto-Tune Pro",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/7b4d8c94b025--antares-auto-tune-pro.json",
+        "primary": "pitch-realtime",
+        "versions": "10.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "inter_phrase_noise": [
+      {
+        "family_id": "290814706035",
+        "adapter_id": "290814706035--fabfilter-pro-g",
+        "vendor": "FabFilter",
+        "product": "Pro-G",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/290814706035--fabfilter-pro-g.json",
+        "primary": "gate-expander",
+        "versions": "1.3.1.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "lack_of_air": [
+      {
+        "family_id": "e98173f7f4df",
+        "adapter_id": "e98173f7f4df--plugin-alliance-maag-eq4",
+        "vendor": "Plugin Alliance",
+        "product": "Maag EQ4",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/e98173f7f4df--plugin-alliance-maag-eq4.json",
+        "primary": "eq-air-color",
+        "versions": "1.3.0.0 | 1.9.0.0",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "0c0769036773",
+        "adapter_id": "0c0769036773--slate-digital-fresh-air",
+        "vendor": "Slate Digital",
+        "product": "Fresh Air",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/0c0769036773--slate-digital-fresh-air.json",
+        "primary": "exciter-air",
+        "versions": "1.1.1",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "level-riding": [
+      {
+        "family_id": "b6c750f3ccec",
+        "adapter_id": "b6c750f3ccec--waves-vocal-rider",
+        "vendor": "Waves",
+        "product": "Vocal Rider",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/b6c750f3ccec--waves-vocal-rider.json",
+        "primary": "level-riding",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "leveling": [
+      {
+        "family_id": "aeaf742fd9a2",
+        "adapter_id": "aeaf742fd9a2--softube-tube-tech-cl-1b-mk-ii",
+        "vendor": "Softube",
+        "product": "Tube-Tech CL 1B mk II",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/aeaf742fd9a2--softube-tube-tech-cl-1b-mk-ii.json",
+        "primary": "compression-opto",
+        "versions": "2.5.0.9 | 2.5.9",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "limiting": [
+      {
+        "family_id": "98d9ac6060f6",
+        "adapter_id": "98d9ac6060f6--fabfilter-pro-l-2",
+        "vendor": "FabFilter",
+        "product": "Pro-L 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/98d9ac6060f6--fabfilter-pro-l-2.json",
+        "primary": "limiting",
+        "versions": "2.2.1.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "loudness": [
+      {
+        "family_id": "585b0952e62c",
+        "adapter_id": "585b0952e62c--izotope-insight-2",
+        "vendor": "iZotope",
+        "product": "Insight 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/585b0952e62c--izotope-insight-2.json",
+        "primary": "metering",
+        "versions": "2.0.6.0 | 2.6.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "loudness-match": [
+      {
+        "family_id": "fb4b55cbf4ec",
+        "adapter_id": "fb4b55cbf4ec--plugin-alliance-adptr-metricab",
+        "vendor": "Plugin Alliance",
+        "product": "ADPTR MetricAB",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/fb4b55cbf4ec--plugin-alliance-adptr-metricab.json",
+        "primary": "reference-ab",
+        "versions": "1.0.0 | 1.0.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "loudness_bias_check": [
+      {
+        "family_id": "fb4b55cbf4ec",
+        "adapter_id": "fb4b55cbf4ec--plugin-alliance-adptr-metricab",
+        "vendor": "Plugin Alliance",
+        "product": "ADPTR MetricAB",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/fb4b55cbf4ec--plugin-alliance-adptr-metricab.json",
+        "primary": "reference-ab",
+        "versions": "1.0.0 | 1.0.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "loudness_measurement": [
+      {
+        "family_id": "585b0952e62c",
+        "adapter_id": "585b0952e62c--izotope-insight-2",
+        "vendor": "iZotope",
+        "product": "Insight 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/585b0952e62c--izotope-insight-2.json",
+        "primary": "metering",
+        "versions": "2.0.6.0 | 2.6.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "low-level-detail": [
+      {
+        "family_id": "98b9ef89ee33",
+        "adapter_id": "98b9ef89ee33--waves-mv2",
+        "vendor": "Waves",
+        "product": "MV2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/98b9ef89ee33--waves-mv2.json",
+        "primary": "compression-upward-downward",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "low_frequency_mono": [
+      {
+        "family_id": "1034f31ae5fd",
+        "adapter_id": "1034f31ae5fd--plugin-alliance-bx-control-v2",
+        "vendor": "Plugin Alliance",
+        "product": "bx_control V2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/1034f31ae5fd--plugin-alliance-bx-control-v2.json",
+        "primary": "stereo-utility",
+        "versions": "2.0.0.0 | 2.10.0.0 | 2.3.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "low_level_detail_missing": [
+      {
+        "family_id": "98b9ef89ee33",
+        "adapter_id": "98b9ef89ee33--waves-mv2",
+        "vendor": "Waves",
+        "product": "MV2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/98b9ef89ee33--waves-mv2.json",
+        "primary": "compression-upward-downward",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "low_mid_bloom": [
+      {
+        "family_id": "5cc7ad8baf95",
+        "adapter_id": "5cc7ad8baf95--waves-f6",
+        "vendor": "Waves",
+        "product": "F6",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/5cc7ad8baf95--waves-f6.json",
+        "primary": "eq-dynamic-flexible",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "a8c2063eb007",
+        "adapter_id": "a8c2063eb007--fabfilter-pro-mb",
+        "vendor": "FabFilter",
+        "product": "Pro-MB",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a8c2063eb007--fabfilter-pro-mb.json",
+        "primary": "multiband-dynamics",
+        "versions": "1.2.8.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "macro_level_inconsistency": [
+      {
+        "family_id": "b6c750f3ccec",
+        "adapter_id": "b6c750f3ccec--waves-vocal-rider",
+        "vendor": "Waves",
+        "product": "Vocal Rider",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/b6c750f3ccec--waves-vocal-rider.json",
+        "primary": "level-riding",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "metering": [
+      {
+        "family_id": "585b0952e62c",
+        "adapter_id": "585b0952e62c--izotope-insight-2",
+        "vendor": "iZotope",
+        "product": "Insight 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/585b0952e62c--izotope-insight-2.json",
+        "primary": "metering",
+        "versions": "2.0.6.0 | 2.6.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "mid-side": [
+      {
+        "family_id": "497c2536aeff",
+        "adapter_id": "497c2536aeff--fabfilter-pro-q-3",
+        "vendor": "FabFilter",
+        "product": "Pro-Q 3",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/497c2536aeff--fabfilter-pro-q-3.json",
+        "primary": "eq-surgical-dynamic",
+        "versions": "3.2.3.0",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "5cc7ad8baf95",
+        "adapter_id": "5cc7ad8baf95--waves-f6",
+        "vendor": "Waves",
+        "product": "F6",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/5cc7ad8baf95--waves-f6.json",
+        "primary": "eq-dynamic-flexible",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "mid_side_diagnosis": [
+      {
+        "family_id": "1034f31ae5fd",
+        "adapter_id": "1034f31ae5fd--plugin-alliance-bx-control-v2",
+        "vendor": "Plugin Alliance",
+        "product": "bx_control V2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/1034f31ae5fd--plugin-alliance-bx-control-v2.json",
+        "primary": "stereo-utility",
+        "versions": "2.0.0.0 | 2.10.0.0 | 2.3.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "midrange_character": [
+      {
+        "family_id": "edb2c31ffd45",
+        "adapter_id": "edb2c31ffd45--waves-abbey-road-saturator",
+        "vendor": "Waves",
+        "product": "Abbey Road Saturator",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/edb2c31ffd45--waves-abbey-road-saturator.json",
+        "primary": "saturation-character",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "mix_context_comparison": [
+      {
+        "family_id": "fb4b55cbf4ec",
+        "adapter_id": "fb4b55cbf4ec--plugin-alliance-adptr-metricab",
+        "vendor": "Plugin Alliance",
+        "product": "ADPTR MetricAB",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/fb4b55cbf4ec--plugin-alliance-adptr-metricab.json",
+        "primary": "reference-ab",
+        "versions": "1.0.0 | 1.0.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "modulated_delay": [
+      {
+        "family_id": "83165b3547f7",
+        "adapter_id": "83165b3547f7--fabfilter-timeless-3",
+        "vendor": "FabFilter",
+        "product": "Timeless 3",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/83165b3547f7--fabfilter-timeless-3.json",
+        "primary": "delay-creative",
+        "versions": "3.0.5.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "modulated_tail": [
+      {
+        "family_id": "a0c159c0ffd1",
+        "adapter_id": "a0c159c0ffd1--valhalla-dsp-llc-valhallavintageverb",
+        "vendor": "Valhalla DSP, LLC",
+        "product": "ValhallaVintageVerb",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a0c159c0ffd1--valhalla-dsp-llc-valhallavintageverb.json",
+        "primary": "reverb-vintage-algorithmic",
+        "versions": "2.2.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "modulation": [
+      {
+        "family_id": "0072a637f389",
+        "adapter_id": "0072a637f389--fabfilter-saturn-2",
+        "vendor": "FabFilter",
+        "product": "Saturn 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/0072a637f389--fabfilter-saturn-2.json",
+        "primary": "saturation-multiband",
+        "versions": "2.0.8.0",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "06fad1aad9d8",
+        "adapter_id": "06fad1aad9d8--waves-vocal-bender",
+        "vendor": "Waves",
+        "product": "Vocal Bender",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/06fad1aad9d8--waves-vocal-bender.json",
+        "primary": "pitch-formant-creative",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "83165b3547f7",
+        "adapter_id": "83165b3547f7--fabfilter-timeless-3",
+        "vendor": "FabFilter",
+        "product": "Timeless 3",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/83165b3547f7--fabfilter-timeless-3.json",
+        "primary": "delay-creative",
+        "versions": "3.0.5.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "mono-maker": [
+      {
+        "family_id": "1034f31ae5fd",
+        "adapter_id": "1034f31ae5fd--plugin-alliance-bx-control-v2",
+        "vendor": "Plugin Alliance",
+        "product": "bx_control V2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/1034f31ae5fd--plugin-alliance-bx-control-v2.json",
+        "primary": "stereo-utility",
+        "versions": "2.0.0.0 | 2.10.0.0 | 2.3.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "mono-to-stereo": [
+      {
+        "family_id": "2035ec8dd8df",
+        "adapter_id": "2035ec8dd8df--waves-ps22-spread",
+        "vendor": "Waves",
+        "product": "PS22 Spread",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/2035ec8dd8df--waves-ps22-spread.json",
+        "primary": "width-psychoacoustic",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "mono_to_stereo_effect": [
+      {
+        "family_id": "2035ec8dd8df",
+        "adapter_id": "2035ec8dd8df--waves-ps22-spread",
+        "vendor": "Waves",
+        "product": "PS22 Spread",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/2035ec8dd8df--waves-ps22-spread.json",
+        "primary": "width-psychoacoustic",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "mouth_click_or_short_impulse": [
+      {
+        "family_id": "75f2f9574990",
+        "adapter_id": "75f2f9574990--waves-x-click",
+        "vendor": "Waves",
+        "product": "X-Click",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/75f2f9574990--waves-x-click.json",
+        "primary": "restoration-click-mouth-adjacent",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "moving_resonance": [
+      {
+        "family_id": "7a146380912e",
+        "adapter_id": "7a146380912e--oeksound-soothe2",
+        "vendor": "oeksound",
+        "product": "soothe2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/7a146380912e--oeksound-soothe2.json",
+        "primary": "resonance-suppression",
+        "versions": "1.1.2",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "mud": [
+      {
+        "family_id": "497c2536aeff",
+        "adapter_id": "497c2536aeff--fabfilter-pro-q-3",
+        "vendor": "FabFilter",
+        "product": "Pro-Q 3",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/497c2536aeff--fabfilter-pro-q-3.json",
+        "primary": "eq-surgical-dynamic",
+        "versions": "3.2.3.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "multi_stage_vocal_cleanup": [
+      {
+        "family_id": "a094b33b301c",
+        "adapter_id": "a094b33b301c--waves-scheps-omni-channel",
+        "vendor": "Waves",
+        "product": "Scheps Omni Channel",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a094b33b301c--waves-scheps-omni-channel.json",
+        "primary": "channel-strip",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "multiband-dynamics": [
+      {
+        "family_id": "a8c2063eb007",
+        "adapter_id": "a8c2063eb007--fabfilter-pro-mb",
+        "vendor": "FabFilter",
+        "product": "Pro-MB",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a8c2063eb007--fabfilter-pro-mb.json",
+        "primary": "multiband-dynamics",
+        "versions": "1.2.8.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "multitap": [
+      {
+        "family_id": "83165b3547f7",
+        "adapter_id": "83165b3547f7--fabfilter-timeless-3",
+        "vendor": "FabFilter",
+        "product": "Timeless 3",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/83165b3547f7--fabfilter-timeless-3.json",
+        "primary": "delay-creative",
+        "versions": "3.0.5.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "natural_vocal_depth": [
+      {
+        "family_id": "8987809250b1",
+        "adapter_id": "8987809250b1--fabfilter-pro-r",
+        "vendor": "FabFilter",
+        "product": "Pro-R",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/8987809250b1--fabfilter-pro-r.json",
+        "primary": "reverb-natural",
+        "versions": "1.1.5.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "noise-control": [
+      {
+        "family_id": "290814706035",
+        "adapter_id": "290814706035--fabfilter-pro-g",
+        "vendor": "FabFilter",
+        "product": "Pro-G",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/290814706035--fabfilter-pro-g.json",
+        "primary": "gate-expander",
+        "versions": "1.3.1.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "noise-reduction-multiband-dialogue": [
+      {
+        "family_id": "6756edefac77",
+        "adapter_id": "6756edefac77--waves-wns",
+        "vendor": "Waves",
+        "product": "WNS",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/6756edefac77--waves-wns.json",
+        "primary": "noise-reduction-multiband-dialogue",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "noise-reduction-simple": [
+      {
+        "family_id": "29b6d9504a55",
+        "adapter_id": "29b6d9504a55--waves-ns1",
+        "vendor": "Waves",
+        "product": "NS1",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/29b6d9504a55--waves-ns1.json",
+        "primary": "noise-reduction-simple",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "note-level-editing": [
+      {
+        "family_id": "394f47cfa81e",
+        "adapter_id": "394f47cfa81e--celemony-melodyne",
+        "vendor": "Celemony",
+        "product": "Melodyne",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/394f47cfa81e--celemony-melodyne.json",
+        "primary": "pitch-editor",
+        "versions": "5.4.1",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "note_level_pitch_error": [
+      {
+        "family_id": "394f47cfa81e",
+        "adapter_id": "394f47cfa81e--celemony-melodyne",
+        "vendor": "Celemony",
+        "product": "Melodyne",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/394f47cfa81e--celemony-melodyne.json",
+        "primary": "pitch-editor",
+        "versions": "5.4.1",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "octave": [
+      {
+        "family_id": "06fad1aad9d8",
+        "adapter_id": "06fad1aad9d8--waves-vocal-bender",
+        "vendor": "Waves",
+        "product": "Vocal Bender",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/06fad1aad9d8--waves-vocal-bender.json",
+        "primary": "pitch-formant-creative",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "parallel": [
+      {
+        "family_id": "47e12f69eb3c",
+        "adapter_id": "47e12f69eb3c--waves-cla-76",
+        "vendor": "Waves",
+        "product": "CLA-76",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/47e12f69eb3c--waves-cla-76.json",
+        "primary": "compression-fet",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "a3005d9763bc",
+        "adapter_id": "a3005d9763bc--fabfilter-pro-c-2",
+        "vendor": "FabFilter",
+        "product": "Pro-C 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a3005d9763bc--fabfilter-pro-c-2.json",
+        "primary": "compression-flexible",
+        "versions": "2.1.7.0",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "0072a637f389",
+        "adapter_id": "0072a637f389--fabfilter-saturn-2",
+        "vendor": "FabFilter",
+        "product": "Saturn 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/0072a637f389--fabfilter-saturn-2.json",
+        "primary": "saturation-multiband",
+        "versions": "2.0.8.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "parallel-brightness": [
+      {
+        "family_id": "0c0769036773",
+        "adapter_id": "0c0769036773--slate-digital-fresh-air",
+        "vendor": "Slate Digital",
+        "product": "Fresh Air",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/0c0769036773--slate-digital-fresh-air.json",
+        "primary": "exciter-air",
+        "versions": "1.1.1",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "parallel-distortion": [
+      {
+        "family_id": "edb2c31ffd45",
+        "adapter_id": "edb2c31ffd45--waves-abbey-road-saturator",
+        "vendor": "Waves",
+        "product": "Abbey Road Saturator",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/edb2c31ffd45--waves-abbey-road-saturator.json",
+        "primary": "saturation-character",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "parallel_air": [
+      {
+        "family_id": "1994a7f7d443",
+        "adapter_id": "1994a7f7d443--plugin-alliance-black-box-analog-design-hg-2",
+        "vendor": "Plugin Alliance",
+        "product": "Black Box Analog Design HG-2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/1994a7f7d443--plugin-alliance-black-box-analog-design-hg-2.json",
+        "primary": "saturation-tube-parallel",
+        "versions": "1.3.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "parallel_distortion": [
+      {
+        "family_id": "edb2c31ffd45",
+        "adapter_id": "edb2c31ffd45--waves-abbey-road-saturator",
+        "vendor": "Waves",
+        "product": "Abbey Road Saturator",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/edb2c31ffd45--waves-abbey-road-saturator.json",
+        "primary": "saturation-character",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "peak-control": [
+      {
+        "family_id": "47e12f69eb3c",
+        "adapter_id": "47e12f69eb3c--waves-cla-76",
+        "vendor": "Waves",
+        "product": "CLA-76",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/47e12f69eb3c--waves-cla-76.json",
+        "primary": "compression-fet",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "peak_control": [
+      {
+        "family_id": "a3005d9763bc",
+        "adapter_id": "a3005d9763bc--fabfilter-pro-c-2",
+        "vendor": "FabFilter",
+        "product": "Pro-C 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a3005d9763bc--fabfilter-pro-c-2.json",
+        "primary": "compression-flexible",
+        "versions": "2.1.7.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "phrase_level_automation_load": [
+      {
+        "family_id": "b6c750f3ccec",
+        "adapter_id": "b6c750f3ccec--waves-vocal-rider",
+        "vendor": "Waves",
+        "product": "Vocal Rider",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/b6c750f3ccec--waves-vocal-rider.json",
+        "primary": "level-riding",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "pitch-delay": [
+      {
+        "family_id": "4bceae9f0a6f",
+        "adapter_id": "4bceae9f0a6f--waves-doubler",
+        "vendor": "Waves",
+        "product": "Doubler",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/4bceae9f0a6f--waves-doubler.json",
+        "primary": "width-multivoice",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "pitch-editor": [
+      {
+        "family_id": "394f47cfa81e",
+        "adapter_id": "394f47cfa81e--celemony-melodyne",
+        "vendor": "Celemony",
+        "product": "Melodyne",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/394f47cfa81e--celemony-melodyne.json",
+        "primary": "pitch-editor",
+        "versions": "5.4.1",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "pitch-formant-creative": [
+      {
+        "family_id": "06fad1aad9d8",
+        "adapter_id": "06fad1aad9d8--waves-vocal-bender",
+        "vendor": "Waves",
+        "product": "Vocal Bender",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/06fad1aad9d8--waves-vocal-bender.json",
+        "primary": "pitch-formant-creative",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "pitch-graph": [
+      {
+        "family_id": "7b4d8c94b025",
+        "adapter_id": "7b4d8c94b025--antares-auto-tune-pro",
+        "vendor": "Antares",
+        "product": "Auto-Tune Pro",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/7b4d8c94b025--antares-auto-tune-pro.json",
+        "primary": "pitch-realtime",
+        "versions": "10.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "pitch-realtime": [
+      {
+        "family_id": "7b4d8c94b025",
+        "adapter_id": "7b4d8c94b025--antares-auto-tune-pro",
+        "vendor": "Antares",
+        "product": "Auto-Tune Pro",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/7b4d8c94b025--antares-auto-tune-pro.json",
+        "primary": "pitch-realtime",
+        "versions": "10.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "pitch_drift_realtime": [
+      {
+        "family_id": "7b4d8c94b025",
+        "adapter_id": "7b4d8c94b025--antares-auto-tune-pro",
+        "vendor": "Antares",
+        "product": "Auto-Tune Pro",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/7b4d8c94b025--antares-auto-tune-pro.json",
+        "primary": "pitch-realtime",
+        "versions": "10.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "plate": [
+      {
+        "family_id": "a0c159c0ffd1",
+        "adapter_id": "a0c159c0ffd1--valhalla-dsp-llc-valhallavintageverb",
+        "vendor": "Valhalla DSP, LLC",
+        "product": "ValhallaVintageVerb",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a0c159c0ffd1--valhalla-dsp-llc-valhallavintageverb.json",
+        "primary": "reverb-vintage-algorithmic",
+        "versions": "2.2.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "pre-compression": [
+      {
+        "family_id": "b6c750f3ccec",
+        "adapter_id": "b6c750f3ccec--waves-vocal-rider",
+        "vendor": "Waves",
+        "product": "Vocal Rider",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/b6c750f3ccec--waves-vocal-rider.json",
+        "primary": "level-riding",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "pre-mix-cleanup": [
+      {
+        "family_id": "75f2f9574990",
+        "adapter_id": "75f2f9574990--waves-x-click",
+        "vendor": "Waves",
+        "product": "X-Click",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/75f2f9574990--waves-x-click.json",
+        "primary": "restoration-click-mouth-adjacent",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "ad123c8856d3",
+        "adapter_id": "ad123c8856d3--waves-debreath",
+        "vendor": "Waves",
+        "product": "DeBreath",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/ad123c8856d3--waves-debreath.json",
+        "primary": "restoration-breath",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "preamp": [
+      {
+        "family_id": "a094b33b301c",
+        "adapter_id": "a094b33b301c--waves-scheps-omni-channel",
+        "vendor": "Waves",
+        "product": "Scheps Omni Channel",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a094b33b301c--waves-scheps-omni-channel.json",
+        "primary": "channel-strip",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "presence": [
+      {
+        "family_id": "0c0769036773",
+        "adapter_id": "0c0769036773--slate-digital-fresh-air",
+        "vendor": "Slate Digital",
+        "product": "Fresh Air",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/0c0769036773--slate-digital-fresh-air.json",
+        "primary": "exciter-air",
+        "versions": "1.1.1",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "presence_dullness": [
+      {
+        "family_id": "0c0769036773",
+        "adapter_id": "0c0769036773--slate-digital-fresh-air",
+        "vendor": "Slate Digital",
+        "product": "Fresh Air",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/0c0769036773--slate-digital-fresh-air.json",
+        "primary": "exciter-air",
+        "versions": "1.1.1",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "presence_instability": [
+      {
+        "family_id": "a8c2063eb007",
+        "adapter_id": "a8c2063eb007--fabfilter-pro-mb",
+        "vendor": "FabFilter",
+        "product": "Pro-MB",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a8c2063eb007--fabfilter-pro-mb.json",
+        "primary": "multiband-dynamics",
+        "versions": "1.2.8.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "quick_noise_cleanup": [
+      {
+        "family_id": "29b6d9504a55",
+        "adapter_id": "29b6d9504a55--waves-ns1",
+        "vendor": "Waves",
+        "product": "NS1",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/29b6d9504a55--waves-ns1.json",
+        "primary": "noise-reduction-simple",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "quick_vocal_density": [
+      {
+        "family_id": "fbfdbc32d12d",
+        "adapter_id": "fbfdbc32d12d--waves-rvox",
+        "vendor": "Waves",
+        "product": "RVox",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/fbfdbc32d12d--waves-rvox.json",
+        "primary": "compression-vocal-fast",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "reference-ab": [
+      {
+        "family_id": "fb4b55cbf4ec",
+        "adapter_id": "fb4b55cbf4ec--plugin-alliance-adptr-metricab",
+        "vendor": "Plugin Alliance",
+        "product": "ADPTR MetricAB",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/fb4b55cbf4ec--plugin-alliance-adptr-metricab.json",
+        "primary": "reference-ab",
+        "versions": "1.0.0 | 1.0.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "reference_mismatch": [
+      {
+        "family_id": "fb4b55cbf4ec",
+        "adapter_id": "fb4b55cbf4ec--plugin-alliance-adptr-metricab",
+        "vendor": "Plugin Alliance",
+        "product": "ADPTR MetricAB",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/fb4b55cbf4ec--plugin-alliance-adptr-metricab.json",
+        "primary": "reference-ab",
+        "versions": "1.0.0 | 1.0.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "resonance": [
+      {
+        "family_id": "497c2536aeff",
+        "adapter_id": "497c2536aeff--fabfilter-pro-q-3",
+        "vendor": "FabFilter",
+        "product": "Pro-Q 3",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/497c2536aeff--fabfilter-pro-q-3.json",
+        "primary": "eq-surgical-dynamic",
+        "versions": "3.2.3.0",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "497c2536aeff",
+        "adapter_id": "497c2536aeff--fabfilter-pro-q-3",
+        "vendor": "FabFilter",
+        "product": "Pro-Q 3",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/497c2536aeff--fabfilter-pro-q-3.json",
+        "primary": "eq-surgical-dynamic",
+        "versions": "3.2.3.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "resonance-suppression": [
+      {
+        "family_id": "7a146380912e",
+        "adapter_id": "7a146380912e--oeksound-soothe2",
+        "vendor": "oeksound",
+        "product": "soothe2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/7a146380912e--oeksound-soothe2.json",
+        "primary": "resonance-suppression",
+        "versions": "1.1.2",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "restoration-breath": [
+      {
+        "family_id": "ad123c8856d3",
+        "adapter_id": "ad123c8856d3--waves-debreath",
+        "vendor": "Waves",
+        "product": "DeBreath",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/ad123c8856d3--waves-debreath.json",
+        "primary": "restoration-breath",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "restoration-click-mouth-adjacent": [
+      {
+        "family_id": "75f2f9574990",
+        "adapter_id": "75f2f9574990--waves-x-click",
+        "vendor": "Waves",
+        "product": "X-Click",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/75f2f9574990--waves-x-click.json",
+        "primary": "restoration-click-mouth-adjacent",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "reverb-chamber": [
+      {
+        "family_id": "877f2fb079d2",
+        "adapter_id": "877f2fb079d2--waves-abbey-road-chambers",
+        "vendor": "Waves",
+        "product": "Abbey Road Chambers",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/877f2fb079d2--waves-abbey-road-chambers.json",
+        "primary": "reverb-chamber",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "reverb-natural": [
+      {
+        "family_id": "8987809250b1",
+        "adapter_id": "8987809250b1--fabfilter-pro-r",
+        "vendor": "FabFilter",
+        "product": "Pro-R",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/8987809250b1--fabfilter-pro-r.json",
+        "primary": "reverb-natural",
+        "versions": "1.1.5.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "reverb-plate": [
+      {
+        "family_id": "efa4ad9005f3",
+        "adapter_id": "efa4ad9005f3--valhalla-dsp-llc-valhallaplate",
+        "vendor": "Valhalla DSP, LLC",
+        "product": "ValhallaPlate",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/efa4ad9005f3--valhalla-dsp-llc-valhallaplate.json",
+        "primary": "reverb-plate",
+        "versions": "1.6.3",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "reverb-vintage-algorithmic": [
+      {
+        "family_id": "a0c159c0ffd1",
+        "adapter_id": "a0c159c0ffd1--valhalla-dsp-llc-valhallavintageverb",
+        "vendor": "Valhalla DSP, LLC",
+        "product": "ValhallaVintageVerb",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a0c159c0ffd1--valhalla-dsp-llc-valhallavintageverb.json",
+        "primary": "reverb-vintage-algorithmic",
+        "versions": "2.2.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "robotic_voice": [
+      {
+        "family_id": "06fad1aad9d8",
+        "adapter_id": "06fad1aad9d8--waves-vocal-bender",
+        "vendor": "Waves",
+        "product": "Vocal Bender",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/06fad1aad9d8--waves-vocal-bender.json",
+        "primary": "pitch-formant-creative",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "room-noise": [
+      {
+        "family_id": "29b6d9504a55",
+        "adapter_id": "29b6d9504a55--waves-ns1",
+        "vendor": "Waves",
+        "product": "NS1",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/29b6d9504a55--waves-ns1.json",
+        "primary": "noise-reduction-simple",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "room_distance": [
+      {
+        "family_id": "8987809250b1",
+        "adapter_id": "8987809250b1--fabfilter-pro-r",
+        "vendor": "FabFilter",
+        "product": "Pro-R",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/8987809250b1--fabfilter-pro-r.json",
+        "primary": "reverb-natural",
+        "versions": "1.1.5.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "room_tone_between_lines": [
+      {
+        "family_id": "290814706035",
+        "adapter_id": "290814706035--fabfilter-pro-g",
+        "vendor": "FabFilter",
+        "product": "Pro-G",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/290814706035--fabfilter-pro-g.json",
+        "primary": "gate-expander",
+        "versions": "1.3.1.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "saturation-character": [
+      {
+        "family_id": "edb2c31ffd45",
+        "adapter_id": "edb2c31ffd45--waves-abbey-road-saturator",
+        "vendor": "Waves",
+        "product": "Abbey Road Saturator",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/edb2c31ffd45--waves-abbey-road-saturator.json",
+        "primary": "saturation-character",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "saturation-multiband": [
+      {
+        "family_id": "0072a637f389",
+        "adapter_id": "0072a637f389--fabfilter-saturn-2",
+        "vendor": "FabFilter",
+        "product": "Saturn 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/0072a637f389--fabfilter-saturn-2.json",
+        "primary": "saturation-multiband",
+        "versions": "2.0.8.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "saturation-tape": [
+      {
+        "family_id": "6d808184e53c",
+        "adapter_id": "6d808184e53c--slate-digital-virtual-tape-machines",
+        "vendor": "Slate Digital",
+        "product": "Virtual Tape Machines",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/6d808184e53c--slate-digital-virtual-tape-machines.json",
+        "primary": "saturation-tape",
+        "versions": "1.1.11.1 | 1.2.1.1",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "saturation-tube-parallel": [
+      {
+        "family_id": "1994a7f7d443",
+        "adapter_id": "1994a7f7d443--plugin-alliance-black-box-analog-design-hg-2",
+        "vendor": "Plugin Alliance",
+        "product": "Black Box Analog Design HG-2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/1994a7f7d443--plugin-alliance-black-box-analog-design-hg-2.json",
+        "primary": "saturation-tube-parallel",
+        "versions": "1.3.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "send-effect": [
+      {
+        "family_id": "2035ec8dd8df",
+        "adapter_id": "2035ec8dd8df--waves-ps22-spread",
+        "vendor": "Waves",
+        "product": "PS22 Spread",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/2035ec8dd8df--waves-ps22-spread.json",
+        "primary": "width-psychoacoustic",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "sibilance": [
+      {
+        "family_id": "5d8d036ccd33",
+        "adapter_id": "5d8d036ccd33--fabfilter-pro-ds",
+        "vendor": "FabFilter",
+        "product": "Pro-DS",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/5d8d036ccd33--fabfilter-pro-ds.json",
+        "primary": "deessing-wide-split",
+        "versions": "1.2.1.0",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "0188bc583c26",
+        "adapter_id": "0188bc583c26--eiosis-eiosis-e2deesser",
+        "vendor": "Eiosis",
+        "product": "Eiosis E2Deesser",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/0188bc583c26--eiosis-eiosis-e2deesser.json",
+        "primary": "deessing-spectral",
+        "versions": "1.0.9.3",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "0188bc583c26",
+        "adapter_id": "0188bc583c26--eiosis-eiosis-e2deesser",
+        "vendor": "Eiosis",
+        "product": "Eiosis E2Deesser",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/0188bc583c26--eiosis-eiosis-e2deesser.json",
+        "primary": "deessing-spectral",
+        "versions": "1.0.9.3",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "sidechain": [
+      {
+        "family_id": "290814706035",
+        "adapter_id": "290814706035--fabfilter-pro-g",
+        "vendor": "FabFilter",
+        "product": "Pro-G",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/290814706035--fabfilter-pro-g.json",
+        "primary": "gate-expander",
+        "versions": "1.3.1.0",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "a3005d9763bc",
+        "adapter_id": "a3005d9763bc--fabfilter-pro-c-2",
+        "vendor": "FabFilter",
+        "product": "Pro-C 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a3005d9763bc--fabfilter-pro-c-2.json",
+        "primary": "compression-flexible",
+        "versions": "2.1.7.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "sidechain_compression": [
+      {
+        "family_id": "a3005d9763bc",
+        "adapter_id": "a3005d9763bc--fabfilter-pro-c-2",
+        "vendor": "FabFilter",
+        "product": "Pro-C 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a3005d9763bc--fabfilter-pro-c-2.json",
+        "primary": "compression-flexible",
+        "versions": "2.1.7.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "simple_peak_and_body_control": [
+      {
+        "family_id": "fbfdbc32d12d",
+        "adapter_id": "fbfdbc32d12d--waves-rvox",
+        "vendor": "Waves",
+        "product": "RVox",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/fbfdbc32d12d--waves-rvox.json",
+        "primary": "compression-vocal-fast",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "single-vocal": [
+      {
+        "family_id": "5d8d036ccd33",
+        "adapter_id": "5d8d036ccd33--fabfilter-pro-ds",
+        "vendor": "FabFilter",
+        "product": "Pro-DS",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/5d8d036ccd33--fabfilter-pro-ds.json",
+        "primary": "deessing-wide-split",
+        "versions": "1.2.1.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "six-band-suppression": [
+      {
+        "family_id": "6756edefac77",
+        "adapter_id": "6756edefac77--waves-wns",
+        "vendor": "Waves",
+        "product": "WNS",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/6756edefac77--waves-wns.json",
+        "primary": "noise-reduction-multiband-dialogue",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "slap_delay": [
+      {
+        "family_id": "bbf795a9fd06",
+        "adapter_id": "bbf795a9fd06--waves-h-delay",
+        "vendor": "Waves",
+        "product": "H-Delay",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/bbf795a9fd06--waves-h-delay.json",
+        "primary": "delay-vocal",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "smooth_leveling": [
+      {
+        "family_id": "aeaf742fd9a2",
+        "adapter_id": "aeaf742fd9a2--softube-tube-tech-cl-1b-mk-ii",
+        "vendor": "Softube",
+        "product": "Tube-Tech CL 1B mk II",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/aeaf742fd9a2--softube-tube-tech-cl-1b-mk-ii.json",
+        "primary": "compression-opto",
+        "versions": "2.5.0.9 | 2.5.9",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "solo-mid-side": [
+      {
+        "family_id": "1034f31ae5fd",
+        "adapter_id": "1034f31ae5fd--plugin-alliance-bx-control-v2",
+        "vendor": "Plugin Alliance",
+        "product": "bx_control V2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/1034f31ae5fd--plugin-alliance-bx-control-v2.json",
+        "primary": "stereo-utility",
+        "versions": "2.0.0.0 | 2.10.0.0 | 2.3.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "speaker-mic": [
+      {
+        "family_id": "877f2fb079d2",
+        "adapter_id": "877f2fb079d2--waves-abbey-road-chambers",
+        "vendor": "Waves",
+        "product": "Abbey Road Chambers",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/877f2fb079d2--waves-abbey-road-chambers.json",
+        "primary": "reverb-chamber",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "speaker_mic_room_colour": [
+      {
+        "family_id": "877f2fb079d2",
+        "adapter_id": "877f2fb079d2--waves-abbey-road-chambers",
+        "vendor": "Waves",
+        "product": "Abbey Road Chambers",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/877f2fb079d2--waves-abbey-road-chambers.json",
+        "primary": "reverb-chamber",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "spectrum": [
+      {
+        "family_id": "fb4b55cbf4ec",
+        "adapter_id": "fb4b55cbf4ec--plugin-alliance-adptr-metricab",
+        "vendor": "Plugin Alliance",
+        "product": "ADPTR MetricAB",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/fb4b55cbf4ec--plugin-alliance-adptr-metricab.json",
+        "primary": "reference-ab",
+        "versions": "1.0.0 | 1.0.0.0",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "585b0952e62c",
+        "adapter_id": "585b0952e62c--izotope-insight-2",
+        "vendor": "iZotope",
+        "product": "Insight 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/585b0952e62c--izotope-insight-2.json",
+        "primary": "metering",
+        "versions": "2.0.6.0 | 2.6.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "spectrum_or_stereo_diagnosis": [
+      {
+        "family_id": "585b0952e62c",
+        "adapter_id": "585b0952e62c--izotope-insight-2",
+        "vendor": "iZotope",
+        "product": "Insight 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/585b0952e62c--izotope-insight-2.json",
+        "primary": "metering",
+        "versions": "2.0.6.0 | 2.6.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "stereo": [
+      {
+        "family_id": "585b0952e62c",
+        "adapter_id": "585b0952e62c--izotope-insight-2",
+        "vendor": "iZotope",
+        "product": "Insight 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/585b0952e62c--izotope-insight-2.json",
+        "primary": "metering",
+        "versions": "2.0.6.0 | 2.6.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "stereo-utility": [
+      {
+        "family_id": "1034f31ae5fd",
+        "adapter_id": "1034f31ae5fd--plugin-alliance-bx-control-v2",
+        "vendor": "Plugin Alliance",
+        "product": "bx_control V2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/1034f31ae5fd--plugin-alliance-bx-control-v2.json",
+        "primary": "stereo-utility",
+        "versions": "2.0.0.0 | 2.10.0.0 | 2.3.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "stereo_width_management": [
+      {
+        "family_id": "1034f31ae5fd",
+        "adapter_id": "1034f31ae5fd--plugin-alliance-bx-control-v2",
+        "vendor": "Plugin Alliance",
+        "product": "bx_control V2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/1034f31ae5fd--plugin-alliance-bx-control-v2.json",
+        "primary": "stereo-utility",
+        "versions": "2.0.0.0 | 2.10.0.0 | 2.3.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "subtle_parallel_space": [
+      {
+        "family_id": "2035ec8dd8df",
+        "adapter_id": "2035ec8dd8df--waves-ps22-spread",
+        "vendor": "Waves",
+        "product": "PS22 Spread",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/2035ec8dd8df--waves-ps22-spread.json",
+        "primary": "width-psychoacoustic",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "sustain_too_long": [
+      {
+        "family_id": "ddb1354cf0c2",
+        "adapter_id": "ddb1354cf0c2--waves-smack-attack",
+        "vendor": "Waves",
+        "product": "Smack Attack",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/ddb1354cf0c2--waves-smack-attack.json",
+        "primary": "transient-shaping",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "tape_density": [
+      {
+        "family_id": "6d808184e53c",
+        "adapter_id": "6d808184e53c--slate-digital-virtual-tape-machines",
+        "vendor": "Slate Digital",
+        "product": "Virtual Tape Machines",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/6d808184e53c--slate-digital-virtual-tape-machines.json",
+        "primary": "saturation-tape",
+        "versions": "1.1.11.1 | 1.2.1.1",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "tempo-sync": [
+      {
+        "family_id": "bbf795a9fd06",
+        "adapter_id": "bbf795a9fd06--waves-h-delay",
+        "vendor": "Waves",
+        "product": "H-Delay",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/bbf795a9fd06--waves-h-delay.json",
+        "primary": "delay-vocal",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "tempo_echo": [
+      {
+        "family_id": "bbf795a9fd06",
+        "adapter_id": "bbf795a9fd06--waves-h-delay",
+        "vendor": "Waves",
+        "product": "H-Delay",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/bbf795a9fd06--waves-h-delay.json",
+        "primary": "delay-vocal",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "throw_delay": [
+      {
+        "family_id": "bbf795a9fd06",
+        "adapter_id": "bbf795a9fd06--waves-h-delay",
+        "vendor": "Waves",
+        "product": "H-Delay",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/bbf795a9fd06--waves-h-delay.json",
+        "primary": "delay-vocal",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "timing": [
+      {
+        "family_id": "394f47cfa81e",
+        "adapter_id": "394f47cfa81e--celemony-melodyne",
+        "vendor": "Celemony",
+        "product": "Melodyne",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/394f47cfa81e--celemony-melodyne.json",
+        "primary": "pitch-editor",
+        "versions": "5.4.1",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "timing_or_pitch_drift_edit": [
+      {
+        "family_id": "394f47cfa81e",
+        "adapter_id": "394f47cfa81e--celemony-melodyne",
+        "vendor": "Celemony",
+        "product": "Melodyne",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/394f47cfa81e--celemony-melodyne.json",
+        "primary": "pitch-editor",
+        "versions": "5.4.1",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "tonal_imbalance": [
+      {
+        "family_id": "497c2536aeff",
+        "adapter_id": "497c2536aeff--fabfilter-pro-q-3",
+        "vendor": "FabFilter",
+        "product": "Pro-Q 3",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/497c2536aeff--fabfilter-pro-q-3.json",
+        "primary": "eq-surgical-dynamic",
+        "versions": "3.2.3.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "transient-shaping": [
+      {
+        "family_id": "ddb1354cf0c2",
+        "adapter_id": "ddb1354cf0c2--waves-smack-attack",
+        "vendor": "Waves",
+        "product": "Smack Attack",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/ddb1354cf0c2--waves-smack-attack.json",
+        "primary": "transient-shaping",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "true-peak": [
+      {
+        "family_id": "98d9ac6060f6",
+        "adapter_id": "98d9ac6060f6--fabfilter-pro-l-2",
+        "vendor": "FabFilter",
+        "product": "Pro-L 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/98d9ac6060f6--fabfilter-pro-l-2.json",
+        "primary": "limiting",
+        "versions": "2.2.1.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "true_peak_ceiling": [
+      {
+        "family_id": "98d9ac6060f6",
+        "adapter_id": "98d9ac6060f6--fabfilter-pro-l-2",
+        "vendor": "FabFilter",
+        "product": "Pro-L 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/98d9ac6060f6--fabfilter-pro-l-2.json",
+        "primary": "limiting",
+        "versions": "2.2.1.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "true_peak_check": [
+      {
+        "family_id": "585b0952e62c",
+        "adapter_id": "585b0952e62c--izotope-insight-2",
+        "vendor": "iZotope",
+        "product": "Insight 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/585b0952e62c--izotope-insight-2.json",
+        "primary": "metering",
+        "versions": "2.0.6.0 | 2.6.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "tube-color": [
+      {
+        "family_id": "aeaf742fd9a2",
+        "adapter_id": "aeaf742fd9a2--softube-tube-tech-cl-1b-mk-ii",
+        "vendor": "Softube",
+        "product": "Tube-Tech CL 1B mk II",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/aeaf742fd9a2--softube-tube-tech-cl-1b-mk-ii.json",
+        "primary": "compression-opto",
+        "versions": "2.5.0.9 | 2.5.9",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "tube_harmonic_density": [
+      {
+        "family_id": "1994a7f7d443",
+        "adapter_id": "1994a7f7d443--plugin-alliance-black-box-analog-design-hg-2",
+        "vendor": "Plugin Alliance",
+        "product": "Black Box Analog Design HG-2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/1994a7f7d443--plugin-alliance-black-box-analog-design-hg-2.json",
+        "primary": "saturation-tube-parallel",
+        "versions": "1.3.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "vintage-room": [
+      {
+        "family_id": "877f2fb079d2",
+        "adapter_id": "877f2fb079d2--waves-abbey-road-chambers",
+        "vendor": "Waves",
+        "product": "Abbey Road Chambers",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/877f2fb079d2--waves-abbey-road-chambers.json",
+        "primary": "reverb-chamber",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "vintage_chamber_depth": [
+      {
+        "family_id": "877f2fb079d2",
+        "adapter_id": "877f2fb079d2--waves-abbey-road-chambers",
+        "vendor": "Waves",
+        "product": "Abbey Road Chambers",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/877f2fb079d2--waves-abbey-road-chambers.json",
+        "primary": "reverb-chamber",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "vintage_hall_or_plate": [
+      {
+        "family_id": "a0c159c0ffd1",
+        "adapter_id": "a0c159c0ffd1--valhalla-dsp-llc-valhallavintageverb",
+        "vendor": "Valhalla DSP, LLC",
+        "product": "ValhallaVintageVerb",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a0c159c0ffd1--valhalla-dsp-llc-valhallavintageverb.json",
+        "primary": "reverb-vintage-algorithmic",
+        "versions": "2.2.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "vocal-bus": [
+      {
+        "family_id": "98d9ac6060f6",
+        "adapter_id": "98d9ac6060f6--fabfilter-pro-l-2",
+        "vendor": "FabFilter",
+        "product": "Pro-L 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/98d9ac6060f6--fabfilter-pro-l-2.json",
+        "primary": "limiting",
+        "versions": "2.2.1.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "vocal-plate": [
+      {
+        "family_id": "efa4ad9005f3",
+        "adapter_id": "efa4ad9005f3--valhalla-dsp-llc-valhallaplate",
+        "vendor": "Valhalla DSP, LLC",
+        "product": "ValhallaPlate",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/efa4ad9005f3--valhalla-dsp-llc-valhallaplate.json",
+        "primary": "reverb-plate",
+        "versions": "1.6.3",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "vocal_body_control": [
+      {
+        "family_id": "aeaf742fd9a2",
+        "adapter_id": "aeaf742fd9a2--softube-tube-tech-cl-1b-mk-ii",
+        "vendor": "Softube",
+        "product": "Tube-Tech CL 1B mk II",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/aeaf742fd9a2--softube-tube-tech-cl-1b-mk-ii.json",
+        "primary": "compression-opto",
+        "versions": "2.5.0.9 | 2.5.9",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "vocal_bus_peak_protection": [
+      {
+        "family_id": "98d9ac6060f6",
+        "adapter_id": "98d9ac6060f6--fabfilter-pro-l-2",
+        "vendor": "FabFilter",
+        "product": "Pro-L 2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/98d9ac6060f6--fabfilter-pro-l-2.json",
+        "primary": "limiting",
+        "versions": "2.2.1.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "vocal_density": [
+      {
+        "family_id": "edb2c31ffd45",
+        "adapter_id": "edb2c31ffd45--waves-abbey-road-saturator",
+        "vendor": "Waves",
+        "product": "Abbey Road Saturator",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/edb2c31ffd45--waves-abbey-road-saturator.json",
+        "primary": "saturation-character",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "vocal_depth": [
+      {
+        "family_id": "a0c159c0ffd1",
+        "adapter_id": "a0c159c0ffd1--valhalla-dsp-llc-valhallavintageverb",
+        "vendor": "Valhalla DSP, LLC",
+        "product": "ValhallaVintageVerb",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/a0c159c0ffd1--valhalla-dsp-llc-valhallavintageverb.json",
+        "primary": "reverb-vintage-algorithmic",
+        "versions": "2.2.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "vocal_plate_depth": [
+      {
+        "family_id": "efa4ad9005f3",
+        "adapter_id": "efa4ad9005f3--valhalla-dsp-llc-valhallaplate",
+        "vendor": "Valhalla DSP, LLC",
+        "product": "ValhallaPlate",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/efa4ad9005f3--valhalla-dsp-llc-valhallaplate.json",
+        "primary": "reverb-plate",
+        "versions": "1.6.3",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "vocal_weight": [
+      {
+        "family_id": "1994a7f7d443",
+        "adapter_id": "1994a7f7d443--plugin-alliance-black-box-analog-design-hg-2",
+        "vendor": "Plugin Alliance",
+        "product": "Black Box Analog Design HG-2",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/1994a7f7d443--plugin-alliance-black-box-analog-design-hg-2.json",
+        "primary": "saturation-tube-parallel",
+        "versions": "1.3.0.0",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "voice-specific": [
+      {
+        "family_id": "0188bc583c26",
+        "adapter_id": "0188bc583c26--eiosis-eiosis-e2deesser",
+        "vendor": "Eiosis",
+        "product": "Eiosis E2Deesser",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/0188bc583c26--eiosis-eiosis-e2deesser.json",
+        "primary": "deessing-spectral",
+        "versions": "1.0.9.3",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "voice_specific_harshness": [
+      {
+        "family_id": "0188bc583c26",
+        "adapter_id": "0188bc583c26--eiosis-eiosis-e2deesser",
+        "vendor": "Eiosis",
+        "product": "Eiosis E2Deesser",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/0188bc583c26--eiosis-eiosis-e2deesser.json",
+        "primary": "deessing-spectral",
+        "versions": "1.0.9.3",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "width-multivoice": [
+      {
+        "family_id": "4bceae9f0a6f",
+        "adapter_id": "4bceae9f0a6f--waves-doubler",
+        "vendor": "Waves",
+        "product": "Doubler",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/4bceae9f0a6f--waves-doubler.json",
+        "primary": "width-multivoice",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "width-psychoacoustic": [
+      {
+        "family_id": "2035ec8dd8df",
+        "adapter_id": "2035ec8dd8df--waves-ps22-spread",
+        "vendor": "Waves",
+        "product": "PS22 Spread",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/2035ec8dd8df--waves-ps22-spread.json",
+        "primary": "width-psychoacoustic",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "workflow-speed": [
+      {
+        "family_id": "29b6d9504a55",
+        "adapter_id": "29b6d9504a55--waves-ns1",
+        "vendor": "Waves",
+        "product": "NS1",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/29b6d9504a55--waves-ns1.json",
+        "primary": "noise-reduction-simple",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      },
+      {
+        "family_id": "fbfdbc32d12d",
+        "adapter_id": "fbfdbc32d12d--waves-rvox",
+        "vendor": "Waves",
+        "product": "RVox",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/fbfdbc32d12d--waves-rvox.json",
+        "primary": "compression-vocal-fast",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ],
+    "zero-latency": [
+      {
+        "family_id": "6756edefac77",
+        "adapter_id": "6756edefac77--waves-wns",
+        "vendor": "Waves",
+        "product": "WNS",
+        "path": "projects/p1-plugin-knowledge-base/adapters/plugins/6756edefac77--waves-wns.json",
+        "primary": "noise-reduction-multiband-dialogue",
+        "versions": "12.7.0.209",
+        "availability": "current-filesystem-match"
+      }
+    ]
+  }
+}

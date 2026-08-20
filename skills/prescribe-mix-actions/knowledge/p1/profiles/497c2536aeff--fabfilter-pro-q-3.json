@@ -1,0 +1,220 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "497c2536aeff--fabfilter-pro-q-3",
+  "family_id": "497c2536aeff",
+  "identity": {
+    "vendor": "FabFilter",
+    "product": "Pro-Q 3",
+    "version_range": "3.2.3.0",
+    "formats": [
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "eq-surgical-dynamic",
+    "secondary": [
+      "resonance",
+      "mid-side"
+    ],
+    "diagnoses": [
+      "resonance",
+      "mud",
+      "tonal_imbalance",
+      "frequency_masking"
+    ],
+    "not_for": [
+      "broadband_noise",
+      "pitch_error"
+    ]
+  },
+  "routing": [
+    {
+      "position": "corrective insert before or after compression according to trigger source",
+      "when": "resonance"
+    },
+    {
+      "position": "corrective insert before or after compression according to trigger source",
+      "when": "mud"
+    },
+    {
+      "position": "corrective insert before or after compression according to trigger source",
+      "when": "tonal_imbalance"
+    },
+    {
+      "position": "corrective insert before or after compression according to trigger source",
+      "when": "frequency_masking"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "smallest bandwidth and gain that fixes diagnosis",
+      "dynamic action only on offending events",
+      "level-matched bypass"
+    ],
+    "controls": [
+      {
+        "name": "Freq/Q/Gain",
+        "action": "locate then widen to preserve timbre"
+      },
+      {
+        "name": "Dynamic Range/Threshold",
+        "action": "limit range before lowering threshold"
+      },
+      {
+        "name": "Phase Mode",
+        "action": "choose lowest-latency acceptable mode"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "over-notching",
+    "phase shift",
+    "latency",
+    "thin tone"
+  ],
+  "stop_conditions": [
+    "vowels hollow out",
+    "problem moves rather than improves"
+  ],
+  "alternatives": [
+    {
+      "condition": "six-band workflow or sidechain",
+      "fallback": "F6"
+    },
+    {
+      "condition": "many moving resonances",
+      "fallback": "soothe2"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 3.2.3.0.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/FabFilter/Pro-Q 3.md",
+    "source_note": "sources/音乐制作/插件资料/FabFilter/Pro-Q 3资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/497c2536aeff--FabFilter-Pro-Q-3.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/497c2536aeff--multitone-parametric-eq-phase-modes.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/FabFilter/Pro-Q 3.md",
+        "packaged_path": "evidence/cards/Pro-Q 3.md",
+        "sha256": "353524044135fd5d89faac84a86d1f4f4c925381ea2c8b02fbf2c5fe740f6378"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/FabFilter/Pro-Q 3资料.md",
+        "packaged_path": "evidence/sources/Pro-Q 3资料.md",
+        "sha256": "a08fbe67fce4fae2be0af5f2fba9ac6cbf3b8b32b20530121b0bc413264ffc54"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/497c2536aeff--FabFilter-Pro-Q-3.md",
+        "packaged_path": "evidence/validation/497c2536aeff--FabFilter-Pro-Q-3.md",
+        "sha256": "bb1efbaa99772b6eece5b5b4fdc8ab3bb4ddca2c424b7aea6f546325dbe59834"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/497c2536aeff--multitone-parametric-eq-phase-modes.json",
+          "packaged_path": "evidence/results/497c2536aeff--multitone-parametric-eq-phase-modes.json",
+          "sha256": "ff2f6884266dc5510d9879dbc14c51c95e736993c890ac807a6a45c2b6c02925"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "resonance",
+      "mud",
+      "tonal_imbalance",
+      "frequency_masking"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Static bell and Zero/Natural/Linear Medium phase/latency measured."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "修正型高通、宽幅减法与动态共振通常放在主压缩前，减少后级被无用能量或偶发共振触发。",
+      "压缩或饱和后可加第二实例做小幅音色修整，因为非线性与压缩会重塑频谱。",
+      "与伴奏做外部侧链动态让位时，把 Pro-Q 3 放在被让位的总线，并由主唱发送侧链。"
+    ],
+    "routing": [
+      "主唱 Insert 的前段修正 EQ。",
+      "伴奏或音乐总线上的外部侧链动态频段。",
+      "空间返回上的 M/S 清理；低频 Side 高通前先确认不是自然房间信息。"
+    ],
+    "controls": [
+      {
+        "name": "Frequency / Gain / Q / Shape",
+        "meaning": "定义每个滤波器的中心、幅度、带宽和拓扑。",
+        "action": "先用 Solo 临时定位，再在全混音中用最小必要增益和合适带宽。"
+      },
+      {
+        "name": "Dynamic Range",
+        "meaning": "限制该频段最大动态增益变化；负值压制、正值扩展。",
+        "action": "偶发问题从 -1 至 -3 dB 起，先调 Range，再决定是否需要手动 Threshold。"
+      },
+      {
+        "name": "Auto / Manual Threshold",
+        "meaning": "自动阈值随输入适应；手动阈值固定触发点。",
+        "action": "自然音量变化优先 Auto；需要与确定事件或侧链对齐时再手动。"
+      },
+      {
+        "name": "Stereo Placement",
+        "meaning": "限定频段作用于 Stereo、L/R 或 M/S 成分。",
+        "action": "主唱单轨通常 Stereo；效果返回只在明确证据下处理 Side，始终检查单声道。"
+      },
+      {
+        "name": "Processing Mode",
+        "meaning": "选择零延迟、自然相位或线性相位。",
+        "action": "常规混音从 Zero Latency；只有相位叠加问题有证据时才试 Linear Phase。"
+      }
+    ],
+    "parameter_start_points": [
+      "高通仅在确有噪声时启用；从 60–90 Hz、12 或 24 dB/oct 起，边听低音主体边上移。",
+      "宽幅减法从 -0.5 至 -2 dB、Q 0.7–1.5 起；窄共振从 -1 至 -3 dB、Q 3–8 起。",
+      "动态问题从 Range -1 至 -3 dB、Auto Threshold 起；不要先堆多个深达 -6 dB 的动态结点。"
+    ],
+    "listen_for": [
+      "Solo 中定位的频率在全混音中是否真是问题。",
+      "高通是否削弱男声胸腔、低音气势或爆破修复后的自然低端。",
+      "动态频段是否随音节抽动、使音色忽明忽暗。"
+    ],
+    "stop": [
+      "问题不再抢注意力且旁通后不会觉得声音被挖空。",
+      "再多 0.5–1 dB 只让人声更薄、更远或更有相位感时回退。"
+    ],
+    "latency": [
+      "本机 48 kHz 实测宿主报告 Zero Latency `0 samples`、Natural Phase `320 samples (6.7 ms)`、Linear Phase Medium `5120 samples (106.7 ms)`；Ableton PDC 后三态最佳整数偏移均为 0。Zero/Natural 的静态 Bell 都有频率相关相位，Linear Medium 在十个稳态输入频点约为 0°；Linear 的代价仍包括大延迟和潜在前振铃。Pro-Q 3 没有应被当作常规开关的新版 Spectral 模式。"
+    ]
+  }
+}

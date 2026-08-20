@@ -1,0 +1,596 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T10:22:34+08:00",
+  "family_id": "290814706035",
+  "test_id": "composite-pro-g-vocal-expander-lookahead",
+  "fixed_state": {
+    "host": "Ableton Live 11.3.43",
+    "format": "VST3 Stereo",
+    "plugin": "FabFilter Pro-G 1.3.1.0",
+    "style": "Classic",
+    "threshold_db": -30.0,
+    "ratio": "3.01:1",
+    "range_db": 11.94,
+    "attack_ms": 4.894,
+    "hold_ms": 60.1,
+    "release_ms": 148.5,
+    "knee_db": 0.0,
+    "oversampling": "Off",
+    "sidechain": "internal; filters off",
+    "channel_mode": "Left/Right",
+    "lookahead_conditions": {
+      "zero": {
+        "enabled": false,
+        "host_reported_latency_samples": 0
+      },
+      "lookahead": {
+        "enabled": true,
+        "value_ms": 9.951,
+        "host_reported_latency_samples": 480
+      }
+    },
+    "render": "Master; 2.1.1 start; 48.0.0 length; 72 s output; 48 kHz; stereo 24-bit WAV; normalize off; triangular dither",
+    "controlled_variable": "Lookahead off versus enabled at 9.951 ms; all other visible controls held fixed"
+  },
+  "files": {
+    "bypass": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\7a146380912e--composite--bypass.wav",
+      "sha256": "38a74287a951ad7a62a6abeb219aa91afdd0e4f2abde062b972361851e0de16f",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938332,
+      "rms_dbfs": -21.437912,
+      "left_right_correlation": 0.771435140941
+    },
+    "zero": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\290814706035--composite--vocal-expander-thr-30-ratio3-range12-hold60-release150.wav",
+      "sha256": "81bd8641fb3fb4aa044da37e03821707ba9636192ca29f3a1d34099a4bb60384",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -6.000476,
+      "rms_dbfs": -21.45673,
+      "left_right_correlation": 0.770451842857
+    },
+    "lookahead": {
+      "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\290814706035--composite--vocal-expander-lookahead10ms.wav",
+      "sha256": "937e34481a8c119e258631f5605d2285203bf25e8466a6e3ebb3ef3dfed56153",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "sample_width_bytes": 3,
+      "frames": 3456000,
+      "duration_seconds": 72.0,
+      "peak_dbfs": -1.938333,
+      "rms_dbfs": -21.43792,
+      "left_right_correlation": 0.771434671713
+    }
+  },
+  "snapshot": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\host\\snapshots\\0072a637f389--FabFilter-Saturn-2 Project\\290814706035--FabFilter-Pro-G.als",
+    "sha256": "d674bfaa0223698d5c992680ddfd6be526357ead63e83f0493b49ca257935609",
+    "saved_state": "Pro-G enabled with the fixed controls and Lookahead disabled; Melodyne and all earlier chain devices disabled"
+  },
+  "comparisons": {
+    "zero_vs_bypass_regions": {
+      "impulse_train": {
+        "start_seconds": 0.0,
+        "end_seconds": 6.0,
+        "reference_rms_dbfs": -54.805363,
+        "candidate_rms_dbfs": -66.554154,
+        "candidate_minus_reference_db": -11.748791
+      },
+      "steady_multitone": {
+        "start_seconds": 8.0,
+        "end_seconds": 20.0,
+        "reference_rms_dbfs": -19.495209,
+        "candidate_rms_dbfs": -19.495465,
+        "candidate_minus_reference_db": -0.000256
+      },
+      "fixed_vocal": {
+        "start_seconds": 21.0,
+        "end_seconds": 42.0,
+        "reference_rms_dbfs": -25.938159,
+        "candidate_rms_dbfs": -25.938537,
+        "candidate_minus_reference_db": -0.000378
+      },
+      "spatial_fixture": {
+        "start_seconds": 45.0,
+        "end_seconds": 57.0,
+        "reference_rms_dbfs": -20.793808,
+        "candidate_rms_dbfs": -20.793851,
+        "candidate_minus_reference_db": -4.3e-05
+      },
+      "dynamics_fixture": {
+        "start_seconds": 60.0,
+        "end_seconds": 72.0,
+        "reference_rms_dbfs": -17.19745,
+        "candidate_rms_dbfs": -17.23948,
+        "candidate_minus_reference_db": -0.04203
+      }
+    },
+    "lookahead_vs_bypass_regions": {
+      "impulse_train": {
+        "start_seconds": 0.0,
+        "end_seconds": 6.0,
+        "reference_rms_dbfs": -54.805363,
+        "candidate_rms_dbfs": -54.805364,
+        "candidate_minus_reference_db": -1e-06
+      },
+      "steady_multitone": {
+        "start_seconds": 8.0,
+        "end_seconds": 20.0,
+        "reference_rms_dbfs": -19.495209,
+        "candidate_rms_dbfs": -19.495209,
+        "candidate_minus_reference_db": 0.0
+      },
+      "fixed_vocal": {
+        "start_seconds": 21.0,
+        "end_seconds": 42.0,
+        "reference_rms_dbfs": -25.938159,
+        "candidate_rms_dbfs": -25.938168,
+        "candidate_minus_reference_db": -9e-06
+      },
+      "spatial_fixture": {
+        "start_seconds": 45.0,
+        "end_seconds": 57.0,
+        "reference_rms_dbfs": -20.793808,
+        "candidate_rms_dbfs": -20.793841,
+        "candidate_minus_reference_db": -3.3e-05
+      },
+      "dynamics_fixture": {
+        "start_seconds": 60.0,
+        "end_seconds": 72.0,
+        "reference_rms_dbfs": -17.19745,
+        "candidate_rms_dbfs": -17.197454,
+        "candidate_minus_reference_db": -4e-06
+      }
+    },
+    "stable_dynamics_steps": {
+      "minus30_dbfs_peak": {
+        "nominal_fixture_peak_dbfs": -30,
+        "analysis_start_seconds": 60.2,
+        "analysis_end_seconds": 61.2,
+        "reference_rms_dbfs": -33.010869,
+        "zero_lookahead_rms_dbfs": -33.010869,
+        "lookahead_10ms_rms_dbfs": -33.010869,
+        "zero_minus_reference_db": 0.0,
+        "lookahead_minus_reference_db": -0.0,
+        "lookahead_minus_zero_db": -0.0
+      },
+      "minus24_dbfs_peak": {
+        "nominal_fixture_peak_dbfs": -24,
+        "analysis_start_seconds": 62.1733333333,
+        "analysis_end_seconds": 63.1733333333,
+        "reference_rms_dbfs": -27.010592,
+        "zero_lookahead_rms_dbfs": -27.010592,
+        "lookahead_10ms_rms_dbfs": -27.010592,
+        "zero_minus_reference_db": 0.0,
+        "lookahead_minus_reference_db": 0.0,
+        "lookahead_minus_zero_db": 0.0
+      },
+      "minus18_dbfs_peak": {
+        "nominal_fixture_peak_dbfs": -18,
+        "analysis_start_seconds": 64.1466666667,
+        "analysis_end_seconds": 65.1466666667,
+        "reference_rms_dbfs": -21.010545,
+        "zero_lookahead_rms_dbfs": -21.010545,
+        "lookahead_10ms_rms_dbfs": -21.010545,
+        "zero_minus_reference_db": 0.0,
+        "lookahead_minus_reference_db": 0.0,
+        "lookahead_minus_zero_db": -0.0
+      },
+      "minus12_dbfs_peak": {
+        "nominal_fixture_peak_dbfs": -12,
+        "analysis_start_seconds": 66.12,
+        "analysis_end_seconds": 67.12,
+        "reference_rms_dbfs": -15.010555,
+        "zero_lookahead_rms_dbfs": -15.010555,
+        "lookahead_10ms_rms_dbfs": -15.010555,
+        "zero_minus_reference_db": 0.0,
+        "lookahead_minus_reference_db": 0.0,
+        "lookahead_minus_zero_db": -0.0
+      },
+      "minus6_dbfs_peak": {
+        "nominal_fixture_peak_dbfs": -6,
+        "analysis_start_seconds": 68.09333333330001,
+        "analysis_end_seconds": 69.09333333330001,
+        "reference_rms_dbfs": -9.010575,
+        "zero_lookahead_rms_dbfs": -9.010575,
+        "lookahead_10ms_rms_dbfs": -9.010575,
+        "zero_minus_reference_db": 0.0,
+        "lookahead_minus_reference_db": -0.0,
+        "lookahead_minus_zero_db": -0.0
+      }
+    },
+    "onset_retention": {
+      "step_minus30_dbfs_peak": {
+        "onset_seconds": 60.0,
+        "windows": {
+          "first_5ms": {
+            "reference_rms_dbfs": -45.837744,
+            "zero_minus_reference_db": -11.851304,
+            "lookahead_minus_reference_db": -4.388565,
+            "lookahead_minus_zero_db": 7.462739
+          },
+          "first_10ms": {
+            "reference_rms_dbfs": -38.138474,
+            "zero_minus_reference_db": -3.386247,
+            "lookahead_minus_reference_db": -0.256067,
+            "lookahead_minus_zero_db": 3.130181
+          },
+          "first_20ms": {
+            "reference_rms_dbfs": -34.673407,
+            "zero_minus_reference_db": -0.564597,
+            "lookahead_minus_reference_db": -0.056349,
+            "lookahead_minus_zero_db": 0.508248
+          },
+          "first_50ms": {
+            "reference_rms_dbfs": -33.635486,
+            "zero_minus_reference_db": -0.170042,
+            "lookahead_minus_reference_db": -0.017669,
+            "lookahead_minus_zero_db": 0.152373
+          }
+        }
+      },
+      "step_minus24_dbfs_peak": {
+        "onset_seconds": 61.9733333333,
+        "windows": {
+          "first_5ms": {
+            "reference_rms_dbfs": -40.146804,
+            "zero_minus_reference_db": -9.258563,
+            "lookahead_minus_reference_db": -0.161242,
+            "lookahead_minus_zero_db": 9.097321
+          },
+          "first_10ms": {
+            "reference_rms_dbfs": -32.801699,
+            "zero_minus_reference_db": -0.769615,
+            "lookahead_minus_reference_db": -0.01461,
+            "lookahead_minus_zero_db": 0.755004
+          },
+          "first_20ms": {
+            "reference_rms_dbfs": -28.78622,
+            "zero_minus_reference_db": -0.142191,
+            "lookahead_minus_reference_db": -0.002894,
+            "lookahead_minus_zero_db": 0.139297
+          },
+          "first_50ms": {
+            "reference_rms_dbfs": -27.638724,
+            "zero_minus_reference_db": -0.043177,
+            "lookahead_minus_reference_db": -0.000889,
+            "lookahead_minus_zero_db": 0.042288
+          }
+        }
+      },
+      "step_minus18_dbfs_peak": {
+        "onset_seconds": 63.9466666667,
+        "windows": {
+          "first_5ms": {
+            "reference_rms_dbfs": -33.175162,
+            "zero_minus_reference_db": -3.241161,
+            "lookahead_minus_reference_db": -1e-05,
+            "lookahead_minus_zero_db": 3.241151
+          },
+          "first_10ms": {
+            "reference_rms_dbfs": -26.439437,
+            "zero_minus_reference_db": -0.249156,
+            "lookahead_minus_reference_db": -2e-06,
+            "lookahead_minus_zero_db": 0.249154
+          },
+          "first_20ms": {
+            "reference_rms_dbfs": -22.703829,
+            "zero_minus_reference_db": -0.05153,
+            "lookahead_minus_reference_db": -0.0,
+            "lookahead_minus_zero_db": 0.051529
+          },
+          "first_50ms": {
+            "reference_rms_dbfs": -21.6297,
+            "zero_minus_reference_db": -0.01603,
+            "lookahead_minus_reference_db": -0.0,
+            "lookahead_minus_zero_db": 0.01603
+          }
+        }
+      },
+      "step_minus12_dbfs_peak": {
+        "onset_seconds": 65.92,
+        "windows": {
+          "first_5ms": {
+            "reference_rms_dbfs": -26.897488,
+            "zero_minus_reference_db": -0.379253,
+            "lookahead_minus_reference_db": -0.0,
+            "lookahead_minus_zero_db": 0.379253
+          },
+          "first_10ms": {
+            "reference_rms_dbfs": -20.097288,
+            "zero_minus_reference_db": -0.038103,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 0.038103
+          },
+          "first_20ms": {
+            "reference_rms_dbfs": -16.657067,
+            "zero_minus_reference_db": -0.008599,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 0.008599
+          },
+          "first_50ms": {
+            "reference_rms_dbfs": -15.628555,
+            "zero_minus_reference_db": -0.002713,
+            "lookahead_minus_reference_db": -0.0,
+            "lookahead_minus_zero_db": 0.002712
+          }
+        }
+      },
+      "step_minus6_dbfs_peak": {
+        "onset_seconds": 67.8933333333,
+        "windows": {
+          "first_5ms": {
+            "reference_rms_dbfs": -20.897447,
+            "zero_minus_reference_db": -0.31169,
+            "lookahead_minus_reference_db": -1e-06,
+            "lookahead_minus_zero_db": 0.31169
+          },
+          "first_10ms": {
+            "reference_rms_dbfs": -14.097297,
+            "zero_minus_reference_db": -0.031533,
+            "lookahead_minus_reference_db": -0.0,
+            "lookahead_minus_zero_db": 0.031533
+          },
+          "first_20ms": {
+            "reference_rms_dbfs": -10.657052,
+            "zero_minus_reference_db": -0.00712,
+            "lookahead_minus_reference_db": -0.0,
+            "lookahead_minus_zero_db": 0.00712
+          },
+          "first_50ms": {
+            "reference_rms_dbfs": -9.628571,
+            "zero_minus_reference_db": -0.002246,
+            "lookahead_minus_reference_db": -0.0,
+            "lookahead_minus_zero_db": 0.002246
+          }
+        }
+      },
+      "transient_1": {
+        "onset_seconds": 69.9733333333,
+        "windows": {
+          "first_5ms": {
+            "reference_rms_dbfs": -6.477371,
+            "zero_minus_reference_db": -2.201024,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 2.201024
+          },
+          "first_10ms": {
+            "reference_rms_dbfs": -8.93643,
+            "zero_minus_reference_db": -1.872132,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 1.872132
+          },
+          "first_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "zero_minus_reference_db": -1.830239,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 1.830239
+          },
+          "first_50ms": {
+            "reference_rms_dbfs": -15.845852,
+            "zero_minus_reference_db": -1.829477,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 1.829478
+          }
+        }
+      },
+      "transient_2": {
+        "onset_seconds": 70.4,
+        "windows": {
+          "first_5ms": {
+            "reference_rms_dbfs": -6.477371,
+            "zero_minus_reference_db": -2.137444,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 2.137444
+          },
+          "first_10ms": {
+            "reference_rms_dbfs": -8.93643,
+            "zero_minus_reference_db": -1.820147,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 1.820147
+          },
+          "first_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "zero_minus_reference_db": -1.77967,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 1.77967
+          },
+          "first_50ms": {
+            "reference_rms_dbfs": -15.845852,
+            "zero_minus_reference_db": -1.778934,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 1.778934
+          }
+        }
+      },
+      "transient_3": {
+        "onset_seconds": 70.8266666667,
+        "windows": {
+          "first_5ms": {
+            "reference_rms_dbfs": -6.477371,
+            "zero_minus_reference_db": -2.137444,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 2.137444
+          },
+          "first_10ms": {
+            "reference_rms_dbfs": -8.93643,
+            "zero_minus_reference_db": -1.820147,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 1.820147
+          },
+          "first_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "zero_minus_reference_db": -1.77967,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 1.77967
+          },
+          "first_50ms": {
+            "reference_rms_dbfs": -15.845852,
+            "zero_minus_reference_db": -1.778934,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 1.778935
+          }
+        }
+      },
+      "transient_4": {
+        "onset_seconds": 71.2533333333,
+        "windows": {
+          "first_5ms": {
+            "reference_rms_dbfs": -6.477371,
+            "zero_minus_reference_db": -2.137444,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 2.137444
+          },
+          "first_10ms": {
+            "reference_rms_dbfs": -8.93643,
+            "zero_minus_reference_db": -1.820147,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 1.820147
+          },
+          "first_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "zero_minus_reference_db": -1.77967,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 1.77967
+          },
+          "first_50ms": {
+            "reference_rms_dbfs": -15.845852,
+            "zero_minus_reference_db": -1.778934,
+            "lookahead_minus_reference_db": 0.0,
+            "lookahead_minus_zero_db": 1.778934
+          }
+        }
+      },
+      "transient_5": {
+        "onset_seconds": 71.68,
+        "windows": {
+          "first_5ms": {
+            "reference_rms_dbfs": -6.47737,
+            "zero_minus_reference_db": -2.137444,
+            "lookahead_minus_reference_db": -0.0,
+            "lookahead_minus_zero_db": 2.137444
+          },
+          "first_10ms": {
+            "reference_rms_dbfs": -8.93643,
+            "zero_minus_reference_db": -1.820147,
+            "lookahead_minus_reference_db": -0.0,
+            "lookahead_minus_zero_db": 1.820147
+          },
+          "first_20ms": {
+            "reference_rms_dbfs": -11.867905,
+            "zero_minus_reference_db": -1.77967,
+            "lookahead_minus_reference_db": -0.0,
+            "lookahead_minus_zero_db": 1.77967
+          },
+          "first_50ms": {
+            "reference_rms_dbfs": -15.845852,
+            "zero_minus_reference_db": -1.778934,
+            "lookahead_minus_reference_db": -0.0,
+            "lookahead_minus_zero_db": 1.778934
+          }
+        }
+      }
+    },
+    "active_window_level_bins": {
+      "-70_to_-45_dbfs": {
+        "window_count": 12,
+        "zero_attenuation_db": {
+          "minimum": -11.943525,
+          "p10": -11.532448,
+          "median": -0.441911,
+          "p90": 4e-06,
+          "maximum": 1.4e-05
+        },
+        "lookahead_attenuation_db": {
+          "minimum": -3.199493,
+          "p10": -0.997629,
+          "median": -1.2e-05,
+          "p90": 4e-06,
+          "maximum": 1.5e-05
+        }
+      },
+      "-45_to_-35_dbfs": {
+        "window_count": 11,
+        "zero_attenuation_db": {
+          "minimum": -11.748934,
+          "p10": -11.748495,
+          "median": 0.0,
+          "p90": 1e-06,
+          "maximum": 1e-06
+        },
+        "lookahead_attenuation_db": {
+          "minimum": -0.029755,
+          "p10": -3e-06,
+          "median": -0.0,
+          "p90": 1e-06,
+          "maximum": 2e-06
+        }
+      },
+      "-35_to_-30_dbfs": {
+        "window_count": 37,
+        "zero_attenuation_db": {
+          "minimum": -0.170042,
+          "p10": -1e-06,
+          "median": -0.0,
+          "p90": 1e-06,
+          "maximum": 1e-06
+        },
+        "lookahead_attenuation_db": {
+          "minimum": -0.017669,
+          "p10": -1e-06,
+          "median": -0.0,
+          "p90": 1e-06,
+          "maximum": 1e-06
+        }
+      },
+      "-30_to_-25_dbfs": {
+        "window_count": 248,
+        "zero_attenuation_db": {
+          "minimum": -0.10891,
+          "p10": -0.0,
+          "median": -0.0,
+          "p90": 0.0,
+          "maximum": 1e-06
+        },
+        "lookahead_attenuation_db": {
+          "minimum": -1e-06,
+          "p10": -0.0,
+          "median": 0.0,
+          "p90": 0.0,
+          "maximum": 1e-06
+        }
+      },
+      "-25_to_0_dbfs": {
+        "window_count": 729,
+        "zero_attenuation_db": {
+          "minimum": -1.829529,
+          "p10": -0.0,
+          "median": 0.0,
+          "p90": 0.0,
+          "maximum": 0.0
+        },
+        "lookahead_attenuation_db": {
+          "minimum": -0.0,
+          "p10": -0.0,
+          "median": 0.0,
+          "p90": 0.0,
+          "maximum": 1e-06
+        }
+      }
+    },
+    "zero_vs_lookahead_similarity": {
+      "correlation": 0.999205387323,
+      "residual_rms_dbfs": -49.422288,
+      "maximum_absolute_sample_difference": 0.593146801
+    }
+  },
+  "interpretation_boundary": "This host-PDC-compensated render validates one installed FabFilter Pro-G 1.3.1.0 VST3 Stereo instance at 48 kHz. The -30 dB threshold is compared with deterministic stepped tones whose nominal values are peak amplitudes; their sine RMS is about 3 dB lower. The lookahead render is delay-compensated by Ableton, while the host device status independently reports 480 samples (10 ms), so exported sample alignment does not mean zero processing latency. The test covers internal detection, Classic style, Left/Right mode, oversampling off, and no external sidechain. Other styles, sidechain filters, M/S, stereo-link behavior, MIDI trigger, mono, oversampling, other sample rates/versions, CPU use, and listening preference remain outside this test."
+}

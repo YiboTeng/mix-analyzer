@@ -1,0 +1,217 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "a0c159c0ffd1--valhalla-dsp-llc-valhallavintageverb",
+  "family_id": "a0c159c0ffd1",
+  "identity": {
+    "vendor": "Valhalla DSP, LLC",
+    "product": "ValhallaVintageVerb",
+    "version_range": "2.2.0",
+    "formats": [
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "reverb-vintage-algorithmic",
+    "secondary": [
+      "plate",
+      "hall",
+      "chorus"
+    ],
+    "diagnoses": [
+      "vocal_depth",
+      "vintage_hall_or_plate",
+      "modulated_tail"
+    ],
+    "not_for": [
+      "dry_intimate_only",
+      "uncontrolled_low_frequency_tail"
+    ]
+  },
+  "routing": [
+    {
+      "position": "100% wet aux with send automation",
+      "when": "vocal_depth"
+    },
+    {
+      "position": "100% wet aux with send automation",
+      "when": "vintage_hall_or_plate"
+    },
+    {
+      "position": "100% wet aux with send automation",
+      "when": "modulated_tail"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "pre-delay preserves diction",
+      "filter return",
+      "duck or automate tail"
+    ],
+    "controls": [
+      {
+        "name": "Mode/Color",
+        "action": "choose era and texture"
+      },
+      {
+        "name": "Decay/PreDelay",
+        "action": "fit tempo and phrase gaps"
+      },
+      {
+        "name": "High/Low Cut/Mix",
+        "action": "use 100% wet aux and filter"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "masking",
+    "washed diction",
+    "low-frequency buildup"
+  ],
+  "stop_conditions": [
+    "tail covers next line",
+    "centre consonants retreat"
+  ],
+  "alternatives": [
+    {
+      "condition": "natural room",
+      "fallback": "Pro-R"
+    },
+    {
+      "condition": "plate focus",
+      "fallback": "ValhallaPlate"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 2.2.0.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Valhalla DSP, LLC/ValhallaVintageVerb.md",
+    "source_note": "sources/音乐制作/插件资料/Valhalla DSP, LLC/ValhallaVintageVerb资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/a0c159c0ffd1--ValhallaVintageVerb.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/a0c159c0ffd1--impulse--bypass.json",
+      "projects/p1-plugin-knowledge-base/validation/results/a0c159c0ffd1--impulse--default-wet.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Valhalla DSP, LLC/ValhallaVintageVerb.md",
+        "packaged_path": "evidence/cards/ValhallaVintageVerb.md",
+        "sha256": "1536bcc17e92e5774f91bc74e42ce90a870015954f508ad3a2271fb3abe4546b"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Valhalla DSP, LLC/ValhallaVintageVerb资料.md",
+        "packaged_path": "evidence/sources/ValhallaVintageVerb资料.md",
+        "sha256": "4f5c4dd24e7beb61ddb9cbc8e03f5b227f0cfc8cc21113e49f5b92a46a9351f3"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/a0c159c0ffd1--ValhallaVintageVerb.md",
+        "packaged_path": "evidence/validation/a0c159c0ffd1--ValhallaVintageVerb.md",
+        "sha256": "664f5dadb17d9d71cb3b950b269308ec999ecf0a11d35d174cd7ee119e1e81dd"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/a0c159c0ffd1--impulse--bypass.json",
+          "packaged_path": "evidence/results/a0c159c0ffd1--impulse--bypass.json",
+          "sha256": "efbd246a1957ecdc497d2592fd51f5a18ffca23b7ee11724d21539243172da83"
+        },
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/a0c159c0ffd1--impulse--default-wet.json",
+          "packaged_path": "evidence/results/a0c159c0ffd1--impulse--default-wet.json",
+          "sha256": "91a4748330b5f85c7b9e37b2226b150e68839545d302c45e1f14c20ae33a2cb6"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "vocal_depth",
+      "vintage_hall_or_plate",
+      "modulated_tail"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Default wet impulse onset/decay measured; other algorithms not exhaustively tested."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "100% Wet Stereo Aux；Send 决定量，返回做高通/低通/去齿和 Duck。",
+      "Predelay 与 Attack 分开：Predelay 隔开干声，Attack 改尾部建立形态。"
+    ],
+    "routing": [
+      "Stereo Reverb Aux 100% Wet。",
+      "需要自动 Duck 时由主唱侧链后级压缩或自动化 Send。"
+    ],
+    "controls": [
+      {
+        "name": "Mode",
+        "meaning": "选择算法拓扑、密度、攻击与调制性格。",
+        "action": "主唱从 Chamber/Smooth Plate/Smooth Random 起，逐模式等响度。"
+      },
+      {
+        "name": "Decay / Size / Attack",
+        "meaning": "尾长、模态尺度和建立形态。",
+        "action": "先按节奏定 Decay，再用 Size/Attack 避免金属或淹字。"
+      },
+      {
+        "name": "Predelay",
+        "meaning": "干声到混响起始的间隔。",
+        "action": "Rap 从 20–80 ms 或节拍分数试，让首字保持前。"
+      },
+      {
+        "name": "Color / High-Low Decay",
+        "meaning": "年代带宽和不同频段尾长。",
+        "action": "先 NOW/中性，低切尾、缩短高频尾以腾位置。"
+      },
+      {
+        "name": "Mod Rate/Depth / Mix Lock",
+        "meaning": "调制尾部并锁定干湿。",
+        "action": "自然空间低调制；Aux 锁 Mix 100%。"
+      }
+    ],
+    "parameter_start_points": [
+      "Decay 0.6–1.5 s、Predelay 30–70 ms、High Cut 6–10 kHz、Low Cut 120–250 Hz。",
+      "长效果 2–4 s 只自动化句尾。",
+      "Mix Lock 100%。"
+    ],
+    "listen_for": [
+      "齿音尾、低中频堆积、调制跑音。",
+      "Predelay 变成离散 slap。"
+    ],
+    "stop": [
+      "空间感可感但关掉才明显。",
+      "尾部遮下一句时先缩 Decay/频段而非只降 Send。"
+    ],
+    "latency": [
+      "官方未列本机 2.2.0 延迟/OS；算法内部时变不可做静态相位结论。S4 测 PDC、脉冲衰减与导出。"
+    ]
+  }
+}

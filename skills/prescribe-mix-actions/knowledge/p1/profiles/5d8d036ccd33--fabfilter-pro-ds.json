@@ -1,0 +1,210 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "5d8d036ccd33--fabfilter-pro-ds",
+  "family_id": "5d8d036ccd33",
+  "identity": {
+    "vendor": "FabFilter",
+    "product": "Pro-DS",
+    "version_range": "1.2.1.0",
+    "formats": [
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "deessing-wide-split",
+    "secondary": [
+      "single-vocal",
+      "allround"
+    ],
+    "diagnoses": [
+      "sibilance",
+      "harsh_consonants"
+    ],
+    "not_for": [
+      "global_dullness",
+      "broadband_noise"
+    ]
+  },
+  "routing": [
+    {
+      "position": "after corrective EQ and before brightening",
+      "when": "sibilance"
+    },
+    {
+      "position": "after corrective EQ and before brightening",
+      "when": "harsh_consonants"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "reduce only harsh consonants",
+      "choose Wide or Split by collateral tone change",
+      "minimum lookahead"
+    ],
+    "controls": [
+      {
+        "name": "Threshold/Range",
+        "action": "target problem consonants, not all highs"
+      },
+      {
+        "name": "Wide/Split",
+        "action": "compare equal reduction and tone"
+      },
+      {
+        "name": "Lookahead",
+        "action": "disable if not needed"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "lisping",
+    "dull vowels",
+    "lookahead latency"
+  ],
+  "stop_conditions": [
+    "normal consonants darken",
+    "sibilants lose identity"
+  ],
+  "alternatives": [
+    {
+      "condition": "spectral voice-specific",
+      "fallback": "Eiosis E2Deesser"
+    },
+    {
+      "condition": "broad resonance",
+      "fallback": "soothe2 or dynamic EQ"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 1.2.1.0.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/FabFilter/Pro-DS.md",
+    "source_note": "sources/音乐制作/插件资料/FabFilter/Pro-DS资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/5d8d036ccd33--FabFilter-Pro-DS.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/5d8d036ccd33--composite-deesser-wide-split-lookahead.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/FabFilter/Pro-DS.md",
+        "packaged_path": "evidence/cards/Pro-DS.md",
+        "sha256": "97250136a4a7f808a8445037b9f5c6126f8b6c866186c6ef4a90417127111179"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/FabFilter/Pro-DS资料.md",
+        "packaged_path": "evidence/sources/Pro-DS资料.md",
+        "sha256": "c6079ff8782883f60f8601428cc6182e976e3d6bf2d6acd4dd9aaf0dc9bb3c9c"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/5d8d036ccd33--FabFilter-Pro-DS.md",
+        "packaged_path": "evidence/validation/5d8d036ccd33--FabFilter-Pro-DS.md",
+        "sha256": "fb648d69de15f955a650774480075fd69b630946dedd3967971b73b3bb8cd2ae"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/5d8d036ccd33--composite-deesser-wide-split-lookahead.json",
+          "packaged_path": "evidence/results/5d8d036ccd33--composite-deesser-wide-split-lookahead.json",
+          "sha256": "dece27ad6e9fa3923def7605037d41a9f23804aeca96ae2c6002e417711948d8"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "sibilance",
+      "harsh_consonants"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Wide/Split and Lookahead/OS latency tested on sparse events."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "基础修正后、激励和明亮 EQ 前先控制原始齿音；若后级重新生成刺耳，再在链尾加轻度第二阶段。",
+      "严重失真的人声可用原始干声作外部侧链改善检测。"
+    ],
+    "routing": [
+      "主唱 Insert；通常在 Air EQ/Exciter 前。",
+      "失真人声可由干净分轨外部侧链触发。"
+    ],
+    "controls": [
+      {
+        "name": "Threshold",
+        "meaning": "滤波侧链超过阈值时触发。",
+        "action": "用 Audition Triggering 降到捕获 S/T/CH 而尽量不抓普通元音。"
+      },
+      {
+        "name": "Range",
+        "meaning": "限制最大衰减量。",
+        "action": "先 2–4 dB；最坏齿音仍跳出再加，不靠 Threshold 同时决定深度。"
+      },
+      {
+        "name": "HP/LP Sidechain",
+        "meaning": "限定 2–20 kHz 检测范围。",
+        "action": "Sidechain Audition 中从宽到窄，保留目标齿音而排除元音/军鼓泄漏。"
+      },
+      {
+        "name": "Single Vocal / Allround",
+        "meaning": "人声专用分类或通用频带触发。",
+        "action": "独唱先 Single Vocal；总线、混音或特殊高频限制才 Allround。"
+      },
+      {
+        "name": "Wide / Split Band",
+        "meaning": "全频衰减或仅高频衰减。",
+        "action": "独唱先 Wide 比较自然度；低频主体不应随齿音下沉时试 Split。"
+      },
+      {
+        "name": "Lookahead",
+        "meaning": "提前最多 15 ms 处理齿音起始。",
+        "action": "官方建议人声约 10 ms 是常用起点；若 S 失去自然起始则减少。"
+      }
+    ],
+    "parameter_start_points": [
+      "Single Vocal + Wide Band；Range 2–4 dB；Lookahead 约 5–10 ms。",
+      "侧链先覆盖约 4–12 kHz，再用 Audition 缩窄；不是固定频率答案。",
+      "链尾第二阶段只做 1–2 dB 峰值控制。"
+    ],
+    "listen_for": [
+      "lisp、咬舌、S 开头消失。",
+      "Wide Band 造成整个人声随 S 下沉；Split 造成高频光泽抽动。",
+      "Trigger Audition 是否包含普通词头。"
+    ],
+    "stop": [
+      "齿音不再刺穿伴奏且语义清晰。",
+      "再加 1 dB Range 只让说话含混或暗淡时回退。"
+    ],
+    "latency": [
+      "本机 48 kHz 实测：Wide + Lookahead 12 ms + OS Off 为 720 samples / 15.0 ms；Split 同状态为 1232 samples / 25.7 ms。Lookahead 旋钮即使为 0.000 ms，只要模块仍启用，宿主仍报 720 samples；真正关闭模块且 Wide/OS Off 才为 0 samples。Lookahead Off 下 2x/4x OS 为 34/40 samples。"
+    ]
+  }
+}

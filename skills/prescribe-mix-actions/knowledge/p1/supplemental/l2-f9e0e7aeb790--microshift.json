@@ -1,0 +1,179 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "l2-f9e0e7aeb790--microshift",
+  "family_id": "f9e0e7aeb790",
+  "identity": {
+    "vendor": "SoundToys",
+    "product": "MicroShift",
+    "version_range": "5.0.1.0",
+    "formats": [
+      "VST2"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "deferred / not L3"
+  },
+  "capabilities": {
+    "primary": "width-micro-pitch",
+    "secondary": [],
+    "diagnoses": [
+      "adlib_width",
+      "mono_to_stereo_effect",
+      "subtle_parallel_space"
+    ],
+    "not_for": []
+  },
+  "routing": [
+    {
+      "position": "100% Wet Stereo Aux。",
+      "when": "adlib_width"
+    },
+    {
+      "position": "Backing Vocal Bus 小比例 Insert。",
+      "when": "adlib_width"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "干声中心不动，宽度层退后两侧。",
+      "Mono 折叠仍有稳定主唱。"
+    ],
+    "controls": [
+      {
+        "name": "Style I/II/III",
+        "action": "固定 Detune/Delay，等响度比较空间位置和 Mono。"
+      },
+      {
+        "name": "Detune",
+        "action": "从 50–100% 起；Chorus 明显则降低。"
+      },
+      {
+        "name": "Delay",
+        "action": "从 50–100% 起；与干声梳状/分离则调整。"
+      },
+      {
+        "name": "Focus",
+        "action": "从 120–300 Hz 或更高试，防低中频模糊。"
+      },
+      {
+        "name": "Mix",
+        "action": "Aux 100% Wet；Insert 10–30% 起。"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "explicitly accept L2/deferred evidence",
+    "level-matched comparison"
+  ],
+  "risks": [
+    "主唱 Insert 全湿。",
+    "Focus 太低。",
+    "只听 Stereo。",
+    "干湿响度未匹配。"
+  ],
+  "stop_conditions": [
+    "Stereo 可感而 Mono 几乎不损主唱。",
+    "继续加只让中心变虚时停止。"
+  ],
+  "alternatives": [],
+  "version_policy": {
+    "match": "L2 control knowledge only; no L3 host guarantee.",
+    "mismatch": "Suppress exact controls and require revalidation."
+  },
+  "evidence": {
+    "level": "L2",
+    "card": "C:\\Projects\\aizen-knowledge-base\\notes\\音乐制作\\插件\\SoundToys\\MicroShift.md",
+    "source_note": "C:\\Projects\\aizen-knowledge-base\\sources\\音乐制作\\插件资料\\SoundToys\\MicroShift资料.md",
+    "validation_report": "not-L3",
+    "result_files": [],
+    "packaged": {
+      "card": {
+        "packaged_path": "p1/evidence/supplemental/cards/MicroShift.md",
+        "sha256": "3aa546073ca3d26e2f280d2165367c6b221ca2b21ac2fe5c69306df937158edf"
+      },
+      "source_note": {
+        "packaged_path": "p1/evidence/supplemental/sources/MicroShift资料.md",
+        "sha256": "f0ad0dcdfe6d6cfffda4fde8e0159e6c3d77078e9baab2287c770dd97e6d1517"
+      }
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "adlib_width",
+      "mono_to_stereo_effect",
+      "subtle_parallel_space"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics"
+    ]
+  },
+  "conflict_rules": [],
+  "validation": {
+    "status": "deferred-l2",
+    "matrix_status": "not-l3",
+    "boundary": "Official/control research only; no successful L3 host render."
+  },
+  "catalog_warnings": [
+    "evidence_level_l2_not_l3",
+    "vst2_host_validation_deferred"
+  ],
+  "local_guidance": {
+    "signal_position": [
+      "优先 100% Wet Aux，主唱干声居中，返回高通/去齿。",
+      "Backing Vocal Bus 可 Insert 轻 Mix，但仍做折叠。"
+    ],
+    "routing": [
+      "100% Wet Stereo Aux。",
+      "Backing Vocal Bus 小比例 Insert。"
+    ],
+    "controls": [
+      {
+        "name": "Style I/II/III",
+        "meaning": "不同硬件/算法的延迟、移调与色彩。",
+        "action": "固定 Detune/Delay，等响度比较空间位置和 Mono。"
+      },
+      {
+        "name": "Detune",
+        "meaning": "缩放时变微移调。",
+        "action": "从 50–100% 起；Chorus 明显则降低。"
+      },
+      {
+        "name": "Delay",
+        "meaning": "缩放时变延迟。",
+        "action": "从 50–100% 起；与干声梳状/分离则调整。"
+      },
+      {
+        "name": "Focus",
+        "meaning": "分频以下保持未受影响。",
+        "action": "从 120–300 Hz 或更高试，防低中频模糊。"
+      },
+      {
+        "name": "Mix",
+        "meaning": "干湿比例。",
+        "action": "Aux 100% Wet；Insert 10–30% 起。"
+      }
+    ],
+    "parameter_start_points": [
+      "Style I，Detune/Delay 50–100%，Focus 150–300 Hz，Aux 100% Wet。",
+      "Send 从 -20 dB 起推。",
+      "主唱中心变空或 Mono 下降即减。"
+    ],
+    "listen_for": [
+      "Chorus、相位游移、梳状。",
+      "低中频变宽变糊。",
+      "齿音在 Side 过强。"
+    ],
+    "stop": [
+      "Stereo 可感而 Mono 几乎不损主唱。",
+      "继续加只让中心变虚时停止。"
+    ],
+    "latency": [
+      "时变延迟/移调必然产生相位变化；官方未给宿主延迟。S4 测报告延迟、时变差分和 Mix。"
+    ]
+  }
+}

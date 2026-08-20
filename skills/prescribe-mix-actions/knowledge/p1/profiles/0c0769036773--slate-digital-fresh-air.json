@@ -1,0 +1,201 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "0c0769036773--slate-digital-fresh-air",
+  "family_id": "0c0769036773",
+  "identity": {
+    "vendor": "Slate Digital",
+    "product": "Fresh Air",
+    "version_range": "1.1.1",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "exciter-air",
+    "secondary": [
+      "presence",
+      "parallel-brightness"
+    ],
+    "diagnoses": [
+      "lack_of_air",
+      "presence_dullness"
+    ],
+    "not_for": [
+      "active_sibilance",
+      "clipping_risk"
+    ]
+  },
+  "routing": [
+    {
+      "position": "after de-essing, often parallel or late insert",
+      "when": "lack_of_air"
+    },
+    {
+      "position": "after de-essing, often parallel or late insert",
+      "when": "presence_dullness"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "small Mid or High lift",
+      "maintain peak headroom",
+      "equal loudness"
+    ],
+    "controls": [
+      {
+        "name": "Mid Air",
+        "action": "add presence separately"
+      },
+      {
+        "name": "High Air",
+        "action": "add top air separately"
+      },
+      {
+        "name": "Trim",
+        "action": "restore headroom"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "sibilance",
+    "clipping",
+    "brittle tone"
+  ],
+  "stop_conditions": [
+    "peak reaches 0 dBFS",
+    "consonants become sharp"
+  ],
+  "alternatives": [
+    {
+      "condition": "broad EQ air",
+      "fallback": "Maag EQ4"
+    },
+    {
+      "condition": "dynamic brightness",
+      "fallback": "Pro-Q 3/F6"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 1.1.1.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Slate Digital/Fresh Air.md",
+    "source_note": "sources/音乐制作/插件资料/Slate Digital/Fresh Air资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/0c0769036773--Slate-Digital-Fresh-Air.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/0c0769036773--composite-mid-high-air.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Slate Digital/Fresh Air.md",
+        "packaged_path": "evidence/cards/Fresh Air.md",
+        "sha256": "1ef135b7ed417ad4979b67bcd7a1d2db77565bad56e6224176a1f46215937867"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Slate Digital/Fresh Air资料.md",
+        "packaged_path": "evidence/sources/Fresh Air资料.md",
+        "sha256": "653eab4b1c28d94e5b2f2b4a7952f477040309370954e7d0f133a9188a547d0c"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/0c0769036773--Slate-Digital-Fresh-Air.md",
+        "packaged_path": "evidence/validation/0c0769036773--Slate-Digital-Fresh-Air.md",
+        "sha256": "fde0ca6b02c05f2ca1e5f4ecd81843fb07d3b118658ba64471f6cb0b1bbc8a9b"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/0c0769036773--composite-mid-high-air.json",
+          "packaged_path": "evidence/results/0c0769036773--composite-mid-high-air.json",
+          "sha256": "7f2cf9a866f7c0f324bb1efd79117c5aa9dec22e7c253797e019d003fc284609"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "lack_of_air",
+      "presence_dullness"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Mid/High 21% single-variable response and clipping boundary measured."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "通常放在基础清理与第一阶段去齿后；若 Mid/High Air 重新激发齿音，在其后补轻度 De-esser。",
+      "可在压缩后作为颜色，避免高频激励先改变压缩器触发；也可前置做实验但要重新调压缩。"
+    ],
+    "routing": [
+      "主唱链后段，压缩后、链尾去齿前。",
+      "并行 Aux 100% 插件处理，用 Send 控量并高通/去齿返回。"
+    ],
+    "controls": [
+      {
+        "name": "Mid Air",
+        "meaning": "动态提升高频中段和 Presence。",
+        "action": "从 5–15% 起，咬字不足才上推；鼻尖/硬感出现则回退。"
+      },
+      {
+        "name": "High Air",
+        "meaning": "动态提升更高频细节和空气。",
+        "action": "从 5–20% 起，关注 S、底噪和嘴部点击。"
+      },
+      {
+        "name": "Link",
+        "meaning": "锁定两 Air 旋钮一起移动。",
+        "action": "先分别找边界；只有需要整体联动微调时 Link。"
+      },
+      {
+        "name": "Trim",
+        "meaning": "补偿动态处理带来的输出增益。",
+        "action": "以旁通 Peak/RMS 和感知响度回调，避免超过 0 dBFS。"
+      }
+    ],
+    "parameter_start_points": [
+      "Mid Air 5–15%、High Air 5–20%、先不 Link。",
+      "Trim 降到旁通等 RMS；任何百分比仅为试点。",
+      "并行返回从比干声低 15–25 dB 起推到刚可感。"
+    ],
+    "listen_for": [
+      "S/T/CH、嘴部点击、耳机底噪是否被放大。",
+      "Mid Air 是否把 2–5 kHz 推成刺耳或电话感。",
+      "Trim 前后响度偏差。"
+    ],
+    "stop": [
+      "在混音中关掉会略失光泽，打开又不显处理。",
+      "齿音先于元音变亮或主体变薄时停止。"
+    ],
+    "latency": [
+      "官方简版文档未给出算法延迟、过采样或相位数据。本机 VST3 在 Ableton Live 11.3.43、48 kHz 下报告 `0 samples`；三个独立导出最佳整数偏移均为 0 samples。该结果只覆盖当前宿主、格式与采样率，不从第三方开发信息推断内部实现。"
+    ]
+  }
+}

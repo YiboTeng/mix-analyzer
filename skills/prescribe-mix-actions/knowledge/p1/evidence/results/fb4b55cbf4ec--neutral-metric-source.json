@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-08-20T01:25:33+08:00",
+  "family_id": "fb4b55cbf4ec",
+  "test_id": "neutral-metric-source",
+  "reference": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\a0c159c0ffd1--impulse--bypass.wav",
+    "sha256": "0123293a90801b37bbabd43e59492875ca3c319b9420363a653a2629903f92fc",
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "sample_width_bytes": 3,
+    "frames": 288000,
+    "duration_seconds": 6.0,
+    "peak_dbfs": -1.938333,
+    "rms_dbfs": -54.805364
+  },
+  "candidate": {
+    "path": "C:\\Projects\\aizen-knowledge-base\\projects\\p1-plugin-knowledge-base\\validation\\renders\\fb4b55cbf4ec--impulse--metric-source.wav",
+    "sha256": "df0eafe6c9be1c027ad023b4968959f7dc35c26d95d874c07523c839ca5ee24f",
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "sample_width_bytes": 3,
+    "frames": 288000,
+    "duration_seconds": 6.0,
+    "peak_dbfs": -1.938332,
+    "rms_dbfs": -54.805364
+  },
+  "neutrality": {
+    "direct_correlation": 0.999999998926,
+    "best_integer_lag_samples": 0,
+    "best_integer_lag_ms": 0.0,
+    "best_lag_correlation": 0.999999999462,
+    "level_delta_db": -0.0,
+    "residual_rms_dbfs": -141.486632,
+    "residual_peak_dbfs": -132.453198,
+    "max_abs_error": 2.384185791015625e-07
+  },
+  "interpretation_boundary": "Both files are independent Ableton 48 kHz/24-bit exports with Triangular dither, so exact sample identity is not expected. A zero-sample best lag, near-unity correlation, near-zero level delta, and residual confined near the 24-bit dither floor support neutral pass-through behavior. This test does not quantify feature-specific metering, analysis, reference playback, matching, or automation behavior."
+}

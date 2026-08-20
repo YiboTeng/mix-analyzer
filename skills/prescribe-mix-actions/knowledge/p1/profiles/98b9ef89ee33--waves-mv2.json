@@ -1,0 +1,201 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "98b9ef89ee33--waves-mv2",
+  "family_id": "98b9ef89ee33",
+  "identity": {
+    "vendor": "Waves",
+    "product": "MV2",
+    "version_range": "12.7.0.209",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "compression-upward-downward",
+    "secondary": [
+      "density",
+      "low-level-detail"
+    ],
+    "diagnoses": [
+      "low_level_detail_missing",
+      "dense_close_vocal"
+    ],
+    "not_for": [
+      "noisy_recording",
+      "transparent_macro_riding"
+    ]
+  },
+  "routing": [
+    {
+      "position": "after cleanup and primary compression",
+      "when": "low_level_detail_missing"
+    },
+    {
+      "position": "after cleanup and primary compression",
+      "when": "dense_close_vocal"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "lift only useful low-level detail",
+      "cap high-level density",
+      "restore output headroom"
+    ],
+    "controls": [
+      {
+        "name": "Low Level",
+        "action": "raise quietly masked detail"
+      },
+      {
+        "name": "High Level",
+        "action": "contain louder material"
+      },
+      {
+        "name": "Output",
+        "action": "compensate large gain change"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "noise and breaths lifted",
+    "clipping",
+    "over-dense flat vocal"
+  ],
+  "stop_conditions": [
+    "background rises more than articulation",
+    "peaks lose headroom"
+  ],
+  "alternatives": [
+    {
+      "condition": "phrase riding",
+      "fallback": "Vocal Rider"
+    },
+    {
+      "condition": "conventional compression",
+      "fallback": "Pro-C 2"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 12.7.0.209.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Waves/MV2.md",
+    "source_note": "sources/音乐制作/插件资料/Waves/MV2资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/98b9ef89ee33--Waves-MV2.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/98b9ef89ee33--dynamics-mv2-levels.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Waves/MV2.md",
+        "packaged_path": "evidence/cards/MV2.md",
+        "sha256": "1f95967d10eedc631846729a0afad0be5272a223c67cfe9d1f811432eee4bb83"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Waves/MV2资料.md",
+        "packaged_path": "evidence/sources/MV2资料.md",
+        "sha256": "29951badeb427708b9bed5f0ca5fcc45785169d1c08aed258d9b212b381c4a32"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/98b9ef89ee33--Waves-MV2.md",
+        "packaged_path": "evidence/validation/98b9ef89ee33--Waves-MV2.md",
+        "sha256": "8d255262e298fccc78aa25ea8b909be2324e702adadeaf43beaea7732739de19"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/98b9ef89ee33--dynamics-mv2-levels.json",
+          "packaged_path": "evidence/results/98b9ef89ee33--dynamics-mv2-levels.json",
+          "sha256": "df18d12ae51b983c93a4a1a2a6e8bf61f43ce07b75b9c8059a4149b668d336c7"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "low_level_detail_missing",
+      "dense_close_vocal"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Low +26.2 and High -12 stress transfer measured with 64-sample latency."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "清理、呼吸控制、降噪后再用，避免低电平垃圾被抬起。",
+      "常放在基础峰值压缩后做轻度密度，而不是取代所有动态。"
+    ],
+    "routing": [
+      "主唱链后段，先完成噪声/呼吸清理。",
+      "Aux 并行，返回做高通/去齿。"
+    ],
+    "controls": [
+      {
+        "name": "Low Level",
+        "meaning": "对阈值以下内容做 bottom-up 提升，范围至 +48 dB。",
+        "action": "从 0 小推，观察 Boost 表并听弱字/噪声共同变化。"
+      },
+      {
+        "name": "High Level",
+        "meaning": "对阈值以上内容做 top-down 压缩，范围至 -48 dB。",
+        "action": "先限 1–3 dB 峰值，不与前级重复重压。"
+      },
+      {
+        "name": "Output Gain",
+        "meaning": "最终输出衰减。",
+        "action": "将整体 Active RMS 匹配旁通并防削波。"
+      },
+      {
+        "name": "Cut / Boost Meters",
+        "meaning": "显示上下行处理及最大值。",
+        "action": "重置后在代表片段记录分布，不只看峰值数字。"
+      }
+    ],
+    "parameter_start_points": [
+      "Low Level 2–6 dB 的轻度 Boost 目标；High Level 从浅值开始，以实际 Cut 表与峰值约束判断，不能把旋钮负数直接当作最终衰减。",
+      "Output 还原旁通响度。",
+      "若噪声同步升高，先减 Low Level 而非用 Gate 抵消。"
+    ],
+    "listen_for": [
+      "底噪、房间、耳机串音和呼吸抬升。",
+      "所有音节等高导致疲劳。",
+      "High Level 与前级压缩重复。"
+    ],
+    "stop": [
+      "弱字进入稳定区而噪声仍在背景。",
+      "进一步 Low Level 主要提升非语音时停止。"
+    ],
+    "latency": [
+      "本机 Waves MV2 12.7.0.209 VST3 Stereo 在 Ableton Live 11.3.43 / 48 kHz 报告 64 samples / 1.3 ms；离线导出由宿主 PDC 对齐。官方手册未给过采样，本轮也未验证 VST2、其它采样率或裸延迟。"
+    ]
+  }
+}

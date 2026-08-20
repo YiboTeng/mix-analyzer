@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "83165b3547f7--fabfilter-timeless-3",
+  "family_id": "83165b3547f7",
+  "identity": {
+    "vendor": "FabFilter",
+    "product": "Timeless 3",
+    "version_range": "3.0.5.0",
+    "formats": [
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "delay-creative",
+    "secondary": [
+      "multitap",
+      "modulation",
+      "ducking"
+    ],
+    "diagnoses": [
+      "creative_multitap",
+      "modulated_delay",
+      "ducked_echo"
+    ],
+    "not_for": [
+      "simple_low_cpu_slap",
+      "core_lead_timing_fix"
+    ]
+  },
+  "routing": [
+    {
+      "position": "100% wet aux or automated insert effect",
+      "when": "creative_multitap"
+    },
+    {
+      "position": "100% wet aux or automated insert effect",
+      "when": "modulated_delay"
+    },
+    {
+      "position": "100% wet aux or automated insert effect",
+      "when": "ducked_echo"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "define tap rhythm",
+      "filter and duck repeats",
+      "bound feedback"
+    ],
+    "controls": [
+      {
+        "name": "Delay/Taps",
+        "action": "set rhythmic pattern"
+      },
+      {
+        "name": "Feedback",
+        "action": "limit repeat duration"
+      },
+      {
+        "name": "Modulation/Ducking",
+        "action": "move repeats behind lead"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "feedback runaway",
+    "rhythmic clutter",
+    "pitch modulation artifacts"
+  ],
+  "stop_conditions": [
+    "echo masks lyrics",
+    "feedback outlives section"
+  ],
+  "alternatives": [
+    {
+      "condition": "simple vocal delay",
+      "fallback": "H-Delay"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 3.0.5.0.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/FabFilter/Timeless 3.md",
+    "source_note": "sources/音乐制作/插件资料/FabFilter/Timeless 3资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/83165b3547f7--Timeless-3.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/83165b3547f7--impulse--default-wet.json",
+      "projects/p1-plugin-knowledge-base/validation/results/83165b3547f7--impulse--full-wet.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/FabFilter/Timeless 3.md",
+        "packaged_path": "evidence/cards/Timeless 3.md",
+        "sha256": "22c8f01b5f6af4c7addc6e5e7b2a1b67418e390e1c6c7cdf144e84a42a5ee5e3"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/FabFilter/Timeless 3资料.md",
+        "packaged_path": "evidence/sources/Timeless 3资料.md",
+        "sha256": "f7f843b435ebda4a6cdbceee7576729963e5ab438f1575126d98acc8f24b085f"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/83165b3547f7--Timeless-3.md",
+        "packaged_path": "evidence/validation/83165b3547f7--Timeless-3.md",
+        "sha256": "3bdee7b209701b1152ab743f38903c7a72ca27653d9eed300724dd7465df56be"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/83165b3547f7--impulse--default-wet.json",
+          "packaged_path": "evidence/results/83165b3547f7--impulse--default-wet.json",
+          "sha256": "a10a3e78c743491aa529bc29652a12faa30f7dcbdf2e3a30b254c34e69299967"
+        },
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/83165b3547f7--impulse--full-wet.json",
+          "packaged_path": "evidence/results/83165b3547f7--impulse--full-wet.json",
+          "sha256": "d1edb202df9badc95dfb97f2214cbb3426929ea819902ac779067d3982fa0148"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "creative_multitap",
+      "modulated_delay",
+      "ducked_echo"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Default 350/353.5 ms stereo taps and feedback decay measured."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "100% Wet Aux并Lock Mix；先基础Delay/Feedback/Filter，再加Tap/Mod/FX。",
+      "Ducking用主输入Envelope Follower负向调Wet Level。"
+    ],
+    "routing": [
+      "Stereo Aux 100% Wet并Lock Mix。",
+      "自动化Send、Freeze、Feedback或Tap电平。"
+    ],
+    "controls": [
+      {
+        "name": "Delay/Sync/Read Mode",
+        "meaning": "基础时间、节拍与Tape变调或Stretch保音高。",
+        "action": "常规Sync；自动化时间时按想要Pitch Glide与否选。"
+      },
+      {
+        "name": "Feedback/Cross/PingPong",
+        "meaning": "同通道/跨通道反馈和反弹。",
+        "action": "20–40%起，>100只短自动化。"
+      },
+      {
+        "name": "Taps",
+        "meaning": "最多15附加Tap+主Tap的时间/电平/声像。",
+        "action": "先2–4 Tap按节奏空隙排，不铺满。"
+      },
+      {
+        "name": "Filters",
+        "meaning": "重复每轮进一步滤波。",
+        "action": "HP/LP置反馈路径，逐次变暗/变薄。"
+      },
+      {
+        "name": "EF→Wet Level / FX",
+        "meaning": "输入包络Duck湿声及Drive/LoFi/Diffuse/Pitch。",
+        "action": "先搭Duck，再一次加一个FX。"
+      }
+    ],
+    "parameter_start_points": [
+      "1/8D或1/4、Feedback20–35%、2–4 Tap、HP180–300Hz、LP5–9kHz。",
+      "EF负向调Wet Level，主唱发声时退3–8dB。",
+      "Auto Mute Self-Osc On。"
+    ],
+    "listen_for": [
+      "自激、Pitch递增失控、Filter共振。",
+      "Tap过密像混响并遮词。",
+      "M/S/跨反馈Mono相消。"
+    ],
+    "stop": [
+      "每个Tap/FX有明确作用。",
+      "关闭任何层无差异就删除。"
+    ],
+    "latency": [
+      "Pitch开启会把最短Delay从5提高到45ms；官方未列PDC/OS。S4测各FX、ReadMode和PDC。"
+    ]
+  }
+}

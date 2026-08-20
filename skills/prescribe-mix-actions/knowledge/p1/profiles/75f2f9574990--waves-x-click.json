@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "75f2f9574990--waves-x-click",
+  "family_id": "75f2f9574990",
+  "identity": {
+    "vendor": "Waves",
+    "product": "X-Click",
+    "version_range": "12.7.0.209",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "restoration-click-mouth-adjacent",
+    "secondary": [
+      "pre-mix-cleanup",
+      "difference-monitor"
+    ],
+    "diagnoses": [
+      "mouth_click_or_short_impulse",
+      "digital_click"
+    ],
+    "not_for": [
+      "continuous_noise",
+      "plosive_low_frequency_event"
+    ]
+  },
+  "routing": [
+    {
+      "position": "pre-compression insert or offline event",
+      "when": "mouth_click_or_short_impulse"
+    },
+    {
+      "position": "pre-compression insert or offline event",
+      "when": "digital_click"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "Difference contains only defect",
+      "lowest working threshold",
+      "preserve consonants and drums"
+    ],
+    "controls": [
+      {
+        "name": "Threshold",
+        "action": "raise until target click enters Difference"
+      },
+      {
+        "name": "Shape",
+        "action": "match event width while monitoring Difference"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "transient removal",
+    "consonant smear",
+    "high fixed latency"
+  ],
+  "stop_conditions": [
+    "Difference contains speech or drums",
+    "Audio loses articulation"
+  ],
+  "alternatives": [
+    {
+      "condition": "sparse event",
+      "fallback": "clip edit or waveform repair"
+    },
+    {
+      "condition": "dedicated mouth algorithm available",
+      "fallback": "re-evaluate RX Mouth De-click"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 12.7.0.209.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Waves/X-Click.md",
+    "source_note": "sources/音乐制作/插件资料/Waves/X-Click资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/75f2f9574990--Waves-X-Click.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/75f2f9574990--composite-xclick.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Waves/X-Click.md",
+        "packaged_path": "evidence/cards/X-Click.md",
+        "sha256": "156065307c5dc1a1fabba5c87abc200e19105702e43589e01cfa13e2e887d851"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Waves/X-Click资料.md",
+        "packaged_path": "evidence/sources/X-Click资料.md",
+        "sha256": "f5d8e4e21a07398295cf8b572d92586c18bc0bc471a05214bb6470b0a8982074"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/75f2f9574990--Waves-X-Click.md",
+        "packaged_path": "evidence/validation/75f2f9574990--Waves-X-Click.md",
+        "sha256": "4addc5551a04ac1d360df6607a46765ffa0d1faa6a8c48927804bfa3de43040b"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/75f2f9574990--composite-xclick.json",
+          "packaged_path": "evidence/results/75f2f9574990--composite-xclick.json",
+          "sha256": "986ca0c9ccba341485eb246ba1895c8d31e4f631123094de2b59e2e5d1b7e519"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "mouth_click_or_short_impulse",
+      "digital_click"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    },
+    {
+      "if": "realtime_tracking",
+      "action": "reject because reported latency is 2624 samples"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "No labelled mouth clicks; default neutrality, Difference and 50/70 impulse risk tested."
+  },
+  "local_guidance": {
+    "signal_position": [],
+    "routing": [],
+    "controls": [
+      {
+        "name": "Threshold",
+        "meaning": "可被检测的点击强度/尺寸上限随数值增加。",
+        "action": "从 0 提高到目标点击刚进入 Difference。"
+      },
+      {
+        "name": "Shape",
+        "meaning": "检测事件的形状/时间尺度。",
+        "action": "较低偏短数字点击，较高偏宽刮擦；以 Difference 不含有效瞬态为准。"
+      },
+      {
+        "name": "Audio / Difference",
+        "meaning": "正常结果 / 被移除内容。",
+        "action": "用 Difference 建立“只包含缺陷”的停止条件。"
+      }
+    ],
+    "parameter_start_points": [],
+    "listen_for": [],
+    "stop": [],
+    "latency": []
+  }
+}

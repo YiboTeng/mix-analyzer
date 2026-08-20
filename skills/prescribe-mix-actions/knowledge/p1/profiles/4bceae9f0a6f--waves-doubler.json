@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "4bceae9f0a6f--waves-doubler",
+  "family_id": "4bceae9f0a6f",
+  "identity": {
+    "vendor": "Waves",
+    "product": "Doubler",
+    "version_range": "12.7.0.209",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "width-multivoice",
+    "secondary": [
+      "pitch-delay",
+      "adlib"
+    ],
+    "diagnoses": [
+      "adlib_width",
+      "double_track_effect"
+    ],
+    "not_for": [
+      "core_lead_mono_integrity",
+      "phase_coherent_mastering"
+    ]
+  },
+  "routing": [
+    {
+      "position": "100% wet stereo aux or duplicate layer",
+      "when": "adlib_width"
+    },
+    {
+      "position": "100% wet stereo aux or duplicate layer",
+      "when": "double_track_effect"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "keep dry lead centred",
+      "limit voice delay/pitch",
+      "check mono fold"
+    ],
+    "controls": [
+      {
+        "name": "Voice Delay/Pitch/Pan",
+        "action": "spread effect voices around dry centre"
+      },
+      {
+        "name": "Direct",
+        "action": "disable or account for dry duplication"
+      },
+      {
+        "name": "Mix/Output",
+        "action": "blend under lead"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "comb filtering",
+    "mono loss",
+    "blurred diction"
+  ],
+  "stop_conditions": [
+    "mono loses lead energy",
+    "words lose centre focus"
+  ],
+  "alternatives": [
+    {
+      "condition": "frequency psychoacoustic width",
+      "fallback": "PS22 Spread"
+    },
+    {
+      "condition": "utility width only",
+      "fallback": "bx_control V2"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 12.7.0.209.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Waves/Doubler.md",
+    "source_note": "sources/音乐制作/插件资料/Waves/Doubler资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/4bceae9f0a6f--Waves-Doubler.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/4bceae9f0a6f--impulse-default-doubler4-stereo.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Waves/Doubler.md",
+        "packaged_path": "evidence/cards/Doubler.md",
+        "sha256": "082a5fae38c168d9a0d234bd16205441efc5371c04e063d4b061e28443b192ec"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Waves/Doubler资料.md",
+        "packaged_path": "evidence/sources/Doubler资料.md",
+        "sha256": "7229ac9b75c109f881c568fd78877a5b3018f5c21706b7112ffd4b3d5ddcd977"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/4bceae9f0a6f--Waves-Doubler.md",
+        "packaged_path": "evidence/validation/4bceae9f0a6f--Waves-Doubler.md",
+        "sha256": "076c5a5f40f9326daba725dc93ceabfc5d3e20577f49cf14c0bf5d92e64af611"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/4bceae9f0a6f--impulse-default-doubler4-stereo.json",
+          "packaged_path": "evidence/results/4bceae9f0a6f--impulse-default-doubler4-stereo.json",
+          "sha256": "180f9ea11a194b391ba79cca7fa692c278abd9d2944d36c26f017b6ebf788faf"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "adlib_width",
+      "double_track_effect"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Default Doubler4 impulse spread and mono fold measured."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "优先 100% Effects Aux/组件无 Direct，干声单独中心。",
+      "四声部分散左右、错开 Delay/Detune，返回滤除低频和齿音。"
+    ],
+    "routing": [
+      "Stereo Aux，100% Voice。",
+      "复制轨作角色层。"
+    ],
+    "controls": [
+      {
+        "name": "Voice Delay / Detune / Pan",
+        "meaning": "定义每个副本的时间、音高和位置。",
+        "action": "左右不同：如 ±6–12 cents、10–30 ms，避免完全对称。"
+      },
+      {
+        "name": "Mod Depth/Rate / Reset",
+        "meaning": "时变音高并可重置相位。",
+        "action": "低深度慢速；需要可重复 Cue 才自动化 Reset。"
+      },
+      {
+        "name": "Range 80/20 Hz",
+        "meaning": "最低移调频率与 7/24 ms 声部延迟。",
+        "action": "Lead Vocal 选 80 Hz；Bass/全频才 20 Hz。"
+      },
+      {
+        "name": "Align Direct",
+        "meaning": "把直接声延迟到 Voice。",
+        "action": "Aux 通常不要 Direct；Insert 比较 Align On/Off 与梳状。"
+      },
+      {
+        "name": "Feedback / Output EQ",
+        "meaning": "重复再生和整体高低 Shelf。",
+        "action": "常规 Doubler Feedback 0；返回高通/削高。"
+      }
+    ],
+    "parameter_start_points": [
+      "Range 80 Hz；两声部 Pan L/R；Delay 12/22 ms；Detune -8/+8 cents；Feedback 0。",
+      "返回高通 150–300 Hz、低通 6–10 kHz 作为试点。",
+      "四声部从低 Gain 加第二层。"
+    ],
+    "listen_for": [
+      "梳状、Chorus、Slap。",
+      "左右完全对称导致静态假宽。",
+      "Voice 齿音和低频堆积。"
+    ],
+    "stop": [
+      "Stereo 宽度支持情绪，Mono 不空心。",
+      "再加 Voice 只增混浊时停止。"
+    ],
+    "latency": [
+      "Waves 表列插件宿主延迟 0，但手册明确 Voice 固有 7/24 ms；这是效果设计延迟而非 PDC。本机 `Doubler4 Stereo` VST3 默认 Range 80 Hz、Align No 实测宿主报告 0 samples，且 Direct 三档峰值增益约 0.000 dB；效果声部仍有毫秒级响应，两个概念必须分开。"
+    ]
+  }
+}

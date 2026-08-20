@@ -1,0 +1,205 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "5cc7ad8baf95--waves-f6",
+  "family_id": "5cc7ad8baf95",
+  "identity": {
+    "vendor": "Waves",
+    "product": "F6",
+    "version_range": "12.7.0.209",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "eq-dynamic-flexible",
+    "secondary": [
+      "external-sidechain",
+      "mid-side"
+    ],
+    "diagnoses": [
+      "dynamic_resonance",
+      "frequency_masking",
+      "low_mid_bloom"
+    ],
+    "not_for": [
+      "continuous_noise",
+      "pitch_error"
+    ]
+  },
+  "routing": [
+    {
+      "position": "corrective insert or sidechained masking bus",
+      "when": "dynamic_resonance"
+    },
+    {
+      "position": "corrective insert or sidechained masking bus",
+      "when": "frequency_masking"
+    },
+    {
+      "position": "corrective insert or sidechained masking bus",
+      "when": "low_mid_bloom"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "bounded dynamic range",
+      "trigger only on problem",
+      "equal loudness"
+    ],
+    "controls": [
+      {
+        "name": "Freq/Q/Gain",
+        "action": "define static centre and shape"
+      },
+      {
+        "name": "Range/Threshold",
+        "action": "limit dynamic action before triggering"
+      },
+      {
+        "name": "Attack/Release/SC",
+        "action": "fit phoneme or masking source"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "over-notching",
+    "phase shift",
+    "sidechain mismatch"
+  ],
+  "stop_conditions": [
+    "normal vowels trigger",
+    "release pumps"
+  ],
+  "alternatives": [
+    {
+      "condition": "more surgical visual workflow",
+      "fallback": "Pro-Q 3"
+    },
+    {
+      "condition": "automatic many-resonance control",
+      "fallback": "soothe2"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 12.7.0.209.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Waves/F6.md",
+    "source_note": "sources/音乐制作/插件资料/Waves/F6资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/5cc7ad8baf95--Waves-F6.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/5cc7ad8baf95--composite-dynamic-eq.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Waves/F6.md",
+        "packaged_path": "evidence/cards/F6.md",
+        "sha256": "7715d587257022b77784401823d4695979d0c064f8c12ace087bd5eebb1cc9c8"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Waves/F6资料.md",
+        "packaged_path": "evidence/sources/F6资料.md",
+        "sha256": "062acf9937065bf45e6a38d36ae59c439ac3e300788b60d10db0620a65c108ad"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/5cc7ad8baf95--Waves-F6.md",
+        "packaged_path": "evidence/validation/5cc7ad8baf95--Waves-F6.md",
+        "sha256": "5ec8125d6ccaceb6584a480b824d627de72685b43bc253ef7db79eca5eb1aa20"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/5cc7ad8baf95--composite-dynamic-eq.json",
+          "packaged_path": "evidence/results/5cc7ad8baf95--composite-dynamic-eq.json",
+          "sha256": "eab09fdf670d3b68e8da77e66c44f0312569767fbe1f659a675ffa001817e57a"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "dynamic_resonance",
+      "frequency_masking",
+      "low_mid_bloom"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Static and dynamic single-band response tested; advanced sidechain not tested."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "修正型静态 EQ 之后或压缩之后处理音素相关共振。",
+      "外部侧链时放在需要给主唱让位的伴奏总线上。"
+    ],
+    "routing": [
+      "主唱 Insert。",
+      "伴奏总线 External Sidechain。"
+    ],
+    "controls": [
+      {
+        "name": "Freq/Q/Gain",
+        "meaning": "频段中心、带宽和静态增益。",
+        "action": "先用窄带监听定位，再放宽到不损伤元音。"
+      },
+      {
+        "name": "Range/Threshold",
+        "meaning": "动态最大幅度和触发点。",
+        "action": "先限定 Range，再下调 Threshold 到只在问题音素动作。"
+      },
+      {
+        "name": "Attack/Release",
+        "meaning": "动态段进入和恢复速度。",
+        "action": "以辅音保留和无泵动为停止条件。"
+      },
+      {
+        "name": "SC/M-S/RTA",
+        "meaning": "侧链来源、通道模式与频谱反馈。",
+        "action": "按任务选择，不把显示峰值直接等同听觉问题。"
+      }
+    ],
+    "parameter_start_points": [
+      "Range 先限制在 1–3 dB，再寻找 Threshold；Range 是最大动态边界，不是必然发生的 GR。",
+      "Attack 5–30 ms、Release 60–200 ms 作为人声起点并按听感修正。"
+    ],
+    "listen_for": [
+      "辅音被吸走、元音发空、释放泵动。",
+      "M/S 处理造成中心漂移。"
+    ],
+    "stop": [
+      "最大动态量已受 Range 限制且问题刚好退后。",
+      "再增加处理开始损害咬字或稳定性。"
+    ],
+    "latency": [
+      "静态与动态滤波都会改变频率相关相位；本机 VST3 Stereo、48 kHz、当前 Full Reset/单段设置宿主报告 `0 samples`。这不代表所有格式、采样率、路由或自动化状态都零延迟。"
+    ]
+  }
+}

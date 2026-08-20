@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "edb2c31ffd45--waves-abbey-road-saturator",
+  "family_id": "edb2c31ffd45",
+  "identity": {
+    "vendor": "Waves",
+    "product": "Abbey Road Saturator",
+    "version_range": "12.7.0.209",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "saturation-character",
+    "secondary": [
+      "compander",
+      "parallel-distortion"
+    ],
+    "diagnoses": [
+      "vocal_density",
+      "parallel_distortion",
+      "midrange_character"
+    ],
+    "not_for": [
+      "transparent_correction",
+      "uncorrected_sibilance"
+    ]
+  },
+  "routing": [
+    {
+      "position": "after cleanup, insert light or filtered parallel aux",
+      "when": "vocal_density"
+    },
+    {
+      "position": "after cleanup, insert light or filtered parallel aux",
+      "when": "parallel_distortion"
+    },
+    {
+      "position": "after cleanup, insert light or filtered parallel aux",
+      "when": "midrange_character"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "choose REDD/TG at equal loudness",
+      "drive then compensate output",
+      "blend after tone"
+    ],
+    "controls": [
+      {
+        "name": "Mode/Input",
+        "action": "choose path and drive"
+      },
+      {
+        "name": "Compander",
+        "action": "add only justified excitation"
+      },
+      {
+        "name": "Mix/Output",
+        "action": "match and blend"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "loudness bias",
+    "sibilance",
+    "low-mid buildup",
+    "49-sample latency"
+  ],
+  "stop_conditions": [
+    "more drive adds only loudness or grit",
+    "peaks or noise rise"
+  ],
+  "alternatives": [
+    {
+      "condition": "multiband precision",
+      "fallback": "Saturn 2"
+    },
+    {
+      "condition": "tube parallel",
+      "fallback": "HG-2"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 12.7.0.209.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Waves/Abbey Road Saturator.md",
+    "source_note": "sources/音乐制作/插件资料/Waves/Abbey Road Saturator资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/edb2c31ffd45--Waves-Abbey-Road-Saturator.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/edb2c31ffd45--impulse-default-tg.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Waves/Abbey Road Saturator.md",
+        "packaged_path": "evidence/cards/Abbey Road Saturator.md",
+        "sha256": "a2c9f3253631326c90dae633538553086d5ddbad9f9860471e7ac6eef3597628"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Waves/Abbey Road Saturator资料.md",
+        "packaged_path": "evidence/sources/Abbey Road Saturator资料.md",
+        "sha256": "5950506a8fb61e1a9303b1c8d5c527b85c39fb5d995cf6010024dd724693ba36"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/edb2c31ffd45--Waves-Abbey-Road-Saturator.md",
+        "packaged_path": "evidence/validation/edb2c31ffd45--Waves-Abbey-Road-Saturator.md",
+        "sha256": "e62a72b4487e9c54cdc3279e778d2fc2e43c1f60580a7181543accef8750f7a1"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/edb2c31ffd45--impulse-default-tg.json",
+          "packaged_path": "evidence/results/edb2c31ffd45--impulse-default-tg.json",
+          "sha256": "7503705f6e12380b2af29090b176a7fc56b4716848f4ea5e3d16c0cb67e16393"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "vocal_density",
+      "parallel_distortion",
+      "midrange_character"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Default TG transient response and 49-sample latency measured."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "通常在清理 EQ/去齿之后、主压缩之前或作为并行返回。",
+      "重失真并行轨先高通/低通再混回。"
+    ],
+    "routing": [
+      "Insert 轻度驱动。",
+      "Parallel Aux 重度驱动并带通。"
+    ],
+    "controls": [
+      {
+        "name": "REDD/TG",
+        "meaning": "两种模拟路径与失真性格。",
+        "action": "固定响度和 Drive 逐一比较。"
+      },
+      {
+        "name": "Input/Output",
+        "meaning": "驱动非线性并补偿电平。",
+        "action": "每次增加 Input 都回调 Output 做旁通等响。"
+      },
+      {
+        "name": "Compander",
+        "meaning": "引入 TG12321 压扩器的激励和动态质感。",
+        "action": "从低量开始，听辅音颗粒和噪声底。"
+      },
+      {
+        "name": "Mix/Bass/Treble",
+        "meaning": "并行比例与前后色调。",
+        "action": "先定失真，再用 Mix 和色调融入主唱。"
+      }
+    ],
+    "parameter_start_points": [
+      "Mix 10–30% 或完全并行起步。",
+      "Input 逐步推到谐波可闻，再回调 Output 等响。"
+    ],
+    "listen_for": [
+      "高频砂砾、低中频膨胀、噪声被抬。",
+      "辅音扁平或字头发硬。"
+    ],
+    "stop": [
+      "再增加 Drive 只增加响度或毛刺。",
+      "并行返回在混音中可感但不抢词。"
+    ],
+    "latency": [
+      "官方延迟表在 44.1/48 kHz 列出 49 samples；本机 V12 Stereo 默认实例在 Ableton 48 kHz 实际报告 `49 samples (1.02 ms)`，与官方声明一致。离线导出经过宿主补偿，波形局部峰值偏移不得当作 PDC。"
+    ]
+  }
+}

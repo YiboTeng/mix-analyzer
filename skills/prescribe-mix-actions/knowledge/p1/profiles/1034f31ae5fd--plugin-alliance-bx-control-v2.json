@@ -1,0 +1,221 @@
+{
+  "schema_version": "1.0",
+  "adapter_id": "1034f31ae5fd--plugin-alliance-bx-control-v2",
+  "family_id": "1034f31ae5fd",
+  "identity": {
+    "vendor": "Plugin Alliance",
+    "product": "bx_control V2",
+    "version_range": "2.0.0.0 | 2.10.0.0 | 2.3.0.0",
+    "formats": [
+      "VST2",
+      "VST3"
+    ],
+    "availability": "current-filesystem-match",
+    "tested_host": "Ableton Live 11.3.43 / VST3 / 48 kHz"
+  },
+  "capabilities": {
+    "primary": "stereo-utility",
+    "secondary": [
+      "mono-maker",
+      "solo-mid-side"
+    ],
+    "diagnoses": [
+      "stereo_width_management",
+      "low_frequency_mono",
+      "mid_side_diagnosis"
+    ],
+    "not_for": [
+      "generate_new_width",
+      "fix_bad_arrangement"
+    ]
+  },
+  "routing": [
+    {
+      "position": "utility stage on effect bus or vocal bus",
+      "when": "stereo_width_management"
+    },
+    {
+      "position": "utility stage on effect bus or vocal bus",
+      "when": "low_frequency_mono"
+    },
+    {
+      "position": "utility stage on effect bus or vocal bus",
+      "when": "mid_side_diagnosis"
+    }
+  ],
+  "parameter_strategy": {
+    "targets": [
+      "make only measured width changes",
+      "mono low frequencies when justified",
+      "preserve centre level"
+    ],
+    "controls": [
+      {
+        "name": "Width",
+        "action": "change after checking Side/Mid"
+      },
+      {
+        "name": "Mono Maker",
+        "action": "raise only to problem band"
+      },
+      {
+        "name": "M/S Solo",
+        "action": "diagnose, never leave active"
+      }
+    ],
+    "no_universal_values": true
+  },
+  "input_requirements": [
+    "diagnosis must be present in P0 input",
+    "current local product must be available",
+    "level-matched bypass or justified monitoring comparison",
+    "route and latency budget must be stated"
+  ],
+  "risks": [
+    "side collapse",
+    "centre shift",
+    "over-mono low mids"
+  ],
+  "stop_conditions": [
+    "mono or stereo balance worsens",
+    "vocal centre moves"
+  ],
+  "alternatives": [
+    {
+      "condition": "generate width",
+      "fallback": "Doubler or PS22 Spread"
+    }
+  ],
+  "version_policy": {
+    "match": "Use deterministic mappings only for observed range: 2.0.0.0 | 2.10.0.0 | 2.3.0.0.",
+    "mismatch": "Keep capability-level recommendation, suppress exact control mapping, and require revalidation."
+  },
+  "evidence": {
+    "level": "L3",
+    "card": "notes/音乐制作/插件/Plugin Alliance/bx_control V2.md",
+    "source_note": "sources/音乐制作/插件资料/Plugin Alliance/bx_control V2资料.md",
+    "validation_report": "projects/p1-plugin-knowledge-base/validation/reports/1034f31ae5fd--Plugin-Alliance-bx-control-V2.md",
+    "result_files": [
+      "projects/p1-plugin-knowledge-base/validation/results/1034f31ae5fd--spatial-default-neutral.json",
+      "projects/p1-plugin-knowledge-base/validation/results/1034f31ae5fd--spatial-ms-utility.json"
+    ],
+    "source_root": "C:\\Projects\\aizen-knowledge-base",
+    "packaged": {
+      "card": {
+        "source_path": "notes/音乐制作/插件/Plugin Alliance/bx_control V2.md",
+        "packaged_path": "evidence/cards/bx_control V2.md",
+        "sha256": "920d7f6874197b7dd6e8ec3e82369869708f0f24cc21026bec91449d28b02fb0"
+      },
+      "source_note": {
+        "source_path": "sources/音乐制作/插件资料/Plugin Alliance/bx_control V2资料.md",
+        "packaged_path": "evidence/sources/bx_control V2资料.md",
+        "sha256": "7c4b7a337c80160aa6679ef231f4f353f813baadfde4494db3392457f3b4ccaa"
+      },
+      "validation_report": {
+        "source_path": "projects/p1-plugin-knowledge-base/validation/reports/1034f31ae5fd--Plugin-Alliance-bx-control-V2.md",
+        "packaged_path": "evidence/validation/1034f31ae5fd--Plugin-Alliance-bx-control-V2.md",
+        "sha256": "3125431a70958c7cfb8f8ae760da14c54984fad3fda4a57c2733d9ce2106e25d"
+      },
+      "result_files": [
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/1034f31ae5fd--spatial-default-neutral.json",
+          "packaged_path": "evidence/results/1034f31ae5fd--spatial-default-neutral.json",
+          "sha256": "6cd740dfa171b8822ef87a4e2341263e07fc0b149869d150c9631bd832a81011"
+        },
+        {
+          "source_path": "projects/p1-plugin-knowledge-base/validation/results/1034f31ae5fd--spatial-ms-utility.json",
+          "packaged_path": "evidence/results/1034f31ae5fd--spatial-ms-utility.json",
+          "sha256": "694c59075ce2f74baa328baa133a105f23415032914546989b4ddf6afba03adb"
+        }
+      ]
+    }
+  },
+  "p0_contract": {
+    "diagnosis_inputs": [
+      "stereo_width_management",
+      "low_frequency_mono",
+      "mid_side_diagnosis"
+    ],
+    "outputs": [
+      "plugin",
+      "route",
+      "parameter_targets",
+      "stop_conditions",
+      "side_effects",
+      "retest_metrics",
+      "evidence_pointers"
+    ]
+  },
+  "conflict_rules": [
+    {
+      "if": "installed_version_not_in_version_range",
+      "action": "defer deterministic control mapping and request revalidation"
+    }
+  ],
+  "validation": {
+    "status": "passed-l3",
+    "matrix_status": "passed-l3",
+    "boundary": "Default neutrality, Width 0 and Mono Maker stress measured."
+  },
+  "local_guidance": {
+    "signal_position": [
+      "放在 Doubler、MicroShift、PS22、Chorus 或 Reverb/Delay 返回末端做诊断与低频收束。",
+      "Backing Vocal/FX Bus 可轻调 Width/Mono Maker；主唱干声中心通常只监测。",
+      "需要 M/S 插件链时，以 Encoder → 中间处理 → Decoder 成对使用。"
+    ],
+    "routing": [
+      "Stereo Vocal FX/Backing Bus 末端：轻调 Width 或 Mono Maker，并在 Mono 下复核。",
+      "成对 M/S 链：第一实例编码、最后实例解码；中间处理不得改变通道含义。",
+      "Mix Bus 默认只监测；若实际处理，必须保存旁路对照并确认所有 Solo/Flip/Phase 状态复位。"
+    ],
+    "controls": [
+      {
+        "name": "Stereo Width 0–400%",
+        "meaning": "调整 Side/Mid 比；100%不变，0% Mono。",
+        "action": "从 100% 小幅到 110–130%，同时查 Correlation 与 Mono。"
+      },
+      {
+        "name": "Mono Maker 20 Hz–22 kHz",
+        "meaning": "阈值以下收束 Side并补偿低频。",
+        "action": "总线从 60–120 Hz 试；过高会削掉可听宽度主体。"
+      },
+      {
+        "name": "Solo M/S/L/R",
+        "meaning": "把所选成分相位校正后送到两只扬声器。",
+        "action": "Solo S 检查低频、齿音与主唱核心泄漏，完成后复位。"
+      },
+      {
+        "name": "Solo in Place",
+        "meaning": "按原位置监听所选元素。",
+        "action": "只用于定位问题，不留在导出。"
+      },
+      {
+        "name": "Input/Output L/R-M/S",
+        "meaning": "编码、解码或格式声明。",
+        "action": "常规保持 L/R；M/S 链必须成对恢复。"
+      },
+      {
+        "name": "Balance / Pan M / Pan S",
+        "meaning": "调中心与 M/S 位置。",
+        "action": "先判断来源是否真的偏，再修正；不凭表针盲调。"
+      }
+    ],
+    "parameter_start_points": [
+      "监测基线：Width 100%、Mono Maker Off、L/R in/out、所有 Solo/Flip/Phase 关闭。",
+      "Vocal FX/Backing Bus：Width 110–130%，Mono Maker 60–120 Hz 起步。",
+      "Master/总线：优先只用 Mono Maker 60–100 Hz，小步上调；任何明显宽度损失都应回退。"
+    ],
+    "listen_for": [
+      "相关性、中心稳定、低频重量与 Mono Fold-down。",
+      "Solo S 中是否有主唱主体、齿音或应留在中心的低频。",
+      "Matrix/solo 状态是否误留，Pan M/Pan S 是否造成声像偏移。"
+    ],
+    "stop": [
+      "Stereo 获得所需宽度或低频稳定，而 Mono 主体与中心定位基本不变。",
+      "再提高 Width/Mono Maker 开始让中心变薄、空间主体消失或相关性恶化时停止。"
+    ],
+    "latency": [
+      "- 本机 Ableton 状态栏：0 samples。\n- 默认与旁路最佳整数延迟：0 samples；RMS 电平差 0.0 dB，残差 RMS -141.487198 dBFS。\n- 没有过采样控制；Mono Maker 本身是频率相关处理，端点 Mono 不等同普通声像旋钮。"
+    ]
+  }
+}
